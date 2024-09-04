@@ -25,14 +25,11 @@ Koncept klient-server je důležitým vývojářským paradigmatem, který se č
 
 ```{mermaid}
 graph LR
-    A[fa:fa-male]:::NB <--> B(Webový prohlížeč)
-    B <--> C{fa:fa-cloud}:::NB
+    A[fa:fa-male]:::NB <--> B[Webový prohlížeč]
+    B <--> C(Internet)
     C <--> D[Webový server]
     D <--> E[(Databáze)]
 
-   
-    classDef NB fill:none,stroke-width:0,font-size:1.2em
-    
     subgraph Klient
         B
     end
@@ -40,6 +37,8 @@ graph LR
         D
         E
     end
+
+    classDef NB fill:none,stroke-width:0,font-size:1em
 ```
 
 V první části předmětu se budeme věnovat technologiím klienta, což jsou zejména formátovací jazyky HTML a CSS. Dále se seznámíme ze základy JavaScriptu, který umožňuje interaktivitu s prvky ve webové stránce. Část webové aplikace, kterou uživatelé vidí a se kterou mohou interagovat přímo v jejich webovém prohlížeči, se také označuje jako **front-end**. Zahrnuje disciplíny jako design webu, uživatelského rozhraní (user interface), user experience (UX, neboli jaký zážitek uživateli webová stránka přinese) a další. 

@@ -95,12 +95,12 @@ Tyto značky slouží k označení titulků úrovně 1-6:
 
 ```{myst-example}
 :highlight: html
-<h1>Heading 1<h1>
-<h2>Heading 2<h2>
-<h3>Heading 3<h3>
-<h4>Heading 4<h4>
-<h5>Heading 5<h5>
-<h6>Heading 6<h6>
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>
 ```
 
 Tag `<h1>` by měla být použita pro hlavní nadpis stránky a to maximálně jednou na stránce. Méně důležité nadpisy se pak označují pomocí `<h2>` až `<h6>`.
@@ -111,8 +111,31 @@ Tag označuje odstavec textu *(paragraph)*, který je pak zpravidla vykreslen ja
 
 ```{myst-example}
 :highlight: html
-<p>První odstavec<p>
-<p>Druhý odstavec<p>
+<p>První odstavec</p>
+<p>Druhý odstavec</p>
+```
+
+### Formátování textu
+
+Pro různé formy zvýraznění a formátování textu můžeme použít následující značky:
+
+- **`<strong>`**, **`<em>`**: Text, který by měl být považován za důležitý (pojem, klíčové slovo apod.), obvykle zobrazen tučně (`<strong>`), resp. kurzívou (`<em>`).
+- **`<b>`**: Tučný text (bold), ale bez zvláštního sémantického významu
+- **`<i>`**: Kurzíva (italic), bez zvláštního sémantického významu
+- **`<u>`**: Podtržený text (undeline), bez zvláštního sémantického významu
+- **`<small>`**: Text, který by měl být zobrazen menším písmem, například pro poznámky.
+- **`<mark>`**: Text zobrazený s pozadím (jakoby označen zvýrazňovačem)
+- **`<sub>`**, **`<sup>`**: Značky označují text, který bude zobrazen jako horní (`<sup>`), resp. dolní index (`<sub>`).
+
+Příklad:
+
+```{myst-example}
+:highlight: html
+Důležitý <strong>pojem</strong>, nebo jinak důležitá <em>informace</em>. <br>
+Text <b>tučně</b>, <i>kurzívou</i> a <u>podtržený</u>. <br>
+Text <small>malý a nedůležitý</small>. <br>
+Naopak <mark>velmi důležitý</mark> text. <br>
+A ukázka <sup>horního</sup> a také <sub>dolního</sub> indexu. <br>
 ```
 
 ### Seznamy `<ol>`, `<ul>`, `<li>`
@@ -227,6 +250,7 @@ Tyto tagy se používají pro vytváření tabulek na webové stránce. Příkla
     </tr>
 </table>
 ```
+
 - **`<table>`** je kontejnerový prvek, který definuje tabulku.
 - **`<tr>`** definuje řádek tabulky.
 - **`<th>`** a **`<td>`** definují jednotlivé buňky tabulky, s tím, že `<th>` označuje záhlaví tabulky (názvy sloupců) a je obvykle zobrazeno tučně.

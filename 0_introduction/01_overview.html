@@ -348,14 +348,11 @@ document.write(`
 <p>Koncept klient-server je důležitým vývojářským paradigmatem, který se často objevuje ve webových technologiích, ale i v jiných oblastech IT. Klient je <em>aktivní</em>, <em>zasílá požadavky</em> na server. Server je <em>pasivní</em>, <em>čeká na příchozí požadavky</em> od klienta a poskytuje odpovědi, například v podobě webových stránek.</p>
 <div class="mermaid">
             graph LR
-    A[fa:fa-male]:::NB &lt;--&gt; B(Webový prohlížeč)
-    B &lt;--&gt; C{fa:fa-cloud}:::NB
+    A[fa:fa-male]:::NB &lt;--&gt; B[Webový prohlížeč]
+    B &lt;--&gt; C(Internet)
     C &lt;--&gt; D[Webový server]
     D &lt;--&gt; E[(Databáze)]
 
-   
-    classDef NB fill:none,stroke-width:0,font-size:1.2em
-    
     subgraph Klient
         B
     end
@@ -363,6 +360,8 @@ document.write(`
         D
         E
     end
+
+    classDef NB fill:none,stroke-width:0,font-size:1em
         </div><p>V první části předmětu se budeme věnovat technologiím klienta, což jsou zejména formátovací jazyky HTML a CSS. Dále se seznámíme ze základy JavaScriptu, který umožňuje interaktivitu s prvky ve webové stránce. Část webové aplikace, kterou uživatelé vidí a se kterou mohou interagovat přímo v jejich webovém prohlížeči, se také označuje jako <strong>front-end</strong>. Zahrnuje disciplíny jako design webu, uživatelského rozhraní (user interface), user experience (UX, neboli jaký zážitek uživateli webová stránka přinese) a další.</p>
 <p>V druhé části se pak budeme věnovat zejména straně serveru, naučíme se programovat webovou aplikaci a seznámíme se detailněji s principy fungování Webu. Část webové aplikace, která běží na serveru se také označuje jako <strong>back-end</strong>. Zahrnuje disciplíny jako programování aplikace, databázové technologie, komunikace mezi serverem a klientem, zabezpečení a další.</p>
 <div class="admonition-hura-do-studia admonition">
