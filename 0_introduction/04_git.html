@@ -1,0 +1,714 @@
+
+<!DOCTYPE html>
+
+
+<html lang="cs" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Git &#8212; Programování webových aplikací</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/local.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=4cdba38b"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../_static/translations.js?v=0275affc"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '0_introduction/04_git';</script>
+    <link rel="index" title="Rejstřík" href="../genindex.html" />
+    <link rel="search" title="Vyhledávání" href="../search.html" />
+    <link rel="next" title="Markdown" href="05_markdown.html" />
+    <link rel="prev" title="Úvod do internetových technologií" href="01_overview.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="cs"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Programování webových aplikací</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Vyhledávání" aria-label="Vyhledávání" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Vyhledávání</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Úvod</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_overview.html">Úvod do internetových technologií</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_markdown.html">Markdown</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statický web</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../1_static/01_html.html">HTML formátování</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Stáhněte si tuto stránku">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/0_introduction/04_git.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Stáhněte si zdrojový soubor"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Tisk do PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Režim celé obrazovky"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Vyhledávání" aria-label="Vyhledávání" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Git</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Obsah </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#co-je-to-git-a-k-cemu-se-pouziva">Co je to Git a k čemu se používá</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inicializace-lokalniho-git-repozitare">Inicializace lokálního Git repozitáře</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vytvoreni-commitu">Vytvoření commitu</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vzdalene-repozitare">Vzdálené repozitáře</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nahrani-lokalniho-repozitare-na-vzdaleny-server">Nahrání lokálního repozitáře na vzdálený server</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#konfigurace-gitu">Konfigurace Gitu</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">Linux</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stazeni-existujiciho-repozitare">Stažení existujícího repozitáře</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aktualizace-repozitare">Aktualizace repozitáře</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soubor-gitignore">Soubor <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reseni-konfliktu">Řešení konfliktů</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vytvareni-vetvi-v-git">Vytváření větví v Git</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vytvoreni-nove-vetve">Vytvoření nové větve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#merge-vetvi">Merge větví</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="git">
+<h1>Git<a class="headerlink" href="#git" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.w3schools.com/git/default.asp">Git tutoriál od W3C</a></p></li>
+<li><p><a class="reference external" href="https://education.github.com/git-cheat-sheet-education.pdf">Git cheat sheet od GitHubu</a></p></li>
+</ul>
+<section id="co-je-to-git-a-k-cemu-se-pouziva">
+<h2>1.&nbsp;&nbsp;Co je to Git a k čemu se používá<a class="headerlink" href="#co-je-to-git-a-k-cemu-se-pouziva" title="Link to this heading">#</a></h2>
+<p>Git je distribuovaný systém správy verzí, který umožňuje vývojářům sledovat a spravovat změny v souborech (zejména zdrojových kódů). Je to moderní nástroj pro správu kódu v týmových ale i individuálních projektech, umožňuje koordinovat práci na těchto souborech mezi více lidmi podporuje efektivní workflow při vývoji složitějších projektů.</p>
+<section id="inicializace-lokalniho-git-repozitare">
+<h3>1.1.&nbsp;&nbsp;Inicializace lokálního Git repozitáře<a class="headerlink" href="#inicializace-lokalniho-git-repozitare" title="Link to this heading">#</a></h3>
+<p>Chcete-li vytvořit nový lokální Git repozitář, přejděte do kořenového adresáře projektu a spusťte v konzoli příkaz:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>init
+</pre></div>
+</div>
+<p>Tím se vytvoří nový prázdný Git repozitář a složka <code class="docutils literal notranslate"><span class="pre">.git</span></code>, kam Git ukládá všechny potřebné soubory a historii projektu.</p>
+<p>V Gitu se vytváří verze pomocí <strong>commitu</strong>. Commit představuje uložený stav souborů ve vašem projektu v daném časovém bodě. Když provedete commit, Git vytvoří snímek souborů a uloží tento snímek do lokálního repozitáře. Každý commit má jedinečný identifikátor (hash), který umožňuje sledovat historii změn a případně se vrátit ke starším verzím.</p>
+<p>Commit také obsahuje metadata, jako jsou informace o autorovi, datum a čas commitu, a <em>commit message</em>, která stručně popisuje provedené změny.</p>
+</section>
+<section id="vytvoreni-commitu">
+<h3>1.2.&nbsp;&nbsp;Vytvoření commitu<a class="headerlink" href="#vytvoreni-commitu" title="Link to this heading">#</a></h3>
+<p>Pro vytvoření nového commitu v Gitu postupujte následovně:</p>
+<ol class="arabic simple">
+<li><p>Proveďte změny ve vašem pracovním adresáři, změňte, vytvořte či smažte soubory.</p></li>
+<li><p>Přidejte soubory do commitu pomocí příkazu <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">jmeno_souboru</span></code>. Případně použijte <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code> k přidání všech souborů a změn.</p></li>
+<li><p>Vytvořte commit s popisem změn pomocí příkazu <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;Popis</span> <span class="pre">změn&quot;</span></code>. Je důležité psát smysluplné commit messages, aby bylo jasné, co daný commit obsahuje.</p></li>
+</ol>
+<p>Tímto postupem si budete ve vašem lokálním projektovém adresáři udržovat historii změn, kterou je možné vizualizovat jako graf na sebe navazujících commitů:</p>
+<div class="mermaid">
+            gitGraph
+    commit
+    commit
+    commit
+        </div></section>
+<section id="vzdalene-repozitare">
+<h3>1.3.&nbsp;&nbsp;Vzdálené repozitáře<a class="headerlink" href="#vzdalene-repozitare" title="Link to this heading">#</a></h3>
+<p>Síla Gitu ale spočívá v možnosti sdílení kódu. To se obvykle řeší přes centrální repozitář, kam všichni vývojáři mají přístup a nahrávají do něj své úpravy kódu. Centrální repozitář si můžete hostovat sami na svém serveru, ale obvykle je jednodušší použít <em>Git Hosting</em>, který často nabízí i další funkce jako procházení kódu na webu, propojení s dalšími nástroji atd…</p>
+<p>Mezi populární Git hostingy patří:</p>
+<ul class="simple">
+<li><p><strong><a class="reference external" href="https://github.com">GitHub</a></strong>: Populární webová služba pro hosting Git repozitářů s rozsáhlými nástroji pro kolaboraci.</p></li>
+<li><p><strong><a class="reference external" href="https://gitlab.com">GitLab</a></strong>: Umožňuje nejen hosting repozitářů, ale i deployment a mnoho dalších funkcí pro správu softwarových projektů.</p></li>
+<li><p><strong><a class="reference external" href="https://bitbucket.org">Bitbucket</a></strong>: Nabízí Git hosting s integrovanými nástroji pro týmy, které používají Jira a další Atlassian produkty.</p></li>
+</ul>
+<section id="nahrani-lokalniho-repozitare-na-vzdaleny-server">
+<h4>Nahrání lokálního repozitáře na vzdálený server<a class="headerlink" href="#nahrani-lokalniho-repozitare-na-vzdaleny-server" title="Link to this heading">#</a></h4>
+<p>Chcete-li nahrát existující lokální repozitář na vzdálený server (např. GitHub), proveďte tyto kroky:</p>
+<ol class="arabic">
+<li><p>Vytvořte nový prázdný repozitář na vzdáleném serveru.</p></li>
+<li><p>Přidejte vzdálený repozitář jako remote do vašeho lokálního repozitáře:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>&lt;URL<span class="w"> </span>vzdáleného<span class="w"> </span>repozitáře&gt;<span class="w"> </span>
+</pre></div>
+</div>
+<p>Jako <code class="docutils literal notranslate"><span class="pre">origin</span></code> se v Gitu označuje výchozí název pro vzdálený repozitář. V dalších příkazech odkazujících se na vzdálený repozitář nemusíte pracovat s URL repozitáře, stačí pouze označením <code class="docutils literal notranslate"><span class="pre">origin</span></code>.</p>
+</li>
+<li><p>Nahrajte lokální repozitář na vzdálený server:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
+</pre></div>
+</div>
+<p>Parametr <code class="docutils literal notranslate"><span class="pre">-u</span></code> (ekvivalent <code class="docutils literal notranslate"><span class="pre">--set-upstream</span></code>) řekne vzdálenému repozitáři, aby vytvořil větev kam nahraje lokální repozitář. Parametr <code class="docutils literal notranslate"><span class="pre">-u</span></code> (<code class="docutils literal notranslate"><span class="pre">--set-upstream</span></code>) je potřeba pouze při prvním nahrání na vzdálený repozitář. Označení <em>main</em> je výchozí název hlavní větve v Git repozitáři. Větvení v Gitu se budeme věnovat v dalších kapitolách.</p>
+</li>
+</ol>
+<div class="note admonition">
+<p class="admonition-title">master a main</p>
+<p>Ještě donedávna se všude používalo pro hlavní větev označení <strong>master</strong>, od toho však GitHub <a class="reference external" href="https://www.zdnet.com/article/github-to-replace-master-with-alternative-term-to-avoid-slavery-references/">upouští</a> a zavádí se označení <strong>main</strong>. Stále se ale často setkáte s označením master.</p>
+</div>
+</section>
+<section id="konfigurace-gitu">
+<h4>Konfigurace Gitu<a class="headerlink" href="#konfigurace-gitu" title="Link to this heading">#</a></h4>
+<p>Některé hostingy vyžadují autentizaci pomocí veřejného a soukromého klíče (viz. <a class="reference external" href="https://en.wikipedia.org/wiki/Public-key_cryptography">asymetrická kryptografie</a>). Postup pro vytvoření páru veřejný-soukromý klíč je následující:</p>
+<section id="windows">
+<h5>Windows<a class="headerlink" href="#windows" title="Link to this heading">#</a></h5>
+<p>Spusťte program <strong>PuTTYgen</strong> a klikněte na tlačítko <em>Generate</em>. Po vytvoření klíče naleznete v bloku <em>Key</em> veřejný klíč, který nahrajte do GitHubu.</p>
+<p>Dále klikněte v menu Conversions &gt; Export OpenSSH key (force new file format) a uložte klíč do souboru <code class="docutils literal notranslate"><span class="pre">Z:/.ssh/id_rsa</span></code>.</p>
+<p>Pro budoucí práci s klíčem uložte klíč pomocí <em>Save private key</em>.</p>
+</section>
+<section id="linux">
+<h5>Linux<a class="headerlink" href="#linux" title="Link to this heading">#</a></h5>
+<p>Pro vytvoření páru veřejný-soukromý klíč spusťte příkaz:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ssh-keygen<span class="w"> </span>-o
+</pre></div>
+</div>
+<p>Průvodce se Vás zeptá na umístění souboru s klíči a volitelně heslo, které se bude zadávat při použití klíče. Po dokončení naleznete ve svém domovském adresáři ve složce <code class="docutils literal notranslate"><span class="pre">.ssh</span></code> dva soubory:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>id_ed25519
+id_ed25519.pub
+</pre></div>
+</div>
+<p>Soubor <code class="docutils literal notranslate"><span class="pre">id_ed25519</span></code> obsahuje <strong>soukromý klíč</strong> (<strong>private key</strong>), ten je potřeba chránit a zamezit jeho úniku. Soubor <code class="docutils literal notranslate"><span class="pre">id_ed25519.pub</span></code> pak obsahuje <strong>veřejný klíč</strong> (<strong>public key</strong>), který se nahraje do Git hostingu (případně jiné služby, která tento typ autentizace vyžaduje).</p>
+<div class="note admonition">
+<p class="admonition-title">Algoritmy</p>
+<p>Označení <code class="docutils literal notranslate"><span class="pre">ed25519</span></code> je pro používaný šifrovací algoritmus <a class="reference external" href="https://en.wikipedia.org/wiki/EdDSA">EdDSA</a>, aktuálně výchozí v <code class="docutils literal notranslate"><span class="pre">ssh</span></code> (pomocí parametru <code class="docutils literal notranslate"><span class="pre">-t</span></code> je možné algoritmus změnit, <code class="docutils literal notranslate"><span class="pre">ssh</span></code> jich podporuje několik a je možné, že některé služby vyžadující tento typ autentizace mohou vyžadovat i specifický algoritmus).</p>
+</div>
+<p>Dále je ještě nutné nastavit vaše jméno a email, které se bude ukládat do commitů, aby bylo dobře rozlišitelné, kdo je jejich autorem:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;your@email.com&quot;</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Your Name&quot;</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="stazeni-existujiciho-repozitare">
+<h3>1.4.&nbsp;&nbsp;Stažení existujícího repozitáře<a class="headerlink" href="#stazeni-existujiciho-repozitare" title="Link to this heading">#</a></h3>
+<p>Pokud už vzdálený repozitář existuje a chcete si vytvořit jeho lokální kopii použijte příkaz:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>&lt;URL<span class="w"> </span>vzdáleného<span class="w"> </span>repozitáře&gt;
+</pre></div>
+</div>
+<p>Tím se vytvoří nový adresář s názvem repozitáře, do něj se stáhne aktuální verze všech souborů repozitáře a zároveň se inicializuje lokální git repozitář s kompletní historií včetně nastavení <code class="docutils literal notranslate"><span class="pre">origin</span></code>.</p>
+<section id="aktualizace-repozitare">
+<h4>Aktualizace repozitáře<a class="headerlink" href="#aktualizace-repozitare" title="Link to this heading">#</a></h4>
+<p>Pokud je Git repozitář inicializován a propojen se vzdáleným repozitářem, jsou v Gitu dva základní příkazy pro synchronizaci.</p>
+<p>Příkaz:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>pull
+</pre></div>
+</div>
+<p>stáhne ze vzdáleného repozitáře nejnovější verzi souborů a historii změn. Zároveň provede aktualizace všech souborů lokálního repozitáře na nejnovější verzi.</p>
+<p>Příkaz:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push
+</pre></div>
+</div>
+<p>Odešle všechny změny (které byly zahrnuté v commitech) z lokálního repozitáře do vzdáleného repozitáře.</p>
+</section>
+</section>
+</section>
+<section id="soubor-gitignore">
+<h2>2.&nbsp;&nbsp;Soubor <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code><a class="headerlink" href="#soubor-gitignore" title="Link to this heading">#</a></h2>
+<p>Pomocí souboru <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> umístěného v kořenovém adresáři projektu můžeme definovat, které soubory nebo složky mají být verzovacím systémem Git ignorovány. Tento soubor pomáhá udržet repozitář čistý od nepotřebných nebo dočasných souborů, jako jsou logy, systémové soubory, kompilované zdrojové kódy a další. Do souboru <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> se zapisují pravidla, která Git automaticky čte a ignoruje jakékoliv změny v souborech vyhovujících zadaným pravidlům a v Git je neukládá.</p>
+<p>Pravidla vypadají následovně</p>
+<ul class="simple">
+<li><p><strong>Obecná jména souborů</strong>: Název souboru nebo maska, která specifikuje, které soubory ignorovat (např. <code class="docutils literal notranslate"><span class="pre">*.log</span></code> ignoruje všechny soubory s příponou <code class="docutils literal notranslate"><span class="pre">.log</span></code>).</p></li>
+<li><p><strong>Adresářové cesty</strong>: Můžete specifikovat složky, které mají být ignorovány, přidáním lomítka na konec názvu složky (např. <code class="docutils literal notranslate"><span class="pre">build/</span></code>, nebo <code class="docutils literal notranslate"><span class="pre">**/build</span></code>).</p></li>
+<li><p><strong>Komentáře</strong>: Řádky začínající znakem <code class="docutils literal notranslate"><span class="pre">#</span></code> jsou považovány za komentáře.</p></li>
+</ul>
+<p>Příklad souboru <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># Ignoruje všechny .log soubory
+*.log
+
+# Ignoruje konkrétní složku a vše co v ní je
+temp/
+
+# Ignoruje složku, která se může být umístěna kdekoliv v adresářové struktuře projektu.
+**/cache
+</pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Co tedy do Gitu nepatří?</p>
+<p>Do Gitu obecně nepatří soubory, které</p>
+<ul class="simple">
+<li><p>se generují během běhu programu, např. kompilované bytecode soubory, logy, cache soubory apod.</p></li>
+<li><p>soubory databází a obecně data aplikace vytvářená jejím provozem</p></li>
+<li><p>konfigurační soubory obsahující hesla nebo jiné osobní informace</p></li>
+<li><p>soubory s nastavením pro IDE</p></li>
+</ul>
+</div>
+<section id="reseni-konfliktu">
+<h3>2.1.&nbsp;&nbsp;Řešení konfliktů<a class="headerlink" href="#reseni-konfliktu" title="Link to this heading">#</a></h3>
+<p>Konflikty v Gitu vznikají, když se například dva vývojáři pokusí změnit stejnou část kódu ve stejném souboru. Tato situace často nastává při spolupráci více lidí na stejném projektu. Když pak dojde k pokusu o sloučení těchto změn (např. při <code class="docutils literal notranslate"><span class="pre">push</span></code> nebo <code class="docutils literal notranslate"><span class="pre">pull</span></code>, ale i v dalších situacích), Git není schopen automaticky rozhodnout, která změna má přednost, a vyvolá konflikt. Konfliktující části kódu se pak musí ručně opravit. Postup je následující:</p>
+<ol class="arabic simple">
+<li><p>Použijte příkaz <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>, který ukáže soubory kde došlo konfliktu.</p></li>
+<li><p>Otevřete konfliktující soubor v editoru, kde naleznete speciálně formátované sekce, které ukazují změny z obou větví. Část mezi <code class="docutils literal notranslate"><span class="pre">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span></code> a <code class="docutils literal notranslate"><span class="pre">=======</span></code> je vaše změna, zatímco část mezi <code class="docutils literal notranslate"><span class="pre">=======</span></code> a <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span></code> je změna z větve.</p></li>
+<li><p>Manuálně upravte soubor, aby obsahoval konečnou verzi kódu. Můžete zvolit jednu ze změn, kombinovat obě nebo napsat něco zcela nového.</p></li>
+<li><p>Jakmile upravíte soubory a vyřešíte konflikty, použijte příkaz <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">&lt;soubor&gt;</span></code>, aby Git věděl, že konflikty byly vyřešeny.</p></li>
+<li><p>Po opravení všech konfliktující souborů dokončete proces pomocí <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>, čímž vytvoříte commit opravující konflikty a uložíte vaše změny do lokálního repozitáře. Je dobré také ihned provést <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code>, aby změny byly odeslány do vzdáleného repozitáře a ostatní vývojáři měli přístup k aktuální verzi.</p></li>
+</ol>
+</section>
+</section>
+<section id="vytvareni-vetvi-v-git">
+<h2>3.&nbsp;&nbsp;Vytváření větví v Git<a class="headerlink" href="#vytvareni-vetvi-v-git" title="Link to this heading">#</a></h2>
+<p>V Gitu je vytváření větví (<strong>branch</strong>) základní funkcí, která umožňuje vývojářům pracovat na různých funkcionalitách nebo opravách bez ovlivnění hlavního (produkčního) kódu aplikace, což usnadňuje paralelní vývoj a pomáhá udržovat produkční kód stabilní. Díky větvím mohou vývojáři experimentovat, vyvíjet nové funkce a opravovat chyby bez rizika narušení produkčního kódu. Teprve až když je nová funkce hotova, provede se sloučení větve s produkčním kódem (<strong>merge</strong>).</p>
+<section id="vytvoreni-nove-vetve">
+<h3>3.1.&nbsp;&nbsp;Vytvoření nové větve<a class="headerlink" href="#vytvoreni-nove-vetve" title="Link to this heading">#</a></h3>
+<p>Pro vytvoření nové větve v Gitu použijete příkaz <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code>, následovaný názvem nové větve. Například, pokud chcete vytvořit větev s názvem <code class="docutils literal notranslate"><span class="pre">myfeature</span></code>, zadáte:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>branch<span class="w"> </span>myfeature
+</pre></div>
+</div>
+<p>Po vytvoření větve se na ni můžete přepnout pomocí příkazu <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>myfeature
+</pre></div>
+</div>
+<p>Tento příkaz řekne Gitu, že další commity má ukládat do větve <code class="docutils literal notranslate"><span class="pre">myfeature</span></code> a hlavní větev <code class="docutils literal notranslate"><span class="pre">main</span></code> tak nebude změnami dotčena. Během práci a přidávání commitů do větve <code class="docutils literal notranslate"><span class="pre">myfeature</span></code> můžete samozřejmě kdykoliv přepnout zpět na hlavní větev pomocí <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">main</span></code>, nebo na jakoukoliv jinou větev pomocí <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">&lt;název</span> <span class="pre">větve&gt;</span></code>. Zdrojový kód se tak začne v Gitu větvit:</p>
+<div class="mermaid">
+            gitGraph
+    commit
+    commit
+    commit
+    branch myfeature
+    checkout myfeature
+    commit
+    checkout main
+    commit
+    checkout main
+    checkout myfeature
+    commit
+    commit
+        </div></section>
+<section id="merge-vetvi">
+<h3>3.2.&nbsp;&nbsp;Merge větví<a class="headerlink" href="#merge-vetvi" title="Link to this heading">#</a></h3>
+<p>Sloučení (merge) větví je proces, při kterém se integrují změny z jedné větve do druhé. To se obvykle děje, když je funkce ve vývojové větvi dokončena a má být začleněna do hlavní větve <code class="docutils literal notranslate"><span class="pre">main</span></code>. Pro sloučení větví postupujte následovně</p>
+<ol class="arabic">
+<li><p>Přepněte na větev, <strong>do</strong> které chcete změny sloučit, což je obvykle <code class="docutils literal notranslate"><span class="pre">main</span></code>, ale obecně je možné slučovat větve libovolně:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>main
+</pre></div>
+</div>
+</li>
+<li><p>Použijete příkaz <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span></code> následovaný názvem větve, kterou chcete sloučit:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>merge<span class="w"> </span>myfeature
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Tento příkaz začlení všechny změny z větve <code class="docutils literal notranslate"><span class="pre">myfeature</span></code> do aktuální větve (<code class="docutils literal notranslate"><span class="pre">main</span></code>):</p>
+<ol class="arabic simple" start="3">
+<li><p>Git se pokusí sloučení provést automaticky, ale může se stát, že vzniknou konflikty (změny ve stejných částech souborů v obou větvích). Postupujte s řešením konfliktů tak, jak je popsáno v předchozí kapitole. Po vyřešení konfliktů nezapomeňte vyřešené konflikty přidat do repozitáře pomocí příkazu <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">&lt;soubor&gt;</span></code> a poté vytvořit nový commit pomocí <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>.</p></li>
+</ol>
+<p>Po dokončení merge pak bude repozitář vypadat nějak takto:</p>
+<div class="mermaid">
+            gitGraph
+    commit
+    commit
+    commit
+    branch myfeature
+    checkout myfeature
+    commit
+    checkout main
+    commit
+    checkout main
+    checkout myfeature
+    commit
+    commit
+    checkout main
+    merge myfeature
+        </div><p>Git nabízí celou řadu dalších možností jak s větvemi pracovat a lepší pochopení problematiky doporučuji toto videa o <a class="reference external" href="https://www.youtube.com/watch?v=zOnwgxiC0OA">merge a rebase</a> a o řešení <a class="reference external" href="https://www.youtube.com/watch?v=Sqsz1-o7nXk">merge konfliktů</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Poznámka</p>
+<p>IDE
+Moderní IDE mají zpravidla vestavěnou více či méně pokročilou správu verzí a poskytují funkcionalitu Gitu v uživatelsky přívětivé formě bez nutnosti práce s příkazovou řádkou. Přesto je ale důležité znát základní principy a ovládání Gitu příkazovou řádkou pro situace kde třeba IDE selže, nebo kde není IDE vůbec k dispozici, například na serverech.</p>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="01_overview.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">předchozí</p>
+        <p class="prev-next-title">Úvod do internetových technologií</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="05_markdown.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">další</p>
+        <p class="prev-next-title">Markdown</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Obsah
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#co-je-to-git-a-k-cemu-se-pouziva">Co je to Git a k čemu se používá</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inicializace-lokalniho-git-repozitare">Inicializace lokálního Git repozitáře</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vytvoreni-commitu">Vytvoření commitu</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vzdalene-repozitare">Vzdálené repozitáře</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nahrani-lokalniho-repozitare-na-vzdaleny-server">Nahrání lokálního repozitáře na vzdálený server</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#konfigurace-gitu">Konfigurace Gitu</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">Linux</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stazeni-existujiciho-repozitare">Stažení existujícího repozitáře</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aktualizace-repozitare">Aktualizace repozitáře</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soubor-gitignore">Soubor <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reseni-konfliktu">Řešení konfliktů</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vytvareni-vetvi-v-git">Vytváření větví v Git</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vytvoreni-nove-vetve">Vytvoření nové větve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#merge-vetvi">Merge větví</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Podle kf
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, kf..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
