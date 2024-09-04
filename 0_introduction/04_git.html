@@ -524,27 +524,27 @@ temp/
 <p>V Gitu je vytváření větví (<strong>branch</strong>) základní funkcí, která umožňuje vývojářům pracovat na různých funkcionalitách nebo opravách bez ovlivnění hlavního (produkčního) kódu aplikace, což usnadňuje paralelní vývoj a pomáhá udržovat produkční kód stabilní. Díky větvím mohou vývojáři experimentovat, vyvíjet nové funkce a opravovat chyby bez rizika narušení produkčního kódu. Teprve až když je nová funkce hotova, provede se sloučení větve s produkčním kódem (<strong>merge</strong>).</p>
 <section id="vytvoreni-nove-vetve">
 <h3>3.1.&nbsp;&nbsp;Vytvoření nové větve<a class="headerlink" href="#vytvoreni-nove-vetve" title="Link to this heading">#</a></h3>
-<p>Pro vytvoření nové větve v Gitu použijete příkaz <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code>, následovaný názvem nové větve. Například, pokud chcete vytvořit větev s názvem <code class="docutils literal notranslate"><span class="pre">myfeature</span></code>, zadáte:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>branch<span class="w"> </span>myfeature
+<p>Pro vytvoření nové větve v Gitu použijete příkaz <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code>, následovaný názvem nové větve. Například, pokud chcete vytvořit větev s názvem <code class="docutils literal notranslate"><span class="pre">my_feature</span></code>, zadáte:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>branch<span class="w"> </span>my_feature
 </pre></div>
 </div>
 <p>Po vytvoření větve se na ni můžete přepnout pomocí příkazu <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code>:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>myfeature
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>my_feature
 </pre></div>
 </div>
-<p>Tento příkaz řekne Gitu, že další commity má ukládat do větve <code class="docutils literal notranslate"><span class="pre">myfeature</span></code> a hlavní větev <code class="docutils literal notranslate"><span class="pre">main</span></code> tak nebude změnami dotčena. Během práci a přidávání commitů do větve <code class="docutils literal notranslate"><span class="pre">myfeature</span></code> můžete samozřejmě kdykoliv přepnout zpět na hlavní větev pomocí <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">main</span></code>, nebo na jakoukoliv jinou větev pomocí <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">&lt;název</span> <span class="pre">větve&gt;</span></code>. Zdrojový kód se tak začne v Gitu větvit:</p>
+<p>Tento příkaz řekne Gitu, že další commity má ukládat do větve <code class="docutils literal notranslate"><span class="pre">my_feature</span></code> a hlavní větev <code class="docutils literal notranslate"><span class="pre">main</span></code> tak nebude změnami dotčena. Během práci a přidávání commitů do větve <code class="docutils literal notranslate"><span class="pre">my_feature</span></code> můžete samozřejmě kdykoliv přepnout zpět na hlavní větev pomocí <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">main</span></code>, nebo na jakoukoliv jinou větev pomocí <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">&lt;název</span> <span class="pre">větve&gt;</span></code>. Zdrojový kód se tak začne v Gitu větvit:</p>
 <div class="mermaid">
             gitGraph
     commit
     commit
     commit
-    branch myfeature
-    checkout myfeature
+    branch my_feature
+    checkout my_feature
     commit
     checkout main
     commit
     checkout main
-    checkout myfeature
+    checkout my_feature
     commit
     commit
         </div></section>
@@ -558,12 +558,12 @@ temp/
 </div>
 </li>
 <li><p>Použijete příkaz <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span></code> následovaný názvem větve, kterou chcete sloučit:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>merge<span class="w"> </span>myfeature
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>merge<span class="w"> </span>my_feature
 </pre></div>
 </div>
 </li>
 </ol>
-<p>Tento příkaz začlení všechny změny z větve <code class="docutils literal notranslate"><span class="pre">myfeature</span></code> do aktuální větve (<code class="docutils literal notranslate"><span class="pre">main</span></code>):</p>
+<p>Tento příkaz začlení všechny změny z větve <code class="docutils literal notranslate"><span class="pre">my_feature</span></code> do aktuální větve (<code class="docutils literal notranslate"><span class="pre">main</span></code>):</p>
 <ol class="arabic simple" start="3">
 <li><p>Git se pokusí sloučení provést automaticky, ale může se stát, že vzniknou konflikty (změny ve stejných částech souborů v obou větvích). Postupujte s řešením konfliktů tak, jak je popsáno v předchozí kapitole. Po vyřešení konfliktů nezapomeňte vyřešené konflikty přidat do repozitáře pomocí příkazu <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">&lt;soubor&gt;</span></code> a poté vytvořit nový commit pomocí <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>.</p></li>
 </ol>
@@ -573,17 +573,17 @@ temp/
     commit
     commit
     commit
-    branch myfeature
-    checkout myfeature
+    branch my_feature
+    checkout my_feature
     commit
     checkout main
     commit
     checkout main
-    checkout myfeature
+    checkout my_feature
     commit
     commit
     checkout main
-    merge myfeature
+    merge my_feature
         </div><p>Git nabízí celou řadu dalších možností jak s větvemi pracovat a lepší pochopení problematiky doporučuji toto videa o <a class="reference external" href="https://www.youtube.com/watch?v=zOnwgxiC0OA">merge a rebase</a> a o řešení <a class="reference external" href="https://www.youtube.com/watch?v=Sqsz1-o7nXk">merge konfliktů</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Poznámka</p>

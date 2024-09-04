@@ -210,32 +210,32 @@ V Gitu je vytváření větví (**branch**) základní funkcí, která umožňuj
 
 ### Vytvoření nové větve
 
-Pro vytvoření nové větve v Gitu použijete příkaz `git branch`, následovaný názvem nové větve. Například, pokud chcete vytvořit větev s názvem `myfeature`, zadáte:
+Pro vytvoření nové větve v Gitu použijete příkaz `git branch`, následovaný názvem nové větve. Například, pokud chcete vytvořit větev s názvem `my_feature`, zadáte:
 
 ```sh
-git branch myfeature
+git branch my_feature
 ```
 
 Po vytvoření větve se na ni můžete přepnout pomocí příkazu `git checkout`:
 
 ```sh
-git checkout myfeature
+git checkout my_feature
 ```
 
-Tento příkaz řekne Gitu, že další commity má ukládat do větve `myfeature` a hlavní větev `main` tak nebude změnami dotčena. Během práci a přidávání commitů do větve `myfeature` můžete samozřejmě kdykoliv přepnout zpět na hlavní větev pomocí `git checkout main`, nebo na jakoukoliv jinou větev pomocí `git checkout <název větve>`. Zdrojový kód se tak začne v Gitu větvit:
+Tento příkaz řekne Gitu, že další commity má ukládat do větve `my_feature` a hlavní větev `main` tak nebude změnami dotčena. Během práci a přidávání commitů do větve `my_feature` můžete samozřejmě kdykoliv přepnout zpět na hlavní větev pomocí `git checkout main`, nebo na jakoukoliv jinou větev pomocí `git checkout <název větve>`. Zdrojový kód se tak začne v Gitu větvit:
 
 ```{mermaid}
 gitGraph
     commit
     commit
     commit
-    branch myfeature
-    checkout myfeature
+    branch my_feature
+    checkout my_feature
     commit
     checkout main
     commit
     checkout main
-    checkout myfeature
+    checkout my_feature
     commit
     commit
 ```
@@ -254,10 +254,10 @@ Sloučení (merge) větví je proces, při kterém se integrují změny z jedné
 2. Použijete příkaz `git merge` následovaný názvem větve, kterou chcete sloučit:
 
     ```sh
-    git merge myfeature
+    git merge my_feature
     ```
 
-Tento příkaz začlení všechny změny z větve `myfeature` do aktuální větve (`main`):
+Tento příkaz začlení všechny změny z větve `my_feature` do aktuální větve (`main`):
 
 3. Git se pokusí sloučení provést automaticky, ale může se stát, že vzniknou konflikty (změny ve stejných částech souborů v obou větvích). Postupujte s řešením konfliktů tak, jak je popsáno v předchozí kapitole. Po vyřešení konfliktů nezapomeňte vyřešené konflikty přidat do repozitáře pomocí příkazu `git add <soubor>` a poté vytvořit nový commit pomocí `git commit`.
 
@@ -268,17 +268,17 @@ gitGraph
     commit
     commit
     commit
-    branch myfeature
-    checkout myfeature
+    branch my_feature
+    checkout my_feature
     commit
     checkout main
     commit
     checkout main
-    checkout myfeature
+    checkout my_feature
     commit
     commit
     checkout main
-    merge myfeature
+    merge my_feature
 ```
 
 Git nabízí celou řadu dalších možností jak s větvemi pracovat a lepší pochopení problematiky doporučuji toto videa o [merge a rebase](https://www.youtube.com/watch?v=zOnwgxiC0OA) a o řešení [merge konfliktů](https://www.youtube.com/watch?v=Sqsz1-o7nXk).

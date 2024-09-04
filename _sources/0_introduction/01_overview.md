@@ -45,7 +45,7 @@ V první části předmětu se budeme věnovat technologiím klienta, což jsou 
 
 V druhé části se pak budeme věnovat zejména straně serveru, naučíme se programovat webovou aplikaci a seznámíme se detailněji s principy fungování Webu. Část webové aplikace, která běží na serveru se také označuje jako **back-end**. Zahrnuje disciplíny jako programování aplikace, databázové technologie, komunikace mezi serverem a klientem, zabezpečení a další.
 
-```{admonition} Hurá do studia
-class:note
+```{admonition} Hurá na to!
+:class:note
 Tato dokumentace poskytuje základní přehled o technologiích Webu a má sloužit jako rozcestník pro další informace.
 ```
