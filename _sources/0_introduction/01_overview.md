@@ -11,7 +11,7 @@ Internet a Web
 Protože Internet je jméno této celosvětové sítě, píšeme ho s velkým I.
 ```
 
-**Web** neboli **World Wide Web** zkráceně **WWW**, často zaměňovaný s Internetem, je ve skutečnosti jednou z mnoha služeb dostupných na Internetu. Web vytvořil v roce 1989 [Tim Berners-Lee](https://en.wikipedia.org/wiki/Tim_Berners-Lee) v CERNu a zahrnuje *webové stránky*, které jsou přístupné pomocí *webových prohlížečů*.
+Pojem **Web** neboli **World Wide Web** zkráceně **WWW**, často zaměňovaný s Internetem, je ve skutečnosti jednou z mnoha služeb dostupných na Internetu. Web vytvořil v roce 1989 [Tim Berners-Lee](https://en.wikipedia.org/wiki/Tim_Berners-Lee) v [CERNu](https://home.cern) a původně zahrnoval *webové stránky* přístupné pomocí *webových prohlížečů*. Webové technologie prošly za poslední dekády velkým vývojem a jsou už dnes rozšířené v řadě odvětví a oproti původnímu konceptu webových stránek a prohlížeče mohou mít dnes řadu různých podob a použití např. v mobilních aplikacích, Internetu věcí apod.
 
 Web je jen jednou z mnoha služeb postavených na Internetu. Mezi další služby Internetu patří například e-mail, FTP (File Transfer Protocol), VoIP ale třeba i online hry a celá řada dalších. Web se však stal jednou z nejpopulárnějších služeb, protože poskytuje interaktivní a vizuálně přitažlivou formu prezentace informací a komunikaci s uživatelem skrze všeobecně dostupné webové prohlížeče.
 
@@ -43,9 +43,9 @@ graph LR
 
 V první části předmětu se budeme věnovat technologiím klienta, což jsou zejména formátovací jazyky HTML a CSS. Dále se seznámíme ze základy JavaScriptu, který umožňuje interaktivitu s prvky ve webové stránce. Část webové aplikace, kterou uživatelé vidí a se kterou mohou interagovat přímo v jejich webovém prohlížeči, se také označuje jako **front-end**. Zahrnuje disciplíny jako design webu, uživatelského rozhraní (user interface), user experience (UX, neboli jaký zážitek uživateli webová stránka přinese) a další. 
 
-V druhé části se pak budeme věnovat zejména straně serveru, naučíme se programovat webovou aplikaci a seznámíme se detailněji s principy fungování Webu. Část webové aplikace, která běží na serveru se také označuje jako **back-end**. Zahrnuje disciplíny jako programování aplikace, databázové technologie, komunikace mezi serverem a klientem, zabezpečení a další.
+V druhé části se pak budeme věnovat zejména straně serveru, naučíme se programovat webovou aplikaci a seznámíme se detailněji s principy fungování Webu. Část webové aplikace, která běží na serveru se také označuje jako **back-end**. Zahrnuje disciplíny jako programování logiky aplikace, databázové technologie, komunikace mezi serverem a klientem, zabezpečení a další.
 
 ```{admonition} Hurá na to!
-:class:note
+:class: note
 Tato dokumentace poskytuje základní přehled o technologiích Webu a má sloužit jako rozcestník pro další informace.
 ```

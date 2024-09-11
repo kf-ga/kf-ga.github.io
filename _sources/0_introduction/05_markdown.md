@@ -1,9 +1,11 @@
 Markdown
 ========
 
-- [Detailní přehled Markdown syntaxe](https://www.markdownguide.org/basic-syntax/)
+* [Detailní přehled Markdown syntaxe](https://www.markdownguide.org/basic-syntax/)
 
 Markdown je značkovací jazyk s jednoduchou syntaxí, navržený tak, aby byl snadno čitelný a upravitelný v jednoduchém (plain text) textovém editoru a zároveň převeditelný do formátovacích jazyků, které nabízí lepší možnosti formátování textu jako třeba HTML nebo LaTeX. Markdown se daleko striktněji zaměřuje na samotný obsah a oproti HTML obsahuje daleko méně informací formě prezentace. Často se označuje jako *strukturovaný text*, který se pak podle potřeby a možností dá snadno zobrazovat v různých formách.
+
+Markdown soubory mají zpravidla příponu `.md`.
 
 Základní formátovací značky
 ---------------------------
@@ -17,6 +19,20 @@ Základní formátovací značky
 #### Heading 4
 ##### Heading 5
 ###### Heading 6
+```
+
+Nadpis první úrovně je také možné označit podtržením `=`:
+
+```{myst-example}
+Heading 1
+=========
+```
+
+A nadpis druhé úrovně podtržením `-`:
+
+```{myst-example}
+Heading 2
+---------
 ```
 
 #### Tučné písmo, kurzíva

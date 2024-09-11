@@ -1,5 +1,5 @@
-HTML formátování
-================
+HTML
+====
 
 * [HTML Tutoriál](https://www.w3schools.com/html/default.asp)
 * [HTML Validátor](https://validator.w3.org)
@@ -10,7 +10,7 @@ Co je HTML?
 
 **HTML** (HyperText Markup Language) je značkovací jazyk používaný k vytváření webových stránek a dokumentů. Používá se k popisu struktury a obsahu webových stránek, umožňuje organizaci informací a formátování textu, obrázků a multimédií. HTML definuje jednotlivé části obsahu pomocí značek (**HTML tag**), které jsou interpretovány webovými prohlížeči.
 
-Kořeny jazyka HTML sahají až do osmdesátých let minulého století, kdy byl vyvinut v [CERNU](https://home.cern) za účelem sdílení informací mezi vědeckými pracovišti.
+Kořeny jazyka HTML sahají až do osmdesátých let minulého století, kdy byl vyvinut v [CERNu](https://home.cern) za účelem sdílení informací mezi vědeckými pracovišti.
 
 
 Syntaxe HTML
@@ -44,7 +44,7 @@ Označení *HTML tag* nebo jen *tag* (česky značka) se používá pro označen
 Naproti tomu, *HTML element* zahrnuje nejen samotnou značku, ale také všechno uvnitř této značky, včetně obsahu, vnořených elementů a dalších atributů. Takže zatímco "tag" je pouze samotná značka, *element* zahrnuje celou strukturu, kterou HTML tag definuje. 
 ```
 
-Značky je možné do sebe libovolně vnořovat, je však důležité zachovat správné párování otevíracích a uzavíracích značek. Pro přehlednost kódu je pak dobré používat odsazování:
+Značky je možné do sebe (až na výjimky) libovolně vnořovat, je však důležité zachovat správné párování otevíracích a uzavíracích značek. Pro přehlednost kódu je pak dobré používat odsazování:
 
 ```{myst-example}
 :highlight: html
@@ -86,8 +86,8 @@ HTML souboru se skládá z několika hlavních elementů, které definují zákl
 Každá webová stránka by měla mít alespoň tyto základní elementy pro správnou funkčnost a kompatibilitu s webovými prohlížeči.
 
 
-Základní tagy pro formátování textu
------------------------------------
+Základní HTML tagy
+------------------
 
 ### Nadpisy `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, `<h6>` 
 
@@ -107,19 +107,114 @@ Tag `<h1>` by měla být použita pro hlavní nadpis stránky a to maximálně j
 
 ### Odstavec `<p>`
 
-Tag označuje odstavec textu *(paragraph)*, který je pak zpravidla vykreslen jako blok textu s odsazením na začátku a konci odstavce.
+Tag označuje odstavec textu *(paragraph)*, který je pak zpravidla vykreslen jako blok textu s odsazením na začátku a konci odstavce:
 
 ```{myst-example}
 :highlight: html
 <p>První odstavec</p>
 <p>Druhý odstavec</p>
 ```
+### Seznamy `<ol>`, `<ul>`, `<li>`
+
+#### Neuspořádaný seznam `<ul>`
+
+Tag `<ul>` *(unordered list)* se používá k vytvoření neuspořádaného seznamu, ve kterém jsou položky označeny pomocí odrážek. Pomocí `<li>` *(list item)* se pak označují jednotlivé položky seznamu:
+
+```{myst-example}
+:highlight: html
+<ul>
+  <li>První položka</li>
+  <li>Druhá položka</li>
+  <li>Třetí položka</li>
+</ul>
+```
+
+#### Uspořádaný seznam `<ol>` 
+
+Tag `<ol>` *(ordered list)* se používá k vytvoření očíslovaného seznamu. Tagy `<li>` opět označují jednotlivé položky:
+
+```{myst-example}
+:highlight: html
+<ol>
+    <li>První položka</li>
+    <li>Druhá položka</li>
+    <li>Třetí položka</li>
+</ol>
+```
+
+
+#### Vnořování seznamu 
+
+Stejně jako u většiny ostatních tagů lze i seznamy vnořovat, např.:
+
+```{myst-example}
+:highlight: html
+<ol>
+    <li>První položka</li>
+    <li>Druhá položka
+        <ul>
+            <li>První položka</li>
+            <li>Druhá položka</li>
+            <li>Třetí položka</li>
+        </ul>
+    </li>
+    <li>Třetí položka</li>
+</ol>
+```
+
+
+### Odkaz `<a>`
+
+Tag `<a>` *(anchor)* zobrazí text uvedený mezi otevírací a uzavírací značkou jako odkaz na url uvedenou v atributu `href`.
+
+```{myst-example}
+:highlight: html
+<a href="https://dev.w3.org/html5/spec-LC/">HTML5 specifikace</a>
+```
+
+### Obrázek `<img>`
+
+Tento tag se používá pro vložení obrázků na webovou stránku:
+
+```{myst-example}
+:highlight: html
+<img src="https://www.w3.org/html/logo/downloads/HTML5_Logo.svg" alt="HTML 5 Logo">
+```
+
+Tag `<img>` má následující důležité atributy:
+
+- **`src`**: Určuje cestu k obrázku.
+- **`alt`**: Používá se pro textový popis obrázku, který se zobrazí v případě, že se obrázek nemůže načíst nebo pro účely zpřístupnění webu například pro nevidomé. Až na [výjimky](https://dev.w3.org/html5/spec-LC/embedded-content-1.html#alt) by měl být vždy vyplněn.
+
+
+### Tabulka `<table>`, `<tr>`, `<td>`, `<th>`
+
+Tyto tagy se používají pro vytváření tabulek na webové stránce:
+
+```{myst-example}
+:highlight: html
+<table>
+    <tr>
+        <th>Hlavička 1</th>
+        <th>Hlavička 2</th>
+    </tr>
+    <tr>
+        <td>Data 1</td>
+        <td>Data 2</td>
+    </tr>
+</table>
+```
+
+- **`<table>`** je kontejnerový prvek, který definuje tabulku.
+- **`<tr>`** *(table row)* definuje řádek tabulky.
+- **`<th>`** a **`<td>`** *(table heading, table data)* definují jednotlivé buňky tabulky, s tím, že `<th>` označuje záhlaví tabulky (názvy sloupců) a je obvykle zobrazeno tučně.
+
 
 ### Formátování textu
 
 Pro různé formy zvýraznění a formátování textu můžeme použít následující značky:
 
-- **`<strong>`**, **`<em>`**: Text, který by měl být považován za důležitý (pojem, klíčové slovo apod.), obvykle zobrazen tučně (`<strong>`), resp. kurzívou (`<em>`).
+- **`<strong>`**, **`<em>`**: Text, který by měl být považován za důležitý (pojem, klíčové slovo apod.), obvykle zobrazen tučně (`<strong>`), případně kurzívou (`<em>`).
 - **`<b>`**: Tučný text (bold), ale bez zvláštního sémantického významu
 - **`<i>`**: Kurzíva (italic), bez zvláštního sémantického významu
 - **`<u>`**: Podtržený text (undeline), bez zvláštního sémantického významu
@@ -138,58 +233,45 @@ Naopak <mark>velmi důležitý</mark> text. <br>
 A ukázka <sup>horního</sup> a také <sub>dolního</sub> indexu. <br>
 ```
 
-### Seznamy `<ol>`, `<ul>`, `<li>`
+### Společné atributy
 
-#### Neuspořádaný seznam `<ul>`
-
-Tag `<ul>` *(unordered list)* se používá k vytvoření neuspořádaného seznamu, ve kterém jsou položky označeny pomocí odrážek. Pomocí `<li>` *(list item)* se pak označují jednotlivé položky seznamu:
-
-```{myst-example}
-:highlight: html
-<ul>
-  <li>První položka</li>
-  <li>Druhá položka</li>
-  <li>Třetí položka</li>
-</ul>
-```
-
-
-#### Uspořádaný seznam `<ol>` 
-
-Tag `<ol>` *(ordered list)* se používá k vytvoření očíslovaného seznamu. Tagy `<li>` opět označují jednotlivé položky
+Kromě atributů specifických pro konkrétní značky existuje další sada atributů, které můžeme použít u všech HTML značek. S jejich použitím se seznámíme v dalších kapitolách. Z nejdůležitějších jsou to tyto:
+    
+- **`class`**: Označuje třídu HTML elementu, slouží především při aplikaci CSS stylů, ale lze ho využívat při práci s JavaScriptem.
+- **`id`**: Označuje jedinečný identifikátor HTML elementu, na rozdíl od `class` by na jedné HTML stránce nemělo být více elementů se stejným `id`. Slouží především k jednoznačné identifikaci elementu při práci s JavaScriptem, ale lze pomocí něj také adresovat pomocí CSS stylů.
+- **`style`**: Do tohoto atributu je možné vložit CSS styly, které se aplikují na element. Ačkoliv je preferované mít CSS styly oddělené od HTML, mohou nastat situace, kdy je užitečné vložit styly přímo k elementu. Například: 
 
 ```{myst-example}
 :highlight: html
-<ol>
-    <li>První položka</li>
-    <li>Druhá položka</li>
-    <li>Třetí položka</li>
-</ol>
+<div style="color: red;"> Červený text </div>
 ```
 
 
-#### Vnořování seznamu 
+Zobrazení `inline` a `block`
+----------------------------
 
-Stejně jako u většiny ostatních tagů lze i seznamy vnořovat, např
+HTML si automaticky řídí tok textu a zalamování textu a ve většině případů nezachovává nové řádky tak, jak jsou ve zdrojovém kódu.
+
+Příklad:
 
 ```{myst-example}
 :highlight: html
-<ol>
-    <li>První položka</li>
-    <li>Druhá položka
-        <ul>
-            <li>První položka</li>
-            <li>Druhá položka</li>
-            <li>Třetí položka</li>
-        </ul>
-    </li>
-    <li>Třetí položka</li>
-</ol>
+<p>
+První řádek
+Druhý řádek
+</p>
 ```
+
+V HTML se pracuje s konceptem tzv. `inline` a `block` elementů. 
+
+**`inline` elementy** zaberou pouze tolik místa, kolik je potřeba k zobrazení jejich obsahu. Nezačínají na novém řádku a nezaberou celou šířku. Používají se především pro **formátování v rámci odstavce textu**. Příklady inline elementů: `<span>`, `<a>`, `<strong>`, `<em>`, `<b>`, `<i>` atd.
+
+
+Naproti tomu **`block` elementy** zaberou celou šířku dostupného prostoru na stránce a zobrazují na novém řádku. Jsou určeny pro **strukturování obsahu**. Příklady block elementů: `<div>`, `<p>`, `<h1>` až `<h6>`, `<ul>`, `<ol>`, `<li>`,  `<section>`, `<header>`, `<footer>` atd.
 
 ### Zalomení řádku `<br>`
 
-HTML si automaticky řídí tok textu a zalamování textu a ve většině případů nezachovává nové řádky tak, jak jsou ve zdrojovém kódu. Pro explicitní vložení nového řádku vložte tag `<br>` (break): 
+ Pro explicitní vložení nového řádku vložte tag `<br>` (break): 
 
 ```{myst-example}
 :highlight: html
@@ -209,61 +291,6 @@ Druhý řádek
 
 Povšimněte si, že tag `<br>` je jedním z tagů, které není potřeba ukončovat, nicméně často se v kódu setkáte i se **self-closing** variantou tohoto tagu `<br/>`, která zachovává kompatibilitu s jazykem XML.
 ```
-
-### Odkaz `<a>`
-
-Tag `<a>` zobrazí text uvedený mezi otevírací a uzavírací značkou jako odkaz na url uvedenou v atributu `href`.
-
-```{myst-example}
-:highlight: html
-<a href="https://dev.w3.org/html5/spec-LC/">HTML5 specifikace</a>
-```
-
-### Obrázek `<img>`
-
-Tento tag se používá pro vložení obrázků na webovou stránku.
-
-```{myst-example} html
-<img src="https://www.w3.org/html/logo/downloads/HTML5_Logo.svg" alt="HTML 5 Logo">
-```
-
-Tag `<img>` má následující důležité atributy:
-
-- **`src`**: Určuje cestu k obrázku.
-- **`alt`**: Používá se pro textový popis obrázku, který se zobrazí v případě, že se obrázek nemůže načíst nebo pro účely zpřístupnění webu například pro nevidomé. Až na [výjimky](https://dev.w3.org/html5/spec-LC/embedded-content-1.html#alt) by měl být vždy vyplněn.
-
-
-### Tabulka `<table>`, `<tr>`, `<td>`, `<th>`
-
-Tyto tagy se používají pro vytváření tabulek na webové stránce. Příklad
-
-```{myst-example}
-:highlight: html
-<table>
-    <tr>
-        <th>Hlavička 1</th>
-        <th>Hlavička 2</th>
-    </tr>
-    <tr>
-        <td>Data 1</td>
-        <td>Data 2</td>
-    </tr>
-</table>
-```
-
-- **`<table>`** je kontejnerový prvek, který definuje tabulku.
-- **`<tr>`** definuje řádek tabulky.
-- **`<th>`** a **`<td>`** definují jednotlivé buňky tabulky, s tím, že `<th>` označuje záhlaví tabulky (názvy sloupců) a je obvykle zobrazeno tučně.
-
-
-### Společné atributy
-
-Kromě atributů specifických pro konkrétní značky existuje další sada atributů, které můžeme použít u všech HTML značek. Z nejdůležitějších jsou to tyto:
-    
-- **`class`**: Označuje třídu HTML elementu, slouží především při aplikaci (CSS stylů)[02_css.md], ale lze ho využívat při práci s (JavaScriptem)[javascript/01_intro.md]
-- **`id`**: Označuje jedinečný identifikátor HTML elementu, na rozdíl od `class` by na jedné HTML stránce nemělo být více elementů se stejným `id`. Slouží především k jednoznačné identifikaci elementu při práci s (JavaScriptem)[javascript/01_intro.md], ale lze pomocí něj také adresovat pomocí (CSS stylů)[02_css.md].
-- **`style`**: Do tohoto atributu je možné vložit (CSS styly)[02_css.md], které se aplikují na element. Ačkoliv je preferované mít CSS styly oddělené od HTML, mohou nastat situace, kdy je užitečné vložit styly přímo k elementu. Příklad `<div style="color: red;"> ... </div>`.
-
 
 Tagy pro obecné formátování
 ---------------------------

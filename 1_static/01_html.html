@@ -17,7 +17,7 @@
         gtag('config', 'G-RZX7DQPSHE');
     </script>
     
-    <title>HTML formátování &#8212; Programování webových aplikací</title>
+    <title>HTML &#8212; Webové aplikace</title>
   
   
   
@@ -141,7 +141,7 @@
   
   
   
-    <p class="title logo__title">Programování webových aplikací</p>
+    <p class="title logo__title">Webové aplikace</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -165,7 +165,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statický web</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">HTML formátování</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">HTML</a></li>
 </ul>
 
     </div>
@@ -304,7 +304,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>HTML formátování</h1>
+    <h1>HTML</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -317,21 +317,24 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#co-je-html">Co je HTML?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntaxe-html">Syntaxe HTML</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zakladni-struktura-html">Základní struktura HTML</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zakladni-tagy-pro-formatovani-textu">Základní tagy pro formátování textu</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zakladni-html-tagy">Základní HTML tagy</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nadpisy-h1-h2-h3-h4-h5-h6">Nadpisy <code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;h2&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;h3&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;h4&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;h5&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;h6&gt;</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#odstavec-p">Odstavec <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formatovani-textu">Formátování textu</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#seznamy-ol-ul-li">Seznamy <code class="docutils literal notranslate"><span class="pre">&lt;ol&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;ul&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neusporadany-seznam-ul">Neuspořádaný seznam <code class="docutils literal notranslate"><span class="pre">&lt;ul&gt;</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#usporadany-seznam-ol">Uspořádaný seznam <code class="docutils literal notranslate"><span class="pre">&lt;ol&gt;</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vnorovani-seznamu">Vnořování seznamu</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zalomeni-radku-br">Zalomení řádku <code class="docutils literal notranslate"><span class="pre">&lt;br&gt;</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#odkaz-a">Odkaz <code class="docutils literal notranslate"><span class="pre">&lt;a&gt;</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#obrazek-img">Obrázek <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tabulka-table-tr-td-th">Tabulka <code class="docutils literal notranslate"><span class="pre">&lt;table&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;tr&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;td&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;th&gt;</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formatovani-textu">Formátování textu</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spolecne-atributy">Společné atributy</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zobrazeni-inline-a-block">Zobrazení <code class="docutils literal notranslate"><span class="pre">inline</span></code> a <code class="docutils literal notranslate"><span class="pre">block</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zalomeni-radku-br">Zalomení řádku <code class="docutils literal notranslate"><span class="pre">&lt;br&gt;</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tagy-pro-obecne-formatovani">Tagy pro obecné formátování</a><ul class="nav section-nav flex-column">
@@ -355,8 +358,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="html-formatovani">
-<h1>HTML formátování<a class="headerlink" href="#html-formatovani" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="html">
+<h1>HTML<a class="headerlink" href="#html" title="Link to this heading">#</a></h1>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.w3schools.com/html/default.asp">HTML Tutoriál</a></p></li>
 <li><p><a class="reference external" href="https://validator.w3.org">HTML Validátor</a></p></li>
@@ -364,7 +367,7 @@ document.write(`
 <section id="co-je-html">
 <h2>1.&nbsp;&nbsp;Co je HTML?<a class="headerlink" href="#co-je-html" title="Link to this heading">#</a></h2>
 <p><strong>HTML</strong> (HyperText Markup Language) je značkovací jazyk používaný k vytváření webových stránek a dokumentů. Používá se k popisu struktury a obsahu webových stránek, umožňuje organizaci informací a formátování textu, obrázků a multimédií. HTML definuje jednotlivé části obsahu pomocí značek (<strong>HTML tag</strong>), které jsou interpretovány webovými prohlížeči.</p>
-<p>Kořeny jazyka HTML sahají až do osmdesátých let minulého století, kdy byl vyvinut v <a class="reference external" href="https://home.cern">CERNU</a> za účelem sdílení informací mezi vědeckými pracovišti.</p>
+<p>Kořeny jazyka HTML sahají až do osmdesátých let minulého století, kdy byl vyvinut v <a class="reference external" href="https://home.cern">CERNu</a> za účelem sdílení informací mezi vědeckými pracovišti.</p>
 </section>
 <section id="syntaxe-html">
 <h2>2.&nbsp;&nbsp;Syntaxe HTML<a class="headerlink" href="#syntaxe-html" title="Link to this heading">#</a></h2>
@@ -386,7 +389,7 @@ document.write(`
 <p>Označení <em>HTML tag</em> nebo jen <em>tag</em> (česky značka) se používá pro označení značky v HTML, například <code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> atd., nebo také <em>ukončovací tag</em>, například <code class="docutils literal notranslate"><span class="pre">&lt;/h1&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;/div&gt;</span></code>.</p>
 <p>Naproti tomu, <em>HTML element</em> zahrnuje nejen samotnou značku, ale také všechno uvnitř této značky, včetně obsahu, vnořených elementů a dalších atributů. Takže zatímco “tag” je pouze samotná značka, <em>element</em> zahrnuje celou strukturu, kterou HTML tag definuje.</p>
 </div>
-<p>Značky je možné do sebe libovolně vnořovat, je však důležité zachovat správné párování otevíracích a uzavíracích značek. Pro přehlednost kódu je pak dobré používat odsazování:</p>
+<p>Značky je možné do sebe (až na výjimky) libovolně vnořovat, je však důležité zachovat správné párování otevíracích a uzavíracích značek. Pro přehlednost kódu je pak dobré používat odsazování:</p>
 <div class="myst-example docutils">
 <div class="myst-example-source docutils">
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mydiv&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;main&quot;</span><span class="p">&gt;</span>
@@ -435,8 +438,8 @@ document.write(`
 </ul>
 <p>Každá webová stránka by měla mít alespoň tyto základní elementy pro správnou funkčnost a kompatibilitu s webovými prohlížeči.</p>
 </section>
-<section id="zakladni-tagy-pro-formatovani-textu">
-<h2>4.&nbsp;&nbsp;Základní tagy pro formátování textu<a class="headerlink" href="#zakladni-tagy-pro-formatovani-textu" title="Link to this heading">#</a></h2>
+<section id="zakladni-html-tagy">
+<h2>4.&nbsp;&nbsp;Základní HTML tagy<a class="headerlink" href="#zakladni-html-tagy" title="Link to this heading">#</a></h2>
 <section id="nadpisy-h1-h2-h3-h4-h5-h6">
 <h3>4.1.&nbsp;&nbsp;Nadpisy <code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;h2&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;h3&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;h4&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;h5&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;h6&gt;</span></code><a class="headerlink" href="#nadpisy-h1-h2-h3-h4-h5-h6" title="Link to this heading">#</a></h3>
 <p>Tyto značky slouží k označení titulků úrovně 1-6:</p>
@@ -464,7 +467,7 @@ document.write(`
 </section>
 <section id="odstavec-p">
 <h3>4.2.&nbsp;&nbsp;Odstavec <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code><a class="headerlink" href="#odstavec-p" title="Link to this heading">#</a></h3>
-<p>Tag označuje odstavec textu <em>(paragraph)</em>, který je pak zpravidla vykreslen jako blok textu s odsazením na začátku a konci odstavce.</p>
+<p>Tag označuje odstavec textu <em>(paragraph)</em>, který je pak zpravidla vykreslen jako blok textu s odsazením na začátku a konci odstavce:</p>
 <div class="myst-example docutils">
 <div class="myst-example-source docutils">
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>První odstavec<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
@@ -478,40 +481,8 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="formatovani-textu">
-<h3>4.3.&nbsp;&nbsp;Formátování textu<a class="headerlink" href="#formatovani-textu" title="Link to this heading">#</a></h3>
-<p>Pro různé formy zvýraznění a formátování textu můžeme použít následující značky:</p>
-<ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;strong&gt;</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">&lt;em&gt;</span></code></strong>: Text, který by měl být považován za důležitý (pojem, klíčové slovo apod.), obvykle zobrazen tučně (<code class="docutils literal notranslate"><span class="pre">&lt;strong&gt;</span></code>), resp. kurzívou (<code class="docutils literal notranslate"><span class="pre">&lt;em&gt;</span></code>).</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;b&gt;</span></code></strong>: Tučný text (bold), ale bez zvláštního sémantického významu</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;i&gt;</span></code></strong>: Kurzíva (italic), bez zvláštního sémantického významu</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;u&gt;</span></code></strong>: Podtržený text (undeline), bez zvláštního sémantického významu</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;small&gt;</span></code></strong>: Text, který by měl být zobrazen menším písmem, například pro poznámky.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;mark&gt;</span></code></strong>: Text zobrazený s pozadím (jakoby označen zvýrazňovačem)</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;sub&gt;</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">&lt;sup&gt;</span></code></strong>: Značky označují text, který bude zobrazen jako horní (<code class="docutils literal notranslate"><span class="pre">&lt;sup&gt;</span></code>), resp. dolní index (<code class="docutils literal notranslate"><span class="pre">&lt;sub&gt;</span></code>).</p></li>
-</ul>
-<p>Příklad:</p>
-<div class="myst-example docutils">
-<div class="myst-example-source docutils">
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>Důležitý <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>pojem<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>, nebo jinak důležitá <span class="p">&lt;</span><span class="nt">em</span><span class="p">&gt;</span>informace<span class="p">&lt;/</span><span class="nt">em</span><span class="p">&gt;</span>. <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
-Text <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>tučně<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>, <span class="p">&lt;</span><span class="nt">i</span><span class="p">&gt;</span>kurzívou<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span> a <span class="p">&lt;</span><span class="nt">u</span><span class="p">&gt;</span>podtržený<span class="p">&lt;/</span><span class="nt">u</span><span class="p">&gt;</span>. <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
-Text <span class="p">&lt;</span><span class="nt">small</span><span class="p">&gt;</span>malý a nedůležitý<span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;</span>. <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
-Naopak <span class="p">&lt;</span><span class="nt">mark</span><span class="p">&gt;</span>velmi důležitý<span class="p">&lt;/</span><span class="nt">mark</span><span class="p">&gt;</span> text. <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
-A ukázka <span class="p">&lt;</span><span class="nt">sup</span><span class="p">&gt;</span>horního<span class="p">&lt;/</span><span class="nt">sup</span><span class="p">&gt;</span> a také <span class="p">&lt;</span><span class="nt">sub</span><span class="p">&gt;</span>dolního<span class="p">&lt;/</span><span class="nt">sub</span><span class="p">&gt;</span> indexu. <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
-</pre></div>
-</div>
-</div>
-<div class="myst-example-render docutils">
-<p>Důležitý <strong>pojem</strong>, nebo jinak důležitá <em>informace</em>. <br>
-Text <b>tučně</b>, <i>kurzívou</i> a <u>podtržený</u>. <br>
-Text <small>malý a nedůležitý</small>. <br>
-Naopak <mark>velmi důležitý</mark> text. <br>
-A ukázka <sup>horního</sup> a také <sub>dolního</sub> indexu. <br></p>
-</div>
-</div>
-</section>
 <section id="seznamy-ol-ul-li">
-<h3>4.4.&nbsp;&nbsp;Seznamy <code class="docutils literal notranslate"><span class="pre">&lt;ol&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;ul&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code><a class="headerlink" href="#seznamy-ol-ul-li" title="Link to this heading">#</a></h3>
+<h3>4.3.&nbsp;&nbsp;Seznamy <code class="docutils literal notranslate"><span class="pre">&lt;ol&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;ul&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code><a class="headerlink" href="#seznamy-ol-ul-li" title="Link to this heading">#</a></h3>
 <section id="neusporadany-seznam-ul">
 <h4>Neuspořádaný seznam <code class="docutils literal notranslate"><span class="pre">&lt;ul&gt;</span></code><a class="headerlink" href="#neusporadany-seznam-ul" title="Link to this heading">#</a></h4>
 <p>Tag <code class="docutils literal notranslate"><span class="pre">&lt;ul&gt;</span></code> <em>(unordered list)</em> se používá k vytvoření neuspořádaného seznamu, ve kterém jsou položky označeny pomocí odrážek. Pomocí <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code> <em>(list item)</em> se pak označují jednotlivé položky seznamu:</p>
@@ -536,7 +507,7 @@ A ukázka <sup>horního</sup> a také <sub>dolního</sub> indexu. <br></p>
 </section>
 <section id="usporadany-seznam-ol">
 <h4>Uspořádaný seznam <code class="docutils literal notranslate"><span class="pre">&lt;ol&gt;</span></code><a class="headerlink" href="#usporadany-seznam-ol" title="Link to this heading">#</a></h4>
-<p>Tag <code class="docutils literal notranslate"><span class="pre">&lt;ol&gt;</span></code> <em>(ordered list)</em> se používá k vytvoření očíslovaného seznamu. Tagy <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code> opět označují jednotlivé položky</p>
+<p>Tag <code class="docutils literal notranslate"><span class="pre">&lt;ol&gt;</span></code> <em>(ordered list)</em> se používá k vytvoření očíslovaného seznamu. Tagy <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code> opět označují jednotlivé položky:</p>
 <div class="myst-example docutils">
 <div class="myst-example-source docutils">
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
@@ -558,7 +529,7 @@ A ukázka <sup>horního</sup> a také <sub>dolního</sub> indexu. <br></p>
 </section>
 <section id="vnorovani-seznamu">
 <h4>Vnořování seznamu<a class="headerlink" href="#vnorovani-seznamu" title="Link to this heading">#</a></h4>
-<p>Stejně jako u většiny ostatních tagů lze i seznamy vnořovat, např</p>
+<p>Stejně jako u většiny ostatních tagů lze i seznamy vnořovat, např.:</p>
 <div class="myst-example docutils">
 <div class="myst-example-source docutils">
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
@@ -591,40 +562,9 @@ A ukázka <sup>horního</sup> a také <sub>dolního</sub> indexu. <br></p>
 </div>
 </section>
 </section>
-<section id="zalomeni-radku-br">
-<h3>4.5.&nbsp;&nbsp;Zalomení řádku <code class="docutils literal notranslate"><span class="pre">&lt;br&gt;</span></code><a class="headerlink" href="#zalomeni-radku-br" title="Link to this heading">#</a></h3>
-<p>HTML si automaticky řídí tok textu a zalamování textu a ve většině případů nezachovává nové řádky tak, jak jsou ve zdrojovém kódu. Pro explicitní vložení nového řádku vložte tag <code class="docutils literal notranslate"><span class="pre">&lt;br&gt;</span></code> (break):</p>
-<div class="myst-example docutils">
-<div class="myst-example-source docutils">
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>První řádek<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>Druhý řádek
-</pre></div>
-</div>
-</div>
-<div class="myst-example-render docutils">
-<p>První řádek<br>Druhý řádek</p>
-</div>
-</div>
-<p>Bez vložení <code class="docutils literal notranslate"><span class="pre">&lt;br&gt;</span></code> se text nezalomí, i když ve zdrojovém kódu nový řádek je.</p>
-<div class="myst-example docutils">
-<div class="myst-example-source docutils">
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>První řádek
-Druhý řádek
-</pre></div>
-</div>
-</div>
-<div class="myst-example-render docutils">
-<p>První řádek
-Druhý řádek</p>
-</div>
-</div>
-<div class="note admonition">
-<p class="admonition-title">Neukončený</p>
-<p>Povšimněte si, že tag <code class="docutils literal notranslate"><span class="pre">&lt;br&gt;</span></code> je jedním z tagů, které není potřeba ukončovat, nicméně často se v kódu setkáte i se <strong>self-closing</strong> variantou tohoto tagu <code class="docutils literal notranslate"><span class="pre">&lt;br/&gt;</span></code>, která zachovává kompatibilitu s jazykem XML.</p>
-</div>
-</section>
 <section id="odkaz-a">
-<h3>4.6.&nbsp;&nbsp;Odkaz <code class="docutils literal notranslate"><span class="pre">&lt;a&gt;</span></code><a class="headerlink" href="#odkaz-a" title="Link to this heading">#</a></h3>
-<p>Tag <code class="docutils literal notranslate"><span class="pre">&lt;a&gt;</span></code> zobrazí text uvedený mezi otevírací a uzavírací značkou jako odkaz na url uvedenou v atributu <code class="docutils literal notranslate"><span class="pre">href</span></code>.</p>
+<h3>4.4.&nbsp;&nbsp;Odkaz <code class="docutils literal notranslate"><span class="pre">&lt;a&gt;</span></code><a class="headerlink" href="#odkaz-a" title="Link to this heading">#</a></h3>
+<p>Tag <code class="docutils literal notranslate"><span class="pre">&lt;a&gt;</span></code> <em>(anchor)</em> zobrazí text uvedený mezi otevírací a uzavírací značkou jako odkaz na url uvedenou v atributu <code class="docutils literal notranslate"><span class="pre">href</span></code>.</p>
 <div class="myst-example docutils">
 <div class="myst-example-source docutils">
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://dev.w3.org/html5/spec-LC/&quot;</span><span class="p">&gt;</span>HTML5 specifikace<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
@@ -637,19 +577,16 @@ Druhý řádek</p>
 </div>
 </section>
 <section id="obrazek-img">
-<h3>4.7.&nbsp;&nbsp;Obrázek <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code><a class="headerlink" href="#obrazek-img" title="Link to this heading">#</a></h3>
-<p>Tento tag se používá pro vložení obrázků na webovou stránku.</p>
+<h3>4.5.&nbsp;&nbsp;Obrázek <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code><a class="headerlink" href="#obrazek-img" title="Link to this heading">#</a></h3>
+<p>Tento tag se používá pro vložení obrázků na webovou stránku:</p>
 <div class="myst-example docutils">
 <div class="myst-example-source docutils">
-<div class="highlight-myst notranslate"><div class="highlight"><pre><span></span>html
-&lt;img src=&quot;https://www.w3.org/html/logo/downloads/HTML5_Logo.svg&quot; alt=&quot;HTML 5 Logo&quot;&gt;
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.w3.org/html/logo/downloads/HTML5_Logo.svg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;HTML 5 Logo&quot;</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 </div>
 <div class="myst-example-render docutils">
-<p>html
-<img alt="HTML 5 Logo" src="https://www.w3.org/html/logo/downloads/HTML5_Logo.svg" /></p>
-</div>
+<img alt="HTML 5 Logo" src="https://www.w3.org/html/logo/downloads/HTML5_Logo.svg" /></div>
 </div>
 <p>Tag <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> má následující důležité atributy:</p>
 <ul class="simple">
@@ -658,8 +595,8 @@ Druhý řádek</p>
 </ul>
 </section>
 <section id="tabulka-table-tr-td-th">
-<h3>4.8.&nbsp;&nbsp;Tabulka <code class="docutils literal notranslate"><span class="pre">&lt;table&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;tr&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;td&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;th&gt;</span></code><a class="headerlink" href="#tabulka-table-tr-td-th" title="Link to this heading">#</a></h3>
-<p>Tyto tagy se používají pro vytváření tabulek na webové stránce. Příklad</p>
+<h3>4.6.&nbsp;&nbsp;Tabulka <code class="docutils literal notranslate"><span class="pre">&lt;table&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;tr&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;td&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;th&gt;</span></code><a class="headerlink" href="#tabulka-table-tr-td-th" title="Link to this heading">#</a></h3>
+<p>Tyto tagy se používají pro vytváření tabulek na webové stránce:</p>
 <div class="myst-example docutils">
 <div class="myst-example-source docutils">
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
@@ -690,25 +627,122 @@ Druhý řádek</p>
 </div>
 <ul class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;table&gt;</span></code></strong> je kontejnerový prvek, který definuje tabulku.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;tr&gt;</span></code></strong> definuje řádek tabulky.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;th&gt;</span></code></strong> a <strong><code class="docutils literal notranslate"><span class="pre">&lt;td&gt;</span></code></strong> definují jednotlivé buňky tabulky, s tím, že <code class="docutils literal notranslate"><span class="pre">&lt;th&gt;</span></code> označuje záhlaví tabulky (názvy sloupců) a je obvykle zobrazeno tučně.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;tr&gt;</span></code></strong> <em>(table row)</em> definuje řádek tabulky.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;th&gt;</span></code></strong> a <strong><code class="docutils literal notranslate"><span class="pre">&lt;td&gt;</span></code></strong> <em>(table heading, table data)</em> definují jednotlivé buňky tabulky, s tím, že <code class="docutils literal notranslate"><span class="pre">&lt;th&gt;</span></code> označuje záhlaví tabulky (názvy sloupců) a je obvykle zobrazeno tučně.</p></li>
 </ul>
 </section>
-<section id="spolecne-atributy">
-<h3>4.9.&nbsp;&nbsp;Společné atributy<a class="headerlink" href="#spolecne-atributy" title="Link to this heading">#</a></h3>
-<p>Kromě atributů specifických pro konkrétní značky existuje další sada atributů, které můžeme použít u všech HTML značek. Z nejdůležitějších jsou to tyto:</p>
+<section id="formatovani-textu">
+<h3>4.7.&nbsp;&nbsp;Formátování textu<a class="headerlink" href="#formatovani-textu" title="Link to this heading">#</a></h3>
+<p>Pro různé formy zvýraznění a formátování textu můžeme použít následující značky:</p>
 <ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">class</span></code></strong>: Označuje třídu HTML elementu, slouží především při aplikaci (CSS stylů)[02_css.md], ale lze ho využívat při práci s (JavaScriptem)[javascript/01_intro.md]</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">id</span></code></strong>: Označuje jedinečný identifikátor HTML elementu, na rozdíl od <code class="docutils literal notranslate"><span class="pre">class</span></code> by na jedné HTML stránce nemělo být více elementů se stejným <code class="docutils literal notranslate"><span class="pre">id</span></code>. Slouží především k jednoznačné identifikaci elementu při práci s (JavaScriptem)[javascript/01_intro.md], ale lze pomocí něj také adresovat pomocí (CSS stylů)[02_css.md].</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">style</span></code></strong>: Do tohoto atributu je možné vložit (CSS styly)[02_css.md], které se aplikují na element. Ačkoliv je preferované mít CSS styly oddělené od HTML, mohou nastat situace, kdy je užitečné vložit styly přímo k elementu. Příklad <code class="docutils literal notranslate"><span class="pre">&lt;div</span> <span class="pre">style=&quot;color:</span> <span class="pre">red;&quot;&gt;</span> <span class="pre">...</span> <span class="pre">&lt;/div&gt;</span></code>.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;strong&gt;</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">&lt;em&gt;</span></code></strong>: Text, který by měl být považován za důležitý (pojem, klíčové slovo apod.), obvykle zobrazen tučně (<code class="docutils literal notranslate"><span class="pre">&lt;strong&gt;</span></code>), případně kurzívou (<code class="docutils literal notranslate"><span class="pre">&lt;em&gt;</span></code>).</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;b&gt;</span></code></strong>: Tučný text (bold), ale bez zvláštního sémantického významu</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;i&gt;</span></code></strong>: Kurzíva (italic), bez zvláštního sémantického významu</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;u&gt;</span></code></strong>: Podtržený text (undeline), bez zvláštního sémantického významu</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;small&gt;</span></code></strong>: Text, který by měl být zobrazen menším písmem, například pro poznámky.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;mark&gt;</span></code></strong>: Text zobrazený s pozadím (jakoby označen zvýrazňovačem)</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;sub&gt;</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">&lt;sup&gt;</span></code></strong>: Značky označují text, který bude zobrazen jako horní (<code class="docutils literal notranslate"><span class="pre">&lt;sup&gt;</span></code>), resp. dolní index (<code class="docutils literal notranslate"><span class="pre">&lt;sub&gt;</span></code>).</p></li>
 </ul>
+<p>Příklad:</p>
+<div class="myst-example docutils">
+<div class="myst-example-source docutils">
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>Důležitý <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>pojem<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>, nebo jinak důležitá <span class="p">&lt;</span><span class="nt">em</span><span class="p">&gt;</span>informace<span class="p">&lt;/</span><span class="nt">em</span><span class="p">&gt;</span>. <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+Text <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>tučně<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>, <span class="p">&lt;</span><span class="nt">i</span><span class="p">&gt;</span>kurzívou<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span> a <span class="p">&lt;</span><span class="nt">u</span><span class="p">&gt;</span>podtržený<span class="p">&lt;/</span><span class="nt">u</span><span class="p">&gt;</span>. <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+Text <span class="p">&lt;</span><span class="nt">small</span><span class="p">&gt;</span>malý a nedůležitý<span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;</span>. <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+Naopak <span class="p">&lt;</span><span class="nt">mark</span><span class="p">&gt;</span>velmi důležitý<span class="p">&lt;/</span><span class="nt">mark</span><span class="p">&gt;</span> text. <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+A ukázka <span class="p">&lt;</span><span class="nt">sup</span><span class="p">&gt;</span>horního<span class="p">&lt;/</span><span class="nt">sup</span><span class="p">&gt;</span> a také <span class="p">&lt;</span><span class="nt">sub</span><span class="p">&gt;</span>dolního<span class="p">&lt;/</span><span class="nt">sub</span><span class="p">&gt;</span> indexu. <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="myst-example-render docutils">
+<p>Důležitý <strong>pojem</strong>, nebo jinak důležitá <em>informace</em>. <br>
+Text <b>tučně</b>, <i>kurzívou</i> a <u>podtržený</u>. <br>
+Text <small>malý a nedůležitý</small>. <br>
+Naopak <mark>velmi důležitý</mark> text. <br>
+A ukázka <sup>horního</sup> a také <sub>dolního</sub> indexu. <br></p>
+</div>
+</div>
+</section>
+<section id="spolecne-atributy">
+<h3>4.8.&nbsp;&nbsp;Společné atributy<a class="headerlink" href="#spolecne-atributy" title="Link to this heading">#</a></h3>
+<p>Kromě atributů specifických pro konkrétní značky existuje další sada atributů, které můžeme použít u všech HTML značek. S jejich použitím se seznámíme v dalších kapitolách. Z nejdůležitějších jsou to tyto:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">class</span></code></strong>: Označuje třídu HTML elementu, slouží především při aplikaci CSS stylů, ale lze ho využívat při práci s JavaScriptem.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">id</span></code></strong>: Označuje jedinečný identifikátor HTML elementu, na rozdíl od <code class="docutils literal notranslate"><span class="pre">class</span></code> by na jedné HTML stránce nemělo být více elementů se stejným <code class="docutils literal notranslate"><span class="pre">id</span></code>. Slouží především k jednoznačné identifikaci elementu při práci s JavaScriptem, ale lze pomocí něj také adresovat pomocí CSS stylů.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">style</span></code></strong>: Do tohoto atributu je možné vložit CSS styly, které se aplikují na element. Ačkoliv je preferované mít CSS styly oddělené od HTML, mohou nastat situace, kdy je užitečné vložit styly přímo k elementu. Například:</p></li>
+</ul>
+<div class="myst-example docutils">
+<div class="myst-example-source docutils">
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color: red;&quot;</span><span class="p">&gt;</span> Červený text <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="myst-example-render docutils">
+<div style="color: red;"> Červený text </div>
+</div>
+</div>
+</section>
+</section>
+<section id="zobrazeni-inline-a-block">
+<h2>5.&nbsp;&nbsp;Zobrazení <code class="docutils literal notranslate"><span class="pre">inline</span></code> a <code class="docutils literal notranslate"><span class="pre">block</span></code><a class="headerlink" href="#zobrazeni-inline-a-block" title="Link to this heading">#</a></h2>
+<p>HTML si automaticky řídí tok textu a zalamování textu a ve většině případů nezachovává nové řádky tak, jak jsou ve zdrojovém kódu.</p>
+<p>Příklad:</p>
+<div class="myst-example docutils">
+<div class="myst-example-source docutils">
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+První řádek
+Druhý řádek
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="myst-example-render docutils">
+<p>
+První řádek
+Druhý řádek
+</p>
+</div>
+</div>
+<p>V HTML se pracuje s konceptem tzv. <code class="docutils literal notranslate"><span class="pre">inline</span></code> a <code class="docutils literal notranslate"><span class="pre">block</span></code> elementů.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">inline</span></code> elementy</strong> zaberou pouze tolik místa, kolik je potřeba k zobrazení jejich obsahu. Nezačínají na novém řádku a nezaberou celou šířku. Používají se především pro <strong>formátování v rámci odstavce textu</strong>. Příklady inline elementů: <code class="docutils literal notranslate"><span class="pre">&lt;span&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;a&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;strong&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;em&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;b&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;i&gt;</span></code> atd.</p>
+<p>Naproti tomu <strong><code class="docutils literal notranslate"><span class="pre">block</span></code> elementy</strong> zaberou celou šířku dostupného prostoru na stránce a zobrazují na novém řádku. Jsou určeny pro <strong>strukturování obsahu</strong>. Příklady block elementů: <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;</span></code> až <code class="docutils literal notranslate"><span class="pre">&lt;h6&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;ul&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;ol&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code>,  <code class="docutils literal notranslate"><span class="pre">&lt;section&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;header&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;footer&gt;</span></code> atd.</p>
+<section id="zalomeni-radku-br">
+<h3>5.1.&nbsp;&nbsp;Zalomení řádku <code class="docutils literal notranslate"><span class="pre">&lt;br&gt;</span></code><a class="headerlink" href="#zalomeni-radku-br" title="Link to this heading">#</a></h3>
+<p>Pro explicitní vložení nového řádku vložte tag <code class="docutils literal notranslate"><span class="pre">&lt;br&gt;</span></code> (break):</p>
+<div class="myst-example docutils">
+<div class="myst-example-source docutils">
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>První řádek<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>Druhý řádek
+</pre></div>
+</div>
+</div>
+<div class="myst-example-render docutils">
+<p>První řádek<br>Druhý řádek</p>
+</div>
+</div>
+<p>Bez vložení <code class="docutils literal notranslate"><span class="pre">&lt;br&gt;</span></code> se text nezalomí, i když ve zdrojovém kódu nový řádek je.</p>
+<div class="myst-example docutils">
+<div class="myst-example-source docutils">
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>První řádek
+Druhý řádek
+</pre></div>
+</div>
+</div>
+<div class="myst-example-render docutils">
+<p>První řádek
+Druhý řádek</p>
+</div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Neukončený</p>
+<p>Povšimněte si, že tag <code class="docutils literal notranslate"><span class="pre">&lt;br&gt;</span></code> je jedním z tagů, které není potřeba ukončovat, nicméně často se v kódu setkáte i se <strong>self-closing</strong> variantou tohoto tagu <code class="docutils literal notranslate"><span class="pre">&lt;br/&gt;</span></code>, která zachovává kompatibilitu s jazykem XML.</p>
+</div>
 </section>
 </section>
 <section id="tagy-pro-obecne-formatovani">
-<h2>5.&nbsp;&nbsp;Tagy pro obecné formátování<a class="headerlink" href="#tagy-pro-obecne-formatovani" title="Link to this heading">#</a></h2>
+<h2>6.&nbsp;&nbsp;Tagy pro obecné formátování<a class="headerlink" href="#tagy-pro-obecne-formatovani" title="Link to this heading">#</a></h2>
 <p>Kromě tagů, které se používají pro formátování textu a mají zpravidla typickou formátovací funkci, existují i tagy, které se používají pro obecné formátování a strukturování větších celků stránky.</p>
 <section id="tagy-div-span">
-<h3>5.1.&nbsp;&nbsp;Tagy <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;span&gt;</span></code><a class="headerlink" href="#tagy-div-span" title="Link to this heading">#</a></h3>
+<h3>6.1.&nbsp;&nbsp;Tagy <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;span&gt;</span></code><a class="headerlink" href="#tagy-div-span" title="Link to this heading">#</a></h3>
 <p>Tagy <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> a <code class="docutils literal notranslate"><span class="pre">&lt;span&gt;</span></code> slouží k logickému seskupování obsahu.</p>
 <ul class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code></strong> je blokový (<code class="docutils literal notranslate"><span class="pre">block</span></code>) element, který vytváří oddělení svého obsahu od okolního obsahu. Často se používá pro rozvržení stránky do logických sekcí, například menu, článek, záhlaví stránky apod.</p></li>
@@ -716,7 +750,7 @@ Druhý řádek</p>
 </ul>
 </section>
 <section id="semanticke-tagy">
-<h3>5.2.&nbsp;&nbsp;Sémantické tagy<a class="headerlink" href="#semanticke-tagy" title="Link to this heading">#</a></h3>
+<h3>6.2.&nbsp;&nbsp;Sémantické tagy<a class="headerlink" href="#semanticke-tagy" title="Link to this heading">#</a></h3>
 <p>Sémantické tagy popisují význam části dokumentu, nikoli jeho vzhled. Usnadňují orientaci v kódu a jeho správnou interpretaci prohlížeči i vyhledávači.</p>
 <p>Příklady sémantických tagů:</p>
 <ul class="simple">
@@ -731,10 +765,10 @@ Druhý řádek</p>
 </section>
 </section>
 <section id="caste-chyby-pri-psani-html">
-<h2>6.&nbsp;&nbsp;Časté chyby při psaní HTML<a class="headerlink" href="#caste-chyby-pri-psani-html" title="Link to this heading">#</a></h2>
+<h2>7.&nbsp;&nbsp;Časté chyby při psaní HTML<a class="headerlink" href="#caste-chyby-pri-psani-html" title="Link to this heading">#</a></h2>
 <p>Zde je několik příkladů běžných chyb v syntaxi HTML:</p>
 <section id="neukoncene-tagy">
-<h3>6.1.&nbsp;&nbsp;Neukončené tagy<a class="headerlink" href="#neukoncene-tagy" title="Link to this heading">#</a></h3>
+<h3>7.1.&nbsp;&nbsp;Neukončené tagy<a class="headerlink" href="#neukoncene-tagy" title="Link to this heading">#</a></h3>
 <p>Správně:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Toto je odstavec.<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </pre></div>
@@ -745,7 +779,7 @@ Druhý řádek</p>
 </div>
 </section>
 <section id="nespravne-vnorene-tagy">
-<h3>6.2.&nbsp;&nbsp;Nesprávně vnořené tagy<a class="headerlink" href="#nespravne-vnorene-tagy" title="Link to this heading">#</a></h3>
+<h3>7.2.&nbsp;&nbsp;Nesprávně vnořené tagy<a class="headerlink" href="#nespravne-vnorene-tagy" title="Link to this heading">#</a></h3>
 <p>Správně:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;&lt;</span><span class="nt">em</span><span class="p">&gt;</span>Tento text je tučný a kurzíva.<span class="p">&lt;/</span><span class="nt">em</span><span class="p">&gt;&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>
 </pre></div>
@@ -802,21 +836,24 @@ Druhý řádek</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#co-je-html">Co je HTML?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntaxe-html">Syntaxe HTML</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zakladni-struktura-html">Základní struktura HTML</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zakladni-tagy-pro-formatovani-textu">Základní tagy pro formátování textu</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zakladni-html-tagy">Základní HTML tagy</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nadpisy-h1-h2-h3-h4-h5-h6">Nadpisy <code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;h2&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;h3&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;h4&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;h5&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;h6&gt;</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#odstavec-p">Odstavec <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formatovani-textu">Formátování textu</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#seznamy-ol-ul-li">Seznamy <code class="docutils literal notranslate"><span class="pre">&lt;ol&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;ul&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neusporadany-seznam-ul">Neuspořádaný seznam <code class="docutils literal notranslate"><span class="pre">&lt;ul&gt;</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#usporadany-seznam-ol">Uspořádaný seznam <code class="docutils literal notranslate"><span class="pre">&lt;ol&gt;</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vnorovani-seznamu">Vnořování seznamu</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zalomeni-radku-br">Zalomení řádku <code class="docutils literal notranslate"><span class="pre">&lt;br&gt;</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#odkaz-a">Odkaz <code class="docutils literal notranslate"><span class="pre">&lt;a&gt;</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#obrazek-img">Obrázek <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tabulka-table-tr-td-th">Tabulka <code class="docutils literal notranslate"><span class="pre">&lt;table&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;tr&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;td&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;th&gt;</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formatovani-textu">Formátování textu</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spolecne-atributy">Společné atributy</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zobrazeni-inline-a-block">Zobrazení <code class="docutils literal notranslate"><span class="pre">inline</span></code> a <code class="docutils literal notranslate"><span class="pre">block</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zalomeni-radku-br">Zalomení řádku <code class="docutils literal notranslate"><span class="pre">&lt;br&gt;</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tagy-pro-obecne-formatovani">Tagy pro obecné formátování</a><ul class="nav section-nav flex-column">

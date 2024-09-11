@@ -17,7 +17,7 @@
         gtag('config', 'G-RZX7DQPSHE');
     </script>
     
-    <title>Git &#8212; Programování webových aplikací</title>
+    <title>Git &#8212; Webové aplikace</title>
   
   
   
@@ -144,7 +144,7 @@
   
   
   
-    <p class="title logo__title">Programování webových aplikací</p>
+    <p class="title logo__title">Webové aplikace</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -168,7 +168,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statický web</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../1_static/01_html.html">HTML formátování</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_static/01_html.html">HTML</a></li>
 </ul>
 
     </div>
@@ -318,24 +318,23 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#co-je-to-git-a-k-cemu-se-pouziva">Co je to Git a k čemu se používá</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inicializace-lokalniho-git-repozitare">Inicializace lokálního Git repozitáře</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vytvoreni-commitu">Vytvoření commitu</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vzdalene-repozitare">Vzdálené repozitáře</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nahrani-lokalniho-repozitare-na-vzdaleny-server">Nahrání lokálního repozitáře na vzdálený server</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-repozitare">Git repozitáře</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#konfigurace-gitu">Konfigurace Gitu</a><ul class="nav section-nav flex-column">
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">Linux</a></li>
 </ul>
 </li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#jmeno-a-email">Jméno a email</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stazeni-existujiciho-repozitare">Stažení existujícího repozitáře</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aktualizace-repozitare">Aktualizace repozitáře</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stazeni-existujiciho-repozitare">Stažení existujícího repozitáře</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inicializace-lokalniho-git-repozitare">Inicializace lokálního Git repozitáře</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nahrani-lokalniho-repozitare-na-vzdaleny-server">Nahrání lokálního repozitáře na vzdálený server</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soubor-gitignore">Soubor <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vytvoreni-commitu">Vytvoření commitu</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aktualizace-repozitare">Aktualizace repozitáře</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soubor-gitignore">Soubor <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reseni-konfliktu">Řešení konfliktů</a></li>
 </ul>
 </li>
@@ -360,44 +359,71 @@ document.write(`
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.w3schools.com/git/default.asp">Git tutoriál od W3C</a></p></li>
 <li><p><a class="reference external" href="https://education.github.com/git-cheat-sheet-education.pdf">Git cheat sheet od GitHubu</a></p></li>
+<li><p><a class="reference external" href="https://ourcodeworld.com/articles/read/1421/how-to-create-a-ssh-key-to-work-with-github-and-gitlab-using-puttygen-in-windows-10">Nastavení autentizace na GitHub ve Windows</a></p></li>
 </ul>
 <section id="co-je-to-git-a-k-cemu-se-pouziva">
 <h2>1.&nbsp;&nbsp;Co je to Git a k čemu se používá<a class="headerlink" href="#co-je-to-git-a-k-cemu-se-pouziva" title="Link to this heading">#</a></h2>
 <p>Git je distribuovaný systém správy verzí, který umožňuje vývojářům sledovat a spravovat změny v souborech (zejména zdrojových kódů). Je to moderní nástroj pro správu kódu v týmových ale i individuálních projektech, umožňuje koordinovat práci na těchto souborech mezi více lidmi podporuje efektivní workflow při vývoji složitějších projektů.</p>
-<section id="inicializace-lokalniho-git-repozitare">
-<h3>1.1.&nbsp;&nbsp;Inicializace lokálního Git repozitáře<a class="headerlink" href="#inicializace-lokalniho-git-repozitare" title="Link to this heading">#</a></h3>
-<p>Chcete-li vytvořit nový lokální Git repozitář, přejděte do kořenového adresáře projektu a spusťte v konzoli příkaz:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>init
-</pre></div>
-</div>
-<p>Tím se vytvoří nový prázdný Git repozitář a složka <code class="docutils literal notranslate"><span class="pre">.git</span></code>, kam Git ukládá všechny potřebné soubory a historii projektu.</p>
-<p>V Gitu se vytváří verze pomocí <strong>commitu</strong>. Commit představuje uložený stav souborů ve vašem projektu v daném časovém bodě. Když provedete commit, Git vytvoří snímek souborů a uloží tento snímek do lokálního repozitáře. Každý commit má jedinečný identifikátor (hash), který umožňuje sledovat historii změn a případně se vrátit ke starším verzím.</p>
-<p>Commit také obsahuje metadata, jako jsou informace o autorovi, datum a čas commitu, a <em>commit message</em>, která stručně popisuje provedené změny.</p>
-</section>
-<section id="vytvoreni-commitu">
-<h3>1.2.&nbsp;&nbsp;Vytvoření commitu<a class="headerlink" href="#vytvoreni-commitu" title="Link to this heading">#</a></h3>
-<p>Pro vytvoření nového commitu v Gitu postupujte následovně:</p>
-<ol class="arabic simple">
-<li><p>Proveďte změny ve vašem pracovním adresáři, změňte, vytvořte či smažte soubory.</p></li>
-<li><p>Přidejte soubory do commitu pomocí příkazu <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">jmeno_souboru</span></code>. Případně použijte <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code> k přidání všech souborů a změn.</p></li>
-<li><p>Vytvořte commit s popisem změn pomocí příkazu <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;Popis</span> <span class="pre">změn&quot;</span></code>. Je důležité psát smysluplné commit messages, aby bylo jasné, co daný commit obsahuje.</p></li>
-</ol>
-<p>Tímto postupem si budete ve vašem lokálním projektovém adresáři udržovat historii změn, kterou je možné vizualizovat jako graf na sebe navazujících commitů:</p>
-<div class="mermaid">
-            gitGraph
-    commit
-    commit
-    commit
-        </div></section>
-<section id="vzdalene-repozitare">
-<h3>1.3.&nbsp;&nbsp;Vzdálené repozitáře<a class="headerlink" href="#vzdalene-repozitare" title="Link to this heading">#</a></h3>
-<p>Síla Gitu ale spočívá v možnosti sdílení kódu. To se obvykle řeší přes centrální repozitář, kam všichni vývojáři mají přístup a nahrávají do něj své úpravy kódu. Centrální repozitář si můžete hostovat sami na svém serveru, ale obvykle je jednodušší použít <em>Git Hosting</em>, který často nabízí i další funkce jako procházení kódu na webu, propojení s dalšími nástroji atd…</p>
+<section id="git-repozitare">
+<h3>1.1.&nbsp;&nbsp;Git repozitáře<a class="headerlink" href="#git-repozitare" title="Link to this heading">#</a></h3>
+<p>Síla Gitu ale spočívá v možnosti sdílení kódu. To se obvykle řeší přes centrální <strong>repozitář</strong>, kam všichni vývojáři mají přístup a nahrávají do něj své úpravy kódu. Centrální repozitář si můžete hostovat sami na svém serveru, ale obvykle je jednodušší použít <em>Git hosting</em>, který často nabízí i další funkce jako procházení kódu na webu, propojení s dalšími nástroji atd…</p>
 <p>Mezi populární Git hostingy patří:</p>
 <ul class="simple">
 <li><p><strong><a class="reference external" href="https://github.com">GitHub</a></strong>: Populární webová služba pro hosting Git repozitářů s rozsáhlými nástroji pro kolaboraci.</p></li>
 <li><p><strong><a class="reference external" href="https://gitlab.com">GitLab</a></strong>: Umožňuje nejen hosting repozitářů, ale i deployment a mnoho dalších funkcí pro správu softwarových projektů.</p></li>
 <li><p><strong><a class="reference external" href="https://bitbucket.org">Bitbucket</a></strong>: Nabízí Git hosting s integrovanými nástroji pro týmy, které používají Jira a další Atlassian produkty.</p></li>
 </ul>
+<section id="konfigurace-gitu">
+<h4>Konfigurace Gitu<a class="headerlink" href="#konfigurace-gitu" title="Link to this heading">#</a></h4>
+<p>Některé hostingy vyžadují autentizaci pomocí veřejného a soukromého klíče (viz. <a class="reference external" href="https://en.wikipedia.org/wiki/Public-key_cryptography">asymetrická kryptografie</a>). Postup pro vytvoření páru veřejný-soukromý klíč je následující:</p>
+<section id="windows">
+<h5>Windows<a class="headerlink" href="#windows" title="Link to this heading">#</a></h5>
+<p>Spusťte program <strong>PuTTYgen</strong> a klikněte na tlačítko <em>Generate</em>. Po vytvoření klíče naleznete v bloku <em>Key</em> veřejný klíč, který nahrajte do GitHubu.</p>
+<p>Dále klikněte v menu Conversions &gt; Export OpenSSH key (force new file format) a uložte klíč do souboru <code class="docutils literal notranslate"><span class="pre">Z:/.ssh/id_rsa</span></code>.</p>
+<p>Podrobněji zpracovaný návod naleznete například <a class="reference external" href="https://ourcodeworld.com/articles/read/1421/how-to-create-a-ssh-key-to-work-with-github-and-gitlab-using-puttygen-in-windows-10">zde</a>.</p>
+</section>
+<section id="linux">
+<h5>Linux<a class="headerlink" href="#linux" title="Link to this heading">#</a></h5>
+<p>Pro vytvoření páru veřejný-soukromý klíč spusťte příkaz:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ssh-keygen<span class="w"> </span>-o
+</pre></div>
+</div>
+<p>Průvodce se Vás zeptá na umístění souboru s klíči a volitelně heslo, které se bude zadávat při použití klíče. Po dokončení naleznete ve svém domovském adresáři ve složce <code class="docutils literal notranslate"><span class="pre">.ssh</span></code> dva soubory:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>id_ed25519
+id_ed25519.pub
+</pre></div>
+</div>
+<p>Soubor <code class="docutils literal notranslate"><span class="pre">id_ed25519</span></code> obsahuje <strong>soukromý klíč</strong> (<strong>private key</strong>), ten je potřeba chránit a zamezit jeho úniku. Soubor <code class="docutils literal notranslate"><span class="pre">id_ed25519.pub</span></code> pak obsahuje <strong>veřejný klíč</strong> (<strong>public key</strong>), který se nahraje do Git hostingu (případně jiné služby, která tento typ autentizace vyžaduje).</p>
+<div class="note admonition">
+<p class="admonition-title">Algoritmy</p>
+<p>Označení <code class="docutils literal notranslate"><span class="pre">ed25519</span></code> je pro používaný šifrovací algoritmus <a class="reference external" href="https://en.wikipedia.org/wiki/EdDSA">EdDSA</a>, aktuálně výchozí v <code class="docutils literal notranslate"><span class="pre">ssh</span></code> (pomocí parametru <code class="docutils literal notranslate"><span class="pre">-t</span></code> je možné algoritmus změnit, <code class="docutils literal notranslate"><span class="pre">ssh</span></code> jich podporuje několik a je možné, že některé služby vyžadující tento typ autentizace mohou vyžadovat i specifický algoritmus).</p>
+</div>
+</section>
+</section>
+<section id="jmeno-a-email">
+<h4>Jméno a email<a class="headerlink" href="#jmeno-a-email" title="Link to this heading">#</a></h4>
+<p>Dále je ještě nutné nastavit vaše jméno a email, které se bude ukládat do commitů, aby bylo dobře rozlišitelné, kdo je jejich autorem:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;your@email.com&quot;</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Your Name&quot;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="stazeni-existujiciho-repozitare">
+<h3>1.2.&nbsp;&nbsp;Stažení existujícího repozitáře<a class="headerlink" href="#stazeni-existujiciho-repozitare" title="Link to this heading">#</a></h3>
+<p>Pokud už vzdálený repozitář existuje a chcete si vytvořit jeho lokální kopii použijte příkaz:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>&lt;URL<span class="w"> </span>vzdáleného<span class="w"> </span>repozitáře&gt;
+</pre></div>
+</div>
+<p>Tím se vytvoří nový adresář s názvem repozitáře, do něj se stáhne aktuální verze všech souborů repozitáře a zároveň se inicializuje lokální git repozitář s kompletní historií včetně nastavení <code class="docutils literal notranslate"><span class="pre">origin</span></code> (adresy vzdáleného repozitáře na Git hostingu).</p>
+</section>
+<section id="inicializace-lokalniho-git-repozitare">
+<h3>1.3.&nbsp;&nbsp;Inicializace lokálního Git repozitáře<a class="headerlink" href="#inicializace-lokalniho-git-repozitare" title="Link to this heading">#</a></h3>
+<p>Chcete-li vytvořit nový lokální Git repozitář, přejděte do kořenového adresáře projektu a spusťte v konzoli příkaz:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>init
+</pre></div>
+</div>
+<p>Tím se vytvoří nový prázdný Git repozitář a složka <code class="docutils literal notranslate"><span class="pre">.git</span></code>, kam Git ukládá všechny potřebné soubory a historii projektu.</p>
 <section id="nahrani-lokalniho-repozitare-na-vzdaleny-server">
 <h4>Nahrání lokálního repozitáře na vzdálený server<a class="headerlink" href="#nahrani-lokalniho-repozitare-na-vzdaleny-server" title="Link to this heading">#</a></h4>
 <p>Chcete-li nahrát existující lokální repozitář na vzdálený server (např. GitHub), proveďte tyto kroky:</p>
@@ -421,48 +447,26 @@ document.write(`
 <p>Ještě donedávna se všude používalo pro hlavní větev označení <strong>master</strong>, od toho však GitHub <a class="reference external" href="https://www.zdnet.com/article/github-to-replace-master-with-alternative-term-to-avoid-slavery-references/">upouští</a> a zavádí se označení <strong>main</strong>. Stále se ale často setkáte s označením master.</p>
 </div>
 </section>
-<section id="konfigurace-gitu">
-<h4>Konfigurace Gitu<a class="headerlink" href="#konfigurace-gitu" title="Link to this heading">#</a></h4>
-<p>Některé hostingy vyžadují autentizaci pomocí veřejného a soukromého klíče (viz. <a class="reference external" href="https://en.wikipedia.org/wiki/Public-key_cryptography">asymetrická kryptografie</a>). Postup pro vytvoření páru veřejný-soukromý klíč je následující:</p>
-<section id="windows">
-<h5>Windows<a class="headerlink" href="#windows" title="Link to this heading">#</a></h5>
-<p>Spusťte program <strong>PuTTYgen</strong> a klikněte na tlačítko <em>Generate</em>. Po vytvoření klíče naleznete v bloku <em>Key</em> veřejný klíč, který nahrajte do GitHubu.</p>
-<p>Dále klikněte v menu Conversions &gt; Export OpenSSH key (force new file format) a uložte klíč do souboru <code class="docutils literal notranslate"><span class="pre">Z:/.ssh/id_rsa</span></code>.</p>
-<p>Pro budoucí práci s klíčem uložte klíč pomocí <em>Save private key</em>.</p>
 </section>
-<section id="linux">
-<h5>Linux<a class="headerlink" href="#linux" title="Link to this heading">#</a></h5>
-<p>Pro vytvoření páru veřejný-soukromý klíč spusťte příkaz:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ssh-keygen<span class="w"> </span>-o
-</pre></div>
-</div>
-<p>Průvodce se Vás zeptá na umístění souboru s klíči a volitelně heslo, které se bude zadávat při použití klíče. Po dokončení naleznete ve svém domovském adresáři ve složce <code class="docutils literal notranslate"><span class="pre">.ssh</span></code> dva soubory:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>id_ed25519
-id_ed25519.pub
-</pre></div>
-</div>
-<p>Soubor <code class="docutils literal notranslate"><span class="pre">id_ed25519</span></code> obsahuje <strong>soukromý klíč</strong> (<strong>private key</strong>), ten je potřeba chránit a zamezit jeho úniku. Soubor <code class="docutils literal notranslate"><span class="pre">id_ed25519.pub</span></code> pak obsahuje <strong>veřejný klíč</strong> (<strong>public key</strong>), který se nahraje do Git hostingu (případně jiné služby, která tento typ autentizace vyžaduje).</p>
-<div class="note admonition">
-<p class="admonition-title">Algoritmy</p>
-<p>Označení <code class="docutils literal notranslate"><span class="pre">ed25519</span></code> je pro používaný šifrovací algoritmus <a class="reference external" href="https://en.wikipedia.org/wiki/EdDSA">EdDSA</a>, aktuálně výchozí v <code class="docutils literal notranslate"><span class="pre">ssh</span></code> (pomocí parametru <code class="docutils literal notranslate"><span class="pre">-t</span></code> je možné algoritmus změnit, <code class="docutils literal notranslate"><span class="pre">ssh</span></code> jich podporuje několik a je možné, že některé služby vyžadující tento typ autentizace mohou vyžadovat i specifický algoritmus).</p>
-</div>
-<p>Dále je ještě nutné nastavit vaše jméno a email, které se bude ukládat do commitů, aby bylo dobře rozlišitelné, kdo je jejich autorem:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;your@email.com&quot;</span>
-git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Your Name&quot;</span>
-</pre></div>
-</div>
-</section>
-</section>
-</section>
-<section id="stazeni-existujiciho-repozitare">
-<h3>1.4.&nbsp;&nbsp;Stažení existujícího repozitáře<a class="headerlink" href="#stazeni-existujiciho-repozitare" title="Link to this heading">#</a></h3>
-<p>Pokud už vzdálený repozitář existuje a chcete si vytvořit jeho lokální kopii použijte příkaz:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>&lt;URL<span class="w"> </span>vzdáleného<span class="w"> </span>repozitáře&gt;
-</pre></div>
-</div>
-<p>Tím se vytvoří nový adresář s názvem repozitáře, do něj se stáhne aktuální verze všech souborů repozitáře a zároveň se inicializuje lokální git repozitář s kompletní historií včetně nastavení <code class="docutils literal notranslate"><span class="pre">origin</span></code>.</p>
+<section id="vytvoreni-commitu">
+<h3>1.4.&nbsp;&nbsp;Vytvoření commitu<a class="headerlink" href="#vytvoreni-commitu" title="Link to this heading">#</a></h3>
+<p>V Gitu se vytváří verze pomocí <strong>commitu</strong>. Commit představuje uložený stav souborů ve vašem projektu v daném časovém bodě. Když provedete commit, Git vytvoří snímek souborů a uloží tento snímek do lokálního repozitáře. Každý commit má jedinečný identifikátor (hash), který umožňuje sledovat historii změn a případně se vrátit ke starším verzím.</p>
+<p>Commit také obsahuje metadata, jako jsou informace o autorovi, datum a čas commitu, a <em>commit message</em>, která stručně popisuje provedené změny.</p>
+<p>Pro vytvoření nového commitu v Gitu postupujte následovně:</p>
+<ol class="arabic simple">
+<li><p>Proveďte změny ve vašem pracovním adresáři, změňte, vytvořte či smažte soubory.</p></li>
+<li><p>Přidejte změněné soubory do commitu pomocí příkazu <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">jmeno_souboru</span></code>. Případně použijte <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code> k přidání všech souborů a změn.</p></li>
+<li><p>Vytvořte commit s popisem změn pomocí příkazu <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;Popis</span> <span class="pre">změn&quot;</span></code>. Je důležité psát smysluplné commit messages, aby bylo jasné, co daný commit obsahuje.</p></li>
+</ol>
+<p>Tímto postupem si budete ve vašem lokálním projektovém adresáři udržovat historii změn, kterou je možné vizualizovat jako graf na sebe navazujících commitů:</p>
+<div class="mermaid">
+            gitGraph
+    commit
+    commit
+    commit
+        </div></section>
 <section id="aktualizace-repozitare">
-<h4>Aktualizace repozitáře<a class="headerlink" href="#aktualizace-repozitare" title="Link to this heading">#</a></h4>
+<h3>1.5.&nbsp;&nbsp;Aktualizace repozitáře<a class="headerlink" href="#aktualizace-repozitare" title="Link to this heading">#</a></h3>
 <p>Pokud je Git repozitář inicializován a propojen se vzdáleným repozitářem, jsou v Gitu dva základní příkazy pro synchronizaci.</p>
 <p>Příkaz:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>pull
@@ -473,12 +477,10 @@ git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push
 </pre></div>
 </div>
-<p>Odešle všechny změny (které byly zahrnuté v commitech) z lokálního repozitáře do vzdáleného repozitáře.</p>
-</section>
-</section>
+<p>Odešle všechny změny (commity) z lokálního repozitáře do vzdáleného repozitáře.</p>
 </section>
 <section id="soubor-gitignore">
-<h2>2.&nbsp;&nbsp;Soubor <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code><a class="headerlink" href="#soubor-gitignore" title="Link to this heading">#</a></h2>
+<h3>1.6.&nbsp;&nbsp;Soubor <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code><a class="headerlink" href="#soubor-gitignore" title="Link to this heading">#</a></h3>
 <p>Pomocí souboru <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> umístěného v kořenovém adresáři projektu můžeme definovat, které soubory nebo složky mají být verzovacím systémem Git ignorovány. Tento soubor pomáhá udržet repozitář čistý od nepotřebných nebo dočasných souborů, jako jsou logy, systémové soubory, kompilované zdrojové kódy a další. Do souboru <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> se zapisují pravidla, která Git automaticky čte a ignoruje jakékoliv změny v souborech vyhovujících zadaným pravidlům a v Git je neukládá.</p>
 <p>Pravidla vypadají následovně</p>
 <ul class="simple">
@@ -507,8 +509,9 @@ temp/
 <li><p>soubory s nastavením pro IDE</p></li>
 </ul>
 </div>
+</section>
 <section id="reseni-konfliktu">
-<h3>2.1.&nbsp;&nbsp;Řešení konfliktů<a class="headerlink" href="#reseni-konfliktu" title="Link to this heading">#</a></h3>
+<h3>1.7.&nbsp;&nbsp;Řešení konfliktů<a class="headerlink" href="#reseni-konfliktu" title="Link to this heading">#</a></h3>
 <p>Konflikty v Gitu vznikají, když se například dva vývojáři pokusí změnit stejnou část kódu ve stejném souboru. Tato situace často nastává při spolupráci více lidí na stejném projektu. Když pak dojde k pokusu o sloučení těchto změn (např. při <code class="docutils literal notranslate"><span class="pre">push</span></code> nebo <code class="docutils literal notranslate"><span class="pre">pull</span></code>, ale i v dalších situacích), Git není schopen automaticky rozhodnout, která změna má přednost, a vyvolá konflikt. Konfliktující části kódu se pak musí ručně opravit. Postup je následující:</p>
 <ol class="arabic simple">
 <li><p>Použijte příkaz <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>, který ukáže soubory kde došlo konfliktu.</p></li>
@@ -520,10 +523,10 @@ temp/
 </section>
 </section>
 <section id="vytvareni-vetvi-v-git">
-<h2>3.&nbsp;&nbsp;Vytváření větví v Git<a class="headerlink" href="#vytvareni-vetvi-v-git" title="Link to this heading">#</a></h2>
+<h2>2.&nbsp;&nbsp;Vytváření větví v Git<a class="headerlink" href="#vytvareni-vetvi-v-git" title="Link to this heading">#</a></h2>
 <p>V Gitu je vytváření větví (<strong>branch</strong>) základní funkcí, která umožňuje vývojářům pracovat na různých funkcionalitách nebo opravách bez ovlivnění hlavního (produkčního) kódu aplikace, což usnadňuje paralelní vývoj a pomáhá udržovat produkční kód stabilní. Díky větvím mohou vývojáři experimentovat, vyvíjet nové funkce a opravovat chyby bez rizika narušení produkčního kódu. Teprve až když je nová funkce hotova, provede se sloučení větve s produkčním kódem (<strong>merge</strong>).</p>
 <section id="vytvoreni-nove-vetve">
-<h3>3.1.&nbsp;&nbsp;Vytvoření nové větve<a class="headerlink" href="#vytvoreni-nove-vetve" title="Link to this heading">#</a></h3>
+<h3>2.1.&nbsp;&nbsp;Vytvoření nové větve<a class="headerlink" href="#vytvoreni-nove-vetve" title="Link to this heading">#</a></h3>
 <p>Pro vytvoření nové větve v Gitu použijete příkaz <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code>, následovaný názvem nové větve. Například, pokud chcete vytvořit větev s názvem <code class="docutils literal notranslate"><span class="pre">my_feature</span></code>, zadáte:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>branch<span class="w"> </span>my_feature
 </pre></div>
@@ -549,7 +552,7 @@ temp/
     commit
         </div></section>
 <section id="merge-vetvi">
-<h3>3.2.&nbsp;&nbsp;Merge větví<a class="headerlink" href="#merge-vetvi" title="Link to this heading">#</a></h3>
+<h3>2.2.&nbsp;&nbsp;Merge větví<a class="headerlink" href="#merge-vetvi" title="Link to this heading">#</a></h3>
 <p>Sloučení (merge) větví je proces, při kterém se integrují změny z jedné větve do druhé. To se obvykle děje, když je funkce ve vývojové větvi dokončena a má být začleněna do hlavní větve <code class="docutils literal notranslate"><span class="pre">main</span></code>. Pro sloučení větví postupujte následovně</p>
 <ol class="arabic">
 <li><p>Přepněte na větev, <strong>do</strong> které chcete změny sloučit, což je obvykle <code class="docutils literal notranslate"><span class="pre">main</span></code>, ale obecně je možné slučovat větve libovolně:</p>
@@ -640,24 +643,23 @@ Moderní IDE mají zpravidla vestavěnou více či méně pokročilou správu ve
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#co-je-to-git-a-k-cemu-se-pouziva">Co je to Git a k čemu se používá</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inicializace-lokalniho-git-repozitare">Inicializace lokálního Git repozitáře</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vytvoreni-commitu">Vytvoření commitu</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vzdalene-repozitare">Vzdálené repozitáře</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nahrani-lokalniho-repozitare-na-vzdaleny-server">Nahrání lokálního repozitáře na vzdálený server</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-repozitare">Git repozitáře</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#konfigurace-gitu">Konfigurace Gitu</a><ul class="nav section-nav flex-column">
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">Linux</a></li>
 </ul>
 </li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#jmeno-a-email">Jméno a email</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stazeni-existujiciho-repozitare">Stažení existujícího repozitáře</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aktualizace-repozitare">Aktualizace repozitáře</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stazeni-existujiciho-repozitare">Stažení existujícího repozitáře</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inicializace-lokalniho-git-repozitare">Inicializace lokálního Git repozitáře</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nahrani-lokalniho-repozitare-na-vzdaleny-server">Nahrání lokálního repozitáře na vzdálený server</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soubor-gitignore">Soubor <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vytvoreni-commitu">Vytvoření commitu</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aktualizace-repozitare">Aktualizace repozitáře</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soubor-gitignore">Soubor <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reseni-konfliktu">Řešení konfliktů</a></li>
 </ul>
 </li>

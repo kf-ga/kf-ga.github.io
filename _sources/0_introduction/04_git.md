@@ -3,6 +3,7 @@ Git
 
 * [Git tutoriál od W3C](https://www.w3schools.com/git/default.asp)
 * [Git cheat sheet od GitHubu](https://education.github.com/git-cheat-sheet-education.pdf)
+* [Nastavení autentizace na GitHub ve Windows](https://ourcodeworld.com/articles/read/1421/how-to-create-a-ssh-key-to-work-with-github-and-gitlab-using-puttygen-in-windows-10)
 
 
 Co je to Git a k čemu se používá
@@ -10,6 +11,71 @@ Co je to Git a k čemu se používá
 
 Git je distribuovaný systém správy verzí, který umožňuje vývojářům sledovat a spravovat změny v souborech (zejména zdrojových kódů). Je to moderní nástroj pro správu kódu v týmových ale i individuálních projektech, umožňuje koordinovat práci na těchto souborech mezi více lidmi podporuje efektivní workflow při vývoji složitějších projektů.
 
+
+### Git repozitáře
+
+Síla Gitu ale spočívá v možnosti sdílení kódu. To se obvykle řeší přes centrální **repozitář**, kam všichni vývojáři mají přístup a nahrávají do něj své úpravy kódu. Centrální repozitář si můžete hostovat sami na svém serveru, ale obvykle je jednodušší použít *Git hosting*, který často nabízí i další funkce jako procházení kódu na webu, propojení s dalšími nástroji atd..
+
+Mezi populární Git hostingy patří:
+
+- **[GitHub](https://github.com)**: Populární webová služba pro hosting Git repozitářů s rozsáhlými nástroji pro kolaboraci.
+- **[GitLab](https://gitlab.com)**: Umožňuje nejen hosting repozitářů, ale i deployment a mnoho dalších funkcí pro správu softwarových projektů.
+- **[Bitbucket](https://bitbucket.org)**: Nabízí Git hosting s integrovanými nástroji pro týmy, které používají Jira a další Atlassian produkty.
+
+#### Konfigurace Gitu
+
+Některé hostingy vyžadují autentizaci pomocí veřejného a soukromého klíče (viz. [asymetrická kryptografie](https://en.wikipedia.org/wiki/Public-key_cryptography)). Postup pro vytvoření páru veřejný-soukromý klíč je následující:
+
+##### Windows
+
+Spusťte program **PuTTYgen** a klikněte na tlačítko *Generate*. Po vytvoření klíče naleznete v bloku *Key* veřejný klíč, který nahrajte do GitHubu.
+
+Dále klikněte v menu Conversions > Export OpenSSH key (force new file format) a uložte klíč do souboru `Z:/.ssh/id_rsa`.
+
+Podrobněji zpracovaný návod naleznete například [zde](https://ourcodeworld.com/articles/read/1421/how-to-create-a-ssh-key-to-work-with-github-and-gitlab-using-puttygen-in-windows-10).
+
+
+##### Linux
+
+Pro vytvoření páru veřejný-soukromý klíč spusťte příkaz:
+
+```sh
+ssh-keygen -o
+```
+
+Průvodce se Vás zeptá na umístění souboru s klíči a volitelně heslo, které se bude zadávat při použití klíče. Po dokončení naleznete ve svém domovském adresáři ve složce `.ssh` dva soubory:
+
+```sh
+id_ed25519
+id_ed25519.pub
+```
+
+Soubor `id_ed25519` obsahuje **soukromý klíč** (**private key**), ten je potřeba chránit a zamezit jeho úniku. Soubor `id_ed25519.pub` pak obsahuje **veřejný klíč** (**public key**), který se nahraje do Git hostingu (případně jiné služby, která tento typ autentizace vyžaduje).
+
+```{admonition} Algoritmy
+:class: note
+Označení `ed25519` je pro používaný šifrovací algoritmus [EdDSA](https://en.wikipedia.org/wiki/EdDSA), aktuálně výchozí v `ssh` (pomocí parametru `-t` je možné algoritmus změnit, `ssh` jich podporuje několik a je možné, že některé služby vyžadující tento typ autentizace mohou vyžadovat i specifický algoritmus). 
+```
+
+#### Jméno a email
+
+Dále je ještě nutné nastavit vaše jméno a email, které se bude ukládat do commitů, aby bylo dobře rozlišitelné, kdo je jejich autorem:
+
+```sh
+git config --global user.email "your@email.com"
+git config --global user.name "Your Name"
+```
+
+
+### Stažení existujícího repozitáře
+
+Pokud už vzdálený repozitář existuje a chcete si vytvořit jeho lokální kopii použijte příkaz:
+
+```sh
+git clone <URL vzdáleného repozitáře>
+```
+
+Tím se vytvoří nový adresář s názvem repozitáře, do něj se stáhne aktuální verze všech souborů repozitáře a zároveň se inicializuje lokální git repozitář s kompletní historií včetně nastavení `origin` (adresy vzdáleného repozitáře na Git hostingu).
 
 ### Inicializace lokálního Git repozitáře
 
@@ -20,39 +86,6 @@ git init
 ```
 
 Tím se vytvoří nový prázdný Git repozitář a složka `.git`, kam Git ukládá všechny potřebné soubory a historii projektu.
-
-V Gitu se vytváří verze pomocí **commitu**. Commit představuje uložený stav souborů ve vašem projektu v daném časovém bodě. Když provedete commit, Git vytvoří snímek souborů a uloží tento snímek do lokálního repozitáře. Každý commit má jedinečný identifikátor (hash), který umožňuje sledovat historii změn a případně se vrátit ke starším verzím.
-
-Commit také obsahuje metadata, jako jsou informace o autorovi, datum a čas commitu, a *commit message*, která stručně popisuje provedené změny.
-
-
-### Vytvoření commitu
-
-Pro vytvoření nového commitu v Gitu postupujte následovně:
-
-1. Proveďte změny ve vašem pracovním adresáři, změňte, vytvořte či smažte soubory.
-2. Přidejte soubory do commitu pomocí příkazu `git add jmeno_souboru`. Případně použijte `git add .` k přidání všech souborů a změn.
-3. Vytvořte commit s popisem změn pomocí příkazu `git commit -m "Popis změn"`. Je důležité psát smysluplné commit messages, aby bylo jasné, co daný commit obsahuje.
-
-Tímto postupem si budete ve vašem lokálním projektovém adresáři udržovat historii změn, kterou je možné vizualizovat jako graf na sebe navazujících commitů:
-
-```{mermaid}
-gitGraph
-    commit
-    commit
-    commit
-```
-
-
-### Vzdálené repozitáře
-
-Síla Gitu ale spočívá v možnosti sdílení kódu. To se obvykle řeší přes centrální repozitář, kam všichni vývojáři mají přístup a nahrávají do něj své úpravy kódu. Centrální repozitář si můžete hostovat sami na svém serveru, ale obvykle je jednodušší použít *Git Hosting*, který často nabízí i další funkce jako procházení kódu na webu, propojení s dalšími nástroji atd..
-
-Mezi populární Git hostingy patří:
-
-- **[GitHub](https://github.com)**: Populární webová služba pro hosting Git repozitářů s rozsáhlými nástroji pro kolaboraci.
-- **[GitLab](https://gitlab.com)**: Umožňuje nejen hosting repozitářů, ale i deployment a mnoho dalších funkcí pro správu softwarových projektů.
-- **[Bitbucket](https://bitbucket.org)**: Nabízí Git hosting s integrovanými nástroji pro týmy, které používají Jira a další Atlassian produkty.
 
 
 #### Nahrání lokálního repozitáře na vzdálený server
@@ -82,61 +115,29 @@ Chcete-li nahrát existující lokální repozitář na vzdálený server (např
 Ještě donedávna se všude používalo pro hlavní větev označení **master**, od toho však GitHub [upouští](https://www.zdnet.com/article/github-to-replace-master-with-alternative-term-to-avoid-slavery-references/) a zavádí se označení **main**. Stále se ale často setkáte s označením master.
 ```
 
+### Vytvoření commitu
 
-#### Konfigurace Gitu
+V Gitu se vytváří verze pomocí **commitu**. Commit představuje uložený stav souborů ve vašem projektu v daném časovém bodě. Když provedete commit, Git vytvoří snímek souborů a uloží tento snímek do lokálního repozitáře. Každý commit má jedinečný identifikátor (hash), který umožňuje sledovat historii změn a případně se vrátit ke starším verzím.
 
-Některé hostingy vyžadují autentizaci pomocí veřejného a soukromého klíče (viz. [asymetrická kryptografie](https://en.wikipedia.org/wiki/Public-key_cryptography)). Postup pro vytvoření páru veřejný-soukromý klíč je následující:
+Commit také obsahuje metadata, jako jsou informace o autorovi, datum a čas commitu, a *commit message*, která stručně popisuje provedené změny.
 
-##### Windows
+Pro vytvoření nového commitu v Gitu postupujte následovně:
 
-Spusťte program **PuTTYgen** a klikněte na tlačítko *Generate*. Po vytvoření klíče naleznete v bloku *Key* veřejný klíč, který nahrajte do GitHubu.
+1. Proveďte změny ve vašem pracovním adresáři, změňte, vytvořte či smažte soubory.
+2. Přidejte změněné soubory do commitu pomocí příkazu `git add jmeno_souboru`. Případně použijte `git add .` k přidání všech souborů a změn.
+3. Vytvořte commit s popisem změn pomocí příkazu `git commit -m "Popis změn"`. Je důležité psát smysluplné commit messages, aby bylo jasné, co daný commit obsahuje.
 
-Dále klikněte v menu Conversions > Export OpenSSH key (force new file format) a uložte klíč do souboru `Z:/.ssh/id_rsa`.
+Tímto postupem si budete ve vašem lokálním projektovém adresáři udržovat historii změn, kterou je možné vizualizovat jako graf na sebe navazujících commitů:
 
-Pro budoucí práci s klíčem uložte klíč pomocí *Save private key*.
-
-
-##### Linux
-
-Pro vytvoření páru veřejný-soukromý klíč spusťte příkaz:
-
-```sh
-ssh-keygen -o
-```
-
-Průvodce se Vás zeptá na umístění souboru s klíči a volitelně heslo, které se bude zadávat při použití klíče. Po dokončení naleznete ve svém domovském adresáři ve složce `.ssh` dva soubory:
-
-```sh
-id_ed25519
-id_ed25519.pub
-```
-
-Soubor `id_ed25519` obsahuje **soukromý klíč** (**private key**), ten je potřeba chránit a zamezit jeho úniku. Soubor `id_ed25519.pub` pak obsahuje **veřejný klíč** (**public key**), který se nahraje do Git hostingu (případně jiné služby, která tento typ autentizace vyžaduje).
-
-```{admonition} Algoritmy
-:class: note
-Označení `ed25519` je pro používaný šifrovací algoritmus [EdDSA](https://en.wikipedia.org/wiki/EdDSA), aktuálně výchozí v `ssh` (pomocí parametru `-t` je možné algoritmus změnit, `ssh` jich podporuje několik a je možné, že některé služby vyžadující tento typ autentizace mohou vyžadovat i specifický algoritmus). 
-```
-
-Dále je ještě nutné nastavit vaše jméno a email, které se bude ukládat do commitů, aby bylo dobře rozlišitelné, kdo je jejich autorem:
-
-```sh
-git config --global user.email "your@email.com"
-git config --global user.name "Your Name"
+```{mermaid}
+gitGraph
+    commit
+    commit
+    commit
 ```
 
 
-### Stažení existujícího repozitáře
-
-Pokud už vzdálený repozitář existuje a chcete si vytvořit jeho lokální kopii použijte příkaz:
-
-```sh
-git clone <URL vzdáleného repozitáře>
-```
-
-Tím se vytvoří nový adresář s názvem repozitáře, do něj se stáhne aktuální verze všech souborů repozitáře a zároveň se inicializuje lokální git repozitář s kompletní historií včetně nastavení `origin`.
-
-#### Aktualizace repozitáře
+### Aktualizace repozitáře
 
 Pokud je Git repozitář inicializován a propojen se vzdáleným repozitářem, jsou v Gitu dva základní příkazy pro synchronizaci. 
 
@@ -153,10 +154,10 @@ Příkaz:
 git push
 ```
 
-Odešle všechny změny (které byly zahrnuté v commitech) z lokálního repozitáře do vzdáleného repozitáře.
+Odešle všechny změny (commity) z lokálního repozitáře do vzdáleného repozitáře.
 
 
-## Soubor `.gitignore`
+### Soubor `.gitignore`
 
 Pomocí souboru `.gitignore` umístěného v kořenovém adresáři projektu můžeme definovat, které soubory nebo složky mají být verzovacím systémem Git ignorovány. Tento soubor pomáhá udržet repozitář čistý od nepotřebných nebo dočasných souborů, jako jsou logy, systémové soubory, kompilované zdrojové kódy a další. Do souboru `.gitignore` se zapisují pravidla, která Git automaticky čte a ignoruje jakékoliv změny v souborech vyhovujících zadaným pravidlům a v Git je neukládá.
 

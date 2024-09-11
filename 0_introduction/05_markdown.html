@@ -17,7 +17,7 @@
         gtag('config', 'G-RZX7DQPSHE');
     </script>
     
-    <title>Markdown &#8212; Programování webových aplikací</title>
+    <title>Markdown &#8212; Webové aplikace</title>
   
   
   
@@ -56,7 +56,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '0_introduction/05_markdown';</script>
     <link rel="index" title="Rejstřík" href="../genindex.html" />
     <link rel="search" title="Vyhledávání" href="../search.html" />
-    <link rel="next" title="HTML formátování" href="../1_static/01_html.html" />
+    <link rel="next" title="HTML" href="../1_static/01_html.html" />
     <link rel="prev" title="Git" href="04_git.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="cs"/>
@@ -142,7 +142,7 @@
   
   
   
-    <p class="title logo__title">Programování webových aplikací</p>
+    <p class="title logo__title">Webové aplikace</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -166,7 +166,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statický web</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../1_static/01_html.html">HTML formátování</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_static/01_html.html">HTML</a></li>
 </ul>
 
     </div>
@@ -343,6 +343,7 @@ document.write(`
 <li><p><a class="reference external" href="https://www.markdownguide.org/basic-syntax/">Detailní přehled Markdown syntaxe</a></p></li>
 </ul>
 <p>Markdown je značkovací jazyk s jednoduchou syntaxí, navržený tak, aby byl snadno čitelný a upravitelný v jednoduchém (plain text) textovém editoru a zároveň převeditelný do formátovacích jazyků, které nabízí lepší možnosti formátování textu jako třeba HTML nebo LaTeX. Markdown se daleko striktněji zaměřuje na samotný obsah a oproti HTML obsahuje daleko méně informací formě prezentace. Často se označuje jako <em>strukturovaný text</em>, který se pak podle potřeby a možností dá snadno zobrazovat v různých formách.</p>
+<p>Markdown soubory mají zpravidla příponu <code class="docutils literal notranslate"><span class="pre">.md</span></code>.</p>
 <section id="zakladni-formatovaci-znacky">
 <h2>1.&nbsp;&nbsp;Základní formátovací značky<a class="headerlink" href="#zakladni-formatovaci-znacky" title="Link to this heading">#</a></h2>
 <section id="nadpisy">
@@ -365,6 +366,30 @@ document.write(`
 <h4 class="rubric" id="heading-4">Heading 4</h4>
 <h5 class="rubric" id="heading-5">Heading 5</h5>
 <h6 class="rubric" id="heading-6">Heading 6</h6>
+</div>
+</div>
+<p>Nadpis první úrovně je také možné označit podtržením <code class="docutils literal notranslate"><span class="pre">=</span></code>:</p>
+<div class="myst-example docutils">
+<div class="myst-example-source docutils">
+<div class="highlight-myst notranslate"><div class="highlight"><pre><span></span><span class="gh">Heading 1</span>
+<span class="gh">=========</span>
+</pre></div>
+</div>
+</div>
+<div class="myst-example-render docutils">
+<h1 class="rubric" id="id1">Heading 1</h1>
+</div>
+</div>
+<p>A nadpis druhé úrovně podtržením <code class="docutils literal notranslate"><span class="pre">-</span></code>:</p>
+<div class="myst-example docutils">
+<div class="myst-example-source docutils">
+<div class="highlight-myst notranslate"><div class="highlight"><pre><span></span><span class="gu">Heading 2</span>
+<span class="gu">---------</span>
+</pre></div>
+</div>
+</div>
+<div class="myst-example-render docutils">
+<h2 class="rubric" id="id2">Heading 2</h2>
 </div>
 </div>
 <section id="tucne-pismo-kurziva">
@@ -518,7 +543,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">další</p>
-        <p class="prev-next-title">HTML formátování</p>
+        <p class="prev-next-title">HTML</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
