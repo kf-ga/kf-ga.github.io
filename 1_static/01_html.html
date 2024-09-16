@@ -394,7 +394,7 @@ document.write(`
 <p>Označení <em>HTML tag</em> nebo jen <em>tag</em> (česky značka) se používá pro označení značky v HTML, například <code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> atd., nebo také <em>ukončovací tag</em>, například <code class="docutils literal notranslate"><span class="pre">&lt;/h1&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;/div&gt;</span></code>.</p>
 <p>Naproti tomu, <em>HTML element</em> zahrnuje nejen samotnou značku, ale také všechno uvnitř této značky, včetně obsahu, vnořených elementů a dalších atributů. Takže zatímco “tag” je pouze samotná značka, <em>element</em> zahrnuje celou strukturu, kterou HTML tag definuje.</p>
 </div>
-<p>Značky je možné do sebe (až na výjimky) libovolně vnořovat, je však důležité zachovat správné párování otevíracích a uzavíracích značek. Pro přehlednost kódu je pak dobré používat odsazování:</p>
+<p>Značky je možné do sebe (až na výjimky) vnořovat, je však důležité zachovat správné párování otevíracích a uzavíracích značek. Pro přehlednost kódu je pak dobré používat odsazování:</p>
 <div class="myst-example docutils">
 <div class="myst-example-source docutils">
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mydiv&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;main&quot;</span><span class="p">&gt;</span>
@@ -419,6 +419,7 @@ document.write(`
 </div>
 </div>
 </div>
+<p>Při vnořování značek platí určitá omezení. Nelze například vkládat <code class="docutils literal notranslate"><span class="pre">block</span></code> značky do <code class="docutils literal notranslate"><span class="pre">inline</span></code> značek. Je třeba také dodržovat strukturu značek například u seznamu, nebo tabulky. Pokud si nejste jistí, využijte pro kontrolu HTML validátor.</p>
 </section>
 <section id="zakladni-struktura-html">
 <h2>3.&nbsp;&nbsp;Základní struktura HTML<a class="headerlink" href="#zakladni-struktura-html" title="Link to this heading">#</a></h2>
@@ -858,7 +859,7 @@ Druhý řádek</p>
 </section>
 <section id="nevyplnene-povinne-atributy">
 <h3>7.4.&nbsp;&nbsp;Nevyplněné povinné atributy<a class="headerlink" href="#nevyplnene-povinne-atributy" title="Link to this heading">#</a></h3>
-<p>Některé elementy vyžadují mít povinně vyplněné některé atributy, např.: <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> vyžaduje atribut <code class="docutils literal notranslate"><span class="pre">src</span></code> a <code class="docutils literal notranslate"><span class="pre">alt</span></code>, kořenový element <code class="docutils literal notranslate"><span class="pre">&lt;html&gt;</span></code> vyžaduje atribut <code class="docutils literal notranslate"><span class="pre">lang</span></code>. Povinných atributů je více, je proto dobré vždy zkontrolovat stránku pomocí HTML validátoru. Jednotlivé atributy je také vždy nutné oddělovat mezerou:</p>
+<p>Některé elementy vyžadují mít povinně vyplněné některé atributy, např.: <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> vyžaduje atribut <code class="docutils literal notranslate"><span class="pre">src</span></code> a <code class="docutils literal notranslate"><span class="pre">alt</span></code>, kořenový element <code class="docutils literal notranslate"><span class="pre">&lt;html&gt;</span></code> vyžaduje atribut <code class="docutils literal notranslate"><span class="pre">lang</span></code>. Povinných atributů je více, je proto dobré vždy zkontrolovat stránku pomocí HTML validátoru. Jednotlivé atributy je také vždy nutné oddělovat mezerou.</p>
 <p>Správně:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;photo.jpg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;moje fotka&quot;</span><span class="p">&gt;</span>
 </pre></div>

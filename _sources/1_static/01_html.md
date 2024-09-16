@@ -44,7 +44,7 @@ Označení *HTML tag* nebo jen *tag* (česky značka) se používá pro označen
 Naproti tomu, *HTML element* zahrnuje nejen samotnou značku, ale také všechno uvnitř této značky, včetně obsahu, vnořených elementů a dalších atributů. Takže zatímco "tag" je pouze samotná značka, *element* zahrnuje celou strukturu, kterou HTML tag definuje. 
 ```
 
-Značky je možné do sebe (až na výjimky) libovolně vnořovat, je však důležité zachovat správné párování otevíracích a uzavíracích značek. Pro přehlednost kódu je pak dobré používat odsazování:
+Značky je možné do sebe (až na výjimky) vnořovat, je však důležité zachovat správné párování otevíracích a uzavíracích značek. Pro přehlednost kódu je pak dobré používat odsazování:
 
 ```{myst-example}
 :highlight: html
@@ -58,6 +58,8 @@ Značky je možné do sebe (až na výjimky) libovolně vnořovat, je však důl
     </p>
 </div>
 ```
+
+Při vnořování značek platí určitá omezení. Nelze například vkládat `block` značky do `inline` značek. Je třeba také dodržovat strukturu značek například u seznamu, nebo tabulky. Pokud si nejste jistí, využijte pro kontrolu HTML validátor.
 
 
 Základní struktura HTML
@@ -425,7 +427,7 @@ U seznamů je nutné dodržovat přímé vnoření tagů `<ul>` - `<li>`, nebo. 
 
 ### Nevyplněné povinné atributy
 
-Některé elementy vyžadují mít povinně vyplněné některé atributy, např.: `<img>` vyžaduje atribut `src` a `alt`, kořenový element `<html>` vyžaduje atribut `lang`. Povinných atributů je více, je proto dobré vždy zkontrolovat stránku pomocí HTML validátoru. Jednotlivé atributy je také vždy nutné oddělovat mezerou:
+Některé elementy vyžadují mít povinně vyplněné některé atributy, např.: `<img>` vyžaduje atribut `src` a `alt`, kořenový element `<html>` vyžaduje atribut `lang`. Povinných atributů je více, je proto dobré vždy zkontrolovat stránku pomocí HTML validátoru. Jednotlivé atributy je také vždy nutné oddělovat mezerou.
 
 
 Správně: 
