@@ -382,7 +382,7 @@ Chybně:
 ```html
 <table>
     <tr>
-        <mark><td>Sloupec 1<td></mark>
+        <mark><td>Sloupec 1</td></mark>
         <mark><td>Sloupec 2</td></mark>
     </tr>
     <tr>
