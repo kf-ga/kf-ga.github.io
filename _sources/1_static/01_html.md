@@ -67,7 +67,7 @@ HTML souboru se skládá z několika hlavních elementů, které definují zákl
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="cs">
 <head>
     <title>Název stránky</title>
 </head>
@@ -305,6 +305,13 @@ Tagy `<div>` a `<span>` slouží k logickému seskupování obsahu.
 - **`<div>`** je blokový (`block`) element, který vytváří oddělení svého obsahu od okolního obsahu. Často se používá pro rozvržení stránky do logických sekcí, například menu, článek, záhlaví stránky apod.
 - **`<span>`** je řádkový (`inline`) element, který v základu nijak neodděluje svůj obsah. Používá se pro zvýraznění nebo označení částí textu. 
 
+### Komentáře
+
+Jako komentář se v HTML považuje text uzavřený mezi `<!--` a `-->`:
+
+```html
+<!-- Komentář  -->
+```
 
 ### Sémantické tagy
 
@@ -319,6 +326,7 @@ Příklady sémantických tagů:
 - `<aside>` - postranní sloupec (doplňující obsah)  
 - `<footer>` - zápatí stránky
 - `<section>` - tematická sekce stránky
+
 
 
 Časté chyby při psaní HTML
@@ -351,6 +359,119 @@ Chybně:
 ```html
 <strong><em>Tento text je tučný a kurzíva.</strong></em>
 ```
+
+### Chybný kontext tagů
+
+Některé složitější struktury (např. tabulka a seznam) vyžadují dodržování struktury a nedovolují v této struktuře umisťovat jiné značky.
+
+Správně: 
+```html
+<table>
+    <tr>
+        <td><mark>Sloupec 1</mark></td>
+        <td><mark>Sloupec 2</mark></td>
+    </tr>
+    <tr>
+        <td>123</td>
+        <td>456</td>
+    </tr>
+</table>
+```
+
+Chybně: 
+```html
+<table>
+    <tr>
+        <mark><td>Sloupec 1<td></mark>
+        <mark><td>Sloupec 2</td></mark>
+    </tr>
+    <tr>
+        <td>123</td>
+        <td>456</td>
+    </tr>
+</table>
+```
+
+U tabulek je nutné dodržovat přímé vnoření tagů `<table>` - `<tr>` - `<td>` (nebo `<th>`). Veškeré další formátování musí být buď vně tabulky (`<table>`) nebo až uvnitř buňky (`<td>`, `<th>`).
+
+Obdobně to platí u seznamů.
+
+Správně: 
+```html
+<ul>
+    <li><b>Položka 1</b></li>
+    <li>Položka 2</li>
+</ul>
+```
+
+Chybně: 
+```html
+<ul>
+    <b><li>Položka 1</li></b>
+    <li>Položka 2</li>
+</ul>
+```
+
+Také chybně: 
+```html
+<ul>
+    <h1>Nadpis</h1>
+    <li>Položka 1</li>
+    <li>Položka 2</li>
+</ul>
+```
+
+U seznamů je nutné dodržovat přímé vnoření tagů `<ul>` - `<li>`, nebo. `<ol>` - `<li>`, další formátování musí být buď vně seznamu (`<ul>`, `<ol>`) nebo až uvnitř položky (`<li>`).
+
+### Nevyplněné povinné atributy
+
+Některé elementy vyžadují mít povinně vyplněné některé atributy, např.: `<img>` vyžaduje atribut `src` a `alt`, kořenový element `<html>` vyžaduje atribut `lang`. Povinných atributů je více, je proto dobré vždy zkontrolovat stránku pomocí HTML validátoru. Jednotlivé atributy je také vždy nutné oddělovat mezerou:
+
+
+Správně: 
+```html
+<img src="photo.jpg" alt="moje fotka">
+```
+
+Chybně: 
+```html
+<img src="photo.jpg"alt="moje fotka">
+```
+
+### `block` element v `inline` elementu 
+
+V HTML není povoleno vkládat `inline` HTML element do `block` elementu:
+
+Správně: 
+```html
+<h1><i>Nadpis</i></h1>
+```
+
+Chybně: 
+```html
+<i><h1>Nadpis</h1></i>
+```
+
+### HTML značka v chybném kontextu
+
+Každá HTML značka má omezení na to v jakém kontextu může být, např. žádné formátovací ani sémantické značky nemohou být umístěny v `<head>` části dokumentu:
+
+Chybně: 
+```html
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <title>Název stránky</title>
+    <h1>Titulek</h1>
+</head>
+<body>
+    Obsah stránky
+</body>
+</html>
+```
+
+Pravidel je více a je proto vždy dobré zkontrolovat HTML stránku pomocí validátoru.
+
 
 ```{admonition} Fail silently
 :class: note

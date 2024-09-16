@@ -339,12 +339,17 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tagy-pro-obecne-formatovani">Tagy pro obecné formátování</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tagy-div-span">Tagy <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;span&gt;</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#komentare">Komentáře</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#semanticke-tagy">Sémantické tagy</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caste-chyby-pri-psani-html">Časté chyby při psaní HTML</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neukoncene-tagy">Neukončené tagy</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nespravne-vnorene-tagy">Nesprávně vnořené tagy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chybny-kontext-tagu">Chybný kontext tagů</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nevyplnene-povinne-atributy">Nevyplněné povinné atributy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#block-element-v-inline-elementu"><code class="docutils literal notranslate"><span class="pre">block</span></code> element v <code class="docutils literal notranslate"><span class="pre">inline</span></code> elementu</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#html-znacka-v-chybnem-kontextu">HTML značka v chybném kontextu</a></li>
 </ul>
 </li>
 </ul>
@@ -419,7 +424,7 @@ document.write(`
 <h2>3.&nbsp;&nbsp;Základní struktura HTML<a class="headerlink" href="#zakladni-struktura-html" title="Link to this heading">#</a></h2>
 <p>HTML souboru se skládá z několika hlavních elementů, které definují základní strukturu HTML dokumentu:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;cs&quot;</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Název stránky<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
@@ -749,8 +754,15 @@ Druhý řádek</p>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;span&gt;</span></code></strong> je řádkový (<code class="docutils literal notranslate"><span class="pre">inline</span></code>) element, který v základu nijak neodděluje svůj obsah. Používá se pro zvýraznění nebo označení částí textu.</p></li>
 </ul>
 </section>
+<section id="komentare">
+<h3>6.2.&nbsp;&nbsp;Komentáře<a class="headerlink" href="#komentare" title="Link to this heading">#</a></h3>
+<p>Jako komentář se v HTML považuje text uzavřený mezi <code class="docutils literal notranslate"><span class="pre">&lt;!--</span></code> a <code class="docutils literal notranslate"><span class="pre">--&gt;</span></code>:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cm">&lt;!-- Komentář  --&gt;</span>
+</pre></div>
+</div>
+</section>
 <section id="semanticke-tagy">
-<h3>6.2.&nbsp;&nbsp;Sémantické tagy<a class="headerlink" href="#semanticke-tagy" title="Link to this heading">#</a></h3>
+<h3>6.3.&nbsp;&nbsp;Sémantické tagy<a class="headerlink" href="#semanticke-tagy" title="Link to this heading">#</a></h3>
 <p>Sémantické tagy popisují význam části dokumentu, nikoli jeho vzhled. Usnadňují orientaci v kódu a jeho správnou interpretaci prohlížeči i vyhledávači.</p>
 <p>Příklady sémantických tagů:</p>
 <ul class="simple">
@@ -788,6 +800,103 @@ Druhý řádek</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;&lt;</span><span class="nt">em</span><span class="p">&gt;</span>Tento text je tučný a kurzíva.<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;&lt;/</span><span class="nt">em</span><span class="p">&gt;</span>
 </pre></div>
 </div>
+</section>
+<section id="chybny-kontext-tagu">
+<h3>7.3.&nbsp;&nbsp;Chybný kontext tagů<a class="headerlink" href="#chybny-kontext-tagu" title="Link to this heading">#</a></h3>
+<p>Některé složitější struktury (např. tabulka a seznam) vyžadují dodržování struktury a nedovolují v této struktuře umisťovat jiné značky.</p>
+<p>Správně:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">mark</span><span class="p">&gt;</span>Sloupec 1<span class="p">&lt;/</span><span class="nt">mark</span><span class="p">&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">mark</span><span class="p">&gt;</span>Sloupec 2<span class="p">&lt;/</span><span class="nt">mark</span><span class="p">&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>123<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>456<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Chybně:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">mark</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Sloupec 1<span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;&lt;/</span><span class="nt">mark</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">mark</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Sloupec 2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;/</span><span class="nt">mark</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>123<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>456<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>U tabulek je nutné dodržovat přímé vnoření tagů <code class="docutils literal notranslate"><span class="pre">&lt;table&gt;</span></code> - <code class="docutils literal notranslate"><span class="pre">&lt;tr&gt;</span></code> - <code class="docutils literal notranslate"><span class="pre">&lt;td&gt;</span></code> (nebo <code class="docutils literal notranslate"><span class="pre">&lt;th&gt;</span></code>). Veškeré další formátování musí být buď vně tabulky (<code class="docutils literal notranslate"><span class="pre">&lt;table&gt;</span></code>) nebo až uvnitř buňky (<code class="docutils literal notranslate"><span class="pre">&lt;td&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;th&gt;</span></code>).</p>
+<p>Obdobně to platí u seznamů.</p>
+<p>Správně:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">b</span><span class="p">&gt;</span>Položka 1<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Položka 2<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Chybně:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Položka 1<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Položka 2<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Také chybně:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Nadpis<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Položka 1<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Položka 2<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>U seznamů je nutné dodržovat přímé vnoření tagů <code class="docutils literal notranslate"><span class="pre">&lt;ul&gt;</span></code> - <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code>, nebo. <code class="docutils literal notranslate"><span class="pre">&lt;ol&gt;</span></code> - <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code>, další formátování musí být buď vně seznamu (<code class="docutils literal notranslate"><span class="pre">&lt;ul&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;ol&gt;</span></code>) nebo až uvnitř položky (<code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code>).</p>
+</section>
+<section id="nevyplnene-povinne-atributy">
+<h3>7.4.&nbsp;&nbsp;Nevyplněné povinné atributy<a class="headerlink" href="#nevyplnene-povinne-atributy" title="Link to this heading">#</a></h3>
+<p>Některé elementy vyžadují mít povinně vyplněné některé atributy, např.: <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> vyžaduje atribut <code class="docutils literal notranslate"><span class="pre">src</span></code> a <code class="docutils literal notranslate"><span class="pre">alt</span></code>, kořenový element <code class="docutils literal notranslate"><span class="pre">&lt;html&gt;</span></code> vyžaduje atribut <code class="docutils literal notranslate"><span class="pre">lang</span></code>. Povinných atributů je více, je proto dobré vždy zkontrolovat stránku pomocí HTML validátoru. Jednotlivé atributy je také vždy nutné oddělovat mezerou:</p>
+<p>Správně:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;photo.jpg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;moje fotka&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Chybně:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;photo.jpg&quot;</span><span class="na">alt</span><span class="o">=</span><span class="s">&quot;moje fotka&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="block-element-v-inline-elementu">
+<h3>7.5.&nbsp;&nbsp;<code class="docutils literal notranslate"><span class="pre">block</span></code> element v <code class="docutils literal notranslate"><span class="pre">inline</span></code> elementu<a class="headerlink" href="#block-element-v-inline-elementu" title="Link to this heading">#</a></h3>
+<p>V HTML není povoleno vkládat <code class="docutils literal notranslate"><span class="pre">inline</span></code> HTML element do <code class="docutils literal notranslate"><span class="pre">block</span></code> elementu:</p>
+<p>Správně:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;&lt;</span><span class="nt">i</span><span class="p">&gt;</span>Nadpis<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Chybně:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">i</span><span class="p">&gt;&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Nadpis<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="html-znacka-v-chybnem-kontextu">
+<h3>7.6.&nbsp;&nbsp;HTML značka v chybném kontextu<a class="headerlink" href="#html-znacka-v-chybnem-kontextu" title="Link to this heading">#</a></h3>
+<p>Každá HTML značka má omezení na to v jakém kontextu může být, např. žádné formátovací ani sémantické značky nemohou být umístěny v <code class="docutils literal notranslate"><span class="pre">&lt;head&gt;</span></code> části dokumentu:</p>
+<p>Chybně:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;cs&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Název stránky<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Titulek<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    Obsah stránky
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Pravidel je více a je proto vždy dobré zkontrolovat HTML stránku pomocí validátoru.</p>
 <div class="note admonition">
 <p class="admonition-title">Fail silently</p>
 <p>Ačkoliv moderní prohlížeče jsou proti chybám v HTML syntaxi poměrně dost odolné a dokáží zobrazit i kód s velkým množstvím chyb, je dobré tyto chyby nedělat. Chyby v HTML syntaxi mohou způsobit nečekané chování ve složitějších aplikacích. Pro kontrolu je vhodné používat <a class="reference external" href="https://validator.w3.org">HTML5 Validátor</a>.</p>
@@ -858,12 +967,17 @@ Druhý řádek</p>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tagy-pro-obecne-formatovani">Tagy pro obecné formátování</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tagy-div-span">Tagy <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;span&gt;</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#komentare">Komentáře</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#semanticke-tagy">Sémantické tagy</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caste-chyby-pri-psani-html">Časté chyby při psaní HTML</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neukoncene-tagy">Neukončené tagy</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nespravne-vnorene-tagy">Nesprávně vnořené tagy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chybny-kontext-tagu">Chybný kontext tagů</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nevyplnene-povinne-atributy">Nevyplněné povinné atributy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#block-element-v-inline-elementu"><code class="docutils literal notranslate"><span class="pre">block</span></code> element v <code class="docutils literal notranslate"><span class="pre">inline</span></code> elementu</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#html-znacka-v-chybnem-kontextu">HTML značka v chybném kontextu</a></li>
 </ul>
 </li>
 </ul>

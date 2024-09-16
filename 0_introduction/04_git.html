@@ -334,6 +334,7 @@ document.write(`
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vytvoreni-commitu">Vytvoření commitu</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aktualizace-repozitare">Aktualizace repozitáře</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prehled-workflow-v-gitu">Přehled workflow v gitu</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soubor-gitignore">Soubor <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reseni-konfliktu">Řešení konfliktů</a></li>
 </ul>
@@ -479,8 +480,33 @@ git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"
 </div>
 <p>Odešle všechny změny (commity) z lokálního repozitáře do vzdáleného repozitáře.</p>
 </section>
+<section id="prehled-workflow-v-gitu">
+<h3>1.6.&nbsp;&nbsp;Přehled workflow v gitu<a class="headerlink" href="#prehled-workflow-v-gitu" title="Link to this heading">#</a></h3>
+<p>Pojďme si ještě shrnout základní workflow v Gitu:</p>
+<div class="mermaid">
+            graph LR
+    A[Změny v souborech]
+    B[Staging]
+    C[Commit]
+    D[Vzdálený repozitář]
+    A --git add--&gt; B
+    B --git reset--&gt; A
+    B --git commit--&gt; C
+    C --git push--&gt; D
+    D --git pull--&gt; C
+       
+    subgraph &quot;Lokální počítač&quot;
+        A
+        B
+        C
+    end
+    subgraph &quot;Vzdálený server&quot;
+        D
+    end
+        </div><p>Po provedení změn na vašem projektu přidejte pomocí příkazu <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">filename</span></code> soubory to <strong>staging area</strong>, což je množina souborů přichystaných na commit. Soubor je možné odebrat ze staging area pomocí příkazu <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">filename</span></code>. Když máte všechny soubory nachystané ve staging area, proveďte příkaz <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;commit</span> <span class="pre">message&quot;</span></code>. Tím se vytvoří commit, ale zatím pouze ve vašem lokálním počítači. Parametr <em>commit message</em> je povinný a měl by obsahovat stručný popis změn, které v commitu jsou. K odeslání všech commitů z lokálního počítače na vzdálený repozitář (např. Github) použijte příkaz <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code>. Ke stažení všech nových commitů ze vzdáleného repozitáře na váš lokální počítač použijte příkaz <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>.</p>
+</section>
 <section id="soubor-gitignore">
-<h3>1.6.&nbsp;&nbsp;Soubor <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code><a class="headerlink" href="#soubor-gitignore" title="Link to this heading">#</a></h3>
+<h3>1.7.&nbsp;&nbsp;Soubor <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code><a class="headerlink" href="#soubor-gitignore" title="Link to this heading">#</a></h3>
 <p>Pomocí souboru <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> umístěného v kořenovém adresáři projektu můžeme definovat, které soubory nebo složky mají být verzovacím systémem Git ignorovány. Tento soubor pomáhá udržet repozitář čistý od nepotřebných nebo dočasných souborů, jako jsou logy, systémové soubory, kompilované zdrojové kódy a další. Do souboru <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> se zapisují pravidla, která Git automaticky čte a ignoruje jakékoliv změny v souborech vyhovujících zadaným pravidlům a v Git je neukládá.</p>
 <p>Pravidla vypadají následovně</p>
 <ul class="simple">
@@ -511,7 +537,7 @@ temp/
 </div>
 </section>
 <section id="reseni-konfliktu">
-<h3>1.7.&nbsp;&nbsp;Řešení konfliktů<a class="headerlink" href="#reseni-konfliktu" title="Link to this heading">#</a></h3>
+<h3>1.8.&nbsp;&nbsp;Řešení konfliktů<a class="headerlink" href="#reseni-konfliktu" title="Link to this heading">#</a></h3>
 <p>Konflikty v Gitu vznikají, když se například dva vývojáři pokusí změnit stejnou část kódu ve stejném souboru. Tato situace často nastává při spolupráci více lidí na stejném projektu. Když pak dojde k pokusu o sloučení těchto změn (např. při <code class="docutils literal notranslate"><span class="pre">push</span></code> nebo <code class="docutils literal notranslate"><span class="pre">pull</span></code>, ale i v dalších situacích), Git není schopen automaticky rozhodnout, která změna má přednost, a vyvolá konflikt. Konfliktující části kódu se pak musí ručně opravit. Postup je následující:</p>
 <ol class="arabic simple">
 <li><p>Použijte příkaz <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>, který ukáže soubory kde došlo konfliktu.</p></li>
@@ -659,6 +685,7 @@ Moderní IDE mají zpravidla vestavěnou více či méně pokročilou správu ve
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vytvoreni-commitu">Vytvoření commitu</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aktualizace-repozitare">Aktualizace repozitáře</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prehled-workflow-v-gitu">Přehled workflow v gitu</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soubor-gitignore">Soubor <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reseni-konfliktu">Řešení konfliktů</a></li>
 </ul>

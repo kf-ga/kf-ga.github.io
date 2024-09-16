@@ -156,6 +156,34 @@ git push
 
 Odešle všechny změny (commity) z lokálního repozitáře do vzdáleného repozitáře.
 
+### Přehled workflow v gitu
+
+Pojďme si ještě shrnout základní workflow v Gitu:
+
+```{mermaid}
+graph LR
+    A[Změny v souborech]
+    B[Staging]
+    C[Commit]
+    D[Vzdálený repozitář]
+    A --git add--> B
+    B --git reset--> A
+    B --git commit--> C
+    C --git push--> D
+    D --git pull--> C
+       
+    subgraph "Lokální počítač"
+        A
+        B
+        C
+    end
+    subgraph "Vzdálený server"
+        D
+    end
+```
+
+Po provedení změn na vašem projektu přidejte pomocí příkazu `git add filename` soubory to **staging area**, což je množina souborů přichystaných na commit. Soubor je možné odebrat ze staging area pomocí příkazu `git reset filename`. Když máte všechny soubory nachystané ve staging area, proveďte příkaz `git commit -m "commit message"`. Tím se vytvoří commit, ale zatím pouze ve vašem lokálním počítači. Parametr *commit message* je povinný a měl by obsahovat stručný popis změn, které v commitu jsou. K odeslání všech commitů z lokálního počítače na vzdálený repozitář (např. Github) použijte příkaz `git push`. Ke stažení všech nových commitů ze vzdáleného repozitáře na váš lokální počítač použijte příkaz `git pull`.
+
 
 ### Soubor `.gitignore`
 
