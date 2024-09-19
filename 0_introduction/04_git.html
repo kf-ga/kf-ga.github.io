@@ -40,7 +40,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../_static/local.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/local.css?v=1256093c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
@@ -56,6 +56,7 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <script>DOCUMENTATION_OPTIONS.pagename = '0_introduction/04_git';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Rejstřík" href="../genindex.html" />
     <link rel="search" title="Vyhledávání" href="../search.html" />
     <link rel="next" title="Markdown" href="05_markdown.html" />
@@ -169,6 +170,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statický web</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../1_static/01_html.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_static/02_css.html">CSS</a></li>
 </ul>
 
     </div>
@@ -485,10 +487,10 @@ git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"
 <p>Pojďme si ještě shrnout základní workflow v Gitu:</p>
 <div class="mermaid">
             graph LR
-    A[Změny v souborech]
+    A[Změny&lt;br/&gt;v souborech]
     B[Staging]
-    C[Commit]
-    D[Vzdálený repozitář]
+    C[Lokální&lt;br/&gt;repozitář]
+    D[Vzdálený&lt;br/&gt;repozitář]
     A --git add--&gt; B
     B --git reset--&gt; A
     B --git commit--&gt; C
@@ -503,7 +505,8 @@ git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"
     subgraph &quot;Vzdálený server&quot;
         D
     end
-        </div><p>Po provedení změn na vašem projektu přidejte pomocí příkazu <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">filename</span></code> soubory to <strong>staging area</strong>, což je množina souborů přichystaných na commit. Soubor je možné odebrat ze staging area pomocí příkazu <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">filename</span></code>. Když máte všechny soubory nachystané ve staging area, proveďte příkaz <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;commit</span> <span class="pre">message&quot;</span></code>. Tím se vytvoří commit, ale zatím pouze ve vašem lokálním počítači. Parametr <em>commit message</em> je povinný a měl by obsahovat stručný popis změn, které v commitu jsou. K odeslání všech commitů z lokálního počítače na vzdálený repozitář (např. Github) použijte příkaz <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code>. Ke stažení všech nových commitů ze vzdáleného repozitáře na váš lokální počítač použijte příkaz <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>.</p>
+    linkStyle default font-size:1.1em;
+        </div><p>Po provedení změn na vašem projektu přidejte pomocí příkazu <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">jmeno_souboru</span></code> soubory to <strong>staging area</strong>, což je množina souborů přichystaných na commit. Soubor je možné odebrat ze staging area pomocí příkazu <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">jmeno_souboru</span></code>. Když máte všechny soubory nachystané ve staging area, proveďte příkaz <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;commit</span> <span class="pre">message&quot;</span></code>. Tím se vytvoří commit, ale zatím pouze ve vašem lokálním počítači. Parametr <em>commit message</em> je povinný a měl by obsahovat stručný popis změn, které v commitu jsou. K odeslání všech commitů z lokálního počítače na vzdálený repozitář (např. Github) použijte příkaz <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code>. Ke stažení všech nových commitů ze vzdáleného repozitáře na váš lokální počítač použijte příkaz <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>.</p>
 </section>
 <section id="soubor-gitignore">
 <h3>1.7.&nbsp;&nbsp;Soubor <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code><a class="headerlink" href="#soubor-gitignore" title="Link to this heading">#</a></h3>

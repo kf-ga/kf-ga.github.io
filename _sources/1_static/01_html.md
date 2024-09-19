@@ -330,6 +330,104 @@ Příklady sémantických tagů:
 - `<section>` - tematická sekce stránky
 
 
+HTML Entity
+-----------
+
+**HTML Entity** je nástroj, jak zobrazit znaky vyhrazené pro HTML, například znaky `<`, `>`, `&` a další.
+
+HTML Entita se zapisuje ve tvaru
+
+```html
+&entity_name;
+```
+
+kde `entity_name` je název znaku, nebo
+
+```html
+&#entity_number;
+```
+
+kde `entity_number` je číslo znaku v [unicode tabulce](https://symbl.cc/en/unicode-table/). Pomocí HTML Entit lze zapsat jakýkoliv znak, nicméně díky široké podpoře unicode kódování vystačíme zpravidla s následujícími znaky:
+
+| Znak | Jméno                          | name     | number   |
+|------|--------------------------------|----------|----------|
+| &    | **amp**ersand                  | `&amp;`  | `&#38;`  |
+| <    | **l**ower **t**han             | `&lt;`   | `&#60;`  |
+| >    | **g**reater **t**han           | `&gt;`   | `&#62;`  |
+| "    | **quot**ation math             | `&quot;` | `&#34;`  |
+| '    | **apos**trophe                 | `&apos;` | `&#39;`  |
+|      | **n**on-**b**eakable **sp**ace | `&nbsp;` | `&#160;` |
+
+Je pohodlnější si zapamatovat kódování pomocí `entity_name` a i v kódu je to pak lépe čitelné, než kódování číslem:
+
+```{myst-example}
+:highlight: html
+<img src="quote.jpg" alt="Meme saying &quot;Live together, die alone&quot;">
+<p>
+Pro porovnání máme znaky &lt; a &gt;
+</p>
+```
+
+Nepoužití entit v tomto příkladu by mělo za následek nevalidní HTML kód. Entita `&nbsp;` je *nezalomitelná mezera*, kterou můžeme vložit na místo, kde nechceme, aby se nám tok textu zalomil: 
+
+```{myst-example}
+:highlight: html
+Hodně&nbsp;moc&nbsp;dlouhý&nbsp;řádek.&nbsp;Hodně&nbsp;moc&nbsp;dlouhý&nbsp;řádek.&nbsp;Hodně&nbsp;moc&nbsp;dlouhý&nbsp;řádek.&nbsp;Hodně&nbsp;moc&nbsp;dlouhý&nbsp;řádek.&nbsp;Hodně&nbsp;moc&nbsp;dlouhý&nbsp;řádek.
+```
+
+Meta informace
+--------------
+
+Do sekce <head> lze vložit meta informace o stránce, které se nezobrazují přímo v obsahu stránky, ale lze pomocí nich specifikovat dodatečné informace o stránce. Zde jsou uvedeny některé nejčastější meta parametry.
+
+### Kódování stránky
+
+Ačkoliv je dnes běžným standardem kódování unicode (utf-8) a obvykle je to výchozí nastavení všech prohlížečů, je dobré kódování stránky explicitně specifikovat:
+
+```html
+<meta charset="utf-8">
+```
+
+### Favicon
+
+Favicon (zkratka z favorite icon) je ikonka stránky, která se zobrazuje v záložce stránky, v oblíbených apod.
+
+```html
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+```
+
+Podporované jsou různé formáty ikonky, nejčastěji `.ico`, `.png` a `.svg`.
+
+### Název, popis a klíčová slova
+
+Trojice meta informací title, description, keywords specifikuje název stránky, stručný popis obsahu stránky a klíčová slova stránky. Jejich význam sloužil hlavně k tomu, aby vyhledávače stránku lépe zaindexovaly, nicméně dnes už vyhledávače obsah techto informací spíše ignorují (přesné algoritmy řazení ve vyhledávačích jsou přísným tajemstvím), nicméně se tyto meta informace stále často na stránkách objevují.
+
+```html
+<meta name="title" content="W3Schools.com">
+<meta name="description" content="Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, Python, PHP, Bootstrap, Java, XML and more.">
+<meta name="keywords" content="HTML, Python, CSS, SQL, JavaScript, How to, PHP, Java, C, C++, C#, jQuery, Bootstrap, Colors, W3.CSS, XML, MySQL, Icons, NodeJS, React, Graphics, Angular, R, AI, Git, Data Science, Code Game, Tutorials, Programming, Web Development, Training, Learning, Quiz, Exercises, Courses, Lessons, References, Examples, Learn to code, Source code, Demos, Tips, Website">
+```
+
+### Informace pro sociální sítě
+
+Při sdílení stránky na sociálních sítích mohou sociální sítě využít následující meta informace k zobrazení náhledu stránky.
+
+```html
+<meta property="og:title" content="Title of the page">
+<meta property="og:description" content="Description of the page">
+<meta property="og:image" content="image.jpg">
+<meta property="og:url" content="https://www.example.com/page-url">
+```
+
+Některé sociální sítě mají i vlastní sadu meta informací, například Twitter/X: 
+
+```html
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Title of the page">
+<meta name="twitter:description" content="Description of the page">
+<meta name="twitter:image" content="image.jpg">
+```
+
 
 Časté chyby při psaní HTML
 --------------------------

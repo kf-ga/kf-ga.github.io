@@ -40,7 +40,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../_static/local.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/local.css?v=1256093c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
@@ -54,8 +54,10 @@
     <script src="../_static/translations.js?v=0275affc"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '1_static/01_html';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Rejstřík" href="../genindex.html" />
     <link rel="search" title="Vyhledávání" href="../search.html" />
+    <link rel="next" title="CSS" href="02_css.html" />
     <link rel="prev" title="Markdown" href="../0_introduction/05_markdown.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="cs"/>
@@ -166,6 +168,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statický web</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_css.html">CSS</a></li>
 </ul>
 
     </div>
@@ -341,6 +344,14 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tagy-div-span">Tagy <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;span&gt;</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#komentare">Komentáře</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#semanticke-tagy">Sémantické tagy</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#html-entity">HTML Entity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meta-informace">Meta informace</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kodovani-stranky">Kódování stránky</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#favicon">Favicon</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nazev-popis-a-klicova-slova">Název, popis a klíčová slova</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#informace-pro-socialni-site">Informace pro sociální sítě</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caste-chyby-pri-psani-html">Časté chyby při psaní HTML</a><ul class="nav section-nav flex-column">
@@ -777,11 +788,138 @@ Druhý řádek</p>
 </ul>
 </section>
 </section>
+<section id="html-entity">
+<h2>7.&nbsp;&nbsp;HTML Entity<a class="headerlink" href="#html-entity" title="Link to this heading">#</a></h2>
+<p><strong>HTML Entity</strong> je nástroj, jak zobrazit znaky vyhrazené pro HTML, například znaky <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> a další.</p>
+<p>HTML Entita se zapisuje ve tvaru</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="ni">&amp;entity_name;</span>
+</pre></div>
+</div>
+<p>kde <code class="docutils literal notranslate"><span class="pre">entity_name</span></code> je název znaku, nebo</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="ni">&amp;#entity_number;</span>
+</pre></div>
+</div>
+<p>kde <code class="docutils literal notranslate"><span class="pre">entity_number</span></code> je číslo znaku v <a class="reference external" href="https://symbl.cc/en/unicode-table/">unicode tabulce</a>. Pomocí HTML Entit lze zapsat jakýkoliv znak, nicméně díky široké podpoře unicode kódování vystačíme zpravidla s následujícími znaky:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Znak</p></th>
+<th class="head"><p>Jméno</p></th>
+<th class="head"><p>name</p></th>
+<th class="head"><p>number</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>&amp;</p></td>
+<td><p><strong>amp</strong>ersand</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&amp;amp;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&amp;#38;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>&lt;</p></td>
+<td><p><strong>l</strong>ower <strong>t</strong>han</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&amp;lt;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&amp;#60;</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>&gt;</p></td>
+<td><p><strong>g</strong>reater <strong>t</strong>han</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&amp;gt;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&amp;#62;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>„</p></td>
+<td><p><strong>quot</strong>ation math</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&amp;quot;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&amp;#34;</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>’</p></td>
+<td><p><strong>apos</strong>trophe</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&amp;apos;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&amp;#39;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p><strong>n</strong>on-<strong>b</strong>eakable <strong>sp</strong>ace</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&amp;nbsp;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&amp;#160;</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Je pohodlnější si zapamatovat kódování pomocí <code class="docutils literal notranslate"><span class="pre">entity_name</span></code> a i v kódu je to pak lépe čitelné, než kódování číslem:</p>
+<div class="myst-example docutils">
+<div class="myst-example-source docutils">
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;quote.jpg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Meme saying &amp;quot;Live together, die alone&amp;quot;&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+Pro porovnání máme znaky <span class="ni">&amp;lt;</span> a <span class="ni">&amp;gt;</span>
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="myst-example-render docutils">
+<img src="quote.jpg" alt="Meme saying &quot;Live together, die alone&quot;">
+<p>
+Pro porovnání máme znaky &lt; a &gt;
+</p>
+</div>
+</div>
+<p>Nepoužití entit v tomto příkladu by mělo za následek nevalidní HTML kód. Entita <code class="docutils literal notranslate"><span class="pre">&amp;nbsp;</span></code> je <em>nezalomitelná mezera</em>, kterou můžeme vložit na místo, kde nechceme, aby se nám tok textu zalomil:</p>
+<div class="myst-example docutils">
+<div class="myst-example-source docutils">
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>Hodně<span class="ni">&amp;nbsp;</span>moc<span class="ni">&amp;nbsp;</span>dlouhý<span class="ni">&amp;nbsp;</span>řádek.<span class="ni">&amp;nbsp;</span>Hodně<span class="ni">&amp;nbsp;</span>moc<span class="ni">&amp;nbsp;</span>dlouhý<span class="ni">&amp;nbsp;</span>řádek.<span class="ni">&amp;nbsp;</span>Hodně<span class="ni">&amp;nbsp;</span>moc<span class="ni">&amp;nbsp;</span>dlouhý<span class="ni">&amp;nbsp;</span>řádek.<span class="ni">&amp;nbsp;</span>Hodně<span class="ni">&amp;nbsp;</span>moc<span class="ni">&amp;nbsp;</span>dlouhý<span class="ni">&amp;nbsp;</span>řádek.<span class="ni">&amp;nbsp;</span>Hodně<span class="ni">&amp;nbsp;</span>moc<span class="ni">&amp;nbsp;</span>dlouhý<span class="ni">&amp;nbsp;</span>řádek.
+</pre></div>
+</div>
+</div>
+<div class="myst-example-render docutils">
+<p>Hodně moc dlouhý řádek. Hodně moc dlouhý řádek. Hodně moc dlouhý řádek. Hodně moc dlouhý řádek. Hodně moc dlouhý řádek.</p>
+</div>
+</div>
+</section>
+<section id="meta-informace">
+<h2>8.&nbsp;&nbsp;Meta informace<a class="headerlink" href="#meta-informace" title="Link to this heading">#</a></h2>
+<p>Do sekce <head> lze vložit meta informace o stránce, které se nezobrazují přímo v obsahu stránky, ale lze pomocí nich specifikovat dodatečné informace o stránce. Zde jsou uvedeny některé nejčastější meta parametry.</p>
+<section id="kodovani-stranky">
+<h3>8.1.&nbsp;&nbsp;Kódování stránky<a class="headerlink" href="#kodovani-stranky" title="Link to this heading">#</a></h3>
+<p>Ačkoliv je dnes běžným standardem kódování unicode (utf-8) a obvykle je to výchozí nastavení všech prohlížečů, je dobré kódování stránky explicitně specifikovat:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="favicon">
+<h3>8.2.&nbsp;&nbsp;Favicon<a class="headerlink" href="#favicon" title="Link to this heading">#</a></h3>
+<p>Favicon (zkratka z favorite icon) je ikonka stránky, která se zobrazuje v záložce stránky, v oblíbených apod.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;icon&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;favicon.ico&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;image/x-icon&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Podporované jsou různé formáty ikonky, nejčastěji <code class="docutils literal notranslate"><span class="pre">.ico</span></code>, <code class="docutils literal notranslate"><span class="pre">.png</span></code> a <code class="docutils literal notranslate"><span class="pre">.svg</span></code>.</p>
+</section>
+<section id="nazev-popis-a-klicova-slova">
+<h3>8.3.&nbsp;&nbsp;Název, popis a klíčová slova<a class="headerlink" href="#nazev-popis-a-klicova-slova" title="Link to this heading">#</a></h3>
+<p>Trojice meta informací title, description, keywords specifikuje název stránky, stručný popis obsahu stránky a klíčová slova stránky. Jejich význam sloužil hlavně k tomu, aby vyhledávače stránku lépe zaindexovaly, nicméně dnes už vyhledávače obsah techto informací spíše ignorují (přesné algoritmy řazení ve vyhledávačích jsou přísným tajemstvím), nicméně se tyto meta informace stále často na stránkách objevují.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;title&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;W3Schools.com&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;description&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, Python, PHP, Bootstrap, Java, XML and more.&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;keywords&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;HTML, Python, CSS, SQL, JavaScript, How to, PHP, Java, C, C++, C#, jQuery, Bootstrap, Colors, W3.CSS, XML, MySQL, Icons, NodeJS, React, Graphics, Angular, R, AI, Git, Data Science, Code Game, Tutorials, Programming, Web Development, Training, Learning, Quiz, Exercises, Courses, Lessons, References, Examples, Learn to code, Source code, Demos, Tips, Website&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="informace-pro-socialni-site">
+<h3>8.4.&nbsp;&nbsp;Informace pro sociální sítě<a class="headerlink" href="#informace-pro-socialni-site" title="Link to this heading">#</a></h3>
+<p>Při sdílení stránky na sociálních sítích mohou sociální sítě využít následující meta informace k zobrazení náhledu stránky.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:title&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;Title of the page&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:description&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;Description of the page&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:image&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;image.jpg&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:url&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;https://www.example.com/page-url&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Některé sociální sítě mají i vlastní sadu meta informací, například Twitter/X:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;twitter:card&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;summary_large_image&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;twitter:title&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;Title of the page&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;twitter:description&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;Description of the page&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;twitter:image&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;image.jpg&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
 <section id="caste-chyby-pri-psani-html">
-<h2>7.&nbsp;&nbsp;Časté chyby při psaní HTML<a class="headerlink" href="#caste-chyby-pri-psani-html" title="Link to this heading">#</a></h2>
+<h2>9.&nbsp;&nbsp;Časté chyby při psaní HTML<a class="headerlink" href="#caste-chyby-pri-psani-html" title="Link to this heading">#</a></h2>
 <p>Zde je několik příkladů běžných chyb v syntaxi HTML:</p>
 <section id="neukoncene-tagy">
-<h3>7.1.&nbsp;&nbsp;Neukončené tagy<a class="headerlink" href="#neukoncene-tagy" title="Link to this heading">#</a></h3>
+<h3>9.1.&nbsp;&nbsp;Neukončené tagy<a class="headerlink" href="#neukoncene-tagy" title="Link to this heading">#</a></h3>
 <p>Správně:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Toto je odstavec.<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </pre></div>
@@ -792,7 +930,7 @@ Druhý řádek</p>
 </div>
 </section>
 <section id="nespravne-vnorene-tagy">
-<h3>7.2.&nbsp;&nbsp;Nesprávně vnořené tagy<a class="headerlink" href="#nespravne-vnorene-tagy" title="Link to this heading">#</a></h3>
+<h3>9.2.&nbsp;&nbsp;Nesprávně vnořené tagy<a class="headerlink" href="#nespravne-vnorene-tagy" title="Link to this heading">#</a></h3>
 <p>Správně:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;&lt;</span><span class="nt">em</span><span class="p">&gt;</span>Tento text je tučný a kurzíva.<span class="p">&lt;/</span><span class="nt">em</span><span class="p">&gt;&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>
 </pre></div>
@@ -803,7 +941,7 @@ Druhý řádek</p>
 </div>
 </section>
 <section id="chybny-kontext-tagu">
-<h3>7.3.&nbsp;&nbsp;Chybný kontext tagů<a class="headerlink" href="#chybny-kontext-tagu" title="Link to this heading">#</a></h3>
+<h3>9.3.&nbsp;&nbsp;Chybný kontext tagů<a class="headerlink" href="#chybny-kontext-tagu" title="Link to this heading">#</a></h3>
 <p>Některé složitější struktury (např. tabulka a seznam) vyžadují dodržování struktury a nedovolují v této struktuře umisťovat jiné značky.</p>
 <p>Správně:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
@@ -858,7 +996,7 @@ Druhý řádek</p>
 <p>U seznamů je nutné dodržovat přímé vnoření tagů <code class="docutils literal notranslate"><span class="pre">&lt;ul&gt;</span></code> - <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code>, nebo. <code class="docutils literal notranslate"><span class="pre">&lt;ol&gt;</span></code> - <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code>, další formátování musí být buď vně seznamu (<code class="docutils literal notranslate"><span class="pre">&lt;ul&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;ol&gt;</span></code>) nebo až uvnitř položky (<code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code>).</p>
 </section>
 <section id="nevyplnene-povinne-atributy">
-<h3>7.4.&nbsp;&nbsp;Nevyplněné povinné atributy<a class="headerlink" href="#nevyplnene-povinne-atributy" title="Link to this heading">#</a></h3>
+<h3>9.4.&nbsp;&nbsp;Nevyplněné povinné atributy<a class="headerlink" href="#nevyplnene-povinne-atributy" title="Link to this heading">#</a></h3>
 <p>Některé elementy vyžadují mít povinně vyplněné některé atributy, např.: <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> vyžaduje atribut <code class="docutils literal notranslate"><span class="pre">src</span></code> a <code class="docutils literal notranslate"><span class="pre">alt</span></code>, kořenový element <code class="docutils literal notranslate"><span class="pre">&lt;html&gt;</span></code> vyžaduje atribut <code class="docutils literal notranslate"><span class="pre">lang</span></code>. Povinných atributů je více, je proto dobré vždy zkontrolovat stránku pomocí HTML validátoru. Jednotlivé atributy je také vždy nutné oddělovat mezerou.</p>
 <p>Správně:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;photo.jpg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;moje fotka&quot;</span><span class="p">&gt;</span>
@@ -870,7 +1008,7 @@ Druhý řádek</p>
 </div>
 </section>
 <section id="block-element-v-inline-elementu">
-<h3>7.5.&nbsp;&nbsp;<code class="docutils literal notranslate"><span class="pre">block</span></code> element v <code class="docutils literal notranslate"><span class="pre">inline</span></code> elementu<a class="headerlink" href="#block-element-v-inline-elementu" title="Link to this heading">#</a></h3>
+<h3>9.5.&nbsp;&nbsp;<code class="docutils literal notranslate"><span class="pre">block</span></code> element v <code class="docutils literal notranslate"><span class="pre">inline</span></code> elementu<a class="headerlink" href="#block-element-v-inline-elementu" title="Link to this heading">#</a></h3>
 <p>V HTML není povoleno vkládat <code class="docutils literal notranslate"><span class="pre">inline</span></code> HTML element do <code class="docutils literal notranslate"><span class="pre">block</span></code> elementu:</p>
 <p>Správně:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;&lt;</span><span class="nt">i</span><span class="p">&gt;</span>Nadpis<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
@@ -882,7 +1020,7 @@ Druhý řádek</p>
 </div>
 </section>
 <section id="html-znacka-v-chybnem-kontextu">
-<h3>7.6.&nbsp;&nbsp;HTML značka v chybném kontextu<a class="headerlink" href="#html-znacka-v-chybnem-kontextu" title="Link to this heading">#</a></h3>
+<h3>9.6.&nbsp;&nbsp;HTML značka v chybném kontextu<a class="headerlink" href="#html-znacka-v-chybnem-kontextu" title="Link to this heading">#</a></h3>
 <p>Každá HTML značka má omezení na to v jakém kontextu může být, např. žádné formátovací ani sémantické značky nemohou být umístěny v <code class="docutils literal notranslate"><span class="pre">&lt;head&gt;</span></code> části dokumentu:</p>
 <p>Chybně:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
@@ -927,6 +1065,15 @@ Druhý řádek</p>
         <p class="prev-next-title">Markdown</p>
       </div>
     </a>
+    <a class="right-next"
+       href="02_css.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">další</p>
+        <p class="prev-next-title">CSS</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -970,6 +1117,14 @@ Druhý řádek</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tagy-div-span">Tagy <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;span&gt;</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#komentare">Komentáře</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#semanticke-tagy">Sémantické tagy</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#html-entity">HTML Entity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meta-informace">Meta informace</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kodovani-stranky">Kódování stránky</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#favicon">Favicon</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nazev-popis-a-klicova-slova">Název, popis a klíčová slova</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#informace-pro-socialni-site">Informace pro sociální sítě</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caste-chyby-pri-psani-html">Časté chyby při psaní HTML</a><ul class="nav section-nav flex-column">
