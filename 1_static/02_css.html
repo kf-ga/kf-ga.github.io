@@ -350,8 +350,10 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vychozi-styly-prohlizece">Výchozí styly prohlížeče</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#priorita-stylu">Priorita stylů</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pouziti-important">Použití <code class="docutils literal notranslate"><span class="pre">!important</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#priorita-stylu">Priorita stylů</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pouziti-important">Použití <code class="docutils literal notranslate"><span class="pre">!important</span></code></a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -401,8 +403,8 @@ document.write(`
 <section id="vlozeni-stylu-primo-do-html">
 <h3>3.1.&nbsp;&nbsp;Vložení stylu přímo do HTML<a class="headerlink" href="#vlozeni-stylu-primo-do-html" title="Link to this heading">#</a></h3>
 <p>CSS lze vložit přímo do HTML souboru pomocí <code class="docutils literal notranslate"><span class="pre">&lt;style&gt;</span></code> tagu, který se obvykle umisťuje v hlavičce dokumentu <code class="docutils literal notranslate"><span class="pre">&lt;head&gt;</span></code>:</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!doctype html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;cs&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
 <span class="w">            </span><span class="nt">h1</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
@@ -420,8 +422,8 @@ document.write(`
 <section id="vlozeni-pomoci-externiho-souboru">
 <h3>3.2.&nbsp;&nbsp;Vložení pomocí externího souboru<a class="headerlink" href="#vlozeni-pomoci-externiho-souboru" title="Link to this heading">#</a></h3>
 <p>CSS styly lze také uložit do externího souboru a ten pak vložit na stránku pomocí <code class="docutils literal notranslate"><span class="pre">&lt;link&gt;</span></code> tagu:</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!doctype html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;cs&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;styles.css&quot;</span><span class="p">/&gt;</span>
     <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
@@ -682,50 +684,52 @@ document.write(`
 <li><p><strong>Výchozí styly prohlížeče</strong>: Základní styly, které používá prohlížeč.</p></li>
 </ol>
 <p>Dále ovšem vstupuje do hry tzv. <a class="reference external" href="https://www.w3schools.com/css/css_specificity.asp">specificita selektoru</a>, kde se pracuje s tzv. <em>váhou</em> selektoru. To celý systém poněkud zesložiťuje a je obecně lepší pracovat se styly tak, aby se předešlo nejednoznačnostem.</p>
-</section>
 <section id="pouziti-important">
-<h2>9.&nbsp;&nbsp;Použití <code class="docutils literal notranslate"><span class="pre">!important</span></code><a class="headerlink" href="#pouziti-important" title="Link to this heading">#</a></h2>
+<h3>8.1.&nbsp;&nbsp;Použití <code class="docutils literal notranslate"><span class="pre">!important</span></code><a class="headerlink" href="#pouziti-important" title="Link to this heading">#</a></h3>
 <p>V CSS se setkáme ještě s klíčovým slovem <code class="docutils literal notranslate"><span class="pre">!important</span></code>, které je možné použít za každou CSS vlastnost. Pravidlo s <code class="docutils literal notranslate"><span class="pre">!important</span></code> má vyšší prioritu než pravidla bez <code class="docutils literal notranslate"><span class="pre">!important</span></code>, i když jsou méně specifická nebo později definovaná:</p>
 <div class="myst-example docutils">
 <div class="myst-example-source docutils">
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
-<span class="w">        </span><span class="p">.</span><span class="nc">blue</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="w"> </span><span class="cp">!important</span><span class="p">;</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">        </span><span class="p">.</span><span class="nc">red</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">&gt;</span>červenej<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;blue red&quot;</span><span class="p">&gt;</span>modrej<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!doctype html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;cs&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">.</span><span class="nc">blue</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="w"> </span><span class="cp">!important</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="p">.</span><span class="nc">red</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">&gt;</span>červenej<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;blue red&quot;</span><span class="p">&gt;</span>modrej<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 </div>
 <div class="myst-example-render docutils">
-<html>
-<head>
-    <style>
-        .blue {
-            color: blue !important;
-        }
-        .red {
-            color: red;
-        }
-    </style>
-</head>
-<body>
-    <div class="red">červenej</div>
-    <div class="blue red">modrej</div>
-</body>
+<p>&lt;!doctype html&gt;</p>
+<html lang="cs">
+    <head>
+        <style>
+            .blue {
+                color: blue !important;
+            }
+            .red {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="red">červenej</div>
+        <div class="blue red">modrej</div>
+    </body>
 </html>
 </div>
 </div>
+</section>
 </section>
 </section>
 
@@ -797,8 +801,10 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vychozi-styly-prohlizece">Výchozí styly prohlížeče</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#priorita-stylu">Priorita stylů</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pouziti-important">Použití <code class="docutils literal notranslate"><span class="pre">!important</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#priorita-stylu">Priorita stylů</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pouziti-important">Použití <code class="docutils literal notranslate"><span class="pre">!important</span></code></a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

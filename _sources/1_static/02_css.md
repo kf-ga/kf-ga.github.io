@@ -52,8 +52,8 @@ Aby se CSS styly na HTML stránku aplikovaly, je třeba je do HTML stránky vlo�
 CSS lze vložit přímo do HTML souboru pomocí `<style>` tagu, který se obvykle umisťuje v hlavičce dokumentu `<head>`:
 
 ```html
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="cs">
     <head>
         <style>
             h1 { color: blue; }
@@ -72,8 +72,8 @@ CSS lze vložit přímo do HTML souboru pomocí `<style>` tagu, který se obvykl
 CSS styly lze také uložit do externího souboru a ten pak vložit na stránku pomocí `<link>` tagu:
 
 ```html
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="cs">
     <head>
         <link rel="stylesheet" type="text/css" href="styles.css"/>
     </head>
@@ -295,7 +295,8 @@ Všechny výše uvedené lze zapsat i inline pouze do vlastnosti `font`. Pro spr
 * `text-decoration`: Dekorace textu (`underline`, `line-through`, `overline`)
 
 
-## CSS box model
+CSS box model
+-------------
 
 CSS box model je základní koncept, který definuje rozměry a umístění jednotlivých elementů. Každý element představuje obdélníkový box, u kterého lze nastavit vlastnosti `width` a `height`. Dále lze u boxu nastavit vlastnost `padding`, která definuje odsazení dovnitř elementu a `margin`, která definuje vnější odsazení. Dále do box modelu spadá vlastnost `border`, která definuje rámeček elementu.
 
@@ -314,7 +315,6 @@ flowchart TD
 ```
 
 Způsob, jak je box model počítán lze také explicitně změnit pro konkrétní elementy pomocí vlastnosti `box-sizing`.
-
 
 ### `width` a `height`
 
@@ -386,27 +386,28 @@ Pokud jsou pro jeden element definovány styly ve více zdrojích, obecně se ro
 Dále ovšem vstupuje do hry tzv. [specificita selektoru](https://www.w3schools.com/css/css_specificity.asp), kde se pracuje s tzv. *váhou* selektoru. To celý systém poněkud zesložiťuje a je obecně lepší pracovat se styly tak, aby se předešlo nejednoznačnostem.
 
 
-## Použití `!important`
+### Použití `!important`
 
 V CSS se setkáme ještě s klíčovým slovem `!important`, které je možné použít za každou CSS vlastnost. Pravidlo s `!important` má vyšší prioritu než pravidla bez `!important`, i když jsou méně specifická nebo později definovaná:
 
 ```{myst-example}
 :highlight: html
-<html>
-<head>
-    <style>
-        .blue {
-            color: blue !important;
-        }
-        .red {
-            color: red;
-        }
-    </style>
-</head>
-<body>
-    <div class="red">červenej</div>
-    <div class="blue red">modrej</div>
-</body>
+<!doctype html>
+<html lang="cs">
+    <head>
+        <style>
+            .blue {
+                color: blue !important;
+            }
+            .red {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="red">červenej</div>
+        <div class="blue red">modrej</div>
+    </body>
 </html>
 
 ```

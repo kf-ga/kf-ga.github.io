@@ -68,14 +68,14 @@ Základní struktura HTML
 HTML souboru se skládá z několika hlavních elementů, které definují základní strukturu HTML dokumentu:
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="cs">
-<head>
-    <title>Název stránky</title>
-</head>
-<body>
-    Obsah stránky
-</body>
+    <head>
+        <title>Název stránky</title>
+    </head>
+    <body>
+        Obsah stránky
+    </body>
 </html>
 ```
 
@@ -558,15 +558,15 @@ Každá HTML značka má omezení na to v jakém kontextu může být, např. ž
 
 Chybně: 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="cs">
-<head>
-    <title>Název stránky</title>
-    <h1>Titulek</h1>
-</head>
-<body>
-    Obsah stránky
-</body>
+    <head>
+        <title>Název stránky</title>
+        <h1>Titulek</h1>
+    </head>
+    <body>
+        Obsah stránky
+    </body>
 </html>
 ```
 
