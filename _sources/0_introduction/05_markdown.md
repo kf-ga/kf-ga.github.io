@@ -35,7 +35,7 @@ Heading 2
 ---------
 ```
 
-#### Tučné písmo, kurzíva
+### Tučné písmo, kurzíva
 
 ```{myst-example}
 **tučné písmo** nebo __tučné písmo__
@@ -44,7 +44,7 @@ Heading 2
 
 ***tučná kurzíva*** nebo ___tučná kurzíva___
 ```
-#### Seznamy
+### Seznamy
 
 Nečíslované seznamy:
 ```{myst-example}
@@ -61,13 +61,13 @@ Nečíslované seznamy:
     1. Podpoložka 2.1
 ```
 
-#### Literál
+### Literál
 
 ```{myst-example}
 Zobrazení `literálu` přímo v textu
 ```
 
-#### Zdrojový kód
+### Zdrojový kód
 
 ````{myst-example}
   ```python
@@ -75,7 +75,7 @@ Zobrazení `literálu` přímo v textu
   ```
 ````
 
-#### Tabulky
+### Tabulky
 
 ```{myst-example}
 | Hlavička 1 | Hlavička 2 |

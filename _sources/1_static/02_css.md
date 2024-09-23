@@ -3,7 +3,10 @@ CSS
 
 * [CSS Tutoriál od W3C](https://www.w3schools.com/css/default.asp)
 * [CSS Referenční příručka](https://www.w3schools.com/cssref/index.php)
+* [CSS Validátor](https://jigsaw.w3.org/css-validator/)
 
+* Vzorový HTML dokument pro testování CSS: 
+{download}`sandbox.html<../../examples/1_static/02_css/index.html>`
 
 Co je to CSS
 ------------
@@ -16,7 +19,7 @@ CSS bylo vytvořeno v roce 1996 organizací W3C (World Wide Web Consortium) s c�
 Syntaxe CSS
 -----------
 
-Syntaxe CSS stylu se skládá ze **selektorů** a **deklarací stylů**. Deklarace stylu pak obsahuje páry **valstnost** a **hodnota**:
+Syntaxe CSS stylu se skládá ze **selektorů** a **deklarací stylů**. Deklarace stylu pak obsahuje páry **vlastnost** a **hodnota**:
 
 ```css
 selektor {
@@ -45,7 +48,7 @@ p { color: red; font-size: 14px; }
 Vložení CSS do stránky
 ----------------------
 
-Aby se CSS styly na HTML stránku aplikovaly, je třeba je do HTML stránky vložit. To lze udělat třema způsoby:
+Aby se CSS styly na HTML stránku aplikovaly, je třeba je do HTML stránky vložit. To lze udělat třemi způsoby:
 
 ### Vložení stylu přímo do HTML
 
@@ -96,7 +99,7 @@ Téměř každý HTML element má také volitelný atribut style, kterým je mo�
 
 ```{admonition} Co je lepší?
 :class: note
-Oba dva způsoby jsou funkčně ekvivalentní, obvykle bývá preferované ukládání CSS do externího souboru z důvodu lepší přehlednosti a organizace projektu. Znamená to ale, že prohlížeč musí udělat nový dotaz na server a stáhnout CSS soubor. Za některých situací, kdy je třeba CSS stylů málo může být vloženo CSS přímo do stránky a urychlit tak načítání stránky.
+Všechny tři způsoby jsou funkčně ekvivalentní, obvykle ale bývá preferované ukládání CSS do externího souboru z důvodu lepší přehlednosti a organizace projektu. Znamená to ale, že prohlížeč musí udělat nový dotaz na server a stáhnout CSS soubor. Za některých situací, kdy je třeba CSS stylů málo může být vloženo CSS přímo do stránky a urychlit tak načítání stránky.
 
 *Rule of thumb:* Pokud si nejste jistí, vkládejte CSS jako externí soubor.
 ```
@@ -124,10 +127,10 @@ Styl se v tomto případě aplikuje na všechny `<p>` elementy.
 Selektor na třídu umožňuje stylovat všechny elementy, které mají přiřazenou specifickou třídu. Selektory na třídu začínají tečkou `.`, následovanou názvem třídy:
 
 ```css
-.myclass { /*...*/ }
+.my_class { /*...*/ }
 ```
 
-Tento styl se aplikuje na všechny elementy, které mají nastaven atribut `class` na hodnotu `myclass`. Tedy třeba `<div class="myclass"> ... </div>`
+Tento styl se aplikuje na všechny elementy, které mají nastaven atribut `class` na hodnotu `my_class`. Tedy třeba `<div class="my_class"> ... </div>`
 
 
 ### Selektor na id
@@ -135,10 +138,10 @@ Tento styl se aplikuje na všechny elementy, které mají nastaven atribut `clas
 Selektor na id cílí na konkrétní element, který má přiřazené unikátní id. Selektory na id začínají křížkem `#` následovaným id:
 
 ```css
-#myid { /*...*/ }
+#my_id { /*...*/ }
 ```
 
-Tento styl se aplikuje na element s id `myid` , například `<div id="myid"> ... </div>`
+Tento styl se aplikuje na element s id `my_id` , například `<div id="my_id"> ... </div>`
 
 
 ### Pseudotřídy
@@ -158,12 +161,12 @@ Tento styl změní barvu textu všech odkazů na zelenou, když na ně ale uživ
 Selektory je možné kombinovat, například:
 
 ```css
-p.myclass { /*...*/ }
+p.my_class { /*...*/ }
 ```
 
-cílí na všechny elementy `<p>` a které mají vlastnost `class` nastaven na hodnotu `myclass`. Zacílí tedy třeba na `<p class="myclass"> ... </p>` ale už ne na `<div class="myclass"> ... </div>`.
+cílí na všechny elementy `<p>` a které mají vlastnost `class` nastaven na hodnotu `my_class`. Zacílí tedy třeba na `<p class="my_class"> ... </p>` ale už ne na `<div class="my_class"> ... </div>`.
 
-Podobně lze dělat selektory `div#myid` (element `div` mající `id` `myid`), nebo `div.myclass:hover` (elementy `div` mající `class` nastavenu na `myclass` po najetí myší)
+Podobně lze dělat selektory `div#my_id` (element `div` mající `id` `my_id`), nebo `div.my_class:hover` (elementy `div` mající `class` nastavenu na `my_class` po najetí myší)
 
 
 ### Selektory vnořených elementů
@@ -380,7 +383,7 @@ Priorita stylů
 Pokud jsou pro jeden element definovány styly ve více zdrojích, obecně se rozhoduje se podle následujícího pořadí:
 
 1. **Inline styly**: Styly přímo ve vlastnost `style` u HTML elementu mají nejvyšší prioritu.
-2. **Externí a interní CSS**: Styly definované v externích nebo interních CSS. Přičemž platí, že styly definované později (v rámci jednoho souboru, nebo v souboru, který je vložen později)
+2. **Externí a interní CSS**: Styly definované v externích nebo interních CSS. Přičemž platí, že styly definované později (v rámci jednoho souboru, nebo v souboru, který je vložen později) přepisují styly definované dříve.
 3. **Výchozí styly prohlížeče**: Základní styly, které používá prohlížeč.
 
 Dále ovšem vstupuje do hry tzv. [specificita selektoru](https://www.w3schools.com/css/css_specificity.asp), kde se pracuje s tzv. *váhou* selektoru. To celý systém poněkud zesložiťuje a je obecně lepší pracovat se styly tak, aby se předešlo nejednoznačnostem.

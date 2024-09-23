@@ -31,7 +31,7 @@ V HTML existuje otevírací značka (např. `<p>`) a uzavírací značka (např.
 Dále je možné k HTML tagům připojit **HTML atributy**:
 
 ```html
-<div class="mydiv" id="main"></div>
+<div class="my_div" id="main"></div>
 ```
 
 Atributy slouží k detailnější specifikaci vlastností elementu nebo k jejich identifikaci, ale nejsou přímo zobrazované.
@@ -49,7 +49,7 @@ Značky je možné do sebe (až na výjimky) vnořovat, je však důležité zac
 ```{myst-example}
 :highlight: html
 
-<div class="mydiv" id="main">
+<div class="my_div" id="main">
     <p>
         První odstavec
     </p>
@@ -219,7 +219,7 @@ Pro různé formy zvýraznění a formátování textu můžeme použít násled
 - **`<strong>`**, **`<em>`**: Text, který by měl být považován za důležitý (pojem, klíčové slovo apod.), obvykle zobrazen tučně (`<strong>`), případně kurzívou (`<em>`).
 - **`<b>`**: Tučný text (bold), ale bez zvláštního sémantického významu
 - **`<i>`**: Kurzíva (italic), bez zvláštního sémantického významu
-- **`<u>`**: Podtržený text (undeline), bez zvláštního sémantického významu
+- **`<u>`**: Podtržený text (underline), bez zvláštního sémantického významu
 - **`<small>`**: Text, který by měl být zobrazen menším písmem, například pro poznámky.
 - **`<mark>`**: Text zobrazený s pozadím (jakoby označen zvýrazňovačem)
 - **`<sub>`**, **`<sup>`**: Značky označují text, který bude zobrazen jako horní (`<sup>`), resp. dolní index (`<sub>`).
@@ -368,7 +368,7 @@ Pro porovnání máme znaky &lt; a &gt;
 </p>
 ```
 
-Nepoužití entit v tomto příkladu by mělo za následek nevalidní HTML kód. Entita `&nbsp;` je *nezalomitelná mezera*, kterou můžeme vložit na místo, kde nechceme, aby se nám tok textu zalomil: 
+Nepoužití entit v tomto příkladu by mělo za následek nevalidní HTML kód. Entita `&nbsp;` je *nezlomitelná mezera*, kterou můžeme vložit na místo, kde nechceme, aby se nám tok textu zalomil: 
 
 ```{myst-example}
 :highlight: html

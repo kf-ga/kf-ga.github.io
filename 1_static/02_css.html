@@ -370,6 +370,9 @@ document.write(`
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.w3schools.com/css/default.asp">CSS Tutoriál od W3C</a></p></li>
 <li><p><a class="reference external" href="https://www.w3schools.com/cssref/index.php">CSS Referenční příručka</a></p></li>
+<li><p><a class="reference external" href="https://jigsaw.w3.org/css-validator/">CSS Validátor</a></p></li>
+<li><p>Vzorový HTML dokument pro testování CSS:
+<a class="reference download internal" download="" href="../_downloads/02fe4866716f57d53f8b51aad163f64c/index.html"><code class="xref download docutils literal notranslate"><span class="pre">sandbox.html</span></code></a></p></li>
 </ul>
 <section id="co-je-to-css">
 <h2>1.&nbsp;&nbsp;Co je to CSS<a class="headerlink" href="#co-je-to-css" title="Link to this heading">#</a></h2>
@@ -378,7 +381,7 @@ document.write(`
 </section>
 <section id="syntaxe-css">
 <h2>2.&nbsp;&nbsp;Syntaxe CSS<a class="headerlink" href="#syntaxe-css" title="Link to this heading">#</a></h2>
-<p>Syntaxe CSS stylu se skládá ze <strong>selektorů</strong> a <strong>deklarací stylů</strong>. Deklarace stylu pak obsahuje páry <strong>valstnost</strong> a <strong>hodnota</strong>:</p>
+<p>Syntaxe CSS stylu se skládá ze <strong>selektorů</strong> a <strong>deklarací stylů</strong>. Deklarace stylu pak obsahuje páry <strong>vlastnost</strong> a <strong>hodnota</strong>:</p>
 <div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">selektor</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">vlastnost</span><span class="p">:</span><span class="n">hodnota</span><span class="p">;</span>
 <span class="p">}</span>
@@ -399,7 +402,7 @@ document.write(`
 </section>
 <section id="vlozeni-css-do-stranky">
 <h2>3.&nbsp;&nbsp;Vložení CSS do stránky<a class="headerlink" href="#vlozeni-css-do-stranky" title="Link to this heading">#</a></h2>
-<p>Aby se CSS styly na HTML stránku aplikovaly, je třeba je do HTML stránky vložit. To lze udělat třema způsoby:</p>
+<p>Aby se CSS styly na HTML stránku aplikovaly, je třeba je do HTML stránky vložit. To lze udělat třemi způsoby:</p>
 <section id="vlozeni-stylu-primo-do-html">
 <h3>3.1.&nbsp;&nbsp;Vložení stylu přímo do HTML<a class="headerlink" href="#vlozeni-stylu-primo-do-html" title="Link to this heading">#</a></h3>
 <p>CSS lze vložit přímo do HTML souboru pomocí <code class="docutils literal notranslate"><span class="pre">&lt;style&gt;</span></code> tagu, který se obvykle umisťuje v hlavičce dokumentu <code class="docutils literal notranslate"><span class="pre">&lt;head&gt;</span></code>:</p>
@@ -452,7 +455,7 @@ document.write(`
 </div>
 <div class="note admonition">
 <p class="admonition-title">Co je lepší?</p>
-<p>Oba dva způsoby jsou funkčně ekvivalentní, obvykle bývá preferované ukládání CSS do externího souboru z důvodu lepší přehlednosti a organizace projektu. Znamená to ale, že prohlížeč musí udělat nový dotaz na server a stáhnout CSS soubor. Za některých situací, kdy je třeba CSS stylů málo může být vloženo CSS přímo do stránky a urychlit tak načítání stránky.</p>
+<p>Všechny tři způsoby jsou funkčně ekvivalentní, obvykle ale bývá preferované ukládání CSS do externího souboru z důvodu lepší přehlednosti a organizace projektu. Znamená to ale, že prohlížeč musí udělat nový dotaz na server a stáhnout CSS soubor. Za některých situací, kdy je třeba CSS stylů málo může být vloženo CSS přímo do stránky a urychlit tak načítání stránky.</p>
 <p><em>Rule of thumb:</em> Pokud si nejste jistí, vkládejte CSS jako externí soubor.</p>
 </div>
 </section>
@@ -471,18 +474,18 @@ document.write(`
 <section id="selektor-na-tridu">
 <h3>4.2.&nbsp;&nbsp;Selektor na třídu<a class="headerlink" href="#selektor-na-tridu" title="Link to this heading">#</a></h3>
 <p>Selektor na třídu umožňuje stylovat všechny elementy, které mají přiřazenou specifickou třídu. Selektory na třídu začínají tečkou <code class="docutils literal notranslate"><span class="pre">.</span></code>, následovanou názvem třídy:</p>
-<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">myclass</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c">/*...*/</span><span class="w"> </span><span class="p">}</span>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">my_class</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c">/*...*/</span><span class="w"> </span><span class="p">}</span>
 </pre></div>
 </div>
-<p>Tento styl se aplikuje na všechny elementy, které mají nastaven atribut <code class="docutils literal notranslate"><span class="pre">class</span></code> na hodnotu <code class="docutils literal notranslate"><span class="pre">myclass</span></code>. Tedy třeba <code class="docutils literal notranslate"><span class="pre">&lt;div</span> <span class="pre">class=&quot;myclass&quot;&gt;</span> <span class="pre">...</span> <span class="pre">&lt;/div&gt;</span></code></p>
+<p>Tento styl se aplikuje na všechny elementy, které mají nastaven atribut <code class="docutils literal notranslate"><span class="pre">class</span></code> na hodnotu <code class="docutils literal notranslate"><span class="pre">my_class</span></code>. Tedy třeba <code class="docutils literal notranslate"><span class="pre">&lt;div</span> <span class="pre">class=&quot;my_class&quot;&gt;</span> <span class="pre">...</span> <span class="pre">&lt;/div&gt;</span></code></p>
 </section>
 <section id="selektor-na-id">
 <h3>4.3.&nbsp;&nbsp;Selektor na id<a class="headerlink" href="#selektor-na-id" title="Link to this heading">#</a></h3>
 <p>Selektor na id cílí na konkrétní element, který má přiřazené unikátní id. Selektory na id začínají křížkem <code class="docutils literal notranslate"><span class="pre">#</span></code> následovaným id:</p>
-<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">#</span><span class="nn">myid</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c">/*...*/</span><span class="w"> </span><span class="p">}</span>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">#</span><span class="nn">my_id</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c">/*...*/</span><span class="w"> </span><span class="p">}</span>
 </pre></div>
 </div>
-<p>Tento styl se aplikuje na element s id <code class="docutils literal notranslate"><span class="pre">myid</span></code> , například <code class="docutils literal notranslate"><span class="pre">&lt;div</span> <span class="pre">id=&quot;myid&quot;&gt;</span> <span class="pre">...</span> <span class="pre">&lt;/div&gt;</span></code></p>
+<p>Tento styl se aplikuje na element s id <code class="docutils literal notranslate"><span class="pre">my_id</span></code> , například <code class="docutils literal notranslate"><span class="pre">&lt;div</span> <span class="pre">id=&quot;my_id&quot;&gt;</span> <span class="pre">...</span> <span class="pre">&lt;/div&gt;</span></code></p>
 </section>
 <section id="pseudotridy">
 <h3>4.4.&nbsp;&nbsp;Pseudotřídy<a class="headerlink" href="#pseudotridy" title="Link to this heading">#</a></h3>
@@ -496,11 +499,11 @@ document.write(`
 <section id="kombinace-selektoru">
 <h3>4.5.&nbsp;&nbsp;Kombinace selektorů<a class="headerlink" href="#kombinace-selektoru" title="Link to this heading">#</a></h3>
 <p>Selektory je možné kombinovat, například:</p>
-<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="p">.</span><span class="nc">myclass</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c">/*...*/</span><span class="w"> </span><span class="p">}</span>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="p">.</span><span class="nc">my_class</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c">/*...*/</span><span class="w"> </span><span class="p">}</span>
 </pre></div>
 </div>
-<p>cílí na všechny elementy <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> a které mají vlastnost <code class="docutils literal notranslate"><span class="pre">class</span></code> nastaven na hodnotu <code class="docutils literal notranslate"><span class="pre">myclass</span></code>. Zacílí tedy třeba na <code class="docutils literal notranslate"><span class="pre">&lt;p</span> <span class="pre">class=&quot;myclass&quot;&gt;</span> <span class="pre">...</span> <span class="pre">&lt;/p&gt;</span></code> ale už ne na <code class="docutils literal notranslate"><span class="pre">&lt;div</span> <span class="pre">class=&quot;myclass&quot;&gt;</span> <span class="pre">...</span> <span class="pre">&lt;/div&gt;</span></code>.</p>
-<p>Podobně lze dělat selektory <code class="docutils literal notranslate"><span class="pre">div#myid</span></code> (element <code class="docutils literal notranslate"><span class="pre">div</span></code> mající <code class="docutils literal notranslate"><span class="pre">id</span></code> <code class="docutils literal notranslate"><span class="pre">myid</span></code>), nebo <code class="docutils literal notranslate"><span class="pre">div.myclass:hover</span></code> (elementy <code class="docutils literal notranslate"><span class="pre">div</span></code> mající <code class="docutils literal notranslate"><span class="pre">class</span></code> nastavenu na <code class="docutils literal notranslate"><span class="pre">myclass</span></code> po najetí myší)</p>
+<p>cílí na všechny elementy <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> a které mají vlastnost <code class="docutils literal notranslate"><span class="pre">class</span></code> nastaven na hodnotu <code class="docutils literal notranslate"><span class="pre">my_class</span></code>. Zacílí tedy třeba na <code class="docutils literal notranslate"><span class="pre">&lt;p</span> <span class="pre">class=&quot;my_class&quot;&gt;</span> <span class="pre">...</span> <span class="pre">&lt;/p&gt;</span></code> ale už ne na <code class="docutils literal notranslate"><span class="pre">&lt;div</span> <span class="pre">class=&quot;my_class&quot;&gt;</span> <span class="pre">...</span> <span class="pre">&lt;/div&gt;</span></code>.</p>
+<p>Podobně lze dělat selektory <code class="docutils literal notranslate"><span class="pre">div#my_id</span></code> (element <code class="docutils literal notranslate"><span class="pre">div</span></code> mající <code class="docutils literal notranslate"><span class="pre">id</span></code> <code class="docutils literal notranslate"><span class="pre">my_id</span></code>), nebo <code class="docutils literal notranslate"><span class="pre">div.my_class:hover</span></code> (elementy <code class="docutils literal notranslate"><span class="pre">div</span></code> mající <code class="docutils literal notranslate"><span class="pre">class</span></code> nastavenu na <code class="docutils literal notranslate"><span class="pre">my_class</span></code> po najetí myší)</p>
 </section>
 <section id="selektory-vnorenych-elementu">
 <h3>4.6.&nbsp;&nbsp;Selektory vnořených elementů<a class="headerlink" href="#selektory-vnorenych-elementu" title="Link to this heading">#</a></h3>
@@ -680,7 +683,7 @@ document.write(`
 <p>Pokud jsou pro jeden element definovány styly ve více zdrojích, obecně se rozhoduje se podle následujícího pořadí:</p>
 <ol class="arabic simple">
 <li><p><strong>Inline styly</strong>: Styly přímo ve vlastnost <code class="docutils literal notranslate"><span class="pre">style</span></code> u HTML elementu mají nejvyšší prioritu.</p></li>
-<li><p><strong>Externí a interní CSS</strong>: Styly definované v externích nebo interních CSS. Přičemž platí, že styly definované později (v rámci jednoho souboru, nebo v souboru, který je vložen později)</p></li>
+<li><p><strong>Externí a interní CSS</strong>: Styly definované v externích nebo interních CSS. Přičemž platí, že styly definované později (v rámci jednoho souboru, nebo v souboru, který je vložen později) přepisují styly definované dříve.</p></li>
 <li><p><strong>Výchozí styly prohlížeče</strong>: Základní styly, které používá prohlížeč.</p></li>
 </ol>
 <p>Dále ovšem vstupuje do hry tzv. <a class="reference external" href="https://www.w3schools.com/css/css_specificity.asp">specificita selektoru</a>, kde se pracuje s tzv. <em>váhou</em> selektoru. To celý systém poněkud zesložiťuje a je obecně lepší pracovat se styly tak, aby se předešlo nejednoznačnostem.</p>

@@ -396,7 +396,7 @@ document.write(`
 </pre></div>
 </div>
 <p>Dále je možné k HTML tagům připojit <strong>HTML atributy</strong>:</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mydiv&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;main&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;my_div&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;main&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <p>Atributy slouží k detailnější specifikaci vlastností elementu nebo k jejich identifikaci, ale nejsou přímo zobrazované.</p>
@@ -408,7 +408,7 @@ document.write(`
 <p>Značky je možné do sebe (až na výjimky) vnořovat, je však důležité zachovat správné párování otevíracích a uzavíracích značek. Pro přehlednost kódu je pak dobré používat odsazování:</p>
 <div class="myst-example docutils">
 <div class="myst-example-source docutils">
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mydiv&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;main&quot;</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;my_div&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;main&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
         První odstavec
     <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
@@ -420,7 +420,7 @@ document.write(`
 </div>
 </div>
 <div class="myst-example-render docutils">
-<div class="mydiv" id="main">
+<div class="my_div" id="main">
     <p>
         První odstavec
     </p>
@@ -655,7 +655,7 @@ document.write(`
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;strong&gt;</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">&lt;em&gt;</span></code></strong>: Text, který by měl být považován za důležitý (pojem, klíčové slovo apod.), obvykle zobrazen tučně (<code class="docutils literal notranslate"><span class="pre">&lt;strong&gt;</span></code>), případně kurzívou (<code class="docutils literal notranslate"><span class="pre">&lt;em&gt;</span></code>).</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;b&gt;</span></code></strong>: Tučný text (bold), ale bez zvláštního sémantického významu</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;i&gt;</span></code></strong>: Kurzíva (italic), bez zvláštního sémantického významu</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;u&gt;</span></code></strong>: Podtržený text (undeline), bez zvláštního sémantického významu</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;u&gt;</span></code></strong>: Podtržený text (underline), bez zvláštního sémantického významu</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;small&gt;</span></code></strong>: Text, který by měl být zobrazen menším písmem, například pro poznámky.</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;mark&gt;</span></code></strong>: Text zobrazený s pozadím (jakoby označen zvýrazňovačem)</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">&lt;sub&gt;</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">&lt;sup&gt;</span></code></strong>: Značky označují text, který bude zobrazen jako horní (<code class="docutils literal notranslate"><span class="pre">&lt;sup&gt;</span></code>), resp. dolní index (<code class="docutils literal notranslate"><span class="pre">&lt;sub&gt;</span></code>).</p></li>
@@ -858,7 +858,7 @@ Pro porovnání máme znaky &lt; a &gt;
 </p>
 </div>
 </div>
-<p>Nepoužití entit v tomto příkladu by mělo za následek nevalidní HTML kód. Entita <code class="docutils literal notranslate"><span class="pre">&amp;nbsp;</span></code> je <em>nezalomitelná mezera</em>, kterou můžeme vložit na místo, kde nechceme, aby se nám tok textu zalomil:</p>
+<p>Nepoužití entit v tomto příkladu by mělo za následek nevalidní HTML kód. Entita <code class="docutils literal notranslate"><span class="pre">&amp;nbsp;</span></code> je <em>nezlomitelná mezera</em>, kterou můžeme vložit na místo, kde nechceme, aby se nám tok textu zalomil:</p>
 <div class="myst-example docutils">
 <div class="myst-example-source docutils">
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span>Hodně<span class="ni">&amp;nbsp;</span>moc<span class="ni">&amp;nbsp;</span>dlouhý<span class="ni">&amp;nbsp;</span>řádek.<span class="ni">&amp;nbsp;</span>Hodně<span class="ni">&amp;nbsp;</span>moc<span class="ni">&amp;nbsp;</span>dlouhý<span class="ni">&amp;nbsp;</span>řádek.<span class="ni">&amp;nbsp;</span>Hodně<span class="ni">&amp;nbsp;</span>moc<span class="ni">&amp;nbsp;</span>dlouhý<span class="ni">&amp;nbsp;</span>řádek.<span class="ni">&amp;nbsp;</span>Hodně<span class="ni">&amp;nbsp;</span>moc<span class="ni">&amp;nbsp;</span>dlouhý<span class="ni">&amp;nbsp;</span>řádek.<span class="ni">&amp;nbsp;</span>Hodně<span class="ni">&amp;nbsp;</span>moc<span class="ni">&amp;nbsp;</span>dlouhý<span class="ni">&amp;nbsp;</span>řádek.
