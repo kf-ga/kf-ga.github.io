@@ -5,9 +5,6 @@ CSS
 * [CSS Referenční příručka](https://www.w3schools.com/cssref/index.php)
 * [CSS Validátor](https://jigsaw.w3.org/css-validator/)
 
-* Vzorový HTML dokument pro testování CSS: 
-{download}`sandbox.html<../../examples/1_static/02_css/index.html>`
-
 Co je to CSS
 ------------
 

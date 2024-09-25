@@ -81,3 +81,11 @@ Programování webových aplikací
 6_other/02_ethics.md
 6_other/03_analytics.md
 ```
+
+```{toctree}
+:caption: Materiály 
+:maxdepth: 1
+
+materials.md
+```
+
