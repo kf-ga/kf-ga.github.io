@@ -75,7 +75,7 @@ CSS styly lze také uložit do externího souboru a ten pak vložit na stránku 
 <!doctype html>
 <html lang="cs">
     <head>
-        <link rel="stylesheet" type="text/css" href="styles.css"/>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
     </head>
     <body>
         <h1>Já jsem modrej</h1>
