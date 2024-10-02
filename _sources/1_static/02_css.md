@@ -1,5 +1,5 @@
-CSS
-===
+Základy CSS
+===========
 
 * [CSS Tutoriál od W3C](https://www.w3schools.com/css/default.asp)
 * [CSS Referenční příručka](https://www.w3schools.com/cssref/index.php)

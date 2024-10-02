@@ -59,7 +59,7 @@ Značky je možné do sebe (až na výjimky) vnořovat, je však důležité zac
 </div>
 ```
 
-Při vnořování značek platí určitá omezení. Nelze například vkládat `block` značky do `inline` značek. Je třeba také dodržovat strukturu značek například u seznamu, nebo tabulky. Pokud si nejste jistí, využijte pro kontrolu HTML validátor.
+Při vnořování značek platí určitá omezení. Nelze obvykle například vkládat `block` značky do `inline` značek (až na výjimky, například značka `<a>`, která byť je inline, může obsahovat block elementy). Je třeba také dodržovat strukturu značek například u seznamu, nebo tabulky. Pokud si nejste jistí, využijte pro kontrolu HTML validátor.
 
 
 Základní struktura HTML
@@ -116,6 +116,35 @@ Tag označuje odstavec textu *(paragraph)*, který je pak zpravidla vykreslen ja
 <p>První odstavec</p>
 <p>Druhý odstavec</p>
 ```
+
+````{admonition} Automatické ukončování
+:class: warning
+Pokud značka `<p>` obsahuje `block` element, [dokumentace HTML5](https://html.spec.whatwg.org/multipage/syntax.html#optional-tags) praví, že je automaticky ukončena před začátkem tohoto elementu. Kód:
+
+```html
+<p>
+    Odstavec textu 
+    <div>Vnořený text</div>
+</p>
+```
+
+Je dle specifikace interpretován jako 
+
+```html
+<p>
+    Odstavec textu 
+</p>
+<div>
+    Vnořený text
+</div>
+</p>
+```
+
+Což způsobí chybu kvůli nesprávnému párování ukončovací značky `</p>`.
+
+**Značka `<p>` by měla být chápána skutečně jako odstavec textu a obsahovat pouze `inline` formátovací značky**.
+````
+
 ### Seznamy `<ol>`, `<ul>`, `<li>`
 
 #### Neuspořádaný seznam `<ul>`

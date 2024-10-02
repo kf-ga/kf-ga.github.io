@@ -57,7 +57,7 @@
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Rejstřík" href="../genindex.html" />
     <link rel="search" title="Vyhledávání" href="../search.html" />
-    <link rel="next" title="CSS" href="02_css.html" />
+    <link rel="next" title="Základy CSS" href="02_css.html" />
     <link rel="prev" title="Markdown" href="../0_introduction/05_markdown.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="cs"/>
@@ -168,7 +168,8 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statický web</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">HTML</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_css.html">CSS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_css.html">Základy CSS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_layouts.html">CSS Layouty</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Materiály</span></p>
 <ul class="nav bd-sidenav">
@@ -434,7 +435,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Při vnořování značek platí určitá omezení. Nelze například vkládat <code class="docutils literal notranslate"><span class="pre">block</span></code> značky do <code class="docutils literal notranslate"><span class="pre">inline</span></code> značek. Je třeba také dodržovat strukturu značek například u seznamu, nebo tabulky. Pokud si nejste jistí, využijte pro kontrolu HTML validátor.</p>
+<p>Při vnořování značek platí určitá omezení. Nelze obvykle například vkládat <code class="docutils literal notranslate"><span class="pre">block</span></code> značky do <code class="docutils literal notranslate"><span class="pre">inline</span></code> značek (až na výjimky, například značka <code class="docutils literal notranslate"><span class="pre">&lt;a&gt;</span></code>, která byť je inline, může obsahovat block elementy). Je třeba také dodržovat strukturu značek například u seznamu, nebo tabulky. Pokud si nejste jistí, využijte pro kontrolu HTML validátor.</p>
 </section>
 <section id="zakladni-struktura-html">
 <h2>3.&nbsp;&nbsp;Základní struktura HTML<a class="headerlink" href="#zakladni-struktura-html" title="Link to this heading">#</a></h2>
@@ -500,6 +501,28 @@ document.write(`
 <p>První odstavec</p>
 <p>Druhý odstavec</p>
 </div>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Automatické ukončování</p>
+<p>Pokud značka <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> obsahuje <code class="docutils literal notranslate"><span class="pre">block</span></code> element, <a class="reference external" href="https://html.spec.whatwg.org/multipage/syntax.html#optional-tags">dokumentace HTML5</a> praví, že je automaticky ukončena před začátkem tohoto elementu. Kód:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+    Odstavec textu 
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Vnořený text<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Je dle specifikace interpretován jako</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+    Odstavec textu 
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+    Vnořený text
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Což způsobí chybu kvůli nesprávnému párování ukončovací značky <code class="docutils literal notranslate"><span class="pre">&lt;/p&gt;</span></code>.</p>
+<p><strong>Značka <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> by měla být chápána skutečně jako odstavec textu a obsahovat pouze <code class="docutils literal notranslate"><span class="pre">inline</span></code> formátovací značky</strong>.</p>
 </div>
 </section>
 <section id="seznamy-ol-ul-li">
@@ -1074,7 +1097,7 @@ Pro porovnání máme znaky &lt; a &gt;
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">další</p>
-        <p class="prev-next-title">CSS</p>
+        <p class="prev-next-title">Základy CSS</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
