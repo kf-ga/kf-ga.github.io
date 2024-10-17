@@ -24,7 +24,7 @@ Programování webových aplikací
 ```
 
 ```{toctree}
-:caption: Javascript 
+:caption: JavaScript 
 :maxdepth: 1
 
 2_javascript/01_intro.md

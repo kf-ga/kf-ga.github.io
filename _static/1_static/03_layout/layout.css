@@ -7,7 +7,7 @@ header  {
     color: hsl(280, 90%, 20%);
 }
 header h1 {
-    padding: 10px;
+    padding: 5px;
 }
 #menu {
     background-color: hsl(10, 90%, 90%);

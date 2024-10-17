@@ -1,0 +1,759 @@
+
+<!DOCTYPE html>
+
+
+<html lang="cs" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZX7DQPSHE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RZX7DQPSHE');
+    </script>
+    
+    <title>Document Object Model &#8212; Webové aplikace</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/local.css?v=1256093c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=4cdba38b"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../_static/translations.js?v=0275affc"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '2_javascript/05_dom';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Rejstřík" href="../genindex.html" />
+    <link rel="search" title="Vyhledávání" href="../search.html" />
+    <link rel="next" title="Materiály k výuce" href="../materials.html" />
+    <link rel="prev" title="Moduly v JavaScriptu" href="04_modules.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="cs"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Webové aplikace</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Vyhledávání" aria-label="Vyhledávání" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Vyhledávání</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Úvod</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../0_introduction/01_overview.html">Úvod do internetových technologií</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0_introduction/04_git.html">Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0_introduction/05_markdown.html">Markdown</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statický web</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../1_static/01_html.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_static/02_css.html">Základy CSS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_static/03_layouts.html">CSS Layouty</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Javascript</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_intro.html">Seznámení s JavaScriptem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_blocks.html">Řídící bloky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_methods.html">Funkce a třídy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_modules.html">Moduly v JavaScriptu</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Document Object Model</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Materiály</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../materials.html">Materiály k výuce</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Stáhněte si tuto stránku">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/2_javascript/05_dom.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Stáhněte si zdrojový soubor"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Tisk do PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Režim celé obrazovky"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Vyhledávání" aria-label="Vyhledávání" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Document Object Model</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Obsah </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vyznam-document-object-model-dom">Význam Document Object Model (DOM)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zakladni-funkce-javascriptu-na-praci-s-dom">Základní funkce JavaScriptu na práci s DOM</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nalezeni-elementu-nebo-mnoziny-elementu">Nalezení elementu nebo množiny elementů</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vytvoreni-a-smazani-elementu">Vytvoření a smazání elementu</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nastaveni-stylu">Nastavení stylu</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zmena-tridy-elementu">Změna třídy elementu</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atributy-elementu">Atributy elementu</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datasets">Datasets</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#udalosti">Události</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulace-s-window">Manipulace s <code class="docutils literal notranslate"><span class="pre">window</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xpath">XPath</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nalezeni-elementu-podle-xpath">Nalezení elementu podle XPath</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zakladni-pravidla-psani-xpath">Základní pravidla psaní XPath</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="document-object-model">
+<h1>Document Object Model<a class="headerlink" href="#document-object-model" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.w3schools.com/js/js_htmldom.asp">Tutoriál W3C - DOM</a></p></li>
+<li><p><a class="reference external" href="https://www.w3schools.com/jsref/dom_obj_document.asp">Referenční příručka W3C - DOM</a></p></li>
+</ul>
+<section id="vyznam-document-object-model-dom">
+<h2>1.&nbsp;&nbsp;Význam Document Object Model (DOM)<a class="headerlink" href="#vyznam-document-object-model-dom" title="Link to this heading">#</a></h2>
+<p>Při načítání každé stránky prohlížeč parsuje zdrojové soubory HTML a CSS a vytváří si objektovou reprezentaci stránky, se kterou lze dále manipulovat pomocí JavaScriptu. Tato objektová reprezentace stránky se nazývá <strong>Document Object Model</strong>, zkráceně <strong>DOM</strong>.</p>
+<div class="mermaid">
+            graph LR
+    A[HTML] --&gt; G[Parser]
+    B[CSS] --&gt; G[Parser]
+    C[JS] --&gt; F[JS Interpreter]
+    G[Parser] --&gt; E[DOM]
+    F&lt;--&gt;E
+
+    subgraph Zdrojový kód
+        A
+        B
+        C
+    end
+    subgraph Webový prohlížeč
+        E
+        F
+        G
+    end
+        </div><p>DOM je stromová struktura objektů reprezentující HTML dokument. Každý uzel v DOM stromu odpovídá HTML elementu, atributům elementu a textu, který může obsahovat. Manipulací s DOM je možné dynamicky měnit elementy stránky, přidávat, mazat nebo je upravovat.</p>
+</section>
+<section id="zakladni-funkce-javascriptu-na-praci-s-dom">
+<h2>2.&nbsp;&nbsp;Základní funkce JavaScriptu na práci s DOM<a class="headerlink" href="#zakladni-funkce-javascriptu-na-praci-s-dom" title="Link to this heading">#</a></h2>
+<p>JavaScript nabízí řadu funkcí pro práci s DOM. Kořenovým elementem ve stránce je <code class="docutils literal notranslate"><span class="pre">document</span></code>, což je globálně dostupná proměnná v rámci JavaScriptu.</p>
+<section id="nalezeni-elementu-nebo-mnoziny-elementu">
+<h3>2.1.&nbsp;&nbsp;Nalezení elementu nebo množiny elementů<a class="headerlink" href="#nalezeni-elementu-nebo-mnoziny-elementu" title="Link to this heading">#</a></h3>
+<p>Abychom mohli s elementy na stránce pracovat, je nejprve nutné získat objekt elementů nebo jejich pole. K tomu slouží následující funkce:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">document.getElementById('id')</span></code>: Najde element podle ID.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">document.getElementsByClassName('class')</span></code>: Najde všechny elementy s danou třídou.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">document.getElementsByTagName('tag')</span></code>: Najde všechny elementy určitého HTML tagu.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">document.querySelector('.class')</span></code>: Najde první element odpovídající CSS selektoru.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">document.querySelectorAll('.class')</span></code>: Najde všechny elementy odpovídající CSS selektoru.</p></li>
+</ul>
+<p>Tyto funkce jsou dostupné jak v objektu <code class="docutils literal notranslate"><span class="pre">document</span></code>, kdy se vyhledává na celém DOMU, tak i na vnořených elementech v DOM kdy se vyhledává jen v rámci konkrétní větve DOMu (element a všechny jeho přímí či nepřímí potomci).</p>
+<p>Každý element domu obsahuje také atribut <code class="docutils literal notranslate"><span class="pre">parentNode</span></code>, která odkazuje na rodiče daného elementu a atribut <code class="docutils literal notranslate"><span class="pre">childNodes</span></code>, případně <code class="docutils literal notranslate"><span class="pre">children</span></code> (<a class="reference external" href="https://stackoverflow.com/questions/7935689/what-is-the-difference-between-children-and-childnodes-in-javascript">s drobným významovým rozdílem</a>), která je pole obsahující všechny potomky daného elementu:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">test</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">test</span><span class="p">.</span><span class="nx">childNodes</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="vytvoreni-a-smazani-elementu">
+<h3>2.2.&nbsp;&nbsp;Vytvoření a smazání elementu<a class="headerlink" href="#vytvoreni-a-smazani-elementu" title="Link to this heading">#</a></h3>
+<p>K vytvoření elementu se používá funkce <code class="docutils literal notranslate"><span class="pre">document.createElement('tag')</span></code>, kde tag je HTML tag elementu. Vytvořený element je třeba do stránky ještě umístit pomocí funkce <code class="docutils literal notranslate"><span class="pre">appendChild</span></code> u rodičovského elementu:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">child</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">);</span>
+<span class="nx">parent</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">child</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Funkce <code class="docutils literal notranslate"><span class="pre">appendChild</span></code> vloží element na poslední místo jako potomka rodičovského elementu. Pro vložení na specifické místo (pokud již rodič nějaké elementy obsahuje) lze použít funkci <code class="docutils literal notranslate"><span class="pre">parentNode.insertBefore(newNode,</span> <span class="pre">referenceNode)</span></code>.</p>
+<p>Každý element může mít pouze jednoho rodiče. Pokud je zavolána funkce <code class="docutils literal notranslate"><span class="pre">appendChild</span></code> na element, který už v DOMu je umístěn, je element z původního umístění odstraněn a přesunut na nové místo.</p>
+<p>Pro smazání elementu z DOM je určena funkce <code class="docutils literal notranslate"><span class="pre">removeChild</span></code>:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">el</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">);</span>
+<span class="nx">el</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">removeChild</span><span class="p">(</span><span class="nx">el</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="nastaveni-stylu">
+<h3>2.3.&nbsp;&nbsp;Nastavení stylu<a class="headerlink" href="#nastaveni-stylu" title="Link to this heading">#</a></h3>
+<p>Pomocí JavaScriptu lze měnit také konkrétní styly elementu. K tomu slouží atribut elementu <code class="docutils literal notranslate"><span class="pre">style</span></code>:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">);</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;red&#39;</span><span class="p">;</span><span class="w"> </span>
+</pre></div>
+</div>
+<div class="admonition-poznamka admonition">
+<p class="admonition-title">Poznámka</p>
+<p>class:note
+Pokud nastavujete CSS styl, který obsahuje pomlčky <code class="docutils literal notranslate"><span class="pre">-</span></code>, používá se v JavaScriptu ekvivalentní zápis v <a class="reference external" href="https://cs.wikipedia.org/wiki/CamelCase">camelCase</a>. Například CSS vlastnost <code class="docutils literal notranslate"><span class="pre">background-color</span></code> se nastaví <code class="docutils literal notranslate"><span class="pre">element.style.backgroundColor</span> <span class="pre">=</span> <span class="pre">'red';</span></code></p>
+</div>
+</section>
+<section id="zmena-tridy-elementu">
+<h3>2.4.&nbsp;&nbsp;Změna třídy elementu<a class="headerlink" href="#zmena-tridy-elementu" title="Link to this heading">#</a></h3>
+<p>Pro nastavování či změnu třídy elementu se používá vlastnost <code class="docutils literal notranslate"><span class="pre">classList</span></code>, která obsahuje seznam všech tříd, které jsou k elementu přiřazeny. Tento seznam lze modifikovat pomocí metod <code class="docutils literal notranslate"><span class="pre">add</span></code> (přidání třídy), <code class="docutils literal notranslate"><span class="pre">remove</span></code> (odebrání třídy) a <code class="docutils literal notranslate"><span class="pre">toggle</span></code> (přepnutí třídy):</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">);</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;mine&#39;</span><span class="p">);</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">toggle</span><span class="p">(</span><span class="s1">&#39;highlight&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Někdy se setkáme ještě s použitím vlastnosti <code class="docutils literal notranslate"><span class="pre">className</span></code>, která přímo odpovídá atributu <code class="docutils literal notranslate"><span class="pre">class</span></code> elementu. Změna tříd pomocí <code class="docutils literal notranslate"><span class="pre">className</span></code> je méně praktická zejména pokud má element více tříd.</p>
+</section>
+<section id="atributy-elementu">
+<h3>2.5.&nbsp;&nbsp;Atributy elementu<a class="headerlink" href="#atributy-elementu" title="Link to this heading">#</a></h3>
+<p>Obecné atributy elementu lze měnit pomocí funkcí</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">element.getAttribute(attribute)</span></code>: Zjistí hodnotu atributu <code class="docutils literal notranslate"><span class="pre">attribute</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">element.setAttribute(attribute,</span> <span class="pre">value)</span></code>: Nastaví atribut <code class="docutils literal notranslate"><span class="pre">attribute</span></code> na hodnotu <code class="docutils literal notranslate"><span class="pre">value</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">element.removeAttribute(attribute)</span></code>: Odebere atribut <code class="docutils literal notranslate"><span class="pre">attribute</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">element.hasAttribute(attribute)</span></code>: Zjistí, zda element obsahuje atribut <code class="docutils literal notranslate"><span class="pre">attribute</span></code></p></li>
+</ul>
+<p>Například:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">element</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">));</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;http://example.com&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="datasets">
+<h3>2.6.&nbsp;&nbsp;Datasets<a class="headerlink" href="#datasets" title="Link to this heading">#</a></h3>
+<p>Někdy je praktické ukládat k elementům libovolné dodatečné hodnoty. HTML podporuje u elementů atributy <code class="docutils literal notranslate"><span class="pre">data-*</span></code>, které lze pak číst v JavaScriptu pomocí vlastnosti elementu <code class="docutils literal notranslate"><span class="pre">dataset</span></code>. Stejně tak je možné pomocí této vlastností hodnoty zapisovat:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">);</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">value1</span><span class="o">=</span><span class="mf">123</span><span class="p">;</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">value2</span><span class="o">=</span><span class="s2">&quot;abc&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>V DOM pak bude mít element následující strukturu:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;id&quot;</span> <span class="na">data-value1</span><span class="o">=</span><span class="s">&quot;123&quot;</span> <span class="na">data-value2</span><span class="o">=</span><span class="s">&quot;abc&quot;</span><span class="p">&gt;</span> ... <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Poznámka</p>
+<p>Názvy vlastností v dataset jsou automaticky konvertovány z <em>camelCase</em> na <em>dash-style</em>. Například vlastnost <code class="docutils literal notranslate"><span class="pre">data-my-value</span></code> se v datasetu dostane pomocí <code class="docutils literal notranslate"><span class="pre">element.dataset.myValue</span></code>.</p>
+</div>
+</section>
+</section>
+<section id="udalosti">
+<h2>3.&nbsp;&nbsp;Události<a class="headerlink" href="#udalosti" title="Link to this heading">#</a></h2>
+<p>JavaScript nabízí také možnosti, jak reagovat na různé události, které na stránce mohou nastat. Typicky jsou to události vyvolané uživatelem, například kliknutí myší nebo změna obsahu formuláře.</p>
+<p>JavaScript umožňuje přidat k elementu <strong>event listener</strong>, pomocí funkce elementu <code class="docutils literal notranslate"><span class="pre">addEventListener</span></code>. Jako parametr má pak název události a funkci, která se provede, pokud událost nastane:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">);</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Klik!&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+<p>Parametr <code class="docutils literal notranslate"><span class="pre">event</span></code> obsahuje podrobnosti o události, která byla vyvolána (např. informace o pozici kurzoru, kde uživatel klikl).</p>
+<div class="note admonition">
+<p class="admonition-title">Anonymní funkce</p>
+<p>Povšimněte si použití arrow operátoru v argumentu funkce <code class="docutils literal notranslate"><span class="pre">addEventListener</span></code> (argumentem funkce je jiná funkce). Je to funkce, která je vytvořena, aniž by měla nějaké jméno nebo identifikátor. Takovým funkcím říkáme <strong>anonymní funkce</strong>.</p>
+</div>
+<p>V JavaScriptu je možné odchytit řadu různých událostí pomocí metody <code class="docutils literal notranslate"><span class="pre">addEventListener</span></code>:</p>
+<ol class="arabic simple">
+<li><p><strong>Mouse events</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">click</span></code> - Uživatel klikne na prvek.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dblclick</span></code> - Uživatel dvojitě klikne na prvek.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mousedown</span></code> - Uživatel stiskne tlačítko myši nad prvkem.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mouseup</span></code> - Uživatel uvolní tlačítko myši nad prvkem.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mousemove</span></code> - Myš se pohybuje přes prvek.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mouseover</span></code> - Myš přejde na prvek.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mouseout</span></code> - Myš opustí prvek.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mouseenter</span></code> - Myš vstoupí do prvku (nebublá).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mouseleave</span></code> - Myš opustí prvek (nebublá).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">contextmenu</span></code> - Kliknutí pravým tlačítkem myši.</p></li>
+</ul>
+</li>
+<li><p><strong>Keyboard events</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">keydown</span></code> - Uživatel stiskne klávesu.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">keyup</span></code> - Uživatel uvolní klávesu.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">keypress</span></code> - Uživatel stiskne klávesu a drží ji (dnes již méně používáno).</p></li>
+</ul>
+</li>
+<li><p><strong>Form events</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">submit</span></code> - Formulář je odeslán.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">change</span></code> - Hodnota formulářového prvku se změnila.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">focus</span></code> - Prvek získá fokus.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">blur</span></code> - Prvek ztratí fokus.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">input</span></code> - Hodnota vstupního pole se změní.</p></li>
+</ul>
+</li>
+<li><p><strong>Window events</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">resize</span></code> - Okno prohlížeče je změněno.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scroll</span></code> - Okno prohlížeče nebo prvek se posune.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">load</span></code> - Stránka nebo obrázek je načten.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">unload</span></code> - Stránka se má zavřít.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">beforeunload</span></code> - Před uzavřením stránky.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">error</span></code> - Při chybě načítání.</p></li>
+</ul>
+</li>
+</ol>
+<p>A <a class="reference external" href="https://www.w3schools.com/jsref/dom_obj_event.asp">celá řada dalších</a>.</p>
+<p>Pro zrušení event listeneru je možné použít metodu <code class="docutils literal notranslate"><span class="pre">removeEventListener</span></code>. Ta ovšem nefunguje, pokud byl jako listener použita anonymní funkce. Pokud tedy potřebujete v aplikaci rušit event listener, je potřeba použít funkci pojmenovanou:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">clicked</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// code</span>
+<span class="p">}</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">);</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">clicked</span><span class="p">);</span>
+<span class="c1">// ...</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">clicked</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>V některých jednodušších případech je možné události psát také přímo do HTML stránky v atributech elementu:</p>
+<div class="myst-example docutils">
+<div class="myst-example-source docutils">
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;console.log(&#39;clicked&#39;);&quot;</span><span class="p">&gt;</span>
+    Klikni na mě!
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="myst-example-render docutils">
+<div onclick="console.log('clicked');">
+    Klikni na mě!
+</div>
+</div>
+</div>
+</section>
+<section id="manipulace-s-window">
+<h2>4.&nbsp;&nbsp;Manipulace s <code class="docutils literal notranslate"><span class="pre">window</span></code><a class="headerlink" href="#manipulace-s-window" title="Link to this heading">#</a></h2>
+<p>V JavaScriptu je dostupný globální objekt <code class="docutils literal notranslate"><span class="pre">window</span></code> (přesněji řečeno, všechny globální proměnné jsou vlastností objektu <code class="docutils literal notranslate"><span class="pre">window</span></code>), který reprezentuje okno prohlížeče a nabízí také několik užitečných funkcí pro manipulaci se stránkou:</p>
+<ol class="arabic simple">
+<li><p><strong>Navigace a správa URL</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">window.open(url)</span></code> - Otevírá nové okno prohlížeče nebo záložku s <code class="docutils literal notranslate"><span class="pre">url</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">window.close()</span></code> - Zavírá aktuální okno.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">window.location</span></code> - Obsahuje informace o URL adresáři a umožňuje přesměrování.</p></li>
+</ul>
+</li>
+<li><p><strong>Časovače</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">window.setTimeout(fn,</span> <span class="pre">timeout)</span></code> - Spustí po uplynutí <code class="docutils literal notranslate"><span class="pre">timeout</span></code> ms funkci <code class="docutils literal notranslate"><span class="pre">fn</span></code> po  (jednorázově). Vrací <code class="docutils literal notranslate"><span class="pre">id</span></code> časovače.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">window.setInterval(fn,</span> <span class="pre">interval)</span></code> - Opakuje volání funkce <code class="docutils literal notranslate"><span class="pre">fn</span></code> jednou za <code class="docutils literal notranslate"><span class="pre">interval</span></code> ms. Vrací <code class="docutils literal notranslate"><span class="pre">id</span></code> časovače.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">window.clearTimeout(id)</span></code> - Zruší časovač nastavený pomocí <code class="docutils literal notranslate"><span class="pre">setTimeout</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">window.clearInterval(id)</span></code> - Zruší časovač nastavený pomocí <code class="docutils literal notranslate"><span class="pre">setInterval</span></code>.</p></li>
+</ul>
+</li>
+<li><p><strong>Dialogová okna</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">window.alert(text)</span></code> - Zobrazí modální dialogové okno s textem <code class="docutils literal notranslate"><span class="pre">text</span></code> a tlačítkem OK.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">window.confirm(text)</span></code> - Zobrazí modální dialogové okno s otázkou <code class="docutils literal notranslate"><span class="pre">text</span></code> a tlačítky OK a Storno. Vrací <code class="docutils literal notranslate"><span class="pre">true</span></code> pokud uživatel klikl na OK, nebo <code class="docutils literal notranslate"><span class="pre">false</span></code> pokud na Storno.</p></li>
+</ul>
+</li>
+<li><p><strong>Manipulace s oknem</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">window.resizeTo(width,</span> <span class="pre">height)</span></code> - Změní rozměry okna na zadané hodnoty.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">window.resizeBy(dx,</span> <span class="pre">dy)</span></code> - Změní rozměry okna o zadané hodnoty.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">window.moveTo(x,</span> <span class="pre">y)</span></code> - Přesune okno na zadané souřadnice.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">window.moveBy(dx,</span> <span class="pre">dy)</span></code> - Přesune okno o zadané hodnoty.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">window.scrollTo(x,</span> <span class="pre">y)</span></code>: Skrolování na určené pozice v okně.</p></li>
+</ul>
+</li>
+<li><p><strong>Získání informací o okně</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">window.innerHeight</span></code> - Výška obsahu okna.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">window.innerWidth</span></code> - Šířka obsahu okna.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">window.outerHeight</span></code> - Celková výška okna prohlížeče.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">window.outerWidth</span></code> - Celková šířka okna prohlížeče.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">window.screenX</span></code> a <code class="docutils literal notranslate"><span class="pre">window.screenY</span></code> - Pozice okna vzhledem k obrazovce.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">window.scrollX</span></code> a <code class="docutils literal notranslate"><span class="pre">window.scrollY</span></code> - Pozice skrolu v okně.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="xpath">
+<h2>5.&nbsp;&nbsp;XPath<a class="headerlink" href="#xpath" title="Link to this heading">#</a></h2>
+<p>XPath (XML Path Language) je jazyk, který umožňuje vyhledávat a navigovat po uzlech v XML nebo HTML dokumentech pomocí cesty (path) k těmto uzlům.</p>
+<section id="nalezeni-elementu-podle-xpath">
+<h3>5.1.&nbsp;&nbsp;Nalezení elementu podle XPath<a class="headerlink" href="#nalezeni-elementu-podle-xpath" title="Link to this heading">#</a></h3>
+<p>V prohlížečích můžete pro vyhledávání elementů podle XPath použít <code class="docutils literal notranslate"><span class="pre">document.evaluate()</span></code>:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">xpath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;//a[@href=&#39;https://example.com&#39;]&quot;</span><span class="p">;</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">evaluate</span><span class="p">(</span><span class="nx">xpath</span><span class="p">,</span><span class="w"> </span><span class="nb">document</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="nx">XPathResult</span><span class="p">.</span><span class="nx">ANY_TYPE</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">node</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">iterateNext</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Jednoduché lomítko <code class="docutils literal notranslate"><span class="pre">/</span></code> v XPath znamená, že hledáme pouze přímého potomka, dvojité lomítko <code class="docutils literal notranslate"><span class="pre">//</span></code> hledá všechny přímé či nepřímé potomky. Do hranatých závorek se zapisují podmínky <code class="docutils literal notranslate"><span class="pre">[]</span></code>, které musí element splňovat, aby byl vybrán.</p>
+</section>
+<section id="zakladni-pravidla-psani-xpath">
+<h3>5.2.&nbsp;&nbsp;Základní pravidla psaní XPath<a class="headerlink" href="#zakladni-pravidla-psani-xpath" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Výběr elementů podle tagu</strong>: <code class="docutils literal notranslate"><span class="pre">/html/body/div</span></code> - Vybere všechny <code class="docutils literal notranslate"><span class="pre">div</span></code> elementy, které jsou přímými potomky <code class="docutils literal notranslate"><span class="pre">body</span></code>.</p></li>
+<li><p><strong>Výběr elementů podle atributu</strong>: <code class="docutils literal notranslate"><span class="pre">//div[&#64;class='example']</span></code> - Vybere všechny <code class="docutils literal notranslate"><span class="pre">div</span></code> elementy s třídou <code class="docutils literal notranslate"><span class="pre">example</span></code>.</p></li>
+<li><p><strong>Výběr elementů podle obsahu</strong>: <code class="docutils literal notranslate"><span class="pre">//a[contains(text(),'Next')]</span></code> - Vybere všechny odkazy (<code class="docutils literal notranslate"><span class="pre">a</span></code>), které obsahují text “Next”.</p></li>
+</ul>
+<p>Více informací o XPath a naleznete v <a class="reference external" href="https://www.w3schools.com/xml/xpath_intro.asp">tutoriálu od W3C</a>.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="04_modules.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">předchozí</p>
+        <p class="prev-next-title">Moduly v JavaScriptu</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../materials.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">další</p>
+        <p class="prev-next-title">Materiály k výuce</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Obsah
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vyznam-document-object-model-dom">Význam Document Object Model (DOM)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zakladni-funkce-javascriptu-na-praci-s-dom">Základní funkce JavaScriptu na práci s DOM</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nalezeni-elementu-nebo-mnoziny-elementu">Nalezení elementu nebo množiny elementů</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vytvoreni-a-smazani-elementu">Vytvoření a smazání elementu</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nastaveni-stylu">Nastavení stylu</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zmena-tridy-elementu">Změna třídy elementu</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atributy-elementu">Atributy elementu</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datasets">Datasets</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#udalosti">Události</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulace-s-window">Manipulace s <code class="docutils literal notranslate"><span class="pre">window</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xpath">XPath</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nalezeni-elementu-podle-xpath">Nalezení elementu podle XPath</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zakladni-pravidla-psani-xpath">Základní pravidla psaní XPath</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Podle kf
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, kf..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
