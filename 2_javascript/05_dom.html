@@ -60,7 +60,7 @@
     <link rel="index" title="Rejstřík" href="../genindex.html" />
     <link rel="search" title="Vyhledávání" href="../search.html" />
     <link rel="next" title="Materiály k výuce" href="../materials.html" />
-    <link rel="prev" title="Moduly v JavaScriptu" href="04_modules.html" />
+    <link rel="prev" title="Funkce a třídy" href="03_methods.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="cs"/>
   </head>
@@ -173,12 +173,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../1_static/02_css.html">Základy CSS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_static/03_layouts.html">CSS Layouty</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Javascript</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">JavaScript</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_intro.html">Seznámení s JavaScriptem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_blocks.html">Řídící bloky</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_methods.html">Funkce a třídy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04_modules.html">Moduly v JavaScriptu</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Document Object Model</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Materiály</span></p>
@@ -394,7 +393,7 @@ document.write(`
 <p>JavaScript nabízí řadu funkcí pro práci s DOM. Kořenovým elementem ve stránce je <code class="docutils literal notranslate"><span class="pre">document</span></code>, což je globálně dostupná proměnná v rámci JavaScriptu.</p>
 <section id="nalezeni-elementu-nebo-mnoziny-elementu">
 <h3>2.1.&nbsp;&nbsp;Nalezení elementu nebo množiny elementů<a class="headerlink" href="#nalezeni-elementu-nebo-mnoziny-elementu" title="Link to this heading">#</a></h3>
-<p>Abychom mohli s elementy na stránce pracovat, je nejprve nutné získat objekt elementů nebo jejich pole. K tomu slouží následující funkce:</p>
+<p>Abychom mohli s elementy na stránce pracovat, je nejprve nutné získat objekt elementu nebo jejich pole. K tomu slouží následující funkce:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">document.getElementById('id')</span></code>: Najde element podle ID.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">document.getElementsByClassName('class')</span></code>: Najde všechny elementy s danou třídou.</p></li>
@@ -412,13 +411,13 @@ document.write(`
 </section>
 <section id="vytvoreni-a-smazani-elementu">
 <h3>2.2.&nbsp;&nbsp;Vytvoření a smazání elementu<a class="headerlink" href="#vytvoreni-a-smazani-elementu" title="Link to this heading">#</a></h3>
-<p>K vytvoření elementu se používá funkce <code class="docutils literal notranslate"><span class="pre">document.createElement('tag')</span></code>, kde tag je HTML tag elementu. Vytvořený element je třeba do stránky ještě umístit pomocí funkce <code class="docutils literal notranslate"><span class="pre">appendChild</span></code> u rodičovského elementu:</p>
+<p>K vytvoření elementu se používá funkce <code class="docutils literal notranslate"><span class="pre">document.createElement('tag')</span></code>, kde tag je HTML tag elementu. Vytvořený element je třeba do stránky ještě umístit například pomocí funkce <code class="docutils literal notranslate"><span class="pre">appendChild</span></code> u rodičovského elementu:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">child</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">);</span>
 <span class="nx">parent</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">child</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Funkce <code class="docutils literal notranslate"><span class="pre">appendChild</span></code> vloží element na poslední místo jako potomka rodičovského elementu. Pro vložení na specifické místo (pokud již rodič nějaké elementy obsahuje) lze použít funkci <code class="docutils literal notranslate"><span class="pre">parentNode.insertBefore(newNode,</span> <span class="pre">referenceNode)</span></code>.</p>
+<p>Funkce <code class="docutils literal notranslate"><span class="pre">appendChild</span></code> vloží element na poslední místo jako potomka rodičovského elementu. Pro vložení na specifické místo (pokud již rodič nějaké elementy obsahuje) lze použít funkci <code class="docutils literal notranslate"><span class="pre">parent.insertBefore(newNode,</span> <span class="pre">referenceNode)</span></code>, která vloží element <code class="docutils literal notranslate"><span class="pre">newNode</span></code> <strong>před</strong> element <code class="docutils literal notranslate"><span class="pre">referenceNode</span></code>. Element <code class="docutils literal notranslate"><span class="pre">referenceNode</span></code> musí mít jako rodiče element <code class="docutils literal notranslate"><span class="pre">parent</span></code> jinak by volání nedávalo smysl a vyhodilo by chybu.</p>
 <p>Každý element může mít pouze jednoho rodiče. Pokud je zavolána funkce <code class="docutils literal notranslate"><span class="pre">appendChild</span></code> na element, který už v DOMu je umístěn, je element z původního umístění odstraněn a přesunut na nové místo.</p>
 <p>Pro smazání elementu z DOM je určena funkce <code class="docutils literal notranslate"><span class="pre">removeChild</span></code>:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">el</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">);</span>
@@ -433,10 +432,9 @@ document.write(`
 <span class="nx">element</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;red&#39;</span><span class="p">;</span><span class="w"> </span>
 </pre></div>
 </div>
-<div class="admonition-poznamka admonition">
+<div class="note admonition">
 <p class="admonition-title">Poznámka</p>
-<p>class:note
-Pokud nastavujete CSS styl, který obsahuje pomlčky <code class="docutils literal notranslate"><span class="pre">-</span></code>, používá se v JavaScriptu ekvivalentní zápis v <a class="reference external" href="https://cs.wikipedia.org/wiki/CamelCase">camelCase</a>. Například CSS vlastnost <code class="docutils literal notranslate"><span class="pre">background-color</span></code> se nastaví <code class="docutils literal notranslate"><span class="pre">element.style.backgroundColor</span> <span class="pre">=</span> <span class="pre">'red';</span></code></p>
+<p>Pokud nastavujete CSS styl, který obsahuje pomlčky <code class="docutils literal notranslate"><span class="pre">-</span></code>, používá se v JavaScriptu ekvivalentní zápis v <a class="reference external" href="https://cs.wikipedia.org/wiki/CamelCase">camelCase</a>. Například CSS vlastnost <code class="docutils literal notranslate"><span class="pre">background-color</span></code> se nastaví <code class="docutils literal notranslate"><span class="pre">element.style.backgroundColor</span> <span class="pre">=</span> <span class="pre">'red';</span></code></p>
 </div>
 </section>
 <section id="zmena-tridy-elementu">
@@ -600,7 +598,7 @@ Pokud nastavujete CSS styl, který obsahuje pomlčky <code class="docutils liter
 <li><p><code class="docutils literal notranslate"><span class="pre">window.resizeBy(dx,</span> <span class="pre">dy)</span></code> - Změní rozměry okna o zadané hodnoty.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">window.moveTo(x,</span> <span class="pre">y)</span></code> - Přesune okno na zadané souřadnice.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">window.moveBy(dx,</span> <span class="pre">dy)</span></code> - Přesune okno o zadané hodnoty.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">window.scrollTo(x,</span> <span class="pre">y)</span></code>: Skrolování na určené pozice v okně.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">window.scrollTo(x,</span> <span class="pre">y)</span></code> - Scrolování na určené pozice v okně.</p></li>
 </ul>
 </li>
 <li><p><strong>Získání informací o okně</strong>:</p>
@@ -610,7 +608,7 @@ Pokud nastavujete CSS styl, který obsahuje pomlčky <code class="docutils liter
 <li><p><code class="docutils literal notranslate"><span class="pre">window.outerHeight</span></code> - Celková výška okna prohlížeče.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">window.outerWidth</span></code> - Celková šířka okna prohlížeče.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">window.screenX</span></code> a <code class="docutils literal notranslate"><span class="pre">window.screenY</span></code> - Pozice okna vzhledem k obrazovce.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">window.scrollX</span></code> a <code class="docutils literal notranslate"><span class="pre">window.scrollY</span></code> - Pozice skrolu v okně.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">window.scrollX</span></code> a <code class="docutils literal notranslate"><span class="pre">window.scrollY</span></code> - Pozice scrolu v okně.</p></li>
 </ul>
 </li>
 </ol>
@@ -652,12 +650,12 @@ Pokud nastavujete CSS styl, který obsahuje pomlčky <code class="docutils liter
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="04_modules.html"
+       href="03_methods.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">předchozí</p>
-        <p class="prev-next-title">Moduly v JavaScriptu</p>
+        <p class="prev-next-title">Funkce a třídy</p>
       </div>
     </a>
     <a class="right-next"

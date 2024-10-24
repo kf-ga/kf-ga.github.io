@@ -2,8 +2,8 @@ Materiály k výuce
 =================
 
 * Vzorový HTML dokument pro testování CSS selektorů: 
-{download}`sandbox.html<../examples/1_static/02_css/index.html>`
+{download}`sandbox.html<_static/examples/sandbox.html>`
 
 * Stránka pro testování CSS layoutu: 
-{download}`layout.zip<../examples/1_static/layout.zip>`
+{download}`layout.zip<_static/examples/layout.zip>`
 

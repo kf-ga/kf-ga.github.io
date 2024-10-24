@@ -40,7 +40,7 @@ JavaScript nabízí řadu funkcí pro práci s DOM. Kořenovým elementem ve str
 
 ### Nalezení elementu nebo množiny elementů
 
-Abychom mohli s elementy na stránce pracovat, je nejprve nutné získat objekt elementů nebo jejich pole. K tomu slouží následující funkce:
+Abychom mohli s elementy na stránce pracovat, je nejprve nutné získat objekt elementu nebo jejich pole. K tomu slouží následující funkce:
 
 - `document.getElementById('id')`: Najde element podle ID.
 - `document.getElementsByClassName('class')`: Najde všechny elementy s danou třídou.
@@ -61,7 +61,7 @@ console.log(test.childNodes);
 
 ### Vytvoření a smazání elementu 
 
-K vytvoření elementu se používá funkce `document.createElement('tag')`, kde tag je HTML tag elementu. Vytvořený element je třeba do stránky ještě umístit pomocí funkce `appendChild` u rodičovského elementu:
+K vytvoření elementu se používá funkce `document.createElement('tag')`, kde tag je HTML tag elementu. Vytvořený element je třeba do stránky ještě umístit například pomocí funkce `appendChild` u rodičovského elementu:
 
 ```javascript
 let parent = document.getElementById('container');
@@ -69,7 +69,7 @@ let child = document.createElement('div');
 parent.appendChild(child)
 ```
 
-Funkce `appendChild` vloží element na poslední místo jako potomka rodičovského elementu. Pro vložení na specifické místo (pokud již rodič nějaké elementy obsahuje) lze použít funkci `parentNode.insertBefore(newNode, referenceNode)`.
+Funkce `appendChild` vloží element na poslední místo jako potomka rodičovského elementu. Pro vložení na specifické místo (pokud již rodič nějaké elementy obsahuje) lze použít funkci `parent.insertBefore(newNode, referenceNode)`, která vloží element `newNode` **před** element `referenceNode`. Element `referenceNode` musí mít jako rodiče element `parent` jinak by volání nedávalo smysl a vyhodilo by chybu.
 
 Každý element může mít pouze jednoho rodiče. Pokud je zavolána funkce `appendChild` na element, který už v DOMu je umístěn, je element z původního umístění odstraněn a přesunut na nové místo.
 
@@ -91,7 +91,7 @@ element.style.color = 'red';
 ```
 
 ```{admonition} Poznámka
-class:note
+:class: note
 Pokud nastavujete CSS styl, který obsahuje pomlčky `-`, používá se v JavaScriptu ekvivalentní zápis v [camelCase](https://cs.wikipedia.org/wiki/CamelCase). Například CSS vlastnost `background-color` se nastaví `element.style.backgroundColor = 'red';`
 ```
 
@@ -255,7 +255,7 @@ V JavaScriptu je dostupný globální objekt `window` (přesněji řečeno, vše
     - `window.resizeBy(dx, dy)` - Změní rozměry okna o zadané hodnoty.
     - `window.moveTo(x, y)` - Přesune okno na zadané souřadnice.
     - `window.moveBy(dx, dy)` - Přesune okno o zadané hodnoty.
-    - `window.scrollTo(x, y)`: Skrolování na určené pozice v okně.
+    - `window.scrollTo(x, y)` - Scrolování na určené pozice v okně.
 
 5. **Získání informací o okně**:
     - `window.innerHeight` - Výška obsahu okna.
@@ -263,7 +263,7 @@ V JavaScriptu je dostupný globální objekt `window` (přesněji řečeno, vše
     - `window.outerHeight` - Celková výška okna prohlížeče.
     - `window.outerWidth` - Celková šířka okna prohlížeče.
     - `window.screenX` a `window.screenY` - Pozice okna vzhledem k obrazovce.
-    - `window.scrollX` a `window.scrollY` - Pozice skrolu v okně.
+    - `window.scrollX` a `window.scrollY` - Pozice scrolu v okně.
 
 
 XPath
