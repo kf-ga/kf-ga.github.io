@@ -17,7 +17,7 @@
         gtag('config', 'G-RZX7DQPSHE');
     </script>
     
-    <title>Markdown &#8212; Webové aplikace</title>
+    <title>Moduly v JavaScriptu &#8212; Webové aplikace</title>
   
   
   
@@ -53,12 +53,12 @@
     <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script src="../_static/translations.js?v=0275affc"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '0_introduction/05_markdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '2_javascript/04_modules';</script>
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Rejstřík" href="../genindex.html" />
     <link rel="search" title="Vyhledávání" href="../search.html" />
-    <link rel="next" title="HTML" href="../1_static/01_html.html" />
-    <link rel="prev" title="Git" href="04_git.html" />
+    <link rel="next" title="Document Object Model" href="05_dom.html" />
+    <link rel="prev" title="Funkce a třídy" href="03_methods.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="cs"/>
   </head>
@@ -160,10 +160,10 @@
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Úvod</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="01_overview.html">Úvod do internetových technologií</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04_git.html">Git</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Markdown</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../0_introduction/01_overview.html">Úvod do internetových technologií</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0_introduction/04_git.html">Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0_introduction/05_markdown.html">Markdown</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statický web</span></p>
 <ul class="nav bd-sidenav">
@@ -172,12 +172,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../1_static/03_layouts.html">CSS Layouty</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">JavaScript</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../2_javascript/01_intro.html">Seznámení s JavaScriptem</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_javascript/02_blocks.html">Řídící bloky</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_javascript/03_methods.html">Funkce a třídy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_javascript/04_modules.html">Moduly v JavaScriptu</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_javascript/05_dom.html">Document Object Model</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_intro.html">Seznámení s JavaScriptem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_blocks.html">Řídící bloky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_methods.html">Funkce a třídy</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Moduly v JavaScriptu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_dom.html">Document Object Model</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Materiály</span></p>
 <ul class="nav bd-sidenav">
@@ -236,7 +236,7 @@
       
       
       
-      <li><a href="../_sources/0_introduction/05_markdown.md" target="_blank"
+      <li><a href="../_sources/2_javascript/04_modules.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Stáhněte si zdrojový soubor"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -320,7 +320,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Markdown</h1>
+    <h1>Moduly v JavaScriptu</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -330,15 +330,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zakladni-formatovaci-znacky">Základní formátovací značky</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nadpisy">Nadpisy</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tucne-pismo-kurziva">Tučné písmo, kurzíva</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#seznamy">Seznamy</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#literal">Literál</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zdrojovy-kod">Zdrojový kód</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tabulky">Tabulky</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#klicova-slova-export-import">Klíčová slova <code class="docutils literal notranslate"><span class="pre">export</span></code>, <code class="docutils literal notranslate"><span class="pre">import</span></code></a></li>
 </ul>
             </nav>
         </div>
@@ -350,184 +342,43 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="markdown">
-<h1>Markdown<a class="headerlink" href="#markdown" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="moduly-v-javascriptu">
+<h1>Moduly v JavaScriptu<a class="headerlink" href="#moduly-v-javascriptu" title="Link to this heading">#</a></h1>
 <ul class="simple">
-<li><p><a class="reference external" href="https://www.markdownguide.org/basic-syntax/">Detailní přehled Markdown syntaxe</a></p></li>
+<li><p><a class="reference external" href="https://www.w3schools.com/js/js_modules.asp">Tutoriál od W3C - moduly</a></p></li>
 </ul>
-<p>Markdown je značkovací jazyk s jednoduchou syntaxí, navržený tak, aby byl snadno čitelný a upravitelný v jednoduchém (plain text) textovém editoru a zároveň převeditelný do formátovacích jazyků, které nabízí lepší možnosti formátování textu jako třeba HTML nebo LaTeX. Markdown se daleko striktněji zaměřuje na samotný obsah a oproti HTML obsahuje daleko méně informací formě prezentace. Často se označuje jako <em>strukturovaný text</em>, který se pak podle potřeby a možností dá snadno zobrazovat v různých formách.</p>
-<p>Markdown soubory mají zpravidla příponu <code class="docutils literal notranslate"><span class="pre">.md</span></code>.</p>
-<section id="zakladni-formatovaci-znacky">
-<h2>1.&nbsp;&nbsp;Základní formátovací značky<a class="headerlink" href="#zakladni-formatovaci-znacky" title="Link to this heading">#</a></h2>
-<section id="nadpisy">
-<h3>1.1.&nbsp;&nbsp;Nadpisy<a class="headerlink" href="#nadpisy" title="Link to this heading">#</a></h3>
-<div class="myst-example docutils">
-<div class="myst-example-source docutils">
-<div class="highlight-myst notranslate"><div class="highlight"><pre><span></span><span class="gh"># Heading 1</span>
-<span class="gu">## Heading 2</span>
-<span class="gu">### Heading 3</span>
-<span class="gu">#### Heading 4</span>
-<span class="gu">##### Heading 5</span>
-<span class="gu">###### Heading 6</span>
+<p><strong>Moduly</strong> (někdy označované jako <strong>ES6 moduly</strong>, podle verze JavaScriptu, kdy byly standardizovány) v JavaScriptu umožňují rozdělit kód na menší, lépe spravovatelné části, které pak lze importovat a používat v jiných souborech. Moduly jsou izolovány, což znamená, že proměnné a funkce definované v modulu nejsou automaticky dostupné v jiných skriptech bez explicitního importu. To pomáhá předejít konfliktům jmen a usnadňuje udržovatelnost kódu.</p>
+<section id="klicova-slova-export-import">
+<h2>1.&nbsp;&nbsp;Klíčová slova <code class="docutils literal notranslate"><span class="pre">export</span></code>, <code class="docutils literal notranslate"><span class="pre">import</span></code><a class="headerlink" href="#klicova-slova-export-import" title="Link to this heading">#</a></h2>
+<p>Příkaz <code class="docutils literal notranslate"><span class="pre">export</span></code> slouží k označení proměnných, funkcí, tříd nebo jakýchkoliv jiných prvků, které mohou být použity v jiném modulu. Modul definující například třídu pro export může vypadat takto:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span><span class="w"> </span><span class="nx">MyClass</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">}</span>
+<span class="k">export</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MyClass</span><span class="w"> </span><span class="p">};</span>
 </pre></div>
 </div>
-</div>
-<div class="myst-example-render docutils">
-<h1 class="rubric" id="heading-1">Heading 1</h1>
-<h2 class="rubric" id="heading-2">Heading 2</h2>
-<h3 class="rubric" id="heading-3">Heading 3</h3>
-<h4 class="rubric" id="heading-4">Heading 4</h4>
-<h5 class="rubric" id="heading-5">Heading 5</h5>
-<h6 class="rubric" id="heading-6">Heading 6</h6>
-</div>
-</div>
-<p>Nadpis první úrovně je také možné označit podtržením <code class="docutils literal notranslate"><span class="pre">=</span></code>:</p>
-<div class="myst-example docutils">
-<div class="myst-example-source docutils">
-<div class="highlight-myst notranslate"><div class="highlight"><pre><span></span><span class="gh">Heading 1</span>
-<span class="gh">=========</span>
-</pre></div>
-</div>
-</div>
-<div class="myst-example-render docutils">
-<h1 class="rubric" id="id1">Heading 1</h1>
-</div>
-</div>
-<p>A nadpis druhé úrovně podtržením <code class="docutils literal notranslate"><span class="pre">-</span></code>:</p>
-<div class="myst-example docutils">
-<div class="myst-example-source docutils">
-<div class="highlight-myst notranslate"><div class="highlight"><pre><span></span><span class="gu">Heading 2</span>
-<span class="gu">---------</span>
-</pre></div>
-</div>
-</div>
-<div class="myst-example-render docutils">
-<h2 class="rubric" id="id2">Heading 2</h2>
-</div>
-</div>
-</section>
-<section id="tucne-pismo-kurziva">
-<h3>1.2.&nbsp;&nbsp;Tučné písmo, kurzíva<a class="headerlink" href="#tucne-pismo-kurziva" title="Link to this heading">#</a></h3>
-<div class="myst-example docutils">
-<div class="myst-example-source docutils">
-<div class="highlight-myst notranslate"><div class="highlight"><pre><span></span><span class="gs">**tučné písmo**</span> nebo <span class="gs">__tučné písmo__</span>
+<p>V jiném souboru pak můžeme třídu importovat pomocí příkazu <code class="docutils literal notranslate"><span class="pre">import</span></code>:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MyClass</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./mymodule.js&quot;</span><span class="p">;</span>
 
-<span class="ge">*kurzíva*</span> nebo <span class="ge">_kurzíva_</span>
+<span class="nx">my</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MyClass</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Případně je možné importovat v tagu <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code>, kde je potřeba nastavit atribut <code class="docutils literal notranslate"><span class="pre">type=&quot;module&quot;</span></code>:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MyClass</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./mymodule.js&quot;</span><span class="p">;</span>
 
-***tučná kurzíva*** nebo ___tučná kurzíva___
+<span class="w">    </span><span class="nx">my</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MyClass</span><span class="p">();</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-</div>
-<div class="myst-example-render docutils">
-<p><strong>tučné písmo</strong> nebo <strong>tučné písmo</strong></p>
-<p><em>kurzíva</em> nebo <em>kurzíva</em></p>
-<p><em><strong>tučná kurzíva</strong></em> nebo <em><strong>tučná kurzíva</strong></em></p>
-</div>
-</div>
-</section>
-<section id="seznamy">
-<h3>1.3.&nbsp;&nbsp;Seznamy<a class="headerlink" href="#seznamy" title="Link to this heading">#</a></h3>
-<p>Nečíslované seznamy:</p>
-<div class="myst-example docutils">
-<div class="myst-example-source docutils">
-<div class="highlight-myst notranslate"><div class="highlight"><pre><span></span><span class="k">-</span><span class="w"> </span>Položka 1
-<span class="k">-</span><span class="w"> </span>Položka 2
-<span class="w">  </span><span class="k">-</span><span class="w"> </span>Podpoložka 2.1
+<div class="note admonition">
+<p class="admonition-title">Poznámka</p>
+<p>Moduly fungují pouze na HTTP/HTTPS protokolu, nelze je používat při použití <code class="docutils literal notranslate"><span class="pre">file://</span></code> protokolu. Pro testování můžete použít jednoduchý vývojový server Pythonu, který spustíte příkazem:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">http</span><span class="o">.</span><span class="n">server</span>
 </pre></div>
 </div>
+<p>Skript vytvoří webserver na adrese <code class="docutils literal notranslate"><span class="pre">http://0.0.0.0:8000/</span></code>, který bude zobrazovat adresář, ve kterém byl server spuštěn.</p>
 </div>
-<div class="myst-example-render docutils">
-<ul class="simple">
-<li><p>Položka 1</p></li>
-<li><p>Položka 2</p>
-<ul>
-<li><p>Podpoložka 2.1</p></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-<p>Číslované seznamy:</p>
-<div class="myst-example docutils">
-<div class="myst-example-source docutils">
-<div class="highlight-myst notranslate"><div class="highlight"><pre><span></span><span class="k">1.</span> Položka 1
-<span class="k">2.</span> Položka 2
-<span class="w">    </span><span class="k">1.</span> Podpoložka 2.1
-</pre></div>
-</div>
-</div>
-<div class="myst-example-render docutils">
-<ol class="arabic simple">
-<li><p>Položka 1</p></li>
-<li><p>Položka 2</p>
-<ol class="arabic simple">
-<li><p>Podpoložka 2.1</p></li>
-</ol>
-</li>
-</ol>
-</div>
-</div>
-</section>
-<section id="literal">
-<h3>1.4.&nbsp;&nbsp;Literál<a class="headerlink" href="#literal" title="Link to this heading">#</a></h3>
-<div class="myst-example docutils">
-<div class="myst-example-source docutils">
-<div class="highlight-myst notranslate"><div class="highlight"><pre><span></span>Zobrazení <span class="sb">`literálu`</span> přímo v textu
-</pre></div>
-</div>
-</div>
-<div class="myst-example-render docutils">
-<p>Zobrazení <code class="docutils literal notranslate"><span class="pre">literálu</span></code> přímo v textu</p>
-</div>
-</div>
-</section>
-<section id="zdrojovy-kod">
-<h3>1.5.&nbsp;&nbsp;Zdrojový kód<a class="headerlink" href="#zdrojovy-kod" title="Link to this heading">#</a></h3>
-<div class="myst-example docutils">
-<div class="myst-example-source docutils">
-<div class="highlight-myst notranslate"><div class="highlight"><pre><span></span><span class="sb">  ```python</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">)</span>
-<span class="sb">  ```</span>
-</pre></div>
-</div>
-</div>
-<div class="myst-example-render docutils">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="tabulky">
-<h3>1.6.&nbsp;&nbsp;Tabulky<a class="headerlink" href="#tabulky" title="Link to this heading">#</a></h3>
-<div class="myst-example docutils">
-<div class="myst-example-source docutils">
-<div class="highlight-myst notranslate"><div class="highlight"><pre><span></span>| Hlavička 1 | Hlavička 2 |
-|------------|------------|
-| Buňka 1    | Buňka 2    |
-| Buňka 3    | Buňka 4    |
-</pre></div>
-</div>
-</div>
-<div class="myst-example-render docutils">
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Hlavička 1</p></th>
-<th class="head"><p>Hlavička 2</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Buňka 1</p></td>
-<td><p>Buňka 2</p></td>
-</tr>
-<tr class="row-odd"><td><p>Buňka 3</p></td>
-<td><p>Buňka 4</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
 </section>
 </section>
 
@@ -543,20 +394,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="04_git.html"
+       href="03_methods.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">předchozí</p>
-        <p class="prev-next-title">Git</p>
+        <p class="prev-next-title">Funkce a třídy</p>
       </div>
     </a>
     <a class="right-next"
-       href="../1_static/01_html.html"
+       href="05_dom.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">další</p>
-        <p class="prev-next-title">HTML</p>
+        <p class="prev-next-title">Document Object Model</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -576,15 +427,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zakladni-formatovaci-znacky">Základní formátovací značky</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nadpisy">Nadpisy</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tucne-pismo-kurziva">Tučné písmo, kurzíva</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#seznamy">Seznamy</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#literal">Literál</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zdrojovy-kod">Zdrojový kód</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tabulky">Tabulky</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#klicova-slova-export-import">Klíčová slova <code class="docutils literal notranslate"><span class="pre">export</span></code>, <code class="docutils literal notranslate"><span class="pre">import</span></code></a></li>
 </ul>
   </nav></div>
 
