@@ -74,12 +74,19 @@ Programování webových aplikací
 ```
 
 ```{toctree}
+:caption: Webdesign 
+:maxdepth: 1
+
+6_webdesign/01_wireframe.md
+```
+
+```{toctree}
 :caption: Ostatní 
 :maxdepth: 1
 
-6_other/01_legal.md
-6_other/02_ethics.md
-6_other/03_analytics.md
+7_other/01_legal.md
+7_other/02_ethics.md
+7_other/03_analytics.md
 ```
 
 ```{toctree}
