@@ -47,7 +47,7 @@ User Flow
 Nástroje pro tvorbu wireframe
 -----------------------------
 
-- **Papír a tužka**: Ideální pro rychlé náčrtky a brainstorming v rané fázi návrhu.
+- **[Papír](https://cs.wikipedia.org/wiki/Pap%C3%ADr) a [tužka](https://cs.wikipedia.org/wiki/Tu%C5%BEka)**: Ideální pro rychlé náčrtky a brainstorming v rané fázi návrhu.
 - **[Balsamiq](https://balsamiq.com)**: Specializovaný nástroj pro tvorbu low a mid fidelity wireframů.
 - **[Figma](https://www.figma.com)**: Online nástroj pro spolupráci s možností tvorby mid a high fidelity návrhů.
 - **[Sketch](https://www.sketch.com)**: Populární mezi Mac uživateli pro tvorbu detailních designů nejen webů.
