@@ -7,3 +7,6 @@ Materiály k výuce
 * Stránka pro testování CSS layoutu: 
 {download}`layout.zip<_static/examples/layout.zip>`
 
+* Seznam článků z irozhlas.cz: 
+{download}`articles.json<_static/examples/articles.json>`
+

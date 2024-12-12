@@ -17,7 +17,7 @@
         gtag('config', 'G-RZX7DQPSHE');
     </script>
     
-    <title>Úvod do internetových technologií &#8212; Webové aplikace</title>
+    <title>Webové frameworky &#8212; Webové aplikace</title>
   
   
   
@@ -53,14 +53,12 @@
     <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script src="../_static/translations.js?v=0275affc"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({startOnLoad:true});</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '0_introduction/01_overview';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '4_django/01_framework';</script>
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Rejstřík" href="../genindex.html" />
     <link rel="search" title="Vyhledávání" href="../search.html" />
-    <link rel="next" title="Git" href="04_git.html" />
-    <link rel="prev" title="Programování webových aplikací" href="../index.html" />
+    <link rel="next" title="Seznámení s Django" href="02_project.html" />
+    <link rel="prev" title="PIP, Python Virtual Environment" href="../3_python/06_pip.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="cs"/>
   </head>
@@ -162,10 +160,10 @@
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Úvod</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Úvod do internetových technologií</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04_git.html">Git</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05_markdown.html">Markdown</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../0_introduction/01_overview.html">Úvod do internetových technologií</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0_introduction/04_git.html">Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0_introduction/05_markdown.html">Markdown</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statický web</span></p>
 <ul class="nav bd-sidenav">
@@ -191,9 +189,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../3_python/06_pip.html">PIP, Python Virtual Environment</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Django</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../4_django/01_framework.html">Webové frameworky</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../4_django/02_project.html">Seznámení s Django</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Webové frameworky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_project.html">Seznámení s Django</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Webové protokoly</span></p>
 <ul class="nav bd-sidenav">
@@ -260,7 +258,7 @@
       
       
       
-      <li><a href="../_sources/0_introduction/01_overview.md" target="_blank"
+      <li><a href="../_sources/4_django/01_framework.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Stáhněte si zdrojový soubor"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -344,7 +342,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Úvod do internetových technologií</h1>
+    <h1>Webové frameworky</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -354,8 +352,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#internet-a-web">Internet a Web</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zakladni-architektura-webu">Základní architektura Webu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#k-cemu-framework">K čemu framework?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#framework-django">Framework Django</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#architektura-mvt">Architektura MVT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#orm">ORM</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -367,44 +369,31 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="uvod-do-internetovych-technologii">
-<h1>Úvod do internetových technologií<a class="headerlink" href="#uvod-do-internetovych-technologii" title="Link to this heading">#</a></h1>
-<section id="internet-a-web">
-<h2>1.&nbsp;&nbsp;Internet a Web<a class="headerlink" href="#internet-a-web" title="Link to this heading">#</a></h2>
-<p><strong>Internet</strong> je celosvětová síť vzájemně propojených počítačů, která umožňuje komunikaci a přenos dat mezi těmito počítači. Jeho počátky sahají do 60. letech 20. století, kdy vědci pod záštitou amerického ministerstva obrany začali vytvářet síť (původně projekt <a class="reference external" href="https://en.wikipedia.org/wiki/ARPANET">ARPANET</a>) ke komunikaci a sdílení informací mezi vzdálenými počítači pro výzkumné a vojenské účely.</p>
-<div class="note admonition">
-<p class="admonition-title">Velký Internet</p>
-<p>Protože Internet je jméno této celosvětové sítě, píšeme ho s velkým I.</p>
-</div>
-<p>Pojem <strong>Web</strong> neboli <strong>World Wide Web</strong> zkráceně <strong>WWW</strong>, často zaměňovaný s Internetem, je ve skutečnosti jednou z mnoha služeb dostupných na Internetu. Web vytvořil v roce 1989 <a class="reference external" href="https://en.wikipedia.org/wiki/Tim_Berners-Lee">Tim Berners-Lee</a> v <a class="reference external" href="https://home.cern">CERNu</a> a původně zahrnoval <em>webové stránky</em> přístupné pomocí <em>webových prohlížečů</em>. Webové technologie prošly za poslední dekády velkým vývojem a jsou už dnes rozšířené v řadě odvětví a oproti původnímu konceptu webových stránek a prohlížeče mohou mít dnes řadu různých podob a použití např. v mobilních aplikacích, Internetu věcí apod.</p>
-<p>Web je jen jednou z mnoha služeb postavených na Internetu. Mezi další služby Internetu patří například e-mail, FTP (File Transfer Protocol), VoIP ale třeba i online hry a celá řada dalších. Web se však stal jednou z nejpopulárnějších služeb, protože poskytuje interaktivní a vizuálně přitažlivou formu prezentace informací a komunikaci s uživatelem skrze všeobecně dostupné webové prohlížeče.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="webove-frameworky">
+<h1>Webové frameworky<a class="headerlink" href="#webove-frameworky" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.djangoproject.com">Domovská stránka Django</a></p></li>
+</ul>
+<section id="k-cemu-framework">
+<h2>1.&nbsp;&nbsp;K čemu framework?<a class="headerlink" href="#k-cemu-framework" title="Link to this heading">#</a></h2>
+<p>Frameworky na tvorbu webových stránek vznikly jako reakce na rostoucí složitost a požadavky na moderní webové aplikace. V průběhu let se webové technologie vyvíjely z jednoduchých statických stránek na složité interaktivní aplikace, což znamenalo, že vývojáři museli investovat více času a úsilí do správy kódu, zabezpečení a optimalizace výkonu. Frameworky nabízejí hotové komponenty a nástroje, které umožňují vývojářům rychleji a efektivněji vytvářet robustní a bezpečné webové aplikace. Použitím frameworku mohou týmy snížit množství redundantního kódu, dodržovat osvědčené postupy a soustředit se více na unikátní aspekty a funkce svých projektů.</p>
 </section>
-<section id="zakladni-architektura-webu">
-<h2>2.&nbsp;&nbsp;Základní architektura Webu<a class="headerlink" href="#zakladni-architektura-webu" title="Link to this heading">#</a></h2>
-<p>Základním principem fungování webu je interakce mezi uživatelem a serverem skrze Internet. Na straně uživatele (která se označuje jako <strong>klient</strong>) je třeba řešit zejména prezentaci informací, což je hlavní úkol webového prohlížeče. Na straně <strong>server</strong>u pak běží aplikace, která definuje vnitřní logiku, funkce, ukládá data v <em>databázi</em> atd…</p>
-<p>Koncept klient-server je důležitým vývojářským paradigmatem, který se často objevuje ve webových technologiích, ale i v jiných oblastech IT. Klient je <em>aktivní</em>, <em>zasílá požadavky</em> na server. Server je <em>pasivní</em>, <em>čeká na příchozí požadavky</em> od klienta a poskytuje odpovědi, například v podobě webových stránek.</p>
-<div class="mermaid">
-            graph LR
-    A[fa:fa-male]:::NB &lt;--&gt; B[Webový prohlížeč]
-    B &lt;--&gt; C(Internet)
-    C &lt;--&gt; D[Webový server]
-    D &lt;--&gt; E[(Databáze)]
-
-    subgraph Klient
-        B
-    end
-    subgraph Server
-        D
-        E
-    end
-
-    classDef NB fill:none,stroke-width:0,font-size:1em
-        </div><p>V první části předmětu se budeme věnovat technologiím klienta, což jsou zejména formátovací jazyky HTML a CSS. Dále se seznámíme ze základy JavaScriptu, který umožňuje interaktivitu s prvky ve webové stránce. Část webové aplikace, kterou uživatelé vidí a se kterou mohou interagovat přímo v jejich webovém prohlížeči, se také označuje jako <strong>front-end</strong>. Zahrnuje disciplíny jako design webu, uživatelského rozhraní (user interface), user experience (UX, neboli jaký zážitek uživateli webová stránka přinese) a další.</p>
-<p>V druhé části se pak budeme věnovat zejména straně serveru, naučíme se programovat webovou aplikaci a seznámíme se detailněji s principy fungování Webu. Část webové aplikace, která běží na serveru se také označuje jako <strong>back-end</strong>. Zahrnuje disciplíny jako programování logiky aplikace, databázové technologie, komunikace mezi serverem a klientem, zabezpečení a další.</p>
-<div class="note admonition">
-<p class="admonition-title">Hurá na to!</p>
-<p>Tato dokumentace poskytuje základní přehled o technologiích Webu a má sloužit jako rozcestník pro další informace.</p>
+<section id="framework-django">
+<h2>2.&nbsp;&nbsp;Framework Django<a class="headerlink" href="#framework-django" title="Link to this heading">#</a></h2>
+<p>Django je vysokoúrovňový webový framework napsaný v Pythonu, který byl vytvořen s cílem usnadnit rychlý vývoj čistých, funkčních a bezpečných webových aplikací. Django klade důraz na DRY princip. S jeho silným ekosystémem vývojářů a širokou škálou hotových knihoven podporuje vývoj různých typů webových aplikací, od jednoduchých osobních blogů po složité podnikové systémy.</p>
+<div class="tip admonition">
+<p class="admonition-title">Neopakuj se!</p>
+<p><strong>DRY</strong> (<strong>Don’t repeat yourself</strong>) je princip vývoje nejen u webových aplikací, kdy se klade důraz na minimalizaci duplicitního kódu nebo chování aplikace. Pokud jsou na dvou nebo více místech v aplikaci stejné nebo velmi podobné kusy kódu, je to podle DRY principu chybný stav a kód by měl být upraven tak, aby duplicity neobsahoval.</p>
+<p>Django, jak uvidíme později, nabízí celou řadu nástrojů, jak duplicity eliminovat, nebo ideálně je ani při psaní aplikace nevytvářet.</p>
 </div>
+<section id="architektura-mvt">
+<h3>2.1.&nbsp;&nbsp;Architektura MVT<a class="headerlink" href="#architektura-mvt" title="Link to this heading">#</a></h3>
+<p>Django používá architekturu <strong>MVT</strong> (<strong>Model-View-Template</strong>), což je obdoba architektury <strong>MVC</strong> (<strong>Model-View-Controller</strong>). V MVT architektuře je část <strong>Model</strong> zodpovědná za správu dat a logiku aplikace a zajišťuje komunikaci s databází, <strong>View</strong> zpracovává HTTP požadavky přicházející z klienta a vytváří HTTP odpovědi, a <strong>Template</strong> se stará o prezentaci dat uživateli. Tato architektura umožňuje jasné oddělení jednotlivých částí aplikace, což usnadňuje její údržbu a rozšiřování.</p>
+</section>
+<section id="orm">
+<h3>2.2.&nbsp;&nbsp;ORM<a class="headerlink" href="#orm" title="Link to this heading">#</a></h3>
+<p>Django obsahuje vestavěný <strong>ORM</strong> (<strong>Object-Relational Mapping</strong>), což je nástroj, který umožňuje vývojářům pracovat s databázemi pomocí objektově orientovaného programování. ORM mapuje <strong>databázové tabulky na Python třídy</strong> a <strong>řádky tabulek na instance</strong> těchto tříd. Díky tomu mohou vývojáři manipulovat s databázovými daty pomocí Python kódu, aniž by museli psát SQL dotazy a zjednodušuje a zrychluje práci s databázemi.</p>
+</section>
 </section>
 </section>
 
@@ -420,20 +409,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../index.html"
+       href="../3_python/06_pip.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">předchozí</p>
-        <p class="prev-next-title">Programování webových aplikací</p>
+        <p class="prev-next-title">PIP, Python Virtual Environment</p>
       </div>
     </a>
     <a class="right-next"
-       href="04_git.html"
+       href="02_project.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">další</p>
-        <p class="prev-next-title">Git</p>
+        <p class="prev-next-title">Seznámení s Django</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -453,8 +442,12 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#internet-a-web">Internet a Web</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zakladni-architektura-webu">Základní architektura Webu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#k-cemu-framework">K čemu framework?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#framework-django">Framework Django</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#architektura-mvt">Architektura MVT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#orm">ORM</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

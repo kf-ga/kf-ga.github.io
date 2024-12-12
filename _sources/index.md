@@ -69,8 +69,10 @@ Programování webových aplikací
 :caption: Webové protokoly 
 :maxdepth: 1
 
-5_protocols/01_intro.md
-5_protocols/02_url.md
+5_protocols/01_http.md
+5_protocols/02_tcpip.md
+5_protocols/03_dns.md
+5_protocols/04_osi.md
 ```
 
 ```{toctree}

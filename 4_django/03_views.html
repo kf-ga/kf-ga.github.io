@@ -1,0 +1,615 @@
+
+<!DOCTYPE html>
+
+
+<html lang="cs" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZX7DQPSHE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RZX7DQPSHE');
+    </script>
+    
+    <title>Pohledy &#8212; Webové aplikace</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/local.css?v=1256093c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=4cdba38b"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../_static/translations.js?v=0275affc"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '4_django/03_views';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Rejstřík" href="../genindex.html" />
+    <link rel="search" title="Vyhledávání" href="../search.html" />
+    <link rel="next" title="Protokol HTTP" href="../5_protocols/01_http.html" />
+    <link rel="prev" title="Seznámení s Django" href="02_project.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="cs"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Webové aplikace</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Vyhledávání" aria-label="Vyhledávání" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Vyhledávání</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Úvod</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../0_introduction/01_overview.html">Úvod do internetových technologií</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0_introduction/04_git.html">Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0_introduction/05_markdown.html">Markdown</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statický web</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../1_static/01_html.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_static/02_css.html">Základy CSS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_static/03_layouts.html">CSS Layouty</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">JavaScript</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../2_javascript/01_intro.html">Seznámení s JavaScriptem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_javascript/02_blocks.html">Řídící bloky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_javascript/03_methods.html">Funkce a třídy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_javascript/04_modules.html">Moduly v JavaScriptu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_javascript/05_dom.html">Document Object Model</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../3_python/01_intro.html">Seznámení s jazykem Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_python/02_types.html">Datové typy v Pythonu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_python/03_blocks.html">Řídící bloky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_python/04_methods.html">Funkce a třídy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_python/05_packages.html">Balíčky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_python/06_pip.html">PIP, Python Virtual Environment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Django</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_framework.html">Webové frameworky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_project.html">Seznámení s Django</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Pohledy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Webové protokoly</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../5_protocols/01_http.html">Protokol HTTP</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Webdesign</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../6_webdesign/01_wireframe.html">Wireframe návrh</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Materiály</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../materials.html">Materiály k výuce</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Stáhněte si tuto stránku">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/4_django/03_views.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Stáhněte si zdrojový soubor"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Tisk do PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Režim celé obrazovky"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Vyhledávání" aria-label="Vyhledávání" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Pohledy</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Obsah </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architektura-django-aplikace">Architektura Django aplikace</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#view-a-url">View a URL</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametrizace-pohledu">Parametrizace pohledu</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reverzni-sestaveni-url">Reverzní sestavení URL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vychozi-parametry">Výchozí parametry</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="pohledy">
+<h1>Pohledy<a class="headerlink" href="#pohledy" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.djangoproject.com/en/5.0/intro/tutorial01/">Django tutoriál</a></p></li>
+<li><p><a class="reference external" href="https://docs.djangoproject.com/en/5.0/topics/http/views/">Django dokumentace - pohledy</a></p></li>
+<li><p><a class="reference external" href="https://docs.djangoproject.com/en/5.0/topics/http/urls/">Django dokumentace - url</a></p></li>
+</ul>
+<section id="architektura-django-aplikace">
+<h2>1.&nbsp;&nbsp;Architektura Django aplikace<a class="headerlink" href="#architektura-django-aplikace" title="Link to this heading">#</a></h2>
+<p><strong>MVC</strong> (<strong>Model-View-Controller</strong>) je architektonický návrhový vzor používaný zejména pro tvorbu webových stránek pro rozdělení aplikace do tří hlavních logických komponent:</p>
+<ul class="simple">
+<li><p><strong>Model</strong> reprezentuje strukturu dat, pravidla a logiku aplikace. Zpravidla implementován jako třída. Model může být například uživatel nebo článek.</p></li>
+<li><p><strong>View</strong> je část zodpovědná za prezentaci dat a interakci s uživatelem.</p></li>
+<li><p><strong>Controller</strong> řídí interakci mezi Model a View, zpracovává vstupy uživatele a volá aktualizace Model a View.</p></li>
+</ul>
+<p>V Django přebírá velkou část roli komponenty Controller samotný Django framework. V Django frameworku proto hovoříme o architektuře <strong>MVT</strong> (<strong>Model-View-Template</strong>):</p>
+<ul class="simple">
+<li><p><strong>Model</strong> zůstává stejný, reprezentuje data a jejich logiku. Více o modelech v kapitole <span class="xref myst"></span>,</p></li>
+<li><p><strong>View</strong> (pohled) v Django přebírá některé role komponenty Controller z MVC a reprezentuje pohled na na data (na Model).</p></li>
+<li><p><strong>Template</strong> (šablona) je textový soubor, který definuje strukturu stránky nebo její části obvykle pomocí HTML rozšířených o speciální značky. Více o šablonách v kapitole <span class="xref myst"></span>,</p></li>
+</ul>
+<p>Rozdělení projektu na tyto logické části umožňuje jednodušší správu a údržbu kódu při vývoji webové aplikace. Každá komponenta má svůj specifický účel a mění se nezávisle na ostatních. Usnadňuje také práci na projektu pro větší týmy, kdy se část týmu může věnovat vnitřní logice aplikace (Model), část způsobu prezentace uživateli (View) a část vizuální stránce a designu aplikace (Template). Díky rozdělení může každá část pracovat více nezávisle na zbytku týmu.</p>
+</section>
+<section id="view-a-url">
+<h2>2.&nbsp;&nbsp;View a URL<a class="headerlink" href="#view-a-url" title="Link to this heading">#</a></h2>
+<p>Views jsou definovány v souboru <code class="docutils literal notranslate"><span class="pre">views.py</span></code> každé Django aplikace. Z hlediska frameworku Django je pohled (View) funkcí, která převezme jako parametr objekt <code class="docutils literal notranslate"><span class="pre">request</span></code> (instance třídy <code class="docutils literal notranslate"><span class="pre">HttpRequest</span></code>), který obsahuje detailní informace o HTTP požadavku (jeho použití si probereme později) a vrací objekt třídy <code class="docutils literal notranslate"><span class="pre">HttpResponse</span></code> (případně třídy z ní odvozené), který obsahuje data, která se budou prezentovat uživateli a další metadata HTTP protokolu, které si také probereme později. Dva jednoduché pohledy <code class="docutils literal notranslate"><span class="pre">index</span></code> a <code class="docutils literal notranslate"><span class="pre">hello</span></code> mohou vypadat například takto:</p>
+<p><code class="docutils literal notranslate"><span class="pre">my_app/views.py</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+
+<span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s2">&quot;Homepage&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Co to je HTTP?</p>
+<p>Detailům <strong>HTTP</strong> protokolu se budeme věnovat v pozdějších kapitolách, pro začátek stačí vědět, že HTTP (<strong>HyperText Transfer Protocol</strong>) je základní protokol pro komunikaci na webu. Umožňuje přenos dat mezi webovými prohlížeči (klienty) a servery.</p>
+<p>Funguje na principu <strong>HTTP požadavků</strong> (<strong>HTTP Request</strong>) a <strong>HTTP odpovědí</strong> (<strong>HTTP Response</strong>). Klient (např. webový prohlížeč) pošle HTTP požadavek na server, který zpracuje tento požadavek a pošle zpět odpověď obsahující požadované informace (např. HTML stránku, obrázky, data apod.).</p>
+</div>
+<p>Pro mapování pohledů na URL používá Django soubor <code class="docutils literal notranslate"><span class="pre">urls.py</span></code>, kde se každé URL adrese přiřadí pohled, který má HTTP požadavek na toto URL zpracovat. Spojování URL adres s obslužnou funkcí se také někdy označuje jako <strong>routing</strong>.</p>
+<p>Vzhledem k tomu, že aplikace by měly být v Django frameworku navrhovány tak, aby byly případně znovupoužitelné v jiném projektu (což se týká i struktury URL dané aplikace), obvykle se se definují URL specifické pro aplikaci v souboru <code class="docutils literal notranslate"><span class="pre">urls.py</span></code> aplikace (tento soubor není automaticky vytvořen):</p>
+<p><code class="docutils literal notranslate"><span class="pre">my_app/urls.py</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">views</span>
+
+<span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;my_app&quot;</span>
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;hello/&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">hello</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;hello&#39;</span><span class="p">),</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>Tyto URL se pak jako celek namapují na jedno konkrétní URL v rámci celého Django projektu v hlavním souboru <code class="docutils literal notranslate"><span class="pre">urls.py</span></code> projektu:</p>
+<p><code class="docutils literal notranslate"><span class="pre">my_project/urls.py</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">include</span><span class="p">,</span> <span class="n">path</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;my_app/&quot;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s2">&quot;my_app.urls&quot;</span><span class="p">)),</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>Takto vzniknou v projektu <code class="docutils literal notranslate"><span class="pre">my_project</span></code> dvě URL:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/my_app/</span></code> které se mapuje na funkci <code class="docutils literal notranslate"><span class="pre">index</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/my_app/hello/</span></code> které se mapuje na funkci <code class="docutils literal notranslate"><span class="pre">hello</span></code></p></li>
+</ul>
+<div class="warning admonition">
+<p class="admonition-title">Projekt a aplikace</p>
+<p>Připomeňme si rozdíl mezi <strong>Django projektem</strong> a <strong>Django aplikací</strong>. Django aplikace je část Django projektu, která řeší nějakou část vaší webové aplikace a v zásadě je navržena tak, aby mohla být použita ve více projektech. Django projekt je kolekcí jedné či více Django aplikací.</p>
+</div>
+<section id="parametrizace-pohledu">
+<h3>2.1.&nbsp;&nbsp;Parametrizace pohledu<a class="headerlink" href="#parametrizace-pohledu" title="Link to this heading">#</a></h3>
+<p>Často je ve webové aplikaci nutné mít nějakou část URL dynamickou, například pokud chcete zobrazit jeden konkrétní článek, nebo zobrazit kalendář pro konkrétní datum. Bylo by nepraktické definovat explicitně všechny možné kombinace URL a proto nabízí Django framework možnost URL parametrizovat speciálními argumenty v ostrých závorkách <code class="docutils literal notranslate"><span class="pre">&lt;&gt;</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># ...</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;say/&lt;str:my_name&gt;&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">say</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;say&#39;</span><span class="p">),</span>
+    <span class="c1"># ...</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>Tyto parametry v URL Django automaticky zpracuje a předá jako další argument do funkce pohledu:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">say</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">my_name</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;You are </span><span class="si">{</span><span class="n">my_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Pokud tedy zobrazíte url např. <code class="docutils literal notranslate"><span class="pre">/say/John</span></code> v prohlížeči, Django automaticky předá argument <code class="docutils literal notranslate"><span class="pre">&quot;John&quot;</span></code> funkci <code class="docutils literal notranslate"><span class="pre">say</span></code> a vrátí odpověď <code class="docutils literal notranslate"><span class="pre">&quot;You</span> <span class="pre">are</span> <span class="pre">John&quot;</span></code>.</p>
+<p>Django podporuje několik datových typů v URL:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">str</span></code>: Textový řetězec, kromě znaku <code class="docutils literal notranslate"><span class="pre">/</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span></code>: Celé číslo.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">slug</span></code>: “Slug” řetězec, tedy řetězec alfanumerických znaků, pomlčky <code class="docutils literal notranslate"><span class="pre">-</span></code> a podtržítka <code class="docutils literal notranslate"><span class="pre">_</span></code>. Tyto řetězce se často používají v URL kvůli snadné čitelnosti URL.</p></li>
+</ul>
+<p>Jejich úplný seznam a návod jak definovat vlastní typy parametrů naleznete v <a class="reference external" href="https://docs.djangoproject.com/en/5.0/topics/http/urls/">dokumentaci</a>.</p>
+</section>
+<section id="reverzni-sestaveni-url">
+<h3>2.2.&nbsp;&nbsp;Reverzní sestavení URL<a class="headerlink" href="#reverzni-sestaveni-url" title="Link to this heading">#</a></h3>
+<p>V aplikaci často potřebujete vytvořit URL, odkazující na jinou stránku aplikace. Django framework umožňuje snadno vytvářet tyto URL pomocí funkce <code class="docutils literal notranslate"><span class="pre">reverse</span></code> (z reverzního sestavení URL):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">reverse</span>
+
+<span class="c1"># ...</span>
+<span class="n">url</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;my_app:hello&#39;</span><span class="p">)</span>
+<span class="n">link</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;&lt;a href=&quot;</span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s1">&quot;&gt;Say hello&lt;/a&gt;&#39;</span>
+<span class="c1"># ...</span>
+</pre></div>
+</div>
+<p>To je užitečné, protože pokud chcete změnit URL v aplikaci, nebo přesunete celou aplikaci na jiné URL, stačí to změnit jen na jednom místě v souboru <code class="docutils literal notranslate"><span class="pre">urls.py</span></code> a nemusíte procházet celý projekt a zjišťovat kde všude se URL vyskytuje. Argumentem funkce <code class="docutils literal notranslate"><span class="pre">reverse</span></code> je identifikátor URL, což je pár <code class="docutils literal notranslate"><span class="pre">app_name</span></code> (v souboru <code class="docutils literal notranslate"><span class="pre">views.py</span></code> aplikace) a jména URL (parametr <code class="docutils literal notranslate"><span class="pre">name</span></code> funkce <code class="docutils literal notranslate"><span class="pre">path</span></code> ve <code class="docutils literal notranslate"><span class="pre">views.py</span></code> aplikace) spojených dvojtečkou <code class="docutils literal notranslate"><span class="pre">:</span></code>.</p>
+<p>Pokud jsou URL parametrizované, musíte funkci <code class="docutils literal notranslate"><span class="pre">reverse</span></code> předat také parametry, které se do URL dosadí:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ...</span>
+<span class="n">url</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;my_app:say&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">])</span>
+<span class="n">link</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;&lt;a href=&quot;</span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s1">&quot;&gt;Are you John?&lt;/a&gt;&#39;</span>
+<span class="c1"># ...</span>
+</pre></div>
+</div>
+</section>
+<section id="vychozi-parametry">
+<h3>2.3.&nbsp;&nbsp;Výchozí parametry<a class="headerlink" href="#vychozi-parametry" title="Link to this heading">#</a></h3>
+<p>Parametry v pohledu je možné doplnit o výchozí hodnotu:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">say</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">my_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">my_name</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;You are </span><span class="si">{</span><span class="n">my_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;I don&#39;t know who you are&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>V souboru <code class="docutils literal notranslate"><span class="pre">urls.py</span></code> je pak možné stejným pohledem obsluhovat i URL, které parametr nemá:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;say/&quot;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">say</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;say/&lt;str:my_name&gt;/&quot;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">say</span><span class="p">),</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="02_project.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">předchozí</p>
+        <p class="prev-next-title">Seznámení s Django</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../5_protocols/01_http.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">další</p>
+        <p class="prev-next-title">Protokol HTTP</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Obsah
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architektura-django-aplikace">Architektura Django aplikace</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#view-a-url">View a URL</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametrizace-pohledu">Parametrizace pohledu</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reverzni-sestaveni-url">Reverzní sestavení URL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vychozi-parametry">Výchozí parametry</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Podle kf
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, kf..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

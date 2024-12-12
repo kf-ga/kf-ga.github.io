@@ -243,7 +243,6 @@ Vlastnost `color` definuje barvu textu. V CSS je povoleno několik způsobů zad
 * RGB: `rgb(250, 100, 50)` 
 * RGBA (s alfa kanálem pro průhlednost): `rgba(250, 100, 50, 0.5)` (poloprůhledná)
 * HSL (odstín, sytost, jas): `hsl(0, 100%, 50%)` (červená)
-* HSLA: `hsla(0, 100%, 50%, 0.5)` (poloprůhledná červená)
 * Slovním zápisem barev: `red`, `blue`, `green`, atd. Úplný seznam dovolených barev naleznete [zde](https://www.w3schools.com/cssref/css_colors.php).
 
 ### Pozadí `background`
