@@ -125,9 +125,9 @@ Ke zjištění aktuálního typu proměnné je možné použít operátor `typeo
 a=1;
 b="Hello";
 c=true;
-console.log(a); // "number"
-console.log(b); // "string"
-console.log(c); // "boolean"
+console.log(typeof a); // "number"
+console.log(typeof b); // "string"
+console.log(typeof c); // "boolean"
 ```
 
 
