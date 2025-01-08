@@ -1,0 +1,804 @@
+
+<!DOCTYPE html>
+
+
+<html lang="cs" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZX7DQPSHE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RZX7DQPSHE');
+    </script>
+    
+    <title>Formuláře &#8212; Webové aplikace</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/local.css?v=1256093c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=4cdba38b"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../_static/translations.js?v=0275affc"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '4_django/08_forms';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Rejstřík" href="../genindex.html" />
+    <link rel="search" title="Vyhledávání" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="cs"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Webové aplikace</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Vyhledávání" aria-label="Vyhledávání" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Vyhledávání</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Úvod</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../0_introduction/01_overview.html">Úvod do internetových technologií</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0_introduction/04_git.html">Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0_introduction/05_markdown.html">Markdown</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statický web</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../1_static/01_html.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_static/02_css.html">Základy CSS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_static/03_layouts.html">CSS Layouty</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">JavaScript</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../2_javascript/01_intro.html">Seznámení s JavaScriptem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_javascript/02_blocks.html">Řídící bloky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_javascript/03_methods.html">Funkce a třídy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_javascript/04_modules.html">Moduly v JavaScriptu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_javascript/05_dom.html">Document Object Model</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../3_python/01_intro.html">Seznámení s jazykem Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_python/02_types.html">Datové typy v Pythonu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_python/03_blocks.html">Řídící bloky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_python/04_methods.html">Funkce a třídy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_python/05_packages.html">Balíčky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_python/06_pip.html">PIP, Python Virtual Environment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Django</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_framework.html">Webové frameworky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_project.html">Seznámení s Django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_sessions.html">Cookies, sessions a uživatelé</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_deploy.html">Produkční prostředí</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Webové protokoly</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../5_protocols/01_http.html">Protokol HTTP</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Webdesign</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../6_webdesign/01_wireframe.html">Wireframe návrh</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ostatní</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../7_other/01_legal.html">Web a právo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7_other/02_ethics.html">Etika webových aplikací</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7_other/03_analytics.html">Webová analytika</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Materiály</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../materials.html">Materiály k výuce</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Stáhněte si tuto stránku">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/4_django/08_forms.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Stáhněte si zdrojový soubor"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Tisk do PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Režim celé obrazovky"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Vyhledávání" aria-label="Vyhledávání" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Formuláře</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Obsah </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trida-forms-form">Třída <code class="docutils literal notranslate"><span class="pre">forms.Form</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spolecne-parametry">Společné parametry</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zobrazeni-formulare">Zobrazení formuláře</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zpracovani-formulare">Zpracování formuláře</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trida-forms-modelform">Třída <code class="docutils literal notranslate"><span class="pre">forms.ModelForm</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prace-s-relacemi-ve-formularich">Práce s relacemi ve formulářích</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#balicek-crispy-forms">Balíček Crispy Forms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instalace">Instalace</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trida-formhelper">Třída <code class="docutils literal notranslate"><span class="pre">FormHelper</span></code></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="formulare">
+<h1>Formuláře<a class="headerlink" href="#formulare" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.djangoproject.com/en/5.0/topics/forms/">Návody Django - Formuláře</a></p></li>
+<li><p><a class="reference external" href="https://docs.djangoproject.com/en/5.0/ref/forms/api/">Referenční dokumentace Django - Forms API</a></p></li>
+<li><p><a class="reference external" href="https://docs.djangoproject.com/en/5.0/ref/forms/fields/">Referenční dokumentace Django - Form fields</a></p></li>
+</ul>
+<p>Formuláře v Django přinášejí bohatou podporu pro celý životní cyklus formuláře, od vytvoření HTML kódu formuláře po zpracování a kontrolu odeslaných dat.</p>
+<section id="trida-forms-form">
+<h2>1.&nbsp;&nbsp;Třída <code class="docutils literal notranslate"><span class="pre">forms.Form</span></code><a class="headerlink" href="#trida-forms-form" title="Link to this heading">#</a></h2>
+<p>Třída <code class="docutils literal notranslate"><span class="pre">forms.Form</span></code> v Django je základní třídou pro vytváření formulářů. Odvozením z této třídy a přidáním položek formuláře definujete vlastní formulář (podobně jako se definují v Django modely):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># my_app/forms.py</span>
+<span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span> <span class="n">forms</span>
+
+<span class="k">class</span> <span class="nc">CommentForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">Form</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">CharField</span><span class="p">()</span>
+    <span class="n">rating</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">()</span>
+    <span class="n">comment</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Třídy formulářů se obvykle ukládají do souboru <code class="docutils literal notranslate"><span class="pre">forms.py</span></code> v adresáři aplikace.</p>
+<p>Django přináší pestrou sadů typů položek formuláře (<strong>fields</strong>), které se hodí pro většinu situací:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">CharField</span></code></strong>: vstup pro krátký textový řetězec</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">IntegerField</span></code></strong>: celočíselný vstup</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">EmailField</span></code></strong>: vstup pro e-mailové adresy</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">DateField</span></code></strong>: vstup pro výběr data</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">BooleanField</span></code></strong>: výběr ano/ne (zaškrtávací políčko)</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">ChoiceField</span></code></strong>: pro výběr z pevně daných možností</p></li>
+</ul>
+<p>Všechny Fields je možné dále konfigurovat, například u <code class="docutils literal notranslate"><span class="pre">CharField</span></code> je možné <a class="reference external" href="https://docs.djangoproject.com/en/5.0/ref/forms/fields/#charfield">nastavit</a> <code class="docutils literal notranslate"><span class="pre">max_length</span></code> určující maximální délku zadávaného řetězce, nebo u <code class="docutils literal notranslate"><span class="pre">IntegerField</span></code> je možné <a class="reference external" href="https://docs.djangoproject.com/en/5.0/ref/forms/fields/#integerfield">nastavit</a> <code class="docutils literal notranslate"><span class="pre">min_value</span></code> a <code class="docutils literal notranslate"><span class="pre">max_value</span></code> definující povolený rozsah hodnot.</p>
+<p>Úplný seznam možných položek formuláře, včetně možností jejich konfigurace naleznete v [dokumentaci].(https://docs.djangoproject.com/en/5.0/ref/forms/fields/).</p>
+<section id="spolecne-parametry">
+<h3>1.1.&nbsp;&nbsp;Společné parametry<a class="headerlink" href="#spolecne-parametry" title="Link to this heading">#</a></h3>
+<p>Krom parametrů specifických pro každý typ položky <a class="reference external" href="https://docs.djangoproject.com/en/5.0/ref/forms/fields/#core-field-arguments">existují parametry</a> nastavitelné pro všechny typy. Jsou to zejména:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">required</span></code></strong>: zda je pole povinné (výchozí hodnota je <code class="docutils literal notranslate"><span class="pre">True</span></code>)</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">label</span></code></strong>: popisek pole, který se bude zobrazovat uživateli</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">initial</span></code></strong>: počáteční hodnota pole</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">help_text</span></code></strong>: pomocný text, který se zobrazí uživateli</p></li>
+</ul>
+<p>Příklad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># my_app/forms.py</span>
+<span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span> <span class="n">forms</span>
+
+<span class="k">class</span> <span class="nc">CommentForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">Form</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Vaše jméno&quot;</span><span class="p">)</span>
+    <span class="n">rating</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">(</span><span class="n">min_value</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_value</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">initial</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Vaše hodnocení&quot;</span><span class="p">)</span>
+    <span class="n">comment</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Váš komentář&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="zobrazeni-formulare">
+<h2>2.&nbsp;&nbsp;Zobrazení formuláře<a class="headerlink" href="#zobrazeni-formulare" title="Link to this heading">#</a></h2>
+<p>Pro zobrazení formuláře je potřeba vytvořit instanci třídy formuláře, který jsme definovali a vložit ji jako kontext do pohledu:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">book</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">book_id</span><span class="p">):</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">CommentForm</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;comment.html&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;form&#39;</span><span class="p">:</span> <span class="n">form</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>V šabloně se pak formulář vloží jednoduše jako proměnná kontextu:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;{% url &#39;my_app:book&#39; book.id %}&quot;</span><span class="p">&gt;</span>
+    {% csrf_token %}
+    {{ form.as_div }}
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>Odeslat<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Funkce <code class="docutils literal notranslate"><span class="pre">as_div</span></code> transformuje položky formuláře, do HTML kódu, kdy jednotlivé položky jsou odděleny <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> elementy. Šablona pak vygeneruje HTML kód, který vypadá nějak takto:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cm">&lt;!-- ... --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;id_name&quot;</span><span class="p">&gt;</span>Vaše jméno:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;name&quot;</span> <span class="na">maxlength</span><span class="o">=</span><span class="s">&quot;100&quot;</span> <span class="na">required</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;id_name&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;id_rating&quot;</span><span class="p">&gt;</span>Vaše hodnocení:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;rating&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;5&quot;</span> <span class="na">min</span><span class="o">=</span><span class="s">&quot;1&quot;</span> <span class="na">max</span><span class="o">=</span><span class="s">&quot;10&quot;</span> <span class="na">required</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;id_rating&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="cm">&lt;!-- ... --&gt;</span>
+</pre></div>
+</div>
+<p>Krom <code class="docutils literal notranslate"><span class="pre">as_div</span></code> je možné použít <a class="reference external" href="https://docs.djangoproject.com/en/5.0/ref/forms/api/#output-styles">další styly formátování</a>.
+Značka <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">csrf_token</span> <span class="pre">%}</span></code> vloží do formuláře speciální token, který slouží k ověření původu formuláře a k ochraně proti útokům typu <em><a class="reference external" href="https://cs.wikipedia.org/wiki/Cross-site_request_forgery">Cross-site request forgery</a></em>.</p>
+</section>
+<section id="zpracovani-formulare">
+<h2>3.&nbsp;&nbsp;Zpracování formuláře<a class="headerlink" href="#zpracovani-formulare" title="Link to this heading">#</a></h2>
+<p>Posledním úkolem v životním cyklu formuláře je zpracování odeslaných dat. To se v Django realizuje v pohledu, kde se přidá větev programu, reagující na odeslání. Vytvořme nejprve model pro ukládání odeslaných dat do databáze:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># my_app/models.py</span>
+
+<span class="k">class</span> <span class="nc">Comment</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">rating</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">()</span>
+    <span class="n">comment</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
+    <span class="n">book</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Book</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A následně upravíme kód pohledu tak, aby odeslaná data z formuláře ukládal do databáze:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># my_app/views.py</span>
+
+<span class="k">def</span> <span class="nf">book</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+    <span class="n">book</span> <span class="o">=</span> <span class="n">get_object_or_404</span><span class="p">(</span><span class="n">Book</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s2">&quot;POST&quot;</span><span class="p">:</span>
+        <span class="n">review_form</span> <span class="o">=</span> <span class="n">ReviewForm</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">review_form</span><span class="o">.</span><span class="n">is_valid</span><span class="p">():</span>
+            <span class="n">review</span> <span class="o">=</span> <span class="n">Review</span><span class="p">()</span>
+            <span class="n">review</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">review_form</span><span class="o">.</span><span class="n">cleaned_data</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+            <span class="n">review</span><span class="o">.</span><span class="n">rating</span> <span class="o">=</span> <span class="n">review_form</span><span class="o">.</span><span class="n">cleaned_data</span><span class="p">[</span><span class="s2">&quot;rating&quot;</span><span class="p">]</span>
+            <span class="n">review</span><span class="o">.</span><span class="n">comment</span> <span class="o">=</span> <span class="n">review_form</span><span class="o">.</span><span class="n">cleaned_data</span><span class="p">[</span><span class="s2">&quot;comment&quot;</span><span class="p">]</span>
+            <span class="n">review</span><span class="o">.</span><span class="n">book</span> <span class="o">=</span> <span class="n">book</span>
+            <span class="n">review</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="n">reverse</span><span class="p">(</span><span class="s2">&quot;my_app:book&quot;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">book</span><span class="o">.</span><span class="n">id</span><span class="p">]))</span>
+
+    <span class="n">review_form</span><span class="o">=</span><span class="n">ReviewForm</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s2">&quot;my_app/book.html&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;book&quot;</span><span class="p">:</span> <span class="n">book</span><span class="p">,</span> <span class="s2">&quot;review_form&quot;</span><span class="p">:</span> <span class="n">review_form</span><span class="p">})</span>
+
+</pre></div>
+</div>
+<p>Pokud správně projde validace odeslaných dat formuláře (<code class="docutils literal notranslate"><span class="pre">form.is_valid()</span></code>), bude v objektu formuláře atribut <code class="docutils literal notranslate"><span class="pre">cleaned_data</span></code>, což je slovník s hodnotami formuláře, které uživatel odeslal a se kterými je možné nakládat dle logiky aplikace, například je uložit do databáze.</p>
+<p>Po úspěšném zpracování následuje zpravidla přesměrování na další stránku (pomocí <code class="docutils literal notranslate"><span class="pre">HttpResponseRedirect</span></code>), například s potvrzením či jinou informací pro uživatele. Přesměrování je nezbytné proto, aby se zabránilo nechtěnému znovuodeslání formuláře. Pokud by totiž uživatel dal po odeslání formuláře obnovit stránku v prohlížeči, znamenalo by to opětovné odeslání dat formuláře. Prohlížeče na toto opakované odesílání sice upozorňují (“Confirm form resubmission”), nicméně dobrá webová aplikace by měla takových hlášek uživatele preventivně ušetřit,</p>
+<section id="trida-forms-modelform">
+<h3>3.1.&nbsp;&nbsp;Třída <code class="docutils literal notranslate"><span class="pre">forms.ModelForm</span></code><a class="headerlink" href="#trida-forms-modelform" title="Link to this heading">#</a></h3>
+<p>Poměrně často se formuláře používají k editaci instance modelu. Pro tyto případy má Django třídu <code class="docutils literal notranslate"><span class="pre">forms.ModelForm</span></code>, kde stačí definovat model (třídu), který chceme editovat a Django už sestaví celý formulář:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ReviewModelForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">Review</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;rating&#39;</span><span class="p">,</span> <span class="s1">&#39;comment&#39;</span><span class="p">]</span>
+        <span class="n">labels</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s2">&quot;Vaše jméno&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;rating&#39;</span><span class="p">:</span> <span class="s2">&quot;Vaše hodnocení&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;comment&#39;</span><span class="p">:</span> <span class="s2">&quot;Váš komentář&quot;</span>
+        <span class="p">}</span>
+        <span class="n">help_texts</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;rating&#39;</span><span class="p">:</span> <span class="s2">&quot;Hodnocení musí být celé číslo mezi 1 a 10&quot;</span>
+        <span class="p">}</span>
+        <span class="n">error_messages</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;required&#39;</span><span class="p">:</span> <span class="s2">&quot;Jméno je povinné pole&quot;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+</pre></div>
+</div>
+<p>Formulář je možné konfigurovat pomocí vnořené třídy <code class="docutils literal notranslate"><span class="pre">Meta</span></code>, která může mít následující atributy:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">fields</span></code></strong> definuje seznam atributů modelu, které chceme zahrnout ve formuláři (ne vždy chceme mít ve formuláři všechny)</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">exclude</span></code></strong> definuje seznam atributů modelu, které chceme z formuláře vyloučit</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">labels</span></code></strong> definuje slovník, kde klíče jsou názvy atributů modelu a hodnoty jsou popisky, které se zobrazí ve formuláři</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">help_texts</span></code></strong> definuje slovník, kde klíče jsou názvy atributů modelu a hodnoty jsou pomocné texty, které se zobrazí ve formuláři</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">error_messages</span></code></strong> definuje slovník, kde klíče jsou názvy atributů modelu a hodnoty jsou slovníky s chybovými zprávami, které se zobrazí ve formuláři</p></li>
+</ul>
+<p>Následná obsluha formuláře v pohledu se pak zjednoduší:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># my_app/views.py</span>
+
+<span class="c1"># ...</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s2">&quot;POST&quot;</span><span class="p">:</span>
+        <span class="n">review_form</span> <span class="o">=</span> <span class="n">ReviewModelForm</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">review_form</span><span class="o">.</span><span class="n">is_valid</span><span class="p">():</span>
+            <span class="n">review</span> <span class="o">=</span> <span class="n">review_form</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">commit</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="n">review</span><span class="o">.</span><span class="n">book</span> <span class="o">=</span> <span class="n">book</span>
+            <span class="n">review</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="n">reverse</span><span class="p">(</span><span class="s2">&quot;my_app:book&quot;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">book</span><span class="o">.</span><span class="n">id</span><span class="p">]))</span>
+<span class="c1"># ...</span>
+</pre></div>
+</div>
+<p>Funkce <code class="docutils literal notranslate"><span class="pre">review_form.save</span></code> uloží obsah formuláře do objektu a vrátí uložený objekt.  Její parametr <code class="docutils literal notranslate"><span class="pre">commit=False</span></code>, že nechceme objekt ještě uložit do databáze, abychom mu mohli nejprve nastavit atribut <code class="docutils literal notranslate"><span class="pre">book</span></code>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Editační formulář</p>
+<p>Formuláře třídy <code class="docutils literal notranslate"><span class="pre">forms.ModelForm</span></code> je možné elegantně využít také k editaci již existujících objektů předáním parametru <code class="docutils literal notranslate"><span class="pre">instance</span></code> při vytváření formuláře:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">review</span><span class="o">=</span><span class="n">Review</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">review_id</span><span class="p">)</span>
+<span class="n">form</span> <span class="o">=</span> <span class="n">ReviewModelForm</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">POST</span> <span class="ow">or</span> <span class="kc">None</span><span class="p">,</span> <span class="n">instance</span><span class="o">=</span><span class="n">review</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">POST</span> <span class="ow">and</span> <span class="n">form</span><span class="o">.</span><span class="n">is_valid</span><span class="p">():</span>
+    <span class="n">review</span><span class="o">=</span><span class="n">form</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+    <span class="c1"># ...</span>
+</pre></div>
+</div>
+<p>Takto vytvořený formulář bude mít svá pole již předvyplněna hodnotami existujícího objektu. Po odeslání formuláře se existující objekt aktualizuje.</p>
+</div>
+<p>Všechny možností práce se třídou <code class="docutils literal notranslate"><span class="pre">forms.ModelForm</span></code> naleznete v <a class="reference external" href="https://docs.djangoproject.com/en/5.0/topics/forms/modelforms/">dokumentaci</a>.</p>
+</section>
+<section id="prace-s-relacemi-ve-formularich">
+<h3>3.2.&nbsp;&nbsp;Práce s relacemi ve formulářích<a class="headerlink" href="#prace-s-relacemi-ve-formularich" title="Link to this heading">#</a></h3>
+<p>Django umožňuje snadno pracovat s databázovými relacemi i ve formulářích. Pro tyto účely se používají formulářová pole <code class="docutils literal notranslate"><span class="pre">ModelChoiceField</span></code>, která umožňují vybrat jednu instanci modelu a hodí se pro 1:N relace, a pole <code class="docutils literal notranslate"><span class="pre">ModelMultipleChoiceField</span></code>, které umožňuje vybrat více instancí modelu v případě relací M:N.</p>
+<p>Pro ukázku si můžeme vytvořit formulář pro přidání knihy:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BookEditForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">Form</span><span class="p">):</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">CharField</span><span class="p">()</span>
+    <span class="n">author</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">ModelChoiceField</span><span class="p">(</span><span class="n">queryset</span><span class="o">=</span><span class="n">Author</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Nebo v případě, že chceme vybírat více autorů:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BookEditForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">Form</span><span class="p">):</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">CharField</span><span class="p">()</span>
+    <span class="n">authors</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">ModelMultipleChoiceField</span><span class="p">(</span><span class="n">queryset</span><span class="o">=</span><span class="n">Author</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Formulářová pole <code class="docutils literal notranslate"><span class="pre">ModelChoiceField</span></code> a <code class="docutils literal notranslate"><span class="pre">ModelMultipleChoiceField</span></code> berou parametr <code class="docutils literal notranslate"><span class="pre">queryset</span></code>, což je queryset objektů, který má uživatel na výběr. V querysetu je možné provádět filtrování, řazení a další operace, jak je popsáno v kapitole <span class="xref myst"></span>.</p>
+<p>Na straně zpracování formuláře pak v atributu <code class="docutils literal notranslate"><span class="pre">cleaned_data</span></code> nalezneme rovnou vybraný objekt, který je možné přiřadit jako relaci.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">new_book</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
+        <span class="n">form</span> <span class="o">=</span> <span class="n">BookEditForm</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">form</span><span class="o">.</span><span class="n">is_valid</span><span class="p">():</span>
+            <span class="n">book</span> <span class="o">=</span> <span class="n">Book</span><span class="p">()</span>
+            <span class="n">book</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">cleaned_data</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span>
+            <span class="n">book</span><span class="o">.</span><span class="n">published</span> <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">cleaned_data</span><span class="p">[</span><span class="s2">&quot;published&quot;</span><span class="p">]</span>
+            <span class="n">book</span><span class="o">.</span><span class="n">author</span> <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">cleaned_data</span><span class="p">[</span><span class="s2">&quot;author&quot;</span><span class="p">]</span>
+            <span class="n">book</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="n">reverse</span><span class="p">(</span><span class="s2">&quot;my_app:books&quot;</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">form</span> <span class="o">=</span> <span class="n">BookEditForm</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;my_app/new_book.html&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;form&#39;</span><span class="p">:</span> <span class="n">form</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>Nebo v případě pole <code class="docutils literal notranslate"><span class="pre">ModelMultipleChoiceField</span></code> pro vybrání více autorů:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># ...</span>
+    <span class="n">book</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+    <span class="n">book</span><span class="o">.</span><span class="n">authors</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">form</span><span class="o">.</span><span class="n">cleaned_data</span><span class="p">[</span><span class="s2">&quot;authors&quot;</span><span class="p">])</span>
+    <span class="c1"># ...</span>
+</pre></div>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Vytváření relací</p>
+<p>Všimněte si, že funkce <code class="docutils literal notranslate"><span class="pre">book.authors.set</span></code> je volána až po zavolání <code class="docutils literal notranslate"><span class="pre">book.save</span></code>. To je kvůli tomu, že relace k objektu lze vytvářet až poté, co je objekt uložen v databázi a má své id. Pokud se pokusíte vytvořit relaci před uložením objektu do databáze, Django vyhodí výjimku.</p>
+</div>
+</section>
+</section>
+<section id="balicek-crispy-forms">
+<h2>4.&nbsp;&nbsp;Balíček Crispy Forms<a class="headerlink" href="#balicek-crispy-forms" title="Link to this heading">#</a></h2>
+<p>Balíček Crispy Forms je oblíbený nástroj v Django pro zobrazování esteticky příjemných a uživatelsky přívětivých formulářů. Tento balíček umožňuje rychlé stylování formulářů a podporuje různé frontendové frameworky jako Bootstrap.</p>
+<section id="instalace">
+<h3>4.1.&nbsp;&nbsp;Instalace<a class="headerlink" href="#instalace" title="Link to this heading">#</a></h3>
+<p>Nejprve je potřeba nainstalovat balíček <code class="docutils literal notranslate"><span class="pre">django-crispy-forms</span></code> pomocí nástroje <code class="docutils literal notranslate"><span class="pre">pip</span></code>. Zároveň také nainstalujeme balíček <code class="docutils literal notranslate"><span class="pre">crispy-bootstrap5</span></code>, který umožňuje stylovat formulářové prvky ve frameworku <a class="reference external" href="https://getbootstrap.com">Bootstrap 5</a>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>django-crispy-forms<span class="w"> </span>crispy-bootstrap5
+</pre></div>
+</div>
+<p>Poté je třeba přidat <code class="docutils literal notranslate"><span class="pre">crispy_forms</span></code> a <code class="docutils literal notranslate"><span class="pre">crispy_bootstrap5</span></code> do seznamu <code class="docutils literal notranslate"><span class="pre">INSTALLED_APPS</span></code> ve <code class="docutils literal notranslate"><span class="pre">settings.py</span></code> souboru Django projektu:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># my_project/settings.py</span>
+
+<span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># ...</span>
+    <span class="s1">&#39;crispy_forms&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;crispy_bootstrap5&#39;</span><span class="p">,</span>
+    <span class="c1"># ...</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>Dále je potřeba v souboru <code class="docutils literal notranslate"><span class="pre">settings.py</span></code> nastavit výchozí šablonu:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># my_project/settings.py</span>
+
+<span class="c1"># ...</span>
+<span class="n">CRISPY_ALLOWED_TEMPLATE_PACKS</span> <span class="o">=</span> <span class="s2">&quot;bootstrap5&quot;</span>
+<span class="n">CRISPY_TEMPLATE_PACK</span> <span class="o">=</span> <span class="s1">&#39;bootstrap5&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="trida-formhelper">
+<h3>4.2.&nbsp;&nbsp;Třída <code class="docutils literal notranslate"><span class="pre">FormHelper</span></code><a class="headerlink" href="#trida-formhelper" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">FormHelper</span></code> je třída v Crispy Forms, která umožňuje konfiguraci zobrazení formulářů. Pomocí ní lze definovat layout, styly, a další vlastnosti formulářů. Nabízí několik základních konfiguračních proměnných:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">form_method</span></code></strong>: Určuje HTTP metodu formuláře (např. <code class="docutils literal notranslate"><span class="pre">'post'</span></code>, <code class="docutils literal notranslate"><span class="pre">'get'</span></code>).</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">form_action</span></code></strong>: Cíl formuláře, kam mají být data odeslána.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">form_tag</span></code></strong>: Boolean hodnota určující, zda má být formulář obalen tagem <code class="docutils literal notranslate"><span class="pre">&lt;form&gt;</span></code>.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">layout</span></code></strong>: Objekt, který definuje, jak jsou pole formuláře uspořádány.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># my_app/forms.py</span>
+
+<span class="c1"># ...</span>
+<span class="kn">from</span> <span class="nn">crispy_forms.helper</span> <span class="kn">import</span> <span class="n">FormHelper</span>
+<span class="kn">from</span> <span class="nn">crispy_forms.layout</span> <span class="kn">import</span> <span class="n">Layout</span><span class="p">,</span> <span class="n">Row</span><span class="p">,</span> <span class="n">Field</span><span class="p">,</span> <span class="n">Submit</span>
+
+<span class="k">class</span> <span class="nc">ReviewCrispyForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">Review</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;rating&#39;</span><span class="p">,</span> <span class="s1">&#39;comment&#39;</span><span class="p">]</span>
+        <span class="n">labels</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s2">&quot;Vaše jméno&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;rating&#39;</span><span class="p">:</span> <span class="s2">&quot;Vaše hodnocení&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;comment&#39;</span><span class="p">:</span> <span class="s2">&quot;Váš komentář&quot;</span>
+        <span class="p">}</span>
+        <span class="n">help_texts</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;rating&#39;</span><span class="p">:</span> <span class="s2">&quot;Hodnocení musí být celé číslo mezi 1 a 10&quot;</span>
+        <span class="p">}</span>
+        <span class="n">error_messages</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;required&#39;</span><span class="p">:</span> <span class="s2">&quot;Jméno je povinné pole&quot;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">helper</span> <span class="o">=</span> <span class="n">FormHelper</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">helper</span><span class="o">.</span><span class="n">form_method</span> <span class="o">=</span> <span class="s1">&#39;post&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">helper</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span>
+            <span class="n">Row</span><span class="p">(</span>
+                <span class="n">Field</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">),</span>
+                <span class="n">Field</span><span class="p">(</span><span class="s1">&#39;rating&#39;</span><span class="p">),</span>
+                <span class="n">Field</span><span class="p">(</span><span class="s1">&#39;comment&#39;</span><span class="p">),</span>
+            <span class="p">),</span>
+            <span class="n">Submit</span><span class="p">(</span><span class="s1">&#39;submit&#39;</span><span class="p">,</span> <span class="s1">&#39;Submit&#39;</span><span class="p">,</span> <span class="n">css_class</span><span class="o">=</span><span class="s1">&#39;btn-primary&#39;</span><span class="p">)</span>
+        <span class="p">)</span>        
+</pre></div>
+</div>
+<p>V šabloně se pak formulář zobrazí pomocí tagu <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">crispy</span> <span class="pre">form</span> <span class="pre">form.helper</span> <span class="pre">%}</span></code>, který je ale potřeba nejprve načíst pomocí <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">load</span> <span class="pre">crispy_forms_tags</span> <span class="pre">%}</span></code> na začátku šablony:</p>
+<div class="highlight-django notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">load</span> <span class="nv">crispy_forms_tags</span> <span class="cp">%}</span>
+
+<span class="x">&lt;!-- ... --&gt;</span>
+
+<span class="cp">{%</span> <span class="k">crispy</span> <span class="nv">form</span> <span class="nv">form.helper</span> <span class="cp">%}</span>
+
+<span class="x">&lt;!-- ... --&gt;</span>
+</pre></div>
+</div>
+<p>Povšimněte si, že není potřeba obalovat celý formulář do <code class="docutils literal notranslate"><span class="pre">&lt;form&gt;</span></code> tagu. Rovněž CSRF token je přidán automaticky.</p>
+<p>Balíček <code class="docutils literal notranslate"><span class="pre">crispy_forms</span></code> nabízí celou řadu možností jak jak formulář konfigurovat. Jejich úplný výčet naleznete v <a class="reference external" href="https://django-crispy-forms.readthedocs.io/en/latest/">dokumentaci</a>.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Obsah
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trida-forms-form">Třída <code class="docutils literal notranslate"><span class="pre">forms.Form</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spolecne-parametry">Společné parametry</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zobrazeni-formulare">Zobrazení formuláře</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zpracovani-formulare">Zpracování formuláře</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trida-forms-modelform">Třída <code class="docutils literal notranslate"><span class="pre">forms.ModelForm</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prace-s-relacemi-ve-formularich">Práce s relacemi ve formulářích</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#balicek-crispy-forms">Balíček Crispy Forms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instalace">Instalace</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trida-formhelper">Třída <code class="docutils literal notranslate"><span class="pre">FormHelper</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Podle kf
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, kf..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

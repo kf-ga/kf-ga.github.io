@@ -116,6 +116,8 @@ Ukážeme si základní postup jak zobrazit v prohlížeči pomocí Django "Hell
     Otevřete soubor `views.py` v adresáři `my_app` a definujte funkci `hello`, která vrátí HTTP odpověď s textem "Hello World!":
 
     ```python
+    #my_app/views.py
+
     from django.http import HttpResponse
 
     def hello(request):
@@ -124,11 +126,13 @@ Ukážeme si základní postup jak zobrazit v prohlížeči pomocí Django "Hell
 
 2. **Nastavení URL směrování** 
 
-    Aby bylo možné funkci `hello` z `views.py` přiřadit k URL adrese, musíte přidat směřování (někdy označované jako **route**) v souboru `urls.py` v adresáři vašeho projektu (`my_project/my_project/urls.py`):
+    Aby bylo možné funkci `hello` z `views.py` přiřadit k URL adrese, musíte přidat směřování (někdy označované jako **route**, nebo **routing**) v souboru `urls.py` v adresáři vašeho projektu (`my_project/urls.py`):
 
     ```{code-block} python
     :linenos:
     :emphasize-lines: 3, 7
+    #my_project/urls.py
+
     from django.contrib import admin
     from django.urls import path
     from my_app.views import hello
@@ -138,7 +142,7 @@ Ukážeme si základní postup jak zobrazit v prohlížeči pomocí Django "Hell
         path('hello/', hello),
     ]
     ```
-    Příkaz `path('hello/', hello)`, řekne frameworku Django, aby adresu `/hello/` "nasměroval" na funkci hello, jejíž návratová hodnota bude obsahem zobrazené stránky. Při zobrazení adresy `http://localhost:8000/hello/` ve webovém prohlížeči by se měl nyní ukázat text "Hello World!".
+    Příkaz `path('hello/', hello)`, řekne frameworku Django, aby adresu `/hello/` "nasměroval" na funkci `hello`, jejíž návratová hodnota bude obsahem zobrazené stránky. Při zobrazení adresy `http://localhost:8000/hello/` ve webovém prohlížeči by se měl nyní ukázat text "Hello World!".
 
     Příkaz `path('admin/', admin.site.urls)` slouží k nastavení cesty k admin rozhraní, kterému se budeme věnovat později.
 

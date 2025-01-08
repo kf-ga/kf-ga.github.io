@@ -57,7 +57,7 @@
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Rejstřík" href="../genindex.html" />
     <link rel="search" title="Vyhledávání" href="../search.html" />
-    <link rel="next" title="Protokol HTTP" href="../5_protocols/01_http.html" />
+    <link rel="next" title="Pohledy" href="03_views.html" />
     <link rel="prev" title="Webové frameworky" href="01_framework.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="cs"/>
@@ -192,14 +192,19 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_framework.html">Webové frameworky</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Seznámení s Django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_views.html">Pohledy</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Webové protokoly</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../5_protocols/01_http.html">Protokol HTTP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_protocols/01_http.html">HTTP</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Webdesign</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../6_webdesign/01_wireframe.html">Wireframe návrh</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ostatní</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../7_other/04_console.html">Základy práce v konzoli</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Materiály</span></p>
 <ul class="nav bd-sidenav">
@@ -465,7 +470,9 @@ python<span class="w"> </span>manage.py<span class="w"> </span>startapp<span cla
 <ol class="arabic">
 <li><p><strong>Upravte <code class="docutils literal notranslate"><span class="pre">views.py</span></code> ve vaší aplikaci</strong></p>
 <p>Otevřete soubor <code class="docutils literal notranslate"><span class="pre">views.py</span></code> v adresáři <code class="docutils literal notranslate"><span class="pre">my_app</span></code> a definujte funkci <code class="docutils literal notranslate"><span class="pre">hello</span></code>, která vrátí HTTP odpověď s textem “Hello World!”:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#my_app/views.py</span>
+
+<span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
 
 <span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span>
@@ -473,18 +480,20 @@ python<span class="w"> </span>manage.py<span class="w"> </span>startapp<span cla
 </div>
 </li>
 <li><p><strong>Nastavení URL směrování</strong></p>
-<p>Aby bylo možné funkci <code class="docutils literal notranslate"><span class="pre">hello</span></code> z <code class="docutils literal notranslate"><span class="pre">views.py</span></code> přiřadit k URL adrese, musíte přidat směřování (někdy označované jako <strong>route</strong>) v souboru <code class="docutils literal notranslate"><span class="pre">urls.py</span></code> v adresáři vašeho projektu (<code class="docutils literal notranslate"><span class="pre">my_project/my_project/urls.py</span></code>):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
-<span class="linenos">2</span><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
-<span class="hll"><span class="linenos">3</span><span class="kn">from</span> <span class="nn">my_app.views</span> <span class="kn">import</span> <span class="n">hello</span>
-</span><span class="linenos">4</span>
-<span class="linenos">5</span><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
-<span class="linenos">6</span>    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;admin/&#39;</span><span class="p">,</span> <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">),</span>
-<span class="hll"><span class="linenos">7</span>    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;hello/&#39;</span><span class="p">,</span> <span class="n">hello</span><span class="p">),</span>
-</span><span class="linenos">8</span><span class="p">]</span>
+<p>Aby bylo možné funkci <code class="docutils literal notranslate"><span class="pre">hello</span></code> z <code class="docutils literal notranslate"><span class="pre">views.py</span></code> přiřadit k URL adrese, musíte přidat směřování (někdy označované jako <strong>route</strong>, nebo <strong>routing</strong>) v souboru <code class="docutils literal notranslate"><span class="pre">urls.py</span></code> v adresáři vašeho projektu (<code class="docutils literal notranslate"><span class="pre">my_project/urls.py</span></code>):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1">#my_project/urls.py</span>
+<span class="linenos"> 2</span>
+<span class="hll"><span class="linenos"> 3</span><span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+</span><span class="linenos"> 4</span><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
+<span class="linenos"> 5</span><span class="kn">from</span> <span class="nn">my_app.views</span> <span class="kn">import</span> <span class="n">hello</span>
+<span class="linenos"> 6</span>
+<span class="hll"><span class="linenos"> 7</span><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+</span><span class="linenos"> 8</span>    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;admin/&#39;</span><span class="p">,</span> <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">),</span>
+<span class="linenos"> 9</span>    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;hello/&#39;</span><span class="p">,</span> <span class="n">hello</span><span class="p">),</span>
+<span class="linenos">10</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Příkaz <code class="docutils literal notranslate"><span class="pre">path('hello/',</span> <span class="pre">hello)</span></code>, řekne frameworku Django, aby adresu <code class="docutils literal notranslate"><span class="pre">/hello/</span></code> “nasměroval” na funkci hello, jejíž návratová hodnota bude obsahem zobrazené stránky. Při zobrazení adresy <code class="docutils literal notranslate"><span class="pre">http://localhost:8000/hello/</span></code> ve webovém prohlížeči by se měl nyní ukázat text “Hello World!”.</p>
+<p>Příkaz <code class="docutils literal notranslate"><span class="pre">path('hello/',</span> <span class="pre">hello)</span></code>, řekne frameworku Django, aby adresu <code class="docutils literal notranslate"><span class="pre">/hello/</span></code> “nasměroval” na funkci <code class="docutils literal notranslate"><span class="pre">hello</span></code>, jejíž návratová hodnota bude obsahem zobrazené stránky. Při zobrazení adresy <code class="docutils literal notranslate"><span class="pre">http://localhost:8000/hello/</span></code> ve webovém prohlížeči by se měl nyní ukázat text “Hello World!”.</p>
 <p>Příkaz <code class="docutils literal notranslate"><span class="pre">path('admin/',</span> <span class="pre">admin.site.urls)</span></code> slouží k nastavení cesty k admin rozhraní, kterému se budeme věnovat později.</p>
 </li>
 </ol>
@@ -536,11 +545,11 @@ python<span class="w"> </span>manage.py<span class="w"> </span>startapp<span cla
       </div>
     </a>
     <a class="right-next"
-       href="../5_protocols/01_http.html"
+       href="03_views.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">další</p>
-        <p class="prev-next-title">Protokol HTTP</p>
+        <p class="prev-next-title">Pohledy</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

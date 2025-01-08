@@ -32,7 +32,6 @@ Programování webových aplikací
 2_javascript/03_methods.md
 2_javascript/04_modules.md
 2_javascript/05_dom.md
-2_javascript/06_ajax.md
 ```
 
 ```{toctree}
@@ -57,12 +56,12 @@ Programování webových aplikací
 4_django/04_templates.md
 4_django/05_models.md
 4_django/06_admin.md
-4_django/07_files.md
-4_django/08_integration.md
-4_django/09_fixtures.md
-4_django/10_tests.md
-4_django/11_forms.md
-4_django/20_deploy.md
+4_django/07_fixtures.md
+4_django/08_forms.md
+4_django/09_files.md
+4_django/10_sessions.md
+4_django/11_api.md
+4_django/12_deploy.md
 ```
 
 ```{toctree}
@@ -73,6 +72,7 @@ Programování webových aplikací
 5_protocols/02_tcpip.md
 5_protocols/03_dns.md
 5_protocols/04_osi.md
+5_protocols/05_https.md
 ```
 
 ```{toctree}
@@ -89,6 +89,7 @@ Programování webových aplikací
 7_other/01_legal.md
 7_other/02_ethics.md
 7_other/03_analytics.md
+7_other/04_console.md
 ```
 
 ```{toctree}
@@ -98,3 +99,11 @@ Programování webových aplikací
 materials.md
 ```
 
+
+```{toctree}
+:caption: Koncepty 
+:maxdepth: 1
+
+9_concept/08_integration.md
+9_concept/10_tests.md
+```

@@ -1,7 +1,7 @@
-Protokol HTTP
-=============
+HTTP
+====
 
-**HTTP** (**Hypertext Transfer Protocol**) byl vyvinut Timem Berners-Lee v CERNu v roce 1989 jakou součást balíku technologií pro nově vznikající **World Wide Web**. Je to základní webový protokol pro komunikaci mezi klientem (webovým prohlížečem) a serverem (webovou aplikací). Od svého vzniku prošel několika verzemi, dnes se setkáme se základní verzí protokolu HTTP/1.1 a modernějším HTTP/2 a experimentální HTTP/3. HTTP dnes umožňuje nejen přenos hypertextových dokumentů, ale je základem všech moderních webových aplikací.
+**HTTP** (**Hypertext Transfer Protocol**) je internetový protokol, který byl vyvinut Timem Berners-Lee v CERNu v roce 1989 jakou součást balíku technologií pro nově vznikající **World Wide Web**. Je to základní webový protokol pro komunikaci mezi klientem (webovým prohlížečem) a serverem (webovou aplikací). Od svého vzniku prošel několika verzemi, dnes se setkáme se základní verzí protokolu HTTP/1.1 a modernějším HTTP/2 a experimentální HTTP/3. HTTP dnes umožňuje nejen přenos hypertextových dokumentů, ale je základem všech moderních webových aplikací.
 
 Kromě základního protokolu HTTP se dnes častěji používá jeho varianta **HTTPS** (**Hypertext Transfer Protocol Secure**), která šifruje komunikaci mezi prohlížečem a serverem a není tudíž možné pro potencionálního útočníka odposlechnout komunikaci.
 

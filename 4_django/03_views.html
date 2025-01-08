@@ -57,7 +57,7 @@
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Rejstřík" href="../genindex.html" />
     <link rel="search" title="Vyhledávání" href="../search.html" />
-    <link rel="next" title="Protokol HTTP" href="../5_protocols/01_http.html" />
+    <link rel="next" title="HTTP" href="../5_protocols/01_http.html" />
     <link rel="prev" title="Seznámení s Django" href="02_project.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="cs"/>
@@ -196,11 +196,15 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Webové protokoly</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../5_protocols/01_http.html">Protokol HTTP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_protocols/01_http.html">HTTP</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Webdesign</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../6_webdesign/01_wireframe.html">Wireframe návrh</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ostatní</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../7_other/04_console.html">Základy práce v konzoli</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Materiály</span></p>
 <ul class="nav bd-sidenav">
@@ -388,17 +392,18 @@ document.write(`
 </ul>
 <p>V Django přebírá velkou část roli komponenty Controller samotný Django framework. V Django frameworku proto hovoříme o architektuře <strong>MVT</strong> (<strong>Model-View-Template</strong>):</p>
 <ul class="simple">
-<li><p><strong>Model</strong> zůstává stejný, reprezentuje data a jejich logiku. Více o modelech v kapitole <span class="xref myst"></span>,</p></li>
+<li><p><strong>Model</strong> zůstává stejný, reprezentuje data a jejich logiku.</p></li>
 <li><p><strong>View</strong> (pohled) v Django přebírá některé role komponenty Controller z MVC a reprezentuje pohled na na data (na Model).</p></li>
-<li><p><strong>Template</strong> (šablona) je textový soubor, který definuje strukturu stránky nebo její části obvykle pomocí HTML rozšířených o speciální značky. Více o šablonách v kapitole <span class="xref myst"></span>,</p></li>
+<li><p><strong>Template</strong> (šablona) je textový soubor, který definuje strukturu stránky nebo její části obvykle pomocí HTML rozšířených o speciální značky.</p></li>
 </ul>
 <p>Rozdělení projektu na tyto logické části umožňuje jednodušší správu a údržbu kódu při vývoji webové aplikace. Každá komponenta má svůj specifický účel a mění se nezávisle na ostatních. Usnadňuje také práci na projektu pro větší týmy, kdy se část týmu může věnovat vnitřní logice aplikace (Model), část způsobu prezentace uživateli (View) a část vizuální stránce a designu aplikace (Template). Díky rozdělení může každá část pracovat více nezávisle na zbytku týmu.</p>
 </section>
 <section id="view-a-url">
 <h2>2.&nbsp;&nbsp;View a URL<a class="headerlink" href="#view-a-url" title="Link to this heading">#</a></h2>
 <p>Views jsou definovány v souboru <code class="docutils literal notranslate"><span class="pre">views.py</span></code> každé Django aplikace. Z hlediska frameworku Django je pohled (View) funkcí, která převezme jako parametr objekt <code class="docutils literal notranslate"><span class="pre">request</span></code> (instance třídy <code class="docutils literal notranslate"><span class="pre">HttpRequest</span></code>), který obsahuje detailní informace o HTTP požadavku (jeho použití si probereme později) a vrací objekt třídy <code class="docutils literal notranslate"><span class="pre">HttpResponse</span></code> (případně třídy z ní odvozené), který obsahuje data, která se budou prezentovat uživateli a další metadata HTTP protokolu, které si také probereme později. Dva jednoduché pohledy <code class="docutils literal notranslate"><span class="pre">index</span></code> a <code class="docutils literal notranslate"><span class="pre">hello</span></code> mohou vypadat například takto:</p>
-<p><code class="docutils literal notranslate"><span class="pre">my_app/views.py</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># my_app/views.py</span>
+
+<span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
 
 <span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s2">&quot;Homepage&quot;</span><span class="p">)</span>
@@ -414,8 +419,9 @@ document.write(`
 </div>
 <p>Pro mapování pohledů na URL používá Django soubor <code class="docutils literal notranslate"><span class="pre">urls.py</span></code>, kde se každé URL adrese přiřadí pohled, který má HTTP požadavek na toto URL zpracovat. Spojování URL adres s obslužnou funkcí se také někdy označuje jako <strong>routing</strong>.</p>
 <p>Vzhledem k tomu, že aplikace by měly být v Django frameworku navrhovány tak, aby byly případně znovupoužitelné v jiném projektu (což se týká i struktury URL dané aplikace), obvykle se se definují URL specifické pro aplikaci v souboru <code class="docutils literal notranslate"><span class="pre">urls.py</span></code> aplikace (tento soubor není automaticky vytvořen):</p>
-<p><code class="docutils literal notranslate"><span class="pre">my_app/urls.py</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># my_app/urls.py</span>
+
+<span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">views</span>
 
 <span class="n">app_name</span><span class="o">=</span><span class="s2">&quot;my_app&quot;</span>
@@ -426,8 +432,9 @@ document.write(`
 </pre></div>
 </div>
 <p>Tyto URL se pak jako celek namapují na jedno konkrétní URL v rámci celého Django projektu v hlavním souboru <code class="docutils literal notranslate"><span class="pre">urls.py</span></code> projektu:</p>
-<p><code class="docutils literal notranslate"><span class="pre">my_project/urls.py</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">include</span><span class="p">,</span> <span class="n">path</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># my_project/urls.py</span>
+
+<span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">include</span><span class="p">,</span> <span class="n">path</span>
 
 <span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
     <span class="n">path</span><span class="p">(</span><span class="s2">&quot;my_app/&quot;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s2">&quot;my_app.urls&quot;</span><span class="p">)),</span>
@@ -439,6 +446,7 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">/my_app/</span></code> které se mapuje na funkci <code class="docutils literal notranslate"><span class="pre">index</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">/my_app/hello/</span></code> které se mapuje na funkci <code class="docutils literal notranslate"><span class="pre">hello</span></code></p></li>
 </ul>
+<p>Pokud chcete změnit “adresář”, kde se celá aplikace v rámci projektů nachází, stačí tak udělat na jednom místě.</p>
 <div class="warning admonition">
 <p class="admonition-title">Projekt a aplikace</p>
 <p>Připomeňme si rozdíl mezi <strong>Django projektem</strong> a <strong>Django aplikací</strong>. Django aplikace je část Django projektu, která řeší nějakou část vaší webové aplikace a v zásadě je navržena tak, aby mohla být použita ve více projektech. Django projekt je kolekcí jedné či více Django aplikací.</p>
@@ -446,7 +454,9 @@ document.write(`
 <section id="parametrizace-pohledu">
 <h3>2.1.&nbsp;&nbsp;Parametrizace pohledu<a class="headerlink" href="#parametrizace-pohledu" title="Link to this heading">#</a></h3>
 <p>Často je ve webové aplikaci nutné mít nějakou část URL dynamickou, například pokud chcete zobrazit jeden konkrétní článek, nebo zobrazit kalendář pro konkrétní datum. Bylo by nepraktické definovat explicitně všechny možné kombinace URL a proto nabízí Django framework možnost URL parametrizovat speciálními argumenty v ostrých závorkách <code class="docutils literal notranslate"><span class="pre">&lt;&gt;</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># my_app/urls.py</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
     <span class="c1"># ...</span>
     <span class="n">path</span><span class="p">(</span><span class="s1">&#39;say/&lt;str:my_name&gt;&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">say</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;say&#39;</span><span class="p">),</span>
     <span class="c1"># ...</span>
@@ -454,22 +464,24 @@ document.write(`
 </pre></div>
 </div>
 <p>Tyto parametry v URL Django automaticky zpracuje a předá jako další argument do funkce pohledu:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">say</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">my_name</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># my_app/views.py</span>
+
+<span class="k">def</span> <span class="nf">say</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">my_name</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;You are </span><span class="si">{</span><span class="n">my_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Pokud tedy zobrazíte url např. <code class="docutils literal notranslate"><span class="pre">/say/John</span></code> v prohlížeči, Django automaticky předá argument <code class="docutils literal notranslate"><span class="pre">&quot;John&quot;</span></code> funkci <code class="docutils literal notranslate"><span class="pre">say</span></code> a vrátí odpověď <code class="docutils literal notranslate"><span class="pre">&quot;You</span> <span class="pre">are</span> <span class="pre">John&quot;</span></code>.</p>
 <p>Django podporuje několik datových typů v URL:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">str</span></code>: Textový řetězec, kromě znaku <code class="docutils literal notranslate"><span class="pre">/</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">int</span></code>: Celé číslo.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">slug</span></code>: “Slug” řetězec, tedy řetězec alfanumerických znaků, pomlčky <code class="docutils literal notranslate"><span class="pre">-</span></code> a podtržítka <code class="docutils literal notranslate"><span class="pre">_</span></code>. Tyto řetězce se často používají v URL kvůli snadné čitelnosti URL.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">str</span></code></strong>: Textový řetězec, kromě znaku <code class="docutils literal notranslate"><span class="pre">/</span></code>.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">int</span></code></strong>: Celé číslo.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">slug</span></code></strong>: “Slug” řetězec, tedy řetězec alfanumerických znaků, pomlčky <code class="docutils literal notranslate"><span class="pre">-</span></code> a podtržítka <code class="docutils literal notranslate"><span class="pre">_</span></code>. Tyto řetězce se často používají v URL kvůli snadné čitelnosti URL.</p></li>
 </ul>
 <p>Jejich úplný seznam a návod jak definovat vlastní typy parametrů naleznete v <a class="reference external" href="https://docs.djangoproject.com/en/5.0/topics/http/urls/">dokumentaci</a>.</p>
 </section>
 <section id="reverzni-sestaveni-url">
 <h3>2.2.&nbsp;&nbsp;Reverzní sestavení URL<a class="headerlink" href="#reverzni-sestaveni-url" title="Link to this heading">#</a></h3>
-<p>V aplikaci často potřebujete vytvořit URL, odkazující na jinou stránku aplikace. Django framework umožňuje snadno vytvářet tyto URL pomocí funkce <code class="docutils literal notranslate"><span class="pre">reverse</span></code> (z reverzního sestavení URL):</p>
+<p>V aplikaci často potřebujete vytvořit URL, odkazující na jinou stránku aplikace. Django framework umožňuje snadno vytvářet tyto URL pomocí funkce <code class="docutils literal notranslate"><span class="pre">reverse</span></code> (reverzní sestavení URL):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">reverse</span>
 
 <span class="c1"># ...</span>
@@ -478,7 +490,7 @@ document.write(`
 <span class="c1"># ...</span>
 </pre></div>
 </div>
-<p>To je užitečné, protože pokud chcete změnit URL v aplikaci, nebo přesunete celou aplikaci na jiné URL, stačí to změnit jen na jednom místě v souboru <code class="docutils literal notranslate"><span class="pre">urls.py</span></code> a nemusíte procházet celý projekt a zjišťovat kde všude se URL vyskytuje. Argumentem funkce <code class="docutils literal notranslate"><span class="pre">reverse</span></code> je identifikátor URL, což je pár <code class="docutils literal notranslate"><span class="pre">app_name</span></code> (v souboru <code class="docutils literal notranslate"><span class="pre">views.py</span></code> aplikace) a jména URL (parametr <code class="docutils literal notranslate"><span class="pre">name</span></code> funkce <code class="docutils literal notranslate"><span class="pre">path</span></code> ve <code class="docutils literal notranslate"><span class="pre">views.py</span></code> aplikace) spojených dvojtečkou <code class="docutils literal notranslate"><span class="pre">:</span></code>.</p>
+<p>To je užitečné, protože pokud změníte mapování URL v aplikaci, nebo přesunete celou aplikaci na jiné URL, stačí to změnit jen na jednom místě v souboru <code class="docutils literal notranslate"><span class="pre">urls.py</span></code> a nemusíte procházet celý projekt a zjišťovat kde všude se URL vyskytuje. Argumentem funkce <code class="docutils literal notranslate"><span class="pre">reverse</span></code> je identifikátor URL, což je pár <code class="docutils literal notranslate"><span class="pre">app_name</span></code> (v souboru <code class="docutils literal notranslate"><span class="pre">views.py</span></code> aplikace) a jména URL (parametr <code class="docutils literal notranslate"><span class="pre">name</span></code> funkce <code class="docutils literal notranslate"><span class="pre">path</span></code> ve <code class="docutils literal notranslate"><span class="pre">views.py</span></code> aplikace) spojených dvojtečkou <code class="docutils literal notranslate"><span class="pre">:</span></code>.</p>
 <p>Pokud jsou URL parametrizované, musíte funkci <code class="docutils literal notranslate"><span class="pre">reverse</span></code> předat také parametry, které se do URL dosadí:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ...</span>
 <span class="n">url</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;my_app:say&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">])</span>
@@ -502,6 +514,7 @@ document.write(`
     <span class="n">path</span><span class="p">(</span><span class="s2">&quot;say/&lt;str:my_name&gt;/&quot;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">say</span><span class="p">),</span>
 </pre></div>
 </div>
+<p>Další možnosti, jak pracovat v Django s pohledy naleznete v <a class="reference external" href="https://docs.djangoproject.com/en/5.0/topics/http/views/">dokumentaci</a>.</p>
 </section>
 </section>
 </section>
@@ -531,7 +544,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">další</p>
-        <p class="prev-next-title">Protokol HTTP</p>
+        <p class="prev-next-title">HTTP</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

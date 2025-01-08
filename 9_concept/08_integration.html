@@ -1,0 +1,658 @@
+
+<!DOCTYPE html>
+
+
+<html lang="cs" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZX7DQPSHE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RZX7DQPSHE');
+    </script>
+    
+    <title>Další metody integrace &#8212; Webové aplikace</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/local.css?v=1256093c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=4cdba38b"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../_static/translations.js?v=0275affc"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '9_concept/08_integration';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Rejstřík" href="../genindex.html" />
+    <link rel="search" title="Vyhledávání" href="../search.html" />
+    <link rel="next" title="Testování aplikace" href="10_tests.html" />
+    <link rel="prev" title="Materiály k výuce" href="../materials.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="cs"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Webové aplikace</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Vyhledávání" aria-label="Vyhledávání" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Vyhledávání</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Úvod</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../0_introduction/01_overview.html">Úvod do internetových technologií</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0_introduction/04_git.html">Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0_introduction/05_markdown.html">Markdown</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statický web</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../1_static/01_html.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_static/02_css.html">Základy CSS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_static/03_layouts.html">CSS Layouty</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">JavaScript</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../2_javascript/01_intro.html">Seznámení s JavaScriptem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_javascript/02_blocks.html">Řídící bloky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_javascript/03_methods.html">Funkce a třídy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_javascript/04_modules.html">Moduly v JavaScriptu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_javascript/05_dom.html">Document Object Model</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../3_python/01_intro.html">Seznámení s jazykem Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_python/02_types.html">Datové typy v Pythonu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_python/03_blocks.html">Řídící bloky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_python/04_methods.html">Funkce a třídy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_python/05_packages.html">Balíčky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_python/06_pip.html">PIP, Python Virtual Environment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Django</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../4_django/01_framework.html">Webové frameworky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_django/02_project.html">Seznámení s Django</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Webové protokoly</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../5_protocols/01_http.html">HTTP</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ostatní</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../7_other/01_legal.html">Web a právo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7_other/02_ethics.html">Etika webových aplikací</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7_other/03_analytics.html">Webová analytika</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7_other/04_console.html">Základy práce v konzoli</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Materiály</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../materials.html">Materiály k výuce</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Koncepty</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Další metody integrace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_tests.html">Testování aplikace</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Stáhněte si tuto stránku">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/9_concept/08_integration.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Stáhněte si zdrojový soubor"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Tisk do PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Režim celé obrazovky"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Vyhledávání" aria-label="Vyhledávání" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Další metody integrace</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Obsah </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dalsi-tipy-pro-knihovny">Další tipy pro knihovny</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulace-s-obrazky">Manipulace s obrázky</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pillow"><code class="docutils literal notranslate"><span class="pre">Pillow</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ukazka-kodu-zmena-velikosti-obrazku">Ukázka kódu: Změna velikosti obrázku</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matematicke-knihovny">Matematické knihovny</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sympy"><code class="docutils literal notranslate"><span class="pre">SymPy</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ukazka-kodu-reseni-algebraickeho-vyrazu">Ukázka kódu: Řešení algebraického výrazu</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib"><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cviceni">Cvičení</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="dalsi-metody-integrace">
+<h1>Další metody integrace<a class="headerlink" href="#dalsi-metody-integrace" title="Link to this heading">#</a></h1>
+<p>Díky rozsáhlému množství knihoven, které komunita Python vývojářů spravuje, je možné snadno rozšířit webové stránky o pestrou škálu funkcionality.</p>
+<p>Jako jednoduchou ukázku pro integraci knihovny použijeme knihovnu <code class="docutils literal notranslate"><span class="pre">pyfiglet</span></code>, která je wrapperem pro program <code class="docutils literal notranslate"><span class="pre">figlet</span></code>. <code class="docutils literal notranslate"><span class="pre">Figlet</span></code> umožňuje vytvářet velké ASCII art nápisy z obyčejného textu s různými styly písma.</p>
+<div class="tip admonition">
+<p class="admonition-title">Instalace balíčků</p>
+<p>Pro instalaci dalších knihoven pro použijeme nástroj pro správu python balíčků PIP:
+<code class="docutils literal notranslate">&#160;&#160;&#160; <span class="pre">$</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pyfiglet</span>&#160;&#160;&#160; </code></p>
+</div>
+<p>Poté můžete vytvořit Django view. V tomto příkladu vytvoříme jednoduché view, které přijímá GET parametry <code class="docutils literal notranslate"><span class="pre">text</span></code> a <code class="docutils literal notranslate"><span class="pre">font</span></code> pro generování ASCII art nápisu:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+<span class="kn">from</span> <span class="nn">pyfiglet</span> <span class="kn">import</span> <span class="n">Figlet</span>
+
+<span class="k">def</span> <span class="nf">ascii_art_view</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="c1"># Získání parametrů z URL</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="s1">&#39;Hello World&#39;</span><span class="p">)</span>  <span class="c1"># Výchozí hodnota, pokud není text zadán</span>
+    <span class="n">font</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;font&#39;</span><span class="p">,</span> <span class="s1">&#39;standard&#39;</span><span class="p">)</span>  <span class="c1"># Výchozí font, pokud není zadán</span>
+    
+    <span class="c1"># Generování ASCII art</span>
+    <span class="n">figlet</span> <span class="o">=</span> <span class="n">Figlet</span><span class="p">(</span><span class="n">font</span><span class="o">=</span><span class="n">font</span><span class="p">)</span>
+    <span class="n">ascii_art</span> <span class="o">=</span> <span class="n">figlet</span><span class="o">.</span><span class="n">renderText</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    
+    <span class="c1"># Vrácení ASCII art jako plain text odpovědi</span>
+    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="n">ascii_art</span><span class="p">,</span> <span class="n">content_type</span><span class="o">=</span><span class="s2">&quot;text/plain&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Tento kód definuje Django view nazvané <code class="docutils literal notranslate"><span class="pre">ascii_art_view</span></code>, které generuje ASCII art z textu získaného z GET parametru <code class="docutils literal notranslate"><span class="pre">text</span></code>, používající font specifikovaný v GET parametru <code class="docutils literal notranslate"><span class="pre">font</span></code>. Pokud nejsou parametry zadány, použije se výchozí text “Hello World” a výchozí font “standard”.</p>
+<p>Pro přístup k této view musíte přidat URL mapování ve vašem <code class="docutils literal notranslate"><span class="pre">urls.py</span></code> souboru aplikace:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
+<span class="kn">from</span> <span class="nn">.views</span> <span class="kn">import</span> <span class="n">ascii_art_view</span>  <span class="c1"># Předpokládá se, že view je definována v views.py</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;ascii-art/&#39;</span><span class="p">,</span> <span class="n">ascii_art_view</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;ascii-art&#39;</span><span class="p">),</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>Nyní můžete ve svém prohlížeči navštívit <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:8000/ascii-art/?text=Your+Text&amp;font=ghost</span></code>.</p>
+<p>Povšimněte si, že Django view nemusí nutně vždy pracovat s modely, konkrétní požadovanou funkcionalitu je možné zařídit jinými nástroji.</p>
+<div class="note admonition">
+<p class="admonition-title">Cvičení</p>
+<p>Rozšiřte aplikaci pro tvorbu ASCII art nápisů o modelovou vrstvu, kde bude ukládat historii zobrazovaných nápisů a tuto historii bude možné procházet. Zajistěte aby se v historii nápisy neduplikovaly za sebou napři. při opakovaném obnovení stránky.</p>
+</div>
+<section id="dalsi-tipy-pro-knihovny">
+<h2>1.&nbsp;&nbsp;Další tipy pro knihovny<a class="headerlink" href="#dalsi-tipy-pro-knihovny" title="Link to this heading">#</a></h2>
+<section id="manipulace-s-obrazky">
+<h3>1.1.&nbsp;&nbsp;Manipulace s obrázky<a class="headerlink" href="#manipulace-s-obrazky" title="Link to this heading">#</a></h3>
+<section id="pillow">
+<h4><code class="docutils literal notranslate"><span class="pre">Pillow</span></code><a class="headerlink" href="#pillow" title="Link to this heading">#</a></h4>
+<p>Rozáhlá knihovna pro práci s obrázky, která nabízí mnoho možností pro zpracování obrázků od základních operací otočení, změny velikosti, aplikaci různých filtrů, přidání textů do obrázku atd.</p>
+<section id="ukazka-kodu-zmena-velikosti-obrazku">
+<h5>Ukázka kódu: Změna velikosti obrázku<a class="headerlink" href="#ukazka-kodu-zmena-velikosti-obrazku" title="Link to this heading">#</a></h5>
+<p>Níže je ukázka kódu, která ukazuje, jak změnit velikost obrázku pomocí knihovny Pillow. Předpokládejme, že máme obrázek s názvem <code class="docutils literal notranslate"><span class="pre">original.jpg</span></code> a chceme ho změnit na nové rozměry 300x300 pixelů.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+
+<span class="c1"># Načtení původního obrázku</span>
+<span class="n">original_image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;original.jpg&quot;</span><span class="p">)</span>
+
+<span class="c1"># Změna velikosti obrázku</span>
+<span class="n">resized_image</span> <span class="o">=</span> <span class="n">original_image</span><span class="o">.</span><span class="n">resize</span><span class="p">((</span><span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">))</span>
+
+<span class="c1"># Uložení upraveného obrázku</span>
+<span class="n">resized_image</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;resized.jpg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Tento kód nejprve načte obrázek <code class="docutils literal notranslate"><span class="pre">original.jpg</span></code> z vašeho souborového systému. Poté použije metodu <code class="docutils literal notranslate"><span class="pre">resize()</span></code> k nastavení nových rozměrů obrázku. Nakonec upravený obrázek uloží pod novým názvem <code class="docutils literal notranslate"><span class="pre">resized.jpg</span></code>.</p>
+<p>Úplnou dokumentaci knihovny Pillow naleznete na oficiálních stránkách:
+<a class="reference external" href="https://pillow.readthedocs.io/en/stable/">Pillow - Python Imaging Library (Fork)</a></p>
+<p>Tato dokumentace obsahuje kompletní přehled všech funkcí a možností, které Pillow nabízí, včetně pokročilých technik práce s obrázky.</p>
+</section>
+</section>
+</section>
+<section id="matematicke-knihovny">
+<h3>1.2.&nbsp;&nbsp;Matematické knihovny<a class="headerlink" href="#matematicke-knihovny" title="Link to this heading">#</a></h3>
+<section id="sympy">
+<h4><code class="docutils literal notranslate"><span class="pre">SymPy</span></code><a class="headerlink" href="#sympy" title="Link to this heading">#</a></h4>
+<p>SymPy je knihovna pro symbolické matematické výpočty v Pythonu, která umožňuje práci s algebrou, řešení rovnic, práce s vektory a maticemi, limity, integrace, derivace atd.</p>
+<section id="ukazka-kodu-reseni-algebraickeho-vyrazu">
+<h5>Ukázka kódu: Řešení algebraického výrazu<a class="headerlink" href="#ukazka-kodu-reseni-algebraickeho-vyrazu" title="Link to this heading">#</a></h5>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">Eq</span><span class="p">,</span> <span class="n">solve</span>
+
+<span class="c1"># Definice symbolu</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+
+<span class="c1"># Definice rovnice</span>
+<span class="n">equation</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Řešení rovnice</span>
+<span class="n">solutions</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">equation</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">solutions</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Tento kód nejprve importuje potřebné funkce z knihovny SymPy, definuje proměnnou <code class="docutils literal notranslate"><span class="pre">x</span></code> jako symbol, nastaví rovnici (x^2 - 4 = 0), a pak použije funkci <code class="docutils literal notranslate"><span class="pre">solve</span></code> k nalezení řešení této rovnice. Výsledek bude seznam řešení rovnice, tj. [2, -2].</p>
+<p>Úplnou dokumentaci knihovny SymPy a další příklady použití naleznete na oficiálních stránkách:
+<a class="reference external" href="https://docs.sympy.org/latest/index.html">SymPy Documentation</a></p>
+</section>
+</section>
+<section id="matplotlib">
+<h4><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code><a class="headerlink" href="#matplotlib" title="Link to this heading">#</a></h4>
+<p>Matplotlib je knihovna pro vizualizaci dat v Pythonu, která umožňuje tvorbu široké škály grafů a diagramů. Je to jedna z nejpopulárnějších knihoven pro datovou vizualizaci v Pythonu a slouží jako základ pro mnoho dalších vizualizačních knihoven. Zde je stručný přehled některých základních funkcí, které Matplotlib nabízí:</p>
+<p>Ukázka kódu</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Rozsah hodnot x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># Výpočet hodnot y pro sin(x) a cos(x)</span>
+<span class="n">y_sin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">y_cos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Vytvoření grafů pro sin(x) a cos(x)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_sin</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;sin(x)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_cos</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;cos(x)&#39;</span><span class="p">)</span>
+
+<span class="c1"># Přidání legendy</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="c1"># Přidání titulku a popisků os</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Grafy funkcí sin(x) a cos(x)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+
+<span class="c1"># Uložení grafu do souboru</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;sin_cos_graph.png&quot;</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<p>Tento kód nejprve importuje potřebné knihovny <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> pro vizualizaci a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> pro matematické operace. Pomocí <code class="docutils literal notranslate"><span class="pre">numpy.linspace</span></code> generuje rozsah hodnot <code class="docutils literal notranslate"><span class="pre">x</span></code> od 0 do ( 2\pi ) (což odpovídá 360 stupňům ve stupních), které jsou použity pro výpočet hodnot funkcí ( \sin(x) ) a ( \cos(x) ). Poté vytvoří dva grafy, jeden pro každou funkci, s příslušnými legendami. Nakonec graf uloží do souboru <code class="docutils literal notranslate"><span class="pre">sin_cos_graph.png</span></code> voláním <code class="docutils literal notranslate"><span class="pre">plt.savefig</span></code>.</p>
+<p>Úplnou dokumentaci knihovny Matplotlib a další příklady použití naleznete na oficiálních stránkách:
+<a class="reference external" href="https://matplotlib.org/stable/contents.html">Matplotlib Documentation</a></p>
+</section>
+</section>
+</section>
+<section id="cviceni">
+<h2>2.&nbsp;&nbsp;Cvičení<a class="headerlink" href="#cviceni" title="Link to this heading">#</a></h2>
+<div class="hint admonition">
+<p class="admonition-title">Jednoduchý obrázkový editor</p>
+<p>Vytvořte webový nástroj na základní manupulaci s obrázky (otočení, aplikace filtrů). Uživatel nahraje obrázek a poté může pomocí lišty nástrojů s obrázkem provádět potřebné operace.</p>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">Kalkulačka</p>
+<p>Vytvořte webový nástroj pro řešení algebraických výrazů a rovnic. Uživatel zadá do textového vstupu rovnici k vyřešení a aplikace mu zobrazí výsledek. Použijte JavaScriptovou knihovnu <code class="docutils literal notranslate"><span class="pre">MathJax</span></code> pro pěkné zobrazení řešení rovnice (včetně zadání).</p>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../materials.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">předchozí</p>
+        <p class="prev-next-title">Materiály k výuce</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="10_tests.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">další</p>
+        <p class="prev-next-title">Testování aplikace</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Obsah
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dalsi-tipy-pro-knihovny">Další tipy pro knihovny</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulace-s-obrazky">Manipulace s obrázky</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pillow"><code class="docutils literal notranslate"><span class="pre">Pillow</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ukazka-kodu-zmena-velikosti-obrazku">Ukázka kódu: Změna velikosti obrázku</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matematicke-knihovny">Matematické knihovny</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sympy"><code class="docutils literal notranslate"><span class="pre">SymPy</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ukazka-kodu-reseni-algebraickeho-vyrazu">Ukázka kódu: Řešení algebraického výrazu</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib"><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cviceni">Cvičení</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Podle kf
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, kf..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
