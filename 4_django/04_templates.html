@@ -1,0 +1,778 @@
+
+<!DOCTYPE html>
+
+
+<html lang="cs" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZX7DQPSHE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RZX7DQPSHE');
+    </script>
+    
+    <title>Šablony &#8212; Webové aplikace</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/local.css?v=1256093c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=4cdba38b"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../_static/translations.js?v=0275affc"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '4_django/04_templates';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Rejstřík" href="../genindex.html" />
+    <link rel="search" title="Vyhledávání" href="../search.html" />
+    <link rel="next" title="HTTP" href="../5_protocols/01_http.html" />
+    <link rel="prev" title="Pohledy" href="03_views.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="cs"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Webové aplikace</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Vyhledávání" aria-label="Vyhledávání" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Vyhledávání</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Úvod</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../0_introduction/01_overview.html">Úvod do internetových technologií</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0_introduction/04_git.html">Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0_introduction/05_markdown.html">Markdown</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statický web</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../1_static/01_html.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_static/02_css.html">Základy CSS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_static/03_layouts.html">CSS Layouty</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">JavaScript</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../2_javascript/01_intro.html">Seznámení s JavaScriptem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_javascript/02_blocks.html">Řídící bloky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_javascript/03_methods.html">Funkce a třídy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_javascript/04_modules.html">Moduly v JavaScriptu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_javascript/05_dom.html">Document Object Model</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../3_python/01_intro.html">Seznámení s jazykem Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_python/02_types.html">Datové typy v Pythonu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_python/03_blocks.html">Řídící bloky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_python/04_methods.html">Funkce a třídy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_python/05_packages.html">Balíčky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_python/06_pip.html">PIP, Python Virtual Environment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Django</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_framework.html">Webové frameworky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_project.html">Seznámení s Django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_views.html">Pohledy</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Šablony</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Webové protokoly</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../5_protocols/01_http.html">HTTP</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Webdesign</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../6_webdesign/01_wireframe.html">Wireframe návrh</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ostatní</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../7_other/04_console.html">Základy práce v konzoli</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Materiály</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../materials.html">Materiály k výuce</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Stáhněte si tuto stránku">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/4_django/04_templates.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Stáhněte si zdrojový soubor"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Tisk do PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Režim celé obrazovky"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Vyhledávání" aria-label="Vyhledávání" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Šablony</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Obsah </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prace-se-sablonami-v-django">Práce se šablonami v Django</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#promenne-a-filtry">Proměnné a filtry</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add"><code class="docutils literal notranslate"><span class="pre">add</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#join"><code class="docutils literal notranslate"><span class="pre">join</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#length"><code class="docutils literal notranslate"><span class="pre">length</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#date"><code class="docutils literal notranslate"><span class="pre">date</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#safe"><code class="docutils literal notranslate"><span class="pre">safe</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retezeni">Řetězení</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tagy">Tagy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for"><code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">for</span> <span class="pre">%}</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if"><code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">if</span> <span class="pre">%}</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#url"><code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">url</span> <span class="pre">%}</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dedeni-sablon">Dědění šablon</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vkladani-statickych-souboru">Vkládání statických souborů</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="sablony">
+<h1>Šablony<a class="headerlink" href="#sablony" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.djangoproject.com/en/5.0/intro/tutorial03/">Tutoriál Django - šablony</a></p></li>
+<li><p><a class="reference external" href="https://docs.djangoproject.com/en/5.0/topics/templates/">Dokumentace Django - šablony</a></p></li>
+<li><p><a class="reference external" href="https://docs.djangoproject.com/en/5.0/ref/templates/">Dokumentace Django - referenční příručka</a></p></li>
+<li><p><a class="reference external" href="https://docs.djangoproject.com/en/5.0/howto/static-files/">Vkládání statických souborů</a></p></li>
+</ul>
+<p>Šablony (templates) v Django jsou způsob, jak generovat dynamický HTML kód. Pomocí šablon je možné lépe oddělit aplikační logiku od prezentace a vzhledu a zpřehlednit tak složitější projekty. Využívají kombinaci statického HTML a <strong><a class="reference external" href="https://docs.djangoproject.com/en/5.0/ref/templates/language/">Django Template Language (DTL)</a></strong>, který umožňuje provádět komplexnější operace jako vkládání proměnných, logické operace, cykly a další.</p>
+<section id="prace-se-sablonami-v-django">
+<h2>1.&nbsp;&nbsp;Práce se šablonami v Django<a class="headerlink" href="#prace-se-sablonami-v-django" title="Link to this heading">#</a></h2>
+<p>Pro napojení šablony na pohled v Django je potřeba:</p>
+<ol class="arabic">
+<li><p><strong>Vytvoření šablony</strong></p>
+<p>V adresáři aplikace <code class="docutils literal notranslate"><span class="pre">my_project/my_app/templates/my_app/</span></code> vytvořte soubor, například <code class="docutils literal notranslate"><span class="pre">hello.html</span></code>.</p>
+</li>
+<li><p><strong>Napojení šablony v pohledu</strong></p>
+<p>V souboru <code class="docutils literal notranslate"><span class="pre">views.py</span></code> importujte funkci <code class="docutils literal notranslate"><span class="pre">render</span></code> z balíčku <code class="docutils literal notranslate"><span class="pre">django.shortcuts</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># my_app/views.py</span>
+
+<span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span>
+</pre></div>
+</div>
+<p>V rámci view funkce spusťte <code class="docutils literal notranslate"><span class="pre">render</span></code> funkci a její obsah vraťte jako výstup. Funkce <code class="docutils literal notranslate"><span class="pre">render</span></code> dostane jako parametr šablonu, která se použije a volitelně také slovník (<code class="docutils literal notranslate"><span class="pre">dict</span></code>) proměnných <code class="docutils literal notranslate"><span class="pre">context</span></code>, které budou v šabloně dostupné:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># my_app/views.py</span>
+
+<span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;my_app/hello.html&#39;</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Hello world!&quot;</span><span class="p">,</span> <span class="s2">&quot;items&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;one&quot;</span><span class="p">,</span> <span class="s2">&quot;two&quot;</span><span class="p">,</span> <span class="s2">&quot;three&quot;</span><span class="p">]})</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Upravení šablony</strong></p>
+<p>Vlastní šablona <code class="docutils literal notranslate"><span class="pre">hello.html</span></code> je pak v podstatě HTML soubor, který obsahuje navíc speciální značky DTL:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cm">&lt;!-- my_project/my_app/templates/my_app/hello.html --&gt;</span>
+
+<span class="cp">&lt;!doctype html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>{{ title }}<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>{{ title }}<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+        {% for item in items %}
+            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{ item }}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        {% endfor %}
+        <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>V tomto příkladě vidíme dvě základní značky DTL:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">title</span> <span class="pre">}}</span></code></strong>: Dvojité složené závorky vloží na místo obsah proměnné <code class="docutils literal notranslate"><span class="pre">title</span></code>, která byla předána jako <code class="docutils literal notranslate"><span class="pre">context</span></code> šablony.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">for</span> <span class="pre">...</span> <span class="pre">%}</span></code></strong>: Do značek <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">...</span> <span class="pre">%}</span></code> se vkládají <a class="reference external" href="https://docs.djangoproject.com/en/5.0/topics/templates/#tags">DLT tagy</a>. Tag <code class="docutils literal notranslate"><span class="pre">for</span></code> je analogií for cyklu pro iteraci přes seznamy, slovníky atd…</p></li>
+</ul>
+</li>
+</ol>
+<div class="note admonition">
+<p class="admonition-title">Duplicitní cesta?</p>
+<p>Umístění souboru v adresáři <code class="docutils literal notranslate"><span class="pre">my_project/my_app/templates/my_app/index.html</span></code> se může na první pohled zdát jako duplicitní označení v cestě (<code class="docutils literal notranslate"><span class="pre">my_app/</span></code>), nicméně to má svou vnitřní logiku, která začne být jasnější jak se váš projekt bude rozšiřovat. Pomáhá například předcházet kolizím v názvu, pokud je šablona se stejným názvem ve více aplikacích.</p>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Šablona nenalezena?</p>
+<p>Pokud Django hlásí, že nemůže šablonu nalézt, ujistěte se, že máte vaši aplikaci zahrnutou v <code class="docutils literal notranslate"><span class="pre">INSTALLED_APPS</span></code> v konfiguračním souboru <code class="docutils literal notranslate"><span class="pre">settings.py</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># my_project/settings.py</span>
+
+<span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># ...</span>
+    <span class="s1">&#39;my_app.apps.MyAppConfig&#39;</span><span class="p">,</span>
+    <span class="c1"># ...</span>
+<span class="p">]</span>
+
+</pre></div>
+</div>
+</div>
+</section>
+<section id="promenne-a-filtry">
+<h2>2.&nbsp;&nbsp;Proměnné a filtry<a class="headerlink" href="#promenne-a-filtry" title="Link to this heading">#</a></h2>
+<p>Proměnné se v šabloně zobrazují pomocí dvojitých složených závorek: <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">variable_name</span> <span class="pre">}}</span></code>. Django vyhledá proměnné ve slovníku kontextu (<code class="docutils literal notranslate"><span class="pre">context</span></code>) poskytnutém jako parametr funkce <code class="docutils literal notranslate"><span class="pre">render</span></code>.</p>
+<p>Filtry umožňují upravit zobrazení proměnných a jsou aplikovány pomocí znaku <code class="docutils literal notranslate"><span class="pre">|</span></code>. Příklady filtrů:</p>
+<section id="add">
+<h3>2.1.&nbsp;&nbsp;<code class="docutils literal notranslate"><span class="pre">add</span></code><a class="headerlink" href="#add" title="Link to this heading">#</a></h3>
+<p>Přidá hodnotu k číslu, nebo řetězci.</p>
+<div class="highlight-django notranslate"><div class="highlight"><pre><span></span><span class="cp">{{</span> <span class="nv">variable</span> <span class="o">|</span> <span class="nf">add</span><span class="s2">:&quot;2&quot;</span> <span class="cp">}}</span>
+</pre></div>
+</div>
+</section>
+<section id="join">
+<h3>2.2.&nbsp;&nbsp;<code class="docutils literal notranslate"><span class="pre">join</span></code><a class="headerlink" href="#join" title="Link to this heading">#</a></h3>
+<p>Spojí seznam řetězců do jednoho řetězce s uvedeným oddělovačem.</p>
+<div class="highlight-django notranslate"><div class="highlight"><pre><span></span><span class="cp">{{</span> <span class="nv">list_variable</span> <span class="o">|</span> <span class="nf">join</span><span class="s2">:&quot;, &quot;</span> <span class="cp">}}</span>
+</pre></div>
+</div>
+</section>
+<section id="length">
+<h3>2.3.&nbsp;&nbsp;<code class="docutils literal notranslate"><span class="pre">length</span></code><a class="headerlink" href="#length" title="Link to this heading">#</a></h3>
+<p>Vrátí délku řetězce nebo počet položek seznamu.</p>
+<div class="highlight-django notranslate"><div class="highlight"><pre><span></span><span class="cp">{{</span> <span class="nv">string</span> <span class="o">|</span> <span class="nf">length</span> <span class="cp">}}</span>
+</pre></div>
+</div>
+</section>
+<section id="date">
+<h3>2.4.&nbsp;&nbsp;<code class="docutils literal notranslate"><span class="pre">date</span></code><a class="headerlink" href="#date" title="Link to this heading">#</a></h3>
+<p>Filtr na formátování data (Python objektu <code class="docutils literal notranslate"><span class="pre">datetime</span></code>):</p>
+<div class="highlight-django notranslate"><div class="highlight"><pre><span></span><span class="cp">{{</span> <span class="nv">date_variable</span> <span class="o">|</span> <span class="nf">date</span><span class="s2">:&quot;d.m.Y H:i:s&quot;</span> <span class="cp">}}</span>
+</pre></div>
+</div>
+<p>Úplný seznam zástupných znaků použitelných při formátování data naleznete v <a class="reference external" href="https://docs.djangoproject.com/en/5.0/ref/templates/builtins/#date">dokumentaci</a>.</p>
+</section>
+<section id="safe">
+<h3>2.5.&nbsp;&nbsp;<code class="docutils literal notranslate"><span class="pre">safe</span></code><a class="headerlink" href="#safe" title="Link to this heading">#</a></h3>
+<p>Pokud proměnná obsahuje HTML značky, Django je ve výchozí konfiguraci escapuje. Pokud chcete, aby se HTML značky aplikovaly, použijte filtr <code class="docutils literal notranslate"><span class="pre">safe</span></code>:</p>
+<div class="highlight-django notranslate"><div class="highlight"><pre><span></span><span class="cp">{{</span> <span class="nv">html_code</span> <span class="o">|</span> <span class="nf">safe</span> <span class="cp">}}</span>
+</pre></div>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Pozor!</p>
+<p>Filtr <code class="docutils literal notranslate"><span class="pre">safe</span></code> použijte, pouze pokud jse si absolutně jisti, že obsah proměnné je bezpečný a neobsahuje škodlivý kód. Zejména dávejte pozor, pokud takto zobrazujete obsah, který pochází od uživatele, který by tak mohl vložit například tag <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code> nebo <code class="docutils literal notranslate"><span class="pre">&lt;iframe&gt;</span></code> a spustit tak na Vaší stránce kód z cizí stránky. Tento typ útoku se nazývá <a class="reference external" href="https://en.wikipedia.org/wiki/Cross-site_scripting">Cross-Site Scripting (XSS)</a>.</p>
+</div>
+</section>
+<section id="retezeni">
+<h3>2.6.&nbsp;&nbsp;Řetězení<a class="headerlink" href="#retezeni" title="Link to this heading">#</a></h3>
+<div class="highlight-django notranslate"><div class="highlight"><pre><span></span><span class="cp">{{</span> <span class="nv">my_list</span> <span class="o">|</span> <span class="nf">join</span><span class="s2">:&quot;, &quot;</span> <span class="o">|</span> <span class="nf">add</span><span class="s2">:&quot; or more...&quot;</span> <span class="cp">}}</span>
+</pre></div>
+</div>
+<p>Kompletní seznam vestavěných filtrů naleznete v <a class="reference external" href="https://docs.djangoproject.com/en/5.0/ref/templates/builtins/#ref-templates-builtins-filters">dokumentaci</a> a kromě toho je také možné <a class="reference external" href="https://docs.djangoproject.com/en/5.0/howto/custom-template-tags/">definovat vlastní filtry</a>.</p>
+</section>
+</section>
+<section id="tagy">
+<h2>3.&nbsp;&nbsp;Tagy<a class="headerlink" href="#tagy" title="Link to this heading">#</a></h2>
+<p>Tagy se používají pro provádění logiky v šabloně a jsou obklopeny znaky <code class="docutils literal notranslate"><span class="pre">{%</span></code> a <code class="docutils literal notranslate"><span class="pre">%}</span></code>. Základními tagy jsou:</p>
+<section id="for">
+<h3>3.1.&nbsp;&nbsp;<code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">for</span> <span class="pre">%}</span></code><a class="headerlink" href="#for" title="Link to this heading">#</a></h3>
+<p>Iteruje přes seznam, slovník nebo jiný iterovatelný objekt:</p>
+<div class="highlight-django notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">item</span> <span class="k">in</span> <span class="nv">list</span> <span class="cp">%}</span>
+<span class="x">  </span><span class="cp">{{</span> <span class="nv">item</span> <span class="cp">}}</span>
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+</pre></div>
+</div>
+<p>Iterace přes slovník:</p>
+<div class="highlight-django notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">key</span><span class="o">,</span> <span class="nv">value</span> <span class="k">in</span> <span class="nv">dict.items</span> <span class="cp">%}</span>
+<span class="x">  </span><span class="cp">{{</span> <span class="nv">key</span> <span class="cp">}}</span><span class="x"> : </span><span class="cp">{{</span> <span class="nv">value</span> <span class="cp">}}</span>
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+</pre></div>
+</div>
+<p>Ve <code class="docutils literal notranslate"><span class="pre">for</span></code> cyklu je možné v šabloně použít také čítače aktuální položky:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">forloop.counter</span> <span class="pre">}}</span></code> počítá od 1.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">forloop.counter0</span> <span class="pre">}}</span></code> počítá od 0.</p></li>
+</ul>
+</section>
+<section id="if">
+<h3>3.2.&nbsp;&nbsp;<code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">if</span> <span class="pre">%}</span></code><a class="headerlink" href="#if" title="Link to this heading">#</a></h3>
+<p>Tag pro podmíněné zobrazování obsahu na základě podmínky. Obsahuje stejnou logiku větvení if - else if - else jakou známe z Pythonu a jiných jazyků:</p>
+<div class="highlight-django notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">variable</span> <span class="o">&lt;</span> <span class="m">0</span> <span class="cp">%}</span>
+<span class="x">    Hodnota je menší než nula</span>
+<span class="cp">{%</span> <span class="k">elif</span> <span class="nv">variable</span> <span class="o">==</span> <span class="m">0</span> <span class="cp">%}</span>
+<span class="x">    Hodnota je nula</span>
+<span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span>
+<span class="x">    Hodnota je větší než nula</span>
+<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
+</pre></div>
+</div>
+<p>V podmínkách je také možné používat filtry jako součástí podmínky:</p>
+<div class="highlight-django notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">label</span><span class="o">|</span><span class="nf">length</span> <span class="o">&gt;</span> <span class="m">5</span> <span class="cp">%}</span>
+<span class="x">    Délka nadpisu je větší než 5 znaků</span>
+<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
+</pre></div>
+</div>
+</section>
+<section id="url">
+<h3>3.3.&nbsp;&nbsp;<code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">url</span> <span class="pre">%}</span></code><a class="headerlink" href="#url" title="Link to this heading">#</a></h3>
+<p>Pokud máte pojmenované pohledy v souboru <code class="docutils literal notranslate"><span class="pre">urls.py</span></code>, lze jej jednoduše sestavovat pomocí tagu <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">url</span> <span class="pre">app_name:view_name</span> <span class="pre">%}</span></code>. Je to analogie pro volání funkce <code class="docutils literal notranslate"><span class="pre">reverse</span></code>:</p>
+<div class="highlight-django notranslate"><div class="highlight"><pre><span></span><span class="x">&lt;a href=&quot;</span><span class="cp">{%</span> <span class="k">url</span> <span class="s1">&#39;my_app:index&#39;</span> <span class="cp">%}</span><span class="x">&quot;&gt;Homepage&lt;/a&gt;</span>
+</pre></div>
+</div>
+<p>Pro dynamické URL lze předat tagu <code class="docutils literal notranslate"><span class="pre">url</span></code> i parametry:</p>
+<div class="highlight-django notranslate"><div class="highlight"><pre><span></span><span class="x">&lt;a href=&quot;</span><span class="cp">{%</span> <span class="k">url</span> <span class="s1">&#39;my_app:say&#39;</span> <span class="s1">&#39;John&#39;</span> <span class="cp">%}</span><span class="x">&quot;&gt;Are you John?&lt;/a&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="dedeni-sablon">
+<h2>4.&nbsp;&nbsp;Dědění šablon<a class="headerlink" href="#dedeni-sablon" title="Link to this heading">#</a></h2>
+<p>Šablony mohou také dědit (rozšiřovat, doplňovat) jiné šablony. To je užitečné například pro případy, kdy máme část HTML kódu sdíleno mezi více šablonami (stránkami), jako třeba HTML hlavičky, záhlaví stránky, apod… Abychom se vyhnuli opakování kódu (DRY!), vytvoříme například jednu základní šablonu <code class="docutils literal notranslate"><span class="pre">base.html</span></code>, kde definujeme bloky pomocí tagu <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">block</span> <span class="pre">%}</span></code>:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cm">&lt;!-- my_project/my_app/templates/my_app/base.html --&gt;</span>
+
+<span class="cp">&lt;!doctype html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>{% block title %}{% endblock %}<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        {% block content %}{% endblock %}
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Dále vytvoříme druhou šablonu <code class="docutils literal notranslate"><span class="pre">hello.html</span></code>, která bude dědit ze základní šablony <code class="docutils literal notranslate"><span class="pre">base.html</span></code>. Toho docílíme pomocí tagu <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">extends</span> <span class="pre">%}</span></code> a pomocí tagu <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">block</span> <span class="pre">%}</span></code> pak definujeme obsah jednotlivých bloků:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cm">&lt;!-- my_project/my_app/templates/my_app/hello.html --&gt;</span>
+
+{% extends &quot;my_app/base.html&quot; %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block content %}
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Obsah stránky<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+{% endblock %}
+</pre></div>
+</div>
+<p>V pohledu pak ve funkci <code class="docutils literal notranslate"><span class="pre">render</span></code> odkážeme na děděnou šablonu:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># my_app/views.py</span>
+
+<span class="k">def</span> <span class="nf">about</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;my_app/hello.html&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Django debug-toolbar</p>
+<p>Pokud chcete zobrazit na vaší stránce užitečnou debug lištu, a získat přehled o tom, co se ve vaší aplikaci přesně děje, nainstalujte si balíček <code class="docutils literal notranslate"><span class="pre">[django-debug-toolbar](https://django-debug-toolbar.readthedocs.io/en/latest/installation.html)</span></code>.</p>
+</div>
+</section>
+<section id="vkladani-statickych-souboru">
+<h2>5.&nbsp;&nbsp;Vkládání statických souborů<a class="headerlink" href="#vkladani-statickych-souboru" title="Link to this heading">#</a></h2>
+<p>Práce se statickými soubory (CSS, JavaScript, obrázky) má svá specifika (jak si později ukážeme) v produkčním prostředí. Django proto nabízí nástroje pro správu statických souborů, které nám celý proces zjednoduší. Postup vložení například CSS souboru je následující:</p>
+<ol class="arabic">
+<li><p><strong>Konfigurace</strong></p>
+<p>Ujistěte se, že máte v souboru <code class="docutils literal notranslate"><span class="pre">settings.py</span></code> v <code class="docutils literal notranslate"><span class="pre">INSTALLED_APPS</span></code> balíček <code class="docutils literal notranslate"><span class="pre">django.contrib.staticfiles</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># my_project/settings.py</span>
+
+<span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># ...</span>
+    <span class="s1">&#39;django.contrib.staticfiles&#39;</span><span class="p">,</span>
+    <span class="c1"># ...</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Adresář pro statické soubory</strong></p>
+<p>V souboru <code class="docutils literal notranslate"><span class="pre">settings.py</span></code> se ujistěte, že máte konfiguraci pro adresář, ve kterém se nachází statické soubory. Obvykle se používá adresář <code class="docutils literal notranslate"><span class="pre">static/</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># my_project/settings.py</span>
+
+<span class="n">STATIC_URL</span> <span class="o">=</span> <span class="s2">&quot;static/&quot;</span>
+</pre></div>
+</div>
+<p>Vytvořte tento adresář pro statické soubory v adresáři aplikace <code class="docutils literal notranslate"><span class="pre">my_app/static/my_app/</span></code> a umístěte do něj požadované statické soubory, například <code class="docutils literal notranslate"><span class="pre">style.css</span></code>. Duplicitní označení adresáře aplikace (<code class="docutils literal notranslate"><span class="pre">my_app</span></code>) má podobnou logiku jako u šablon a pomáhá předcházet případným konfliktům v názvu souborů z různých aplikací.</p>
+</li>
+<li><p><strong>Použití v šabloně</strong></p>
+<p>V šabloně je třeba nejprve načíst tag <code class="docutils literal notranslate"><span class="pre">static</span></code> (na začátku šablony) pomocí <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">load</span> <span class="pre">static</span> <span class="pre">%}</span></code> a poté už vkládat soubory pomocí tagu <code class="docutils literal notranslate"><span class="pre">static</span></code>:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>{% load static %}
+<span class="cm">&lt;!-- ... --&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{% static &#39;my_app/style.css&#39; %}&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Podrobný návod na vkládání statických souborů a práce s nimi naleznete v <a class="reference external" href="https://docs.djangoproject.com/en/5.0/howto/static-files/">dokumentaci</a>.</p>
+<p>V souboru <code class="docutils literal notranslate"><span class="pre">settings.py</span></code> je možné také nastavit proměnnou <code class="docutils literal notranslate"><span class="pre">STATICFILES_DIRS</span></code>, která obsahuje seznam adresářů, ve kterých se mají statické soubory vyhledávat. Takto je například možné přidat adresář <code class="docutils literal notranslate"><span class="pre">static</span></code> přímo v kořenovém adresáři projektu, pokud nechceme oddělovat statické soubory pro jednotlivé aplikace:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># my_project/settings.py</span>
+
+<span class="n">STATICFILES_DIRS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">BASE_DIR</span> <span class="o">/</span> <span class="s2">&quot;static/&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>Další možnosti, jak pracovat v Django se šablonami naleznete v <a class="reference external" href="https://docs.djangoproject.com/en/5.0/topics/templates/">dokumentaci</a>.</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="03_views.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">předchozí</p>
+        <p class="prev-next-title">Pohledy</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../5_protocols/01_http.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">další</p>
+        <p class="prev-next-title">HTTP</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Obsah
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prace-se-sablonami-v-django">Práce se šablonami v Django</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#promenne-a-filtry">Proměnné a filtry</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add"><code class="docutils literal notranslate"><span class="pre">add</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#join"><code class="docutils literal notranslate"><span class="pre">join</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#length"><code class="docutils literal notranslate"><span class="pre">length</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#date"><code class="docutils literal notranslate"><span class="pre">date</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#safe"><code class="docutils literal notranslate"><span class="pre">safe</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retezeni">Řetězení</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tagy">Tagy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for"><code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">for</span> <span class="pre">%}</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if"><code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">if</span> <span class="pre">%}</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#url"><code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">url</span> <span class="pre">%}</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dedeni-sablon">Dědění šablon</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vkladani-statickych-souboru">Vkládání statických souborů</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Podle kf
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, kf..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
