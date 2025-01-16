@@ -288,7 +288,12 @@ Práce se statickými soubory (CSS, JavaScript, obrázky) má svá specifika (ja
 
 2. **Adresář pro statické soubory**
 
-    V souboru `settings.py` se ujistěte, že máte konfiguraci pro adresář, ve kterém se nachází statické soubory. Obvykle se používá adresář `static/`
+    Vytvořte adresář pro statické soubory v adresáři aplikace `my_app/static/my_app/` a umístěte do něj požadované statické soubory, například `style.css`. Duplicitní označení adresáře aplikace (`my_app`) má podobnou logiku jako u šablon a pomáhá předcházet případným konfliktům v názvu souborů z různých aplikací.
+
+   
+3. **URL adresa pro statické soubory**
+    
+    V souboru `settings.py` se ujistěte, že máte konfiguraci pro URL cestu, ze které se budou statické soubory načítat. Obvykle se používá adresář `static/`:
     
     ```python
     # my_project/settings.py
@@ -296,10 +301,7 @@ Práce se statickými soubory (CSS, JavaScript, obrázky) má svá specifika (ja
     STATIC_URL = "static/"
     ```
 
-    Vytvořte tento adresář pro statické soubory v adresáři aplikace `my_app/static/my_app/` a umístěte do něj požadované statické soubory, například `style.css`. Duplicitní označení adresáře aplikace (`my_app`) má podobnou logiku jako u šablon a pomáhá předcházet případným konfliktům v názvu souborů z různých aplikací.
-    
-
-3. **Použití v šabloně**
+4. **Použití v šabloně**
     
     V šabloně je třeba nejprve načíst tag `static` (na začátku šablony) pomocí `{% load static %}` a poté už vkládat soubory pomocí tagu `static`:
     
@@ -311,7 +313,7 @@ Práce se statickými soubory (CSS, JavaScript, obrázky) má svá specifika (ja
 
 Podrobný návod na vkládání statických souborů a práce s nimi naleznete v [dokumentaci](https://docs.djangoproject.com/en/5.0/howto/static-files/).
 
-V souboru `settings.py` je možné také nastavit proměnnou `STATICFILES_DIRS`, která obsahuje seznam adresářů, ve kterých se mají statické soubory vyhledávat. Takto je například možné přidat adresář `static` přímo v kořenovém adresáři projektu, pokud nechceme oddělovat statické soubory pro jednotlivé aplikace:
+V souboru `settings.py` je možné také nastavit proměnnou `STATICFILES_DIRS`, která obsahuje seznam adresářů, ve kterých se mají statické soubory vyhledávat. Takto je například možné přidat adresář `static` přímo v kořenovém adresáři projektu, pokud nechceme oddělovat statické soubory pro jednotlivé aplikace, nebo přidat statické soubory, které jsou společné pro celý projekt:
 
 ```python
 # my_project/settings.py

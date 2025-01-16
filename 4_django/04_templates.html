@@ -628,13 +628,15 @@ document.write(`
 </div>
 </li>
 <li><p><strong>Adresář pro statické soubory</strong></p>
-<p>V souboru <code class="docutils literal notranslate"><span class="pre">settings.py</span></code> se ujistěte, že máte konfiguraci pro adresář, ve kterém se nachází statické soubory. Obvykle se používá adresář <code class="docutils literal notranslate"><span class="pre">static/</span></code></p>
+<p>Vytvořte adresář pro statické soubory v adresáři aplikace <code class="docutils literal notranslate"><span class="pre">my_app/static/my_app/</span></code> a umístěte do něj požadované statické soubory, například <code class="docutils literal notranslate"><span class="pre">style.css</span></code>. Duplicitní označení adresáře aplikace (<code class="docutils literal notranslate"><span class="pre">my_app</span></code>) má podobnou logiku jako u šablon a pomáhá předcházet případným konfliktům v názvu souborů z různých aplikací.</p>
+</li>
+<li><p><strong>URL adresa pro statické soubory</strong></p>
+<p>V souboru <code class="docutils literal notranslate"><span class="pre">settings.py</span></code> se ujistěte, že máte konfiguraci pro URL cestu, ze které se budou statické soubory načítat. Obvykle se používá adresář <code class="docutils literal notranslate"><span class="pre">static/</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># my_project/settings.py</span>
 
 <span class="n">STATIC_URL</span> <span class="o">=</span> <span class="s2">&quot;static/&quot;</span>
 </pre></div>
 </div>
-<p>Vytvořte tento adresář pro statické soubory v adresáři aplikace <code class="docutils literal notranslate"><span class="pre">my_app/static/my_app/</span></code> a umístěte do něj požadované statické soubory, například <code class="docutils literal notranslate"><span class="pre">style.css</span></code>. Duplicitní označení adresáře aplikace (<code class="docutils literal notranslate"><span class="pre">my_app</span></code>) má podobnou logiku jako u šablon a pomáhá předcházet případným konfliktům v názvu souborů z různých aplikací.</p>
 </li>
 <li><p><strong>Použití v šabloně</strong></p>
 <p>V šabloně je třeba nejprve načíst tag <code class="docutils literal notranslate"><span class="pre">static</span></code> (na začátku šablony) pomocí <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">load</span> <span class="pre">static</span> <span class="pre">%}</span></code> a poté už vkládat soubory pomocí tagu <code class="docutils literal notranslate"><span class="pre">static</span></code>:</p>
@@ -646,7 +648,7 @@ document.write(`
 </li>
 </ol>
 <p>Podrobný návod na vkládání statických souborů a práce s nimi naleznete v <a class="reference external" href="https://docs.djangoproject.com/en/5.0/howto/static-files/">dokumentaci</a>.</p>
-<p>V souboru <code class="docutils literal notranslate"><span class="pre">settings.py</span></code> je možné také nastavit proměnnou <code class="docutils literal notranslate"><span class="pre">STATICFILES_DIRS</span></code>, která obsahuje seznam adresářů, ve kterých se mají statické soubory vyhledávat. Takto je například možné přidat adresář <code class="docutils literal notranslate"><span class="pre">static</span></code> přímo v kořenovém adresáři projektu, pokud nechceme oddělovat statické soubory pro jednotlivé aplikace:</p>
+<p>V souboru <code class="docutils literal notranslate"><span class="pre">settings.py</span></code> je možné také nastavit proměnnou <code class="docutils literal notranslate"><span class="pre">STATICFILES_DIRS</span></code>, která obsahuje seznam adresářů, ve kterých se mají statické soubory vyhledávat. Takto je například možné přidat adresář <code class="docutils literal notranslate"><span class="pre">static</span></code> přímo v kořenovém adresáři projektu, pokud nechceme oddělovat statické soubory pro jednotlivé aplikace, nebo přidat statické soubory, které jsou společné pro celý projekt:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># my_project/settings.py</span>
 
 <span class="n">STATICFILES_DIRS</span> <span class="o">=</span> <span class="p">[</span>
