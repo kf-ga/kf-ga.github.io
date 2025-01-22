@@ -1,9 +1,9 @@
 Pohledy
 =======
 
-* [Django tutoriál](https://docs.djangoproject.com/en/5.0/intro/tutorial01/)
-* [Django dokumentace - pohledy](https://docs.djangoproject.com/en/5.0/topics/http/views/)
-* [Django dokumentace - url](https://docs.djangoproject.com/en/5.0/topics/http/urls/)
+* [Django tutoriál](https://docs.djangoproject.com/en/5.1/intro/tutorial01/)
+* [Django dokumentace - pohledy](https://docs.djangoproject.com/en/5.1/topics/http/views/)
+* [Django dokumentace - url](https://docs.djangoproject.com/en/5.1/topics/http/urls/)
 
 
 Architektura Django aplikace
@@ -121,7 +121,7 @@ Django podporuje několik datových typů v URL:
 - **`int`**: Celé číslo.
 - **`slug`**: "Slug" řetězec, tedy řetězec alfanumerických znaků, pomlčky `-` a podtržítka `_`. Tyto řetězce se často používají v URL kvůli snadné čitelnosti URL.
 
-Jejich úplný seznam a návod jak definovat vlastní typy parametrů naleznete v [dokumentaci](https://docs.djangoproject.com/en/5.0/topics/http/urls/).
+Jejich úplný seznam a návod jak definovat vlastní typy parametrů naleznete v [dokumentaci](https://docs.djangoproject.com/en/5.1/topics/http/urls/).
 
 
 ### Reverzní sestavení URL
@@ -166,4 +166,4 @@ V souboru `urls.py` je pak možné stejným pohledem obsluhovat i URL, které pa
     path("say/<str:my_name>/", views.say),
 ```
 
-Další možnosti, jak pracovat v Django s pohledy naleznete v [dokumentaci](https://docs.djangoproject.com/en/5.0/topics/http/views/).
+Další možnosti, jak pracovat v Django s pohledy naleznete v [dokumentaci](https://docs.djangoproject.com/en/5.1/topics/http/views/).

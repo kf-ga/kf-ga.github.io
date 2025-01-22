@@ -57,7 +57,7 @@
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Rejstřík" href="../genindex.html" />
     <link rel="search" title="Vyhledávání" href="../search.html" />
-    <link rel="next" title="HTTP" href="../5_protocols/01_http.html" />
+    <link rel="next" title="Modely a ORM" href="05_models.html" />
     <link rel="prev" title="Pohledy" href="03_views.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="cs"/>
@@ -194,6 +194,9 @@
 <li class="toctree-l1"><a class="reference internal" href="02_project.html">Seznámení s Django</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_views.html">Pohledy</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Šablony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_models.html">Modely a ORM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_admin.html">Admin rozhraní</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_fixtures.html">Fixtures</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Webové protokoly</span></p>
 <ul class="nav bd-sidenav">
@@ -390,12 +393,12 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="sablony">
 <h1>Šablony<a class="headerlink" href="#sablony" title="Link to this heading">#</a></h1>
 <ul class="simple">
-<li><p><a class="reference external" href="https://docs.djangoproject.com/en/5.0/intro/tutorial03/">Tutoriál Django - šablony</a></p></li>
-<li><p><a class="reference external" href="https://docs.djangoproject.com/en/5.0/topics/templates/">Dokumentace Django - šablony</a></p></li>
-<li><p><a class="reference external" href="https://docs.djangoproject.com/en/5.0/ref/templates/">Dokumentace Django - referenční příručka</a></p></li>
-<li><p><a class="reference external" href="https://docs.djangoproject.com/en/5.0/howto/static-files/">Vkládání statických souborů</a></p></li>
+<li><p><a class="reference external" href="https://docs.djangoproject.com/en/5.1/intro/tutorial03/">Tutoriál Django - šablony</a></p></li>
+<li><p><a class="reference external" href="https://docs.djangoproject.com/en/5.1/topics/templates/">Dokumentace Django - šablony</a></p></li>
+<li><p><a class="reference external" href="https://docs.djangoproject.com/en/5.1/ref/templates/">Dokumentace Django - referenční příručka</a></p></li>
+<li><p><a class="reference external" href="https://docs.djangoproject.com/en/5.1/howto/static-files/">Vkládání statických souborů</a></p></li>
 </ul>
-<p>Šablony (templates) v Django jsou způsob, jak generovat dynamický HTML kód. Pomocí šablon je možné lépe oddělit aplikační logiku od prezentace a vzhledu a zpřehlednit tak složitější projekty. Využívají kombinaci statického HTML a <strong><a class="reference external" href="https://docs.djangoproject.com/en/5.0/ref/templates/language/">Django Template Language (DTL)</a></strong>, který umožňuje provádět komplexnější operace jako vkládání proměnných, logické operace, cykly a další.</p>
+<p>Šablony (templates) v Django jsou způsob, jak generovat dynamický HTML kód. Pomocí šablon je možné lépe oddělit aplikační logiku od prezentace a vzhledu a zpřehlednit tak složitější projekty. Využívají kombinaci statického HTML a <strong><a class="reference external" href="https://docs.djangoproject.com/en/5.1/ref/templates/language/">Django Template Language (DTL)</a></strong>, který umožňuje provádět komplexnější operace jako vkládání proměnných, logické operace, cykly a další.</p>
 <section id="prace-se-sablonami-v-django">
 <h2>1.&nbsp;&nbsp;Práce se šablonami v Django<a class="headerlink" href="#prace-se-sablonami-v-django" title="Link to this heading">#</a></h2>
 <p>Pro napojení šablony na pohled v Django je potřeba:</p>
@@ -441,7 +444,7 @@ document.write(`
 <p>V tomto příkladě vidíme dvě základní značky DTL:</p>
 <ul class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">title</span> <span class="pre">}}</span></code></strong>: Dvojité složené závorky vloží na místo obsah proměnné <code class="docutils literal notranslate"><span class="pre">title</span></code>, která byla předána jako <code class="docutils literal notranslate"><span class="pre">context</span></code> šablony.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">for</span> <span class="pre">...</span> <span class="pre">%}</span></code></strong>: Do značek <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">...</span> <span class="pre">%}</span></code> se vkládají <a class="reference external" href="https://docs.djangoproject.com/en/5.0/topics/templates/#tags">DLT tagy</a>. Tag <code class="docutils literal notranslate"><span class="pre">for</span></code> je analogií for cyklu pro iteraci přes seznamy, slovníky atd…</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">for</span> <span class="pre">...</span> <span class="pre">%}</span></code></strong>: Do značek <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">...</span> <span class="pre">%}</span></code> se vkládají <a class="reference external" href="https://docs.djangoproject.com/en/5.1/topics/templates/#tags">DLT tagy</a>. Tag <code class="docutils literal notranslate"><span class="pre">for</span></code> je analogií for cyklu pro iteraci přes seznamy, slovníky atd…</p></li>
 </ul>
 </li>
 </ol>
@@ -495,7 +498,7 @@ document.write(`
 <div class="highlight-django notranslate"><div class="highlight"><pre><span></span><span class="cp">{{</span> <span class="nv">date_variable</span> <span class="o">|</span> <span class="nf">date</span><span class="s2">:&quot;d.m.Y H:i:s&quot;</span> <span class="cp">}}</span>
 </pre></div>
 </div>
-<p>Úplný seznam zástupných znaků použitelných při formátování data naleznete v <a class="reference external" href="https://docs.djangoproject.com/en/5.0/ref/templates/builtins/#date">dokumentaci</a>.</p>
+<p>Úplný seznam zástupných znaků použitelných při formátování data naleznete v <a class="reference external" href="https://docs.djangoproject.com/en/5.1/ref/templates/builtins/#date">dokumentaci</a>.</p>
 </section>
 <section id="safe">
 <h3>2.5.&nbsp;&nbsp;<code class="docutils literal notranslate"><span class="pre">safe</span></code><a class="headerlink" href="#safe" title="Link to this heading">#</a></h3>
@@ -513,7 +516,7 @@ document.write(`
 <div class="highlight-django notranslate"><div class="highlight"><pre><span></span><span class="cp">{{</span> <span class="nv">my_list</span> <span class="o">|</span> <span class="nf">join</span><span class="s2">:&quot;, &quot;</span> <span class="o">|</span> <span class="nf">add</span><span class="s2">:&quot; or more...&quot;</span> <span class="cp">}}</span>
 </pre></div>
 </div>
-<p>Kompletní seznam vestavěných filtrů naleznete v <a class="reference external" href="https://docs.djangoproject.com/en/5.0/ref/templates/builtins/#ref-templates-builtins-filters">dokumentaci</a> a kromě toho je také možné <a class="reference external" href="https://docs.djangoproject.com/en/5.0/howto/custom-template-tags/">definovat vlastní filtry</a>.</p>
+<p>Kompletní seznam vestavěných filtrů naleznete v <a class="reference external" href="https://docs.djangoproject.com/en/5.1/ref/templates/builtins/#ref-templates-builtins-filters">dokumentaci</a> a kromě toho je také možné <a class="reference external" href="https://docs.djangoproject.com/en/5.1/howto/custom-template-tags/">definovat vlastní filtry</a>.</p>
 </section>
 </section>
 <section id="tagy">
@@ -647,7 +650,7 @@ document.write(`
 </div>
 </li>
 </ol>
-<p>Podrobný návod na vkládání statických souborů a práce s nimi naleznete v <a class="reference external" href="https://docs.djangoproject.com/en/5.0/howto/static-files/">dokumentaci</a>.</p>
+<p>Podrobný návod na vkládání statických souborů a práce s nimi naleznete v <a class="reference external" href="https://docs.djangoproject.com/en/5.1/howto/static-files/">dokumentaci</a>.</p>
 <p>V souboru <code class="docutils literal notranslate"><span class="pre">settings.py</span></code> je možné také nastavit proměnnou <code class="docutils literal notranslate"><span class="pre">STATICFILES_DIRS</span></code>, která obsahuje seznam adresářů, ve kterých se mají statické soubory vyhledávat. Takto je například možné přidat adresář <code class="docutils literal notranslate"><span class="pre">static</span></code> přímo v kořenovém adresáři projektu, pokud nechceme oddělovat statické soubory pro jednotlivé aplikace, nebo přidat statické soubory, které jsou společné pro celý projekt:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># my_project/settings.py</span>
 
@@ -656,7 +659,7 @@ document.write(`
 <span class="p">]</span>
 </pre></div>
 </div>
-<p>Další možnosti, jak pracovat v Django se šablonami naleznete v <a class="reference external" href="https://docs.djangoproject.com/en/5.0/topics/templates/">dokumentaci</a>.</p>
+<p>Další možnosti, jak pracovat v Django se šablonami naleznete v <a class="reference external" href="https://docs.djangoproject.com/en/5.1/topics/templates/">dokumentaci</a>.</p>
 </section>
 </section>
 
@@ -681,11 +684,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="../5_protocols/01_http.html"
+       href="05_models.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">další</p>
-        <p class="prev-next-title">HTTP</p>
+        <p class="prev-next-title">Modely a ORM</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

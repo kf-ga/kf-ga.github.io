@@ -1,7 +1,7 @@
 Seznámení s Django
 ==================
 
-* [Django tutoriál](https://docs.djangoproject.com/en/5.0/intro/tutorial01/)
+* [Django tutoriál](https://docs.djangoproject.com/en/5.1/intro/tutorial01/)
 
 
 Nový Django projekt

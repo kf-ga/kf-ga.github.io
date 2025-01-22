@@ -1,13 +1,13 @@
 Šablony
 =======
 
-* [Tutoriál Django - šablony](https://docs.djangoproject.com/en/5.0/intro/tutorial03/)
-* [Dokumentace Django - šablony](https://docs.djangoproject.com/en/5.0/topics/templates/)
-* [Dokumentace Django - referenční příručka](https://docs.djangoproject.com/en/5.0/ref/templates/)
-* [Vkládání statických souborů](https://docs.djangoproject.com/en/5.0/howto/static-files/)
+* [Tutoriál Django - šablony](https://docs.djangoproject.com/en/5.1/intro/tutorial03/)
+* [Dokumentace Django - šablony](https://docs.djangoproject.com/en/5.1/topics/templates/)
+* [Dokumentace Django - referenční příručka](https://docs.djangoproject.com/en/5.1/ref/templates/)
+* [Vkládání statických souborů](https://docs.djangoproject.com/en/5.1/howto/static-files/)
 
 
-Šablony (templates) v Django jsou způsob, jak generovat dynamický HTML kód. Pomocí šablon je možné lépe oddělit aplikační logiku od prezentace a vzhledu a zpřehlednit tak složitější projekty. Využívají kombinaci statického HTML a **[Django Template Language (DTL)](https://docs.djangoproject.com/en/5.0/ref/templates/language/)**, který umožňuje provádět komplexnější operace jako vkládání proměnných, logické operace, cykly a další.
+Šablony (templates) v Django jsou způsob, jak generovat dynamický HTML kód. Pomocí šablon je možné lépe oddělit aplikační logiku od prezentace a vzhledu a zpřehlednit tak složitější projekty. Využívají kombinaci statického HTML a **[Django Template Language (DTL)](https://docs.djangoproject.com/en/5.1/ref/templates/language/)**, který umožňuje provádět komplexnější operace jako vkládání proměnných, logické operace, cykly a další.
 
 
 Práce se šablonami v Django
@@ -64,7 +64,7 @@ Pro napojení šablony na pohled v Django je potřeba:
     V tomto příkladě vidíme dvě základní značky DTL:
 
     - **`{{ title }}`**: Dvojité složené závorky vloží na místo obsah proměnné `title`, která byla předána jako `context` šablony.
-    - **`{% for ... %}`**: Do značek `{% ... %}` se vkládají [DLT tagy](https://docs.djangoproject.com/en/5.0/topics/templates/#tags). Tag `for` je analogií for cyklu pro iteraci přes seznamy, slovníky atd..
+    - **`{% for ... %}`**: Do značek `{% ... %}` se vkládají [DLT tagy](https://docs.djangoproject.com/en/5.1/topics/templates/#tags). Tag `for` je analogií for cyklu pro iteraci přes seznamy, slovníky atd..
 
 ```{admonition} Duplicitní cesta?
 :class: note
@@ -127,7 +127,7 @@ Filtr na formátování data (Python objektu `datetime`):
 {{ date_variable | date:"d.m.Y H:i:s" }}
 ```
 
-Úplný seznam zástupných znaků použitelných při formátování data naleznete v [dokumentaci](https://docs.djangoproject.com/en/5.0/ref/templates/builtins/#date).
+Úplný seznam zástupných znaků použitelných při formátování data naleznete v [dokumentaci](https://docs.djangoproject.com/en/5.1/ref/templates/builtins/#date).
 
 ### `safe`
 
@@ -149,7 +149,7 @@ Filtr `safe` použijte, pouze pokud jse si absolutně jisti, že obsah proměnn�
 {{ my_list | join:", " | add:" or more..." }}
 ```
 
-Kompletní seznam vestavěných filtrů naleznete v [dokumentaci](https://docs.djangoproject.com/en/5.0/ref/templates/builtins/#ref-templates-builtins-filters) a kromě toho je také možné [definovat vlastní filtry](https://docs.djangoproject.com/en/5.0/howto/custom-template-tags/).
+Kompletní seznam vestavěných filtrů naleznete v [dokumentaci](https://docs.djangoproject.com/en/5.1/ref/templates/builtins/#ref-templates-builtins-filters) a kromě toho je také možné [definovat vlastní filtry](https://docs.djangoproject.com/en/5.1/howto/custom-template-tags/).
 
 Tagy
 ----
@@ -311,7 +311,7 @@ Práce se statickými soubory (CSS, JavaScript, obrázky) má svá specifika (ja
     <link rel="stylesheet" href="{% static 'my_app/style.css' %}">
     ```
 
-Podrobný návod na vkládání statických souborů a práce s nimi naleznete v [dokumentaci](https://docs.djangoproject.com/en/5.0/howto/static-files/).
+Podrobný návod na vkládání statických souborů a práce s nimi naleznete v [dokumentaci](https://docs.djangoproject.com/en/5.1/howto/static-files/).
 
 V souboru `settings.py` je možné také nastavit proměnnou `STATICFILES_DIRS`, která obsahuje seznam adresářů, ve kterých se mají statické soubory vyhledávat. Takto je například možné přidat adresář `static` přímo v kořenovém adresáři projektu, pokud nechceme oddělovat statické soubory pro jednotlivé aplikace, nebo přidat statické soubory, které jsou společné pro celý projekt:
 
@@ -323,4 +323,4 @@ STATICFILES_DIRS = [
 ]
 ```
 
-Další možnosti, jak pracovat v Django se šablonami naleznete v [dokumentaci](https://docs.djangoproject.com/en/5.0/topics/templates/).
+Další možnosti, jak pracovat v Django se šablonami naleznete v [dokumentaci](https://docs.djangoproject.com/en/5.1/topics/templates/).

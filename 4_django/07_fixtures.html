@@ -57,6 +57,8 @@
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Rejstřík" href="../genindex.html" />
     <link rel="search" title="Vyhledávání" href="../search.html" />
+    <link rel="next" title="HTTP" href="../5_protocols/01_http.html" />
+    <link rel="prev" title="Admin rozhraní" href="06_admin.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="cs"/>
   </head>
@@ -117,8 +119,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -189,16 +189,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../3_python/06_pip.html">PIP, Python Virtual Environment</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Django</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_framework.html">Webové frameworky</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_project.html">Seznámení s Django</a></li>
-<li class="toctree-l1"><a class="reference internal" href="12_sessions.html">Cookies, sessions a uživatelé</a></li>
-<li class="toctree-l1"><a class="reference internal" href="13_api.html">API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="14_deploy.html">Produkční prostředí</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_views.html">Pohledy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_templates.html">Šablony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_models.html">Modely a ORM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_admin.html">Admin rozhraní</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Fixtures</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Webové protokoly</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../5_protocols/01_http.html">Protokol HTTP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_protocols/01_http.html">HTTP</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Webdesign</span></p>
 <ul class="nav bd-sidenav">
@@ -206,9 +208,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Ostatní</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../7_other/01_legal.html">Web a právo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../7_other/02_ethics.html">Etika webových aplikací</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../7_other/03_analytics.html">Webová analytika</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../7_other/04_console.html">Základy práce v konzoli</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Materiály</span></p>
 <ul class="nav bd-sidenav">
@@ -380,17 +380,22 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="fixtures">
 <h1>Fixtures<a class="headerlink" href="#fixtures" title="Link to this heading">#</a></h1>
 <ul class="simple">
-<li><p><a class="reference external" href="https://docs.djangoproject.com/en/5.0/topics/db/fixtures/">Django dokumentace - Fixtures</a></p></li>
-<li><p><a class="reference external" href="https://docs.djangoproject.com/en/5.0/howto/initial-data/">Django dokumentace - Výchozí data</a></p></li>
+<li><p><a class="reference external" href="https://docs.djangoproject.com/en/5.1/topics/db/fixtures/">Django dokumentace - Fixtures</a></p></li>
+<li><p><a class="reference external" href="https://docs.djangoproject.com/en/5.1/howto/initial-data/">Django dokumentace - Výchozí data</a></p></li>
 </ul>
 <p><strong>Fixtures</strong> v Django jsou soubory, které obsahují data ve formátu, který Django umí načíst, a která lze použít k naplnění databáze. Jsou užitečné pro vytváření výchozích dat pro aplikace, testování aplikací nebo plnění databáze daty pro vývojové účely.</p>
 <section id="jak-vytvorit-fixtures">
 <h2>1.&nbsp;&nbsp;Jak vytvořit fixtures<a class="headerlink" href="#jak-vytvorit-fixtures" title="Link to this heading">#</a></h2>
-<p>Fixtures soubory lze vytvořit ručně, nebo použít příkaz <code class="docutils literal notranslate"><span class="pre">./manage.py</span> <span class="pre">dumpdata</span></code>, který vyexportuje data aktuální databáze. Fixtures v Django můžete vytvářet v různých formátech, ale nejběžnější jsou JSON a YAML. Zde jsou příklady pro oba formáty:</p>
+<p>Fixtures soubory lze vytvořit ručně, nebo použít příkaz:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>manage.py<span class="w"> </span>dumpdata
+</pre></div>
+</div>
+<p>který vyexportuje data z aktuální databáze. Fixtures v Django můžete vytvářet v různých formátech, ale nejběžnější jsou JSON a YAML. Zde jsou příklady pro oba formáty:</p>
 <section id="json">
 <h3>1.1.&nbsp;&nbsp;JSON<a class="headerlink" href="#json" title="Link to this heading">#</a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="c1">// my_app/fixtures/books.json</span>
 <span class="p">[</span>
+
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_app.author&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;pk&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
@@ -443,11 +448,23 @@ document.write(`
 </div>
 <p>Atribut <code class="docutils literal notranslate"><span class="pre">model</span></code> obsahuje název modelu, který se má vytvářet ve formátu <code class="docutils literal notranslate"><span class="pre">&lt;název</span> <span class="pre">aplikace&gt;.&lt;třída</span> <span class="pre">modelu&gt;</span></code>. Atribut <code class="docutils literal notranslate"><span class="pre">pk</span></code> obsahuje primární klíč, který se má pro objekt nastavit a pomocí kterého se pak budou další objekty odkazovat. Atribut <code class="docutils literal notranslate"><span class="pre">fields</span></code> obsahuje hodnoty, které se mají objektu nastavit.</p>
 <p>Fixtures soubory by měly být umístěny v adresáři <code class="docutils literal notranslate"><span class="pre">fixtures</span></code> a to buď v kořenovém adresáři projektu, nebo v adresáři aplikace.</p>
-<p>Načtení fixtures do databáze se provádí pomocí příkazu <code class="docutils literal notranslate"><span class="pre">./manage.py</span> <span class="pre">loaddata</span></code>, s parametrem názvu fixtures souboru, který se má načíst:</p>
+<p>Načtení fixtures do databáze se provádí pomocí příkazu <code class="docutils literal notranslate"><span class="pre">loaddata</span></code> s parametrem názvu fixtures souboru, který se má načíst:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>manage.py<span class="w"> </span>loaddata<span class="w"> </span>books
 </pre></div>
 </div>
 <p>Povšimněte si, že není potřeba uvádět celý název souboru, Django automaticky hledá soubory s příponou <code class="docutils literal notranslate"><span class="pre">.json</span></code> nebo <code class="docutils literal notranslate"><span class="pre">.yaml</span></code>.</p>
+<p>Často je praktické a jednodušší vytvořit fixtures nejprve naplněním dat v databází pomocí Django admin a pak zavoláním příkazu</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>manage.py<span class="w"> </span>dumpdata<span class="w"> </span>my_app
+</pre></div>
+</div>
+<p>Přidáním argumentu <code class="docutils literal notranslate"><span class="pre">my_app</span></code> se specifikuje, že chceme exportovat data jen z modelů aplikace <code class="docutils literal notranslate"><span class="pre">my_app</span></code>, Případně je rovnou uložit export do souboru:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>manage.py<span class="w"> </span>dumpdata<span class="w"> </span>my_app<span class="w"> </span>&gt;<span class="w"> </span>my_app/fixtures/bookshelf.json
+</pre></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Fixtures v repozitáři</p>
+<p>Zatímco samotné databázové soubory nemají bít součástí distribuce projektu, například v GitHub repozitáři, u fixtures je naopak žádoucí, aby v projektu zahrnuty byly. Představují formu testovacích dat, které může uživatel, který Django projekt zkouší ihned a jednoduše použít k počátečnímu naplnění databáze.</p>
+</div>
 </section>
 </section>
 </section>
@@ -463,6 +480,24 @@ document.write(`
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="06_admin.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">předchozí</p>
+        <p class="prev-next-title">Admin rozhraní</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../5_protocols/01_http.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">další</p>
+        <p class="prev-next-title">HTTP</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               

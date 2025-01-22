@@ -1,0 +1,1010 @@
+
+<!DOCTYPE html>
+
+
+<html lang="cs" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZX7DQPSHE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RZX7DQPSHE');
+    </script>
+    
+    <title>Modely a ORM &#8212; Webové aplikace</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/local.css?v=1256093c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=4cdba38b"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../_static/translations.js?v=0275affc"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '4_django/05_models';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Rejstřík" href="../genindex.html" />
+    <link rel="search" title="Vyhledávání" href="../search.html" />
+    <link rel="next" title="Admin rozhraní" href="06_admin.html" />
+    <link rel="prev" title="Šablony" href="04_templates.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="cs"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Webové aplikace</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Vyhledávání" aria-label="Vyhledávání" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Vyhledávání</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Úvod</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../0_introduction/01_overview.html">Úvod do internetových technologií</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0_introduction/04_git.html">Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0_introduction/05_markdown.html">Markdown</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statický web</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../1_static/01_html.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_static/02_css.html">Základy CSS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_static/03_layouts.html">CSS Layouty</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">JavaScript</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../2_javascript/01_intro.html">Seznámení s JavaScriptem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_javascript/02_blocks.html">Řídící bloky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_javascript/03_methods.html">Funkce a třídy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_javascript/04_modules.html">Moduly v JavaScriptu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_javascript/05_dom.html">Document Object Model</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../3_python/01_intro.html">Seznámení s jazykem Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_python/02_types.html">Datové typy v Pythonu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_python/03_blocks.html">Řídící bloky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_python/04_methods.html">Funkce a třídy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_python/05_packages.html">Balíčky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_python/06_pip.html">PIP, Python Virtual Environment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Django</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_framework.html">Webové frameworky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_project.html">Seznámení s Django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_views.html">Pohledy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_templates.html">Šablony</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Modely a ORM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_admin.html">Admin rozhraní</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_fixtures.html">Fixtures</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Webové protokoly</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../5_protocols/01_http.html">HTTP</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Webdesign</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../6_webdesign/01_wireframe.html">Wireframe návrh</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ostatní</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../7_other/04_console.html">Základy práce v konzoli</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Materiály</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../materials.html">Materiály k výuce</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Stáhněte si tuto stránku">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/4_django/05_models.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Stáhněte si zdrojový soubor"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Tisk do PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Režim celé obrazovky"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Vyhledávání" aria-label="Vyhledávání" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Modely a ORM</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Obsah </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zakladni-pojmy">Základní pojmy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ukazka-tabulky">Ukázka tabulky</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#typy-databazovych-relaci">Typy databázových relací</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#n-one-to-many">1:N (One to Many)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-to-one">1:1 (One to One)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#m-n-many-to-many">M:N (Many to Many)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#django-orm">Django ORM</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#konfigurace-databaze">Konfigurace databáze</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definice-modelu">Definice Modelu</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#zakladni-typy-atributu">Základní typy atributů</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ukazka-kodu-s-1-n-vazbou">Ukázka kódu s 1:N vazbou</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#migrace">Migrace</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vytvoreni-objektu">Vytvoření objektu</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nacitani-objektu-z-databaze">Načítání objektů z databáze</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nacteni-jednoho-objektu">Načtení jednoho objektu</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nacteni-vice-objektu">Načtení více objektů</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vyrazeni-objektu">Vyřazení objektů</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nacteni-vsech-objektu">Načtení všech objektů</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#razeni">Řazení</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retezeni">Řetězení</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metoda-create">Metoda <code class="docutils literal notranslate"><span class="pre">create</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metoda-get-or-create">Metoda <code class="docutils literal notranslate"><span class="pre">get_or_create</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prace-s-relacemi">Práce s relacemi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prirazovani-relace-do-databaze">Přiřazování relace do databáze</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nacitani-objektu-pres-set">Načítání objektů přes <code class="docutils literal notranslate"><span class="pre">_set</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prace-s-m-n-relacemi">Práce s M:N relacemi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#konfigurace-relacni-tabulky">Konfigurace relační tabulky</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="modely-a-orm">
+<h1>Modely a ORM<a class="headerlink" href="#modely-a-orm" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.djangoproject.com/en/5.1/topics/db/models/">Dokumentace Django - modely</a></p></li>
+<li><p><a class="reference external" href="https://docs.djangoproject.com/en/5.1/topics/db/queries/">Dokumentace Django - dotazy</a></p></li>
+<li><p><a class="reference external" href="https://docs.djangoproject.com/en/5.1/ref/models/fields/#model-field-types">Dokumentace Django - field types</a></p></li>
+<li><p><a class="reference external" href="https://docs.djangoproject.com/en/5.1/ref/models/querysets/">Dokumentace Django - queryset reference</a></p></li>
+</ul>
+<p>Databáze je základním stavebním kamenem pro ukládání a práci s daty v mnoha (nejen) webových aplikacích. Databázi můžeme chápat jako organizovanou kolekci tabulek. Databáze mohou být velmi rozsáhlé, u větších internetových projektů mohou snadno dosahovat desítek až stovek gigabajtů dat, často i více. Nelze tedy počítat s tím, že má aplikace všechna data ihned k dispozici (např. v RAM). Existují proto databázové nástroje, které řeší, jak takto velmi objemná data ukládat a jak s nimi efektivně manipulovat a vyhledávat v nich.</p>
+<section id="zakladni-pojmy">
+<h2>1.&nbsp;&nbsp;Základní pojmy<a class="headerlink" href="#zakladni-pojmy" title="Link to this heading">#</a></h2>
+<p>Často používaný typ databází je rodina <strong>SQL</strong> databází (<a class="reference external" href="https://www.mysql.com">MySQL</a>, <a class="reference external" href="https://mariadb.org">MariaDB</a>, <a class="reference external" href="https://www.postgresql.org">PostgreSQL</a>, <a class="reference external" href="https://www.sqlite.org/index.html">SQLite</a> aj.) se kterými umí pracovat i framework Django. Někdy se těmto databázím také říká relační databáze (mezi tabulkami databáze existují relace - vztahy) a jazykem pro komunikaci s těmito databázemi je SQL (<strong>Structured Query Language</strong>). Framework Django vytváří nad SQL databází objektovou reprezentaci. Nemusíme tak komunikovat přímo s databází pomocí jazyka SQL, ale s daty v databázi pracujeme jako s Python objekty. Této objektové nadstavbě nad relační databází se říká <strong>ORM</strong> (<strong>Object-relational mapping</strong>).</p>
+<p>Tabulka v databázi je v ORM reprezentována třídou, která definuje strukturu (atributy) objektů, které korespondují se sloupci v relační databázi. Každý řádek v tabulce je pak reprezentován instancí této třídy, tedy konkrétní objekt s konkrétními hodnotami atributů.</p>
+<p>Objekty mezi sebou mohou mít vztah (relaci), například <em>autor</em> může mít relaci <em>napsal</em> s objektem <em>kniha</em>. V databázích se relace mezi objekty obvykle realizují pomocí <strong>cizích klíčů</strong>, které odkazují na <strong>primární klíče</strong> jiných tabulek.</p>
+<section id="ukazka-tabulky">
+<h3>1.1.&nbsp;&nbsp;Ukázka tabulky<a class="headerlink" href="#ukazka-tabulky" title="Link to this heading">#</a></h3>
+<p>Pro lepší pochopení si ukážeme, jak by mohly vypadat tabulky <code class="docutils literal notranslate"><span class="pre">Author</span></code> a <code class="docutils literal notranslate"><span class="pre">Book</span></code> v databázi, kde každý autor může napsat jednu nebo více knih a každá kniha má právě jednoho autora:</p>
+<p>Tabulka <code class="docutils literal notranslate"><span class="pre">Author</span></code>:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>id</p></th>
+<th class="head"><p>first_name</p></th>
+<th class="head"><p>last_name</p></th>
+<th class="head"><p>born</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>John</p></td>
+<td><p>Doe</p></td>
+<td><p>1950</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>George</p></td>
+<td><p>Orwell</p></td>
+<td><p>1903</p></td>
+</tr>
+</tbody>
+</table>
+<p>Tabulka <code class="docutils literal notranslate"><span class="pre">Book</span></code>:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>id</p></th>
+<th class="head"><p>author_id</p></th>
+<th class="head"><p>name</p></th>
+<th class="head"><p>published</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>Animal Farm</p></td>
+<td><p>1945</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>2</p></td>
+<td><p>1984</p></td>
+<td><p>1949</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>1</p></td>
+<td><p>Foo</p></td>
+<td><p>1999</p></td>
+</tr>
+</tbody>
+</table>
+<p>V této ukázce <code class="docutils literal notranslate"><span class="pre">author_id</span></code> ve tabulce <code class="docutils literal notranslate"><span class="pre">Book</span></code> je cizím klíčem, který odkazuje na primární klíč <code class="docutils literal notranslate"><span class="pre">id</span></code> v tabulce <code class="docutils literal notranslate"><span class="pre">Author</span></code> a vytváří vztah (relaci) mezi řádky (objekty).</p>
+</section>
+</section>
+<section id="typy-databazovych-relaci">
+<h2>2.&nbsp;&nbsp;Typy databázových relací<a class="headerlink" href="#typy-databazovych-relaci" title="Link to this heading">#</a></h2>
+<p>Existují tři základní typy relací: <strong>1:N</strong> (<strong>One to Many</strong>), <strong>1:1</strong> (<strong>One to One</strong>), a <strong>M:N</strong> (<strong>Many to Many</strong>). Každý typ relace slouží k reprezentaci různých druhů vztahů mezi objekty.</p>
+<section id="n-one-to-many">
+<h3>2.1.&nbsp;&nbsp;1:N (One to Many)<a class="headerlink" href="#n-one-to-many" title="Link to this heading">#</a></h3>
+<p>Tento typ relace popisuje situaci, kdy jeden objekt (na straně “one”) může mít vztah s více objekty (na straně “many”), ale každý z těchto objektů na straně “many” má vztah pouze s jedním objektem na straně “one”. Příklad výše je ukázkou relace 1:N. Jeden autor (<code class="docutils literal notranslate"><span class="pre">Author</span></code>) může napsat více knih (<code class="docutils literal notranslate"><span class="pre">Book</span></code>), ale každá kniha má pouze jednoho autora. (Pomiňme pro tuto chvíli stranou knihy, které mají autorů více.)</p>
+<p>Další příklady:</p>
+<ul class="simple">
+<li><p><strong>Vydavatelství a časopisy</strong>: Jedno vydavatelství může vydávat mnoho různých časopisů. Každý časopis má jednoho vydavatele, který se stará o jeho publikaci.</p></li>
+<li><p><strong>Auto a vlastník auta</strong>: Každé auto má právě jednoho vlastníka, ale jedna osoba může vlastnit více aut.</p></li>
+</ul>
+</section>
+<section id="one-to-one">
+<h3>2.2.&nbsp;&nbsp;1:1 (One to One)<a class="headerlink" href="#one-to-one" title="Link to this heading">#</a></h3>
+<p>Vztah 1:1 znamená, že jeden objekt na jedné straně má vztah pouze s jedním objektem na druhé straně, a naopak. Vazba nemusí být nutně povinná, za 1:1 vztah lze považovat i vztah “1:0”.</p>
+<ul class="simple">
+<li><p><strong>Osoba a řidičský průkaz</strong>: Každá osoba může mít maximálně jeden řidičský průkaz a každý řidičský průkaz je přiřazen právě jedné osobě. Ne každý musí ale nutně mít řidičský průkaz.</p></li>
+<li><p><strong>Manželé / partneři</strong>: Každá osoba může mít maximálně jednu jinou osobu jako svého manžela/manželku nebo partnera. Alespoň tedy v naší kultuře, v jiných kulturách může tato relace vypadat jinak.</p></li>
+</ul>
+</section>
+<section id="m-n-many-to-many">
+<h3>2.3.&nbsp;&nbsp;M:N (Many to Many)<a class="headerlink" href="#m-n-many-to-many" title="Link to this heading">#</a></h3>
+<p>Relace M:N umožňuje, aby mnoho objektů na jedné straně mělo vztahy s mnoha objekty na straně druhé.</p>
+<ul class="simple">
+<li><p><strong>Studenti a předměty</strong>: Studenti mohou navštěvovat více předmětů a každý předmět může být navštěvován více studenty.</p></li>
+<li><p><strong>Zboží a kategorie</strong>: Zboží v eshopu může být v umístěno ve více kategoriích a každá kategorie eshopu může v sobě mít více zboží.</p></li>
+</ul>
+<div class="note admonition">
+<p class="admonition-title">Poznámka</p>
+<p>Objekt může mít vztah k jinému objektu stejné třídy. Například každý objekt třídy “Osoba” může (musí?) mít relaci “Otec” a “Matka” na jiný objekt třídy “Osoba”.</p>
+</div>
+</section>
+</section>
+<section id="django-orm">
+<h2>3.&nbsp;&nbsp;Django ORM<a class="headerlink" href="#django-orm" title="Link to this heading">#</a></h2>
+<p>Django framework používá ORM techniky pro práci s databázemi. Vývojáři mohou vytvářet, číst, aktualizovat a mazat databázové záznamy bez nutnosti psát SQL dotazy. Django ORM převede Python kód na SQL dotazy za běhu aplikace. Django ORM umožňuje aplikaci také být nezávislou na konkrétním databázovém systému. Podporuje populární databáze jako PostgreSQL, MySQL, SQLite, Oracle a další. Ke změně databázového úložiště stačí změna v konfiguračním souboru. Také poskytuje nástroje pro automatickou změnu struktury databáze (migraci), což usnadňuje aktualizace databáze během vývoje.</p>
+<section id="konfigurace-databaze">
+<h3>3.1.&nbsp;&nbsp;Konfigurace databáze<a class="headerlink" href="#konfigurace-databaze" title="Link to this heading">#</a></h3>
+<p>Prvním krokem k použití Django ORM je jeho konfigurace. Do souboru <code class="docutils literal notranslate"><span class="pre">settings.py</span></code> v adresáři projektu přidejte následující řádky:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># my_project/settings.py</span>
+
+<span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;ENGINE&#39;</span><span class="p">:</span> <span class="s1">&#39;django.db.backends.sqlite3&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;NAME&#39;</span><span class="p">:</span> <span class="n">BASE_DIR</span> <span class="o">/</span> <span class="s1">&#39;db.sqlite3&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Tento kód nastaví jako databázové úložiště <a class="reference external" href="https://www.sqlite.org/index.html">SQLite</a>, což je velmi jednoduchá SQL databáze, která ukládá všechna data do jednoho souboru, v tomto případě to bude soubor <code class="docutils literal notranslate"><span class="pre">db.sqlite3</span></code> v adresáři projektu. Databáze SQLite je vhodná pro vývojové prostředí, neboť nevyžaduje žádnou další konfiguraci. Má ale velká výkonnostní omezení a proto se jako produkční databáze obvykle volí robustnější řešení, například <a class="reference external" href="https://www.postgresql.org">PostgreSQL</a> nebo <a class="reference external" href="https://mariadb.org">MariaDB</a>.</p>
+</section>
+<section id="definice-modelu">
+<h3>3.2.&nbsp;&nbsp;Definice Modelu<a class="headerlink" href="#definice-modelu" title="Link to this heading">#</a></h3>
+<p>V Django je základním konceptem ORM <strong>Model</strong>, což je třída Pythonu, která definuje strukturu databázové tabulky (její sloupce). Každá instance modelu reprezentuje řádek v této tabulce. Definice modelů se píší do souboru <code class="docutils literal notranslate"><span class="pre">models.py</span></code> v adresáři příslušné aplikace. Model definujeme rozšířením základní třídy <code class="docutils literal notranslate"><span class="pre">django.db.models.Model</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># my_app/models.py</span>
+
+<span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+
+<span class="k">class</span> <span class="nc">Author</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">first_name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">last_name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">born</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateField</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Definuje třídu <code class="docutils literal notranslate"><span class="pre">Author</span></code> (která se díky ORM automaticky mapuje na databázovou tabulku) se třemi atributy (v Django ORM <strong>fields</strong>, tedy sloupci v příslušné databázové tabulce) <code class="docutils literal notranslate"><span class="pre">first_name</span></code>,<code class="docutils literal notranslate"><span class="pre">last_name</span></code> a <code class="docutils literal notranslate"><span class="pre">born</span></code>.</p>
+<div class="note admonition">
+<p class="admonition-title">Poznámka</p>
+<p>Povšimněte si, že třída se jmenuje <code class="docutils literal notranslate"><span class="pre">Author</span></code>, nikoliv <code class="docutils literal notranslate"><span class="pre">Authors</span></code>. Ačkoliv se může na první pohled zdát logické, že třída (tabulka) reprezentuje všechny autory a tudíž by měla být v množném čísle, zpravidla se používá číslo jednotné. Když se pak v kódu vytváří instance třídy (<code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">Author()</span></code>), vím pak hned, že <code class="docutils literal notranslate"><span class="pre">a</span></code> je právě jeden autor. Výraz <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">Authors()</span></code> by mohl naznačovat, že <code class="docutils literal notranslate"><span class="pre">a</span></code> nějakým způsobem obsahuje více autorů. Proto (pokud k tomu není opravdu důvod) volíme jako název třídy modelu <strong>jednotné číslo</strong>.</p>
+</div>
+<section id="zakladni-typy-atributu">
+<h4>Základní typy atributů<a class="headerlink" href="#zakladni-typy-atributu" title="Link to this heading">#</a></h4>
+<p>Django poskytuje různé typy atributů (fields) pro modely, každý odpovídá určitému typu dat v databázi. Základní typy zahrnují:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">CharField</span></code></strong> - Krátký textový řetězec.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">TextField</span></code></strong> - Dlouhý textový řetězec.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">IntegerField</span></code></strong> - Celé číslo.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">BooleanField</span></code></strong> - Pravda/Nepravda (<code class="docutils literal notranslate"><span class="pre">True</span></code>/<code class="docutils literal notranslate"><span class="pre">False</span></code>).</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">DateField</span></code></strong> - Datum.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">ForeignKey</span></code></strong> - Vytváří vazbu mezi modely (pro relace 1:N).</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">ManyToManyField</span></code></strong> - Vytváří vazbu mezi modely (pro relace M:N).</p></li>
+</ul>
+<p>Některé fields mají také možnost konfigurace, například u <code class="docutils literal notranslate"><span class="pre">CharField</span></code> je možné specifikovat maximální délku řetězce pomocí parametru <code class="docutils literal notranslate"><span class="pre">max_length=100</span></code>. Dále se často používá parametr <code class="docutils literal notranslate"><span class="pre">null=True</span></code>, který říká, že pole může být prázdné (resp <code class="docutils literal notranslate"><span class="pre">NULL</span></code>).</p>
+<p>Úplný seznam všech typů a jejich možností konfigurace naleznete v <a class="reference external" href="https://docs.djangoproject.com/en/5.1/ref/models/fields/#model-field-types">dokumentaci</a>.</p>
+</section>
+<section id="ukazka-kodu-s-1-n-vazbou">
+<h4>Ukázka kódu s 1:N vazbou<a class="headerlink" href="#ukazka-kodu-s-1-n-vazbou" title="Link to this heading">#</a></h4>
+<p>Takto by mohla vypadat již zmíněná relace s knihou, která má právě jednoho autora:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># my_app/models.py</span>
+
+<span class="k">class</span> <span class="nc">Book</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">author</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Author</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">published</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateField</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>V tomto příkladu, <code class="docutils literal notranslate"><span class="pre">ForeignKey</span></code> ve modelu <code class="docutils literal notranslate"><span class="pre">Book</span></code> vytváří vazbu 1:N s modelem <code class="docutils literal notranslate"><span class="pre">Author</span></code>. Parametr <code class="docutils literal notranslate"><span class="pre">on_delete=models.CASCADE</span></code> znamená, že když je objekt třídy <code class="docutils literal notranslate"><span class="pre">Autor</span></code> smazán, všechny jeho knihy budou také smazány. Pokud by totiž smazány nebyly, zůstaly by v databázi záznamy knih, odkazující na již neexistující záznam o autorovi, což znamená, že <strong>data v databázi jsou nekonzistentní</strong>.</p>
+<p>Místo kaskádového mazání je možné zvolit jiné chování, například <code class="docutils literal notranslate"><span class="pre">on_delete=models.SET_NULL</span></code>, které nastaví příslušný cizí klíč v databázi na <code class="docutils literal notranslate"><span class="pre">NULL</span></code> nebo <code class="docutils literal notranslate"><span class="pre">on_delete=models.PROTECT</span></code>, což zabrání smazání Autora (nejprve je nutné smazat všechny jeho knihy) případně <a class="reference external" href="https://docs.djangoproject.com/en/5.1/ref/models/fields/#django.db.models.ForeignKey.on_delete">jiné chování</a> dle potřeby.</p>
+<p>V aplikaci (například v pohledech) pak stačí do kódu importovat třídu modelu a můžeme s nimi pracovat:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">my_app.models</span> <span class="kn">import</span> <span class="n">Author</span><span class="p">,</span> <span class="n">Book</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="migrace">
+<h3>3.3.&nbsp;&nbsp;Migrace<a class="headerlink" href="#migrace" title="Link to this heading">#</a></h3>
+<p>Pokud máme definované modely, je potřeba ještě vytvořit odpovídající tabulky v databázi. K tomu má Django nástroj nazvaný <strong>migrace</strong>, což je proces automatického vytváření a aktualizace databázových tabulek. V Django se chápe jako autoritativní struktura ta, která je popsána v souborech <code class="docutils literal notranslate"><span class="pre">models.py</span></code>. Pokud dojde ke změně modelů v těchto souborech (úprava položek, přidání modelu nebo odebrání modelu), je potřeba provést migraci, aby se změny propsaly i do samotné databáze databáze. To se děje ve dvou krocích pomocí nástroje <code class="docutils literal notranslate"><span class="pre">manage.py</span></code>.</p>
+<ol class="arabic">
+<li><p><strong>Příprava migrace</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>manage.py<span class="w"> </span>makemigrations
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Tento příkaz analyzuje změny v definicích modelů a <strong>připraví</strong> migrace. V adresáři aplikace <code class="docutils literal notranslate"><span class="pre">migrations</span></code> vytvoří soubory (např. <code class="docutils literal notranslate"><span class="pre">0001_initial.py</span></code>), které popisují změny, které je potřeba v databázi provést. Změny se zatím připraví, ale do databáze se zatím nezasahuje.</p>
+<ol class="arabic" start="2">
+<li><p><strong>Provedení migrace</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>manage.py<span class="w"> </span>migrate
+</pre></div>
+</div>
+<p>Tento příkaz přečte samotné soubory z adresáře <code class="docutils literal notranslate"><span class="pre">migrations</span></code> a <strong>skutečně provede</strong> změny v databázi. Django přitom automaticky hlídá, které změny byly v databázi provedeny a aplikuje jen ty, které jsou pro aktuální databázi nové. Migrace jsou v podstatě obdobou verzování kódu aplikace pro strukturu databáze a udržují přehled o tom, v jakém stavu aktuální databáze je a jaké změny je potřeba provést aby struktura databáze odpovídala projektu.</p>
+</li>
+</ol>
+</section>
+<section id="vytvoreni-objektu">
+<h3>3.4.&nbsp;&nbsp;Vytvoření objektu<a class="headerlink" href="#vytvoreni-objektu" title="Link to this heading">#</a></h3>
+<p>Pro vytvoření instance modelu v Django je potřeba vytvořit instanci třídy a poté zavolat metodu <code class="docutils literal notranslate"><span class="pre">save()</span></code>, která model permanentně uloží do databáze:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">author</span> <span class="o">=</span> <span class="n">Author</span><span class="p">(</span><span class="n">first_name</span><span class="o">=</span><span class="s1">&#39;Joanne K.&#39;</span><span class="p">,</span> <span class="n">last_name</span><span class="o">=</span><span class="s1">&#39;Rowling&#39;</span><span class="p">,</span> <span class="n">born</span><span class="o">=</span><span class="s2">&quot;1965-07-31&quot;</span><span class="p">)</span>
+<span class="n">author</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+<span class="n">book</span> <span class="o">=</span> <span class="n">Book</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Harry Potter and the Philosopher</span><span class="se">\&#39;</span><span class="s1">s Stone&#39;</span><span class="p">,</span> <span class="n">published</span><span class="o">=</span><span class="s2">&quot;1997-06-26&quot;</span><span class="p">,</span> <span class="n">author</span><span class="o">=</span><span class="n">author</span><span class="p">)</span>
+<span class="n">book</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Nebo alternativní zápis:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">book</span> <span class="o">=</span> <span class="n">Book</span><span class="p">()</span>
+<span class="n">book</span><span class="o">.</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Harry Potter and the Chamber of Secrets&quot;</span>
+<span class="n">book</span><span class="o">.</span><span class="n">published</span><span class="o">=</span><span class="s2">&quot;1998-12-25&quot;</span>
+<span class="n">book</span><span class="o">.</span><span class="n">author</span><span class="o">=</span><span class="n">author</span>
+<span class="n">book</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Poznámka</p>
+<p>Vytvořením nové instance třídy se ještě nevytvoří příslušný záznam (řádek v příslušné tabulce) v databázi. Ten se vytvoří až po zavolání metody <code class="docutils literal notranslate"><span class="pre">save()</span></code>.</p>
+<p>Povšimněte si také, že vytvoření relace mezi autorem a knihou stačí pouze přiřazení instance třídy <code class="docutils literal notranslate"><span class="pre">Author</span></code> k atributu <code class="docutils literal notranslate"><span class="pre">author</span></code> u třídy <code class="docutils literal notranslate"><span class="pre">Book</span></code>.</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Interaktivní konzole</p>
+<p>Pro jednoduché testování modelů a jejich chování si můžete pustit Django interaktivní konzoli pomocí příkazu</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>manage.py<span class="w"> </span>shell
+</pre></div>
+</div>
+<p>Ta vám umožní psát a rovnou spouštět Python kód.</p>
+</div>
+</section>
+</section>
+<section id="nacitani-objektu-z-databaze">
+<h2>4.&nbsp;&nbsp;Načítání objektů z databáze<a class="headerlink" href="#nacitani-objektu-z-databaze" title="Link to this heading">#</a></h2>
+<p>Django nabízí velmi flexibilní rozhraní pro dotazování v databází a načítání objektů z databáze na objektové úrovni.</p>
+<section id="nacteni-jednoho-objektu">
+<h3>4.1.&nbsp;&nbsp;Načtení jednoho objektu<a class="headerlink" href="#nacteni-jednoho-objektu" title="Link to this heading">#</a></h3>
+<p>Pro načtení jednoho objektu z databáze můžete použít metodu <code class="docutils literal notranslate"><span class="pre">get()</span></code>, která očekává, že dotaz vrátí přesně jeden objekt. Pokud objekt není nalezen nebo je nalezeno více objektů, vyvolá výjimku:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">author</span> <span class="o">=</span> <span class="n">Author</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+<span class="k">except</span> <span class="n">Author</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Autor nebyl nalezen&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">Author</span><span class="o">.</span><span class="n">MultipleObjectsReturned</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nalezeno více autorů&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Parametr <code class="docutils literal notranslate"><span class="pre">pk=1</span></code> odkazuje na primární klíč tabulky. Příkaz <code class="docutils literal notranslate"><span class="pre">Author.objects.get(pk=1)</span></code> tedy načte z tabulky autorů jeden řádek, jehož primární klíč je 1 a vrátí objekt třídy <code class="docutils literal notranslate"><span class="pre">Author</span></code>. Jako parametr metody <code class="docutils literal notranslate"><span class="pre">get</span></code> je možné použít <a class="reference external" href="https://docs.djangoproject.com/en/5.1/ref/models/querysets/#id4">celou řadu nejrůznějších filtrů</a>, které Django automaticky překládá do SQL dotazu.</p>
+<div class="note admonition">
+<p class="admonition-title">objects</p>
+<p>Povšimněte si také použití atributu <code class="docutils literal notranslate"><span class="pre">objects</span></code>. Ten má automaticky k dispozici každá třída modelu a slouží právě k vytváření dotazů nad celou tabulkou. V kódu pak spojení <code class="docutils literal notranslate"><span class="pre">Author.objects</span></code> můžeme číst jako operaci <em>nad všemi objekty třídy <code class="docutils literal notranslate"><span class="pre">Author</span></code></em>.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">get_object_or_404</p>
+<p>Funkce <code class="docutils literal notranslate"><span class="pre">get_object_or_404</span></code> z balíčku <code class="docutils literal notranslate"><span class="pre">django.shortcuts</span></code> je užitečná pro načítání objektů v pohledech, pokud chcete rovnou vrátit HTTP chybu 404 Not Found (stránka nenalezena), pokud objekt v databázi neexistuje:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">get_object_or_404</span>
+<span class="c1"># ...</span>
+
+<span class="k">def</span> <span class="nf">author</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+    <span class="n">author</span> <span class="o">=</span> <span class="n">get_object_or_404</span><span class="p">(</span><span class="n">Author</span><span class="p">,</span> <span class="n">pk</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;bookshelf/author.html&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;author&#39;</span><span class="p">:</span> <span class="n">author</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>Pohled <code class="docutils literal notranslate"><span class="pre">author</span></code> se pokusí načíst objekt <code class="docutils literal notranslate"><span class="pre">Author</span></code> s primárním klíčem <code class="docutils literal notranslate"><span class="pre">id</span></code> a zobrazit ho pomocí šablony. Pokud objekt neexistuje, vrátí chybu 404.</p>
+</div>
+</section>
+<section id="nacteni-vice-objektu">
+<h3>4.2.&nbsp;&nbsp;Načtení více objektů<a class="headerlink" href="#nacteni-vice-objektu" title="Link to this heading">#</a></h3>
+<p>Metoda <code class="docutils literal notranslate"><span class="pre">filter</span></code> se používá k načtení více objektů, které odpovídají zadaným kritériím. Vrací <strong><a class="reference external" href="https://docs.djangoproject.com/en/5.1/ref/models/querysets/">queryset</a></strong>, který může obsahovat žádnou, jednu, nebo více položek:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">authors</span> <span class="o">=</span> <span class="n">Author</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">born__lte</span><span class="o">=</span><span class="s2">&quot;1970-01-01&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">author</span> <span class="ow">in</span> <span class="n">authors</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">author</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">author</span><span class="o">.</span><span class="n">last_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Oproti metodě <code class="docutils literal notranslate"><span class="pre">get</span></code> nevyvolá metoda <code class="docutils literal notranslate"><span class="pre">filter</span></code> výjimku, pokud žádný objekt s danou podmínkou neexistuje (vrátí prázdný queryset), nebo pokud je objektů více (vrátí queryset všech objektů). Jako parametr je zde použit filtr <code class="docutils literal notranslate"><span class="pre">born__lte=&quot;1970-01-01&quot;</span></code>, který vybere autory narozené před 1.1.1970. Notace s dvěma podtržítky <code class="docutils literal notranslate"><span class="pre">__</span></code> se v Django používá právě ke specifikaci filtrů a spojuje atribut modelu (<code class="docutils literal notranslate"><span class="pre">born</span></code>) a funkci (<code class="docutils literal notranslate"><span class="pre">lte</span></code> - lower than or equal) použitou k porovnání. Více o filtrech naleznete v <a class="reference external" href="https://docs.djangoproject.com/en/5.1/ref/models/querysets/#id4">dokumentaci</a>.</p>
+<div class="note admonition">
+<p class="admonition-title">Co to je queryset?</p>
+<p>Pojem queryset se může zdát matoucí, když se chová podobně jako seznam objektů. Proč se vlastně zavádí tento pojem?</p>
+<p>Queryset ve skutečnosti není to samé co prostý seznam objektů, ale je to nástroj Django ORM, který reprezentuje dotaz do databáze (nikoliv samotná data). Teprve pokud nad queryset začneme iterovat se dotaz skutečně provede, načte řádky z databáze a začne vracet jednotlivé objekty. Díky tomu lze konstruovat složitější dotazy a zatěžovat databázi až když je to skutečně potřeba.</p>
+</div>
+</section>
+<section id="vyrazeni-objektu">
+<h3>4.3.&nbsp;&nbsp;Vyřazení objektů<a class="headerlink" href="#vyrazeni-objektu" title="Link to this heading">#</a></h3>
+<p>Pomocí metody <code class="docutils literal notranslate"><span class="pre">exclude</span></code> je možné naopak vyřadit z querysetu některé objekty, které splňují podmínky:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">authors</span> <span class="o">=</span> <span class="n">Author</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">exclude</span><span class="p">(</span><span class="n">first_name__startswith</span><span class="o">=</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">author</span> <span class="ow">in</span> <span class="n">authors</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">author</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">author</span><span class="o">.</span><span class="n">last_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Zde se vyřadí z querysetu všichni autoři, jejichž křestní jméno začíná na “A”.</p>
+</section>
+<section id="nacteni-vsech-objektu">
+<h3>4.4.&nbsp;&nbsp;Načtení všech objektů<a class="headerlink" href="#nacteni-vsech-objektu" title="Link to this heading">#</a></h3>
+<p>Metoda <code class="docutils literal notranslate"><span class="pre">all</span></code> vrátí queryset obsahující všechny instance modelu:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">authors</span> <span class="o">=</span> <span class="n">Author</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Význam volání all()</p>
+<p>Ve většině praktických případů není rozdíl mezi voláním <code class="docutils literal notranslate"><span class="pre">Author.objects.all().filter()</span></code> a <code class="docutils literal notranslate"><span class="pre">Author.objects.filter()</span></code>. Použití metody <code class="docutils literal notranslate"><span class="pre">all</span></code> je spíše z důvodů lepší čitelnosti a srozumitelnosti kódu, kdy volání <code class="docutils literal notranslate"><span class="pre">all()</span></code> značí, že začínáme se všemi instancemi modelu.</p>
+</div>
+</section>
+<section id="razeni">
+<h3>4.5.&nbsp;&nbsp;Řazení<a class="headerlink" href="#razeni" title="Link to this heading">#</a></h3>
+<p>Metoda <code class="docutils literal notranslate"><span class="pre">order_by</span></code> umožňuje řadit queryset podle jednoho nebo více sloupců:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">authors</span> <span class="o">=</span> <span class="n">Author</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s2">&quot;-born&quot;</span><span class="p">,</span> <span class="s2">&quot;first_name&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Jako parametr přebírá jeden nebo více sloupců, podle kterých se má řadit (řadí se podle prvního sloupce, pokud je shoda, řadí se podle druhého sloupce atd.). Výchozí řazení je vzestupné, znaménko <code class="docutils literal notranslate"><span class="pre">-</span></code> označuje sestupné řazení.</p>
+</section>
+<section id="retezeni">
+<h3>4.6.&nbsp;&nbsp;Řetězení<a class="headerlink" href="#retezeni" title="Link to this heading">#</a></h3>
+<p>Metody <code class="docutils literal notranslate"><span class="pre">filter</span></code>, <code class="docutils literal notranslate"><span class="pre">exclude</span></code>, <code class="docutils literal notranslate"><span class="pre">order_by</span></code> a <a class="reference external" href="https://docs.djangoproject.com/en/5.1/ref/models/querysets/#methods-that-return-new-querysets">další</a> je možné libovolně řetězit. Každé zřetězené volání vytvoří novou instanci queryset:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">authors</span> <span class="o">=</span> <span class="n">Author</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">born__lte</span><span class="o">=</span><span class="s2">&quot;1970-01-01&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">exclude</span><span class="p">(</span><span class="n">first_name__startswith</span><span class="o">=</span><span class="s2">&quot;A&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s2">&quot;first_name&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="metoda-create">
+<h3>4.7.&nbsp;&nbsp;Metoda <code class="docutils literal notranslate"><span class="pre">create</span></code><a class="headerlink" href="#metoda-create" title="Link to this heading">#</a></h3>
+<p>Metoda <code class="docutils literal notranslate"><span class="pre">create</span></code> umožňuje v jednom řádku vytvořit nový objekt v databázi:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">author</span> <span class="o">=</span> <span class="n">Author</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">first_name</span><span class="o">=</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="n">last_name</span><span class="o">=</span><span class="s2">&quot;Doe&quot;</span><span class="p">,</span> <span class="n">born</span><span class="o">=</span><span class="s2">&quot;1940-08-07&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="metoda-get-or-create">
+<h3>4.8.&nbsp;&nbsp;Metoda <code class="docutils literal notranslate"><span class="pre">get_or_create</span></code><a class="headerlink" href="#metoda-get-or-create" title="Link to this heading">#</a></h3>
+<p>Praktická metoda <code class="docutils literal notranslate"><span class="pre">get_or_create</span></code> umožňuje načíst objekt z databáze nebo vytvořit nový, pokud není nalezen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">author</span><span class="p">,</span> <span class="n">created</span> <span class="o">=</span> <span class="n">Author</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get_or_create</span><span class="p">(</span><span class="n">first_name</span><span class="o">=</span><span class="s2">&quot;Jane&quot;</span><span class="p">,</span> <span class="n">last_name</span><span class="o">=</span><span class="s2">&quot;Bar&quot;</span><span class="p">,</span> <span class="n">defaults</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;born&quot;</span><span class="p">:</span> <span class="s2">&quot;1940-08-07&quot;</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>Argumenty funkce jsou atributy, podle kterých se má Django pokusit objekt najít. Volitelný argument <code class="docutils literal notranslate"><span class="pre">defaults</span></code> obsahuje slovník (<code class="docutils literal notranslate"><span class="pre">dict</span></code>) atributů, které se použijí k naplnění dat nového objektu, pokud Django hledaný objekt nenalezne (neslouží tedy k vyhledávání). Tato metoda vrací dvojici (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>) hodnot, první je samotný objekt a druhá hodnota je <code class="docutils literal notranslate"><span class="pre">True</span></code>, pokud byl objekt nově vytvořen, <code class="docutils literal notranslate"><span class="pre">False</span></code> pokud byl nalezen.</p>
+</section>
+</section>
+<section id="prace-s-relacemi">
+<h2>5.&nbsp;&nbsp;Práce s relacemi<a class="headerlink" href="#prace-s-relacemi" title="Link to this heading">#</a></h2>
+<p>Django nabízí také velmi praktické rozhraní pro práci s relacemi mezi modely.</p>
+<section id="prirazovani-relace-do-databaze">
+<h3>5.1.&nbsp;&nbsp;Přiřazování relace do databáze<a class="headerlink" href="#prirazovani-relace-do-databaze" title="Link to this heading">#</a></h3>
+<p>Pro nastavení relace mezi dvěma objekty v databázi jednoduše přiřaďte atributu typu <code class="docutils literal notranslate"><span class="pre">ForeignKey</span></code> objekt se kterým se má propojit:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">author</span> <span class="o">=</span> <span class="n">Author</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">book</span> <span class="o">=</span> <span class="n">Book</span><span class="p">()</span>
+<span class="n">book</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Stories from nowhere&quot;</span>
+<span class="n">book</span><span class="o">.</span><span class="n">author</span> <span class="o">=</span> <span class="n">author</span>
+<span class="n">book</span><span class="o">.</span><span class="n">published</span> <span class="o">=</span> <span class="s2">&quot;1930-12-13&quot;</span>
+<span class="n">book</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Tento kód uloží do databáze vazbu primární - cizí klíč. Při načtení objektu z databáze je možné s relacemi pracova zase na objektové úrovni, Django se postará o správné načítání dat z databáze na pozadí:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">book</span> <span class="o">=</span> <span class="n">Book</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">book</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">book</span><span class="o">.</span><span class="n">author</span><span class="o">.</span><span class="n">first_name</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">book</span><span class="o">.</span><span class="n">author</span><span class="o">.</span><span class="n">last_name</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="nacitani-objektu-pres-set">
+<h3>5.2.&nbsp;&nbsp;Načítání objektů přes <code class="docutils literal notranslate"><span class="pre">_set</span></code><a class="headerlink" href="#nacitani-objektu-pres-set" title="Link to this heading">#</a></h3>
+<p>Na objektové úrovni funguje relace také z “druhé strany”. Pokud má třída <code class="docutils literal notranslate"><span class="pre">Book</span></code> atribut typu <code class="docutils literal notranslate"><span class="pre">ForeignKey</span></code> na <code class="docutils literal notranslate"><span class="pre">Author</span></code>, Django automaticky vytvoří také u třídy <code class="docutils literal notranslate"><span class="pre">Author</span></code> vlastnost <code class="docutils literal notranslate"><span class="pre">book_set</span></code>, pomocí které je možné přistupovat k objektům <code class="docutils literal notranslate"><span class="pre">Book</span></code>, které patří k danému objektu třídy <code class="docutils literal notranslate"><span class="pre">Author</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">author</span> <span class="o">=</span> <span class="n">Author</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">books</span> <span class="o">=</span> <span class="n">author</span><span class="o">.</span><span class="n">book_set</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="n">books</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">book</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Atribut <code class="docutils literal notranslate"><span class="pre">book_set</span></code> se chová analogicky jako atribut <code class="docutils literal notranslate"><span class="pre">objects</span></code> a je možné s ním dále pracovat, používat funkce jako <code class="docutils literal notranslate"><span class="pre">filter()</span></code>, <code class="docutils literal notranslate"><span class="pre">exclude()</span></code>, <code class="docutils literal notranslate"><span class="pre">order_by()</span></code> atd.</p>
+</section>
+<section id="prace-s-m-n-relacemi">
+<h3>5.3.&nbsp;&nbsp;Práce s M:N relacemi<a class="headerlink" href="#prace-s-m-n-relacemi" title="Link to this heading">#</a></h3>
+<p>V Django typicky reprezentujete M:N (many-to-many) relaci mezi modely pomocí atributu <code class="docutils literal notranslate"><span class="pre">ManyToManyField</span></code>. Pojďme si modifikovat příklad s knihami a autory tak, aby kniha mohla mít více autorů:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># my_app/models.py</span>
+
+<span class="k">class</span> <span class="nc">Book</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">authors</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Author</span><span class="p">)</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">published</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateField</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Po provedení migrace Django automaticky v pozadí vytvoří <strong>propojovací tabulku</strong> (<code class="docutils literal notranslate"><span class="pre">book_author</span></code>) a namísto atributu <code class="docutils literal notranslate"><span class="pre">author</span></code> u třídy <code class="docutils literal notranslate"><span class="pre">Book</span></code> obsahující přímo objekt autora, bude možné pomocí atributu <code class="docutils literal notranslate"><span class="pre">authors</span></code> pracovat se všemi autory dané knihy:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">book</span> <span class="o">=</span> <span class="n">Book</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">authors</span> <span class="o">=</span> <span class="n">book</span><span class="o">.</span><span class="n">authors</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">author</span> <span class="ow">in</span> <span class="n">authors</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">book</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Vlastnost <code class="docutils literal notranslate"><span class="pre">authors</span></code> se chová podobně jako vlastnost modelu <code class="docutils literal notranslate"><span class="pre">objects</span></code>, je možné s ní pracovat jako s querysetem a použít na ni filtry <code class="docutils literal notranslate"><span class="pre">filter(...)</span></code>, řazení <code class="docutils literal notranslate"><span class="pre">order_by(...)</span></code> atd…</p>
+<div class="warning admonition">
+<p class="admonition-title">Pozor na data!</p>
+<p>Při migraci buďte opatrní, neboť je možné, že změna struktury modelů vyvolá takové změny v databázi, které povedou ke ztrátě dat, nebo ztrátě informací o relacích mezi objekty. Obecně platí, že před každou aktualizací databáze (zvláště v produkčním prostředí) by měla být databáze zazálohována, aby bylo možné data případně obnovit.</p>
+</div>
+<p>Pomocí <code class="docutils literal notranslate"><span class="pre">ManyToManyField</span></code> vlastností lze M:N vztahy také modifikovat pomocí následujících funkcí:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">add</span></code></strong>: Přidá jeden nebo více objektů do relace.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">remove</span></code></strong>: Odebere jeden nebo více objektů z relace.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">set</span></code></strong>: Nahradí všechny aktuální relace novou sadou.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">clear</span></code></strong>: Odstraní všechny relace z dané knihy.</p></li>
+</ul>
+<p>Například:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">author_1</span> <span class="o">=</span> <span class="n">Author</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">author_2</span> <span class="o">=</span> <span class="n">Author</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">book</span> <span class="o">=</span> <span class="n">Book</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">book</span><span class="o">.</span><span class="n">authors</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">author_1</span><span class="p">)</span>
+<span class="n">book</span><span class="o">.</span><span class="n">authors</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">author_2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>nebo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">book</span><span class="o">.</span><span class="n">authors</span><span class="o">.</span><span class="n">set</span><span class="p">([</span><span class="n">author_1</span><span class="p">,</span> <span class="n">author_2</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Pojmenování relace</p>
+<p>Relace M:N také funguje z “druhé strany” a objekty třídy <code class="docutils literal notranslate"><span class="pre">Author</span></code> budou mít automaticky vlastnost <code class="docutils literal notranslate"><span class="pre">book_set</span></code>, kde budou dostupné všechny knihy autora. Často je šikovné nastavit u <code class="docutils literal notranslate"><span class="pre">ForeignKey</span></code>, <code class="docutils literal notranslate"><span class="pre">ManyToManyField</span></code> a případně i <code class="docutils literal notranslate"><span class="pre">OneToOneField</span></code> relace parametr <code class="docutils literal notranslate"><span class="pre">related_name</span></code>, kterým je možné změnit název této vlastnosti:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># my_app/models.py</span>
+
+<span class="k">class</span> <span class="nc">Book</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">authors</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Author</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s2">&quot;books&quot;</span><span class="p">)</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">published</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateField</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Knihy autora budou pak dostupné ne přes vlastnost <code class="docutils literal notranslate"><span class="pre">book_set</span></code>, ale přes vlastnost <code class="docutils literal notranslate"><span class="pre">books</span></code>, což zlepší čitelnost a konzistenci kódu:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">author</span> <span class="o">=</span> <span class="n">Author</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">books</span> <span class="o">=</span> <span class="n">author</span><span class="o">.</span><span class="n">books</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="konfigurace-relacni-tabulky">
+<h3>5.4.&nbsp;&nbsp;Konfigurace relační tabulky<a class="headerlink" href="#konfigurace-relacni-tabulky" title="Link to this heading">#</a></h3>
+<p>Pokud potřebujete uložit další informace o samotném vztahu (např. datum, kdy autor začal na knize pracovat), můžete definovat tzv. <strong><code class="docutils literal notranslate"><span class="pre">through</span></code> model</strong>. Tím předefinujete standardní propojovací tabulku a můžete si do vztahu přidat vlastní pole:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># my_app/models.py</span>
+
+<span class="k">class</span> <span class="nc">Book</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">authors</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ManyToManyField</span><span class="p">(</span>
+        <span class="n">Author</span><span class="p">,</span>
+        <span class="n">through</span><span class="o">=</span><span class="s1">&#39;Authorship&#39;</span><span class="p">,</span>
+        <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;books&#39;</span>
+    <span class="p">)</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">published</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateField</span><span class="p">()</span>
+
+<span class="k">class</span> <span class="nc">Authorship</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">author</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Author</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
+    <span class="n">book</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Book</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
+    <span class="n">date_joined</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateField</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Pak vytváříte a spravujete vztahy skrze model <code class="docutils literal notranslate"><span class="pre">Authorship</span></code>, místo abyste přímo používali <code class="docutils literal notranslate"><span class="pre">book.authors.add(...)</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">author</span> <span class="o">=</span> <span class="n">Author</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">book</span> <span class="o">=</span> <span class="n">Book</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">Authorship</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">author</span><span class="o">=</span><span class="n">author</span><span class="p">,</span> <span class="n">book</span><span class="o">=</span><span class="n">book</span><span class="p">,</span> <span class="n">date_joined</span><span class="o">=</span><span class="s2">&quot;1995-01-01&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Případě dále pracovat s funkcemi <code class="docutils literal notranslate"><span class="pre">add</span></code>, <code class="docutils literal notranslate"><span class="pre">remove</span></code>, <code class="docutils literal notranslate"><span class="pre">set</span></code> a <code class="docutils literal notranslate"><span class="pre">clear</span></code>. Při přidávání nových vztahů (pomocí <code class="docutils literal notranslate"><span class="pre">add</span></code> nebo <code class="docutils literal notranslate"><span class="pre">set</span></code>) je možné pomocí parametru <code class="docutils literal notranslate"><span class="pre">through_defaults</span></code> definovat hodnoty pro propojovací model:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">author</span> <span class="o">=</span> <span class="n">Author</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">book</span> <span class="o">=</span> <span class="n">Book</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">author</span><span class="o">.</span><span class="n">books</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">book</span><span class="p">,</span> <span class="n">through_defaults</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;date_joined&quot;</span><span class="p">:</span><span class="s2">&quot;2005-01-01&quot;</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>Další možnosti, jak pracovat v Django se šablonami naleznete v <a class="reference external" href="https://docs.djangoproject.com/en/5.1/topics/db/models/">dokumentaci</a>.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="04_templates.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">předchozí</p>
+        <p class="prev-next-title">Šablony</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="06_admin.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">další</p>
+        <p class="prev-next-title">Admin rozhraní</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Obsah
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zakladni-pojmy">Základní pojmy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ukazka-tabulky">Ukázka tabulky</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#typy-databazovych-relaci">Typy databázových relací</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#n-one-to-many">1:N (One to Many)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-to-one">1:1 (One to One)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#m-n-many-to-many">M:N (Many to Many)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#django-orm">Django ORM</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#konfigurace-databaze">Konfigurace databáze</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definice-modelu">Definice Modelu</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#zakladni-typy-atributu">Základní typy atributů</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ukazka-kodu-s-1-n-vazbou">Ukázka kódu s 1:N vazbou</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#migrace">Migrace</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vytvoreni-objektu">Vytvoření objektu</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nacitani-objektu-z-databaze">Načítání objektů z databáze</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nacteni-jednoho-objektu">Načtení jednoho objektu</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nacteni-vice-objektu">Načtení více objektů</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vyrazeni-objektu">Vyřazení objektů</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nacteni-vsech-objektu">Načtení všech objektů</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#razeni">Řazení</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retezeni">Řetězení</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metoda-create">Metoda <code class="docutils literal notranslate"><span class="pre">create</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metoda-get-or-create">Metoda <code class="docutils literal notranslate"><span class="pre">get_or_create</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prace-s-relacemi">Práce s relacemi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prirazovani-relace-do-databaze">Přiřazování relace do databáze</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nacitani-objektu-pres-set">Načítání objektů přes <code class="docutils literal notranslate"><span class="pre">_set</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prace-s-m-n-relacemi">Práce s M:N relacemi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#konfigurace-relacni-tabulky">Konfigurace relační tabulky</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Podle kf
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, kf..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
