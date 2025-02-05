@@ -76,7 +76,16 @@ který vyexportuje data z aktuální databáze. Fixtures v Django můžete vytv�
 
 Atribut `model` obsahuje název modelu, který se má vytvářet ve formátu `<název aplikace>.<třída modelu>`. Atribut `pk` obsahuje primární klíč, který se má pro objekt nastavit a pomocí kterého se pak budou další objekty odkazovat. Atribut `fields` obsahuje hodnoty, které se mají objektu nastavit.
 
-Fixtures soubory by měly být umístěny v adresáři `fixtures` a to buď v kořenovém adresáři projektu, nebo v adresáři aplikace.
+Fixtures soubory by měly být umístěny v adresáři `fixtures` a to buď v kořenovém adresáři projektu, nebo v adresáři aplikace. Adresáře, kde má Django fixtures soubory hledat je možné konfigurovat v souboru `settings.py` pomocí direktivy `FIXTURE_DIRS`. Takto se například nastaví, aby Django vyhledával v adresáři `fixtures` v kořenovém adresáři projektu:
+
+```python
+# my_project/settings.py
+
+FIXTURE_DIRS = [
+    BASE_DIR / "fixtures/",
+]
+```
+
 
 Načtení fixtures do databáze se provádí pomocí příkazu `loaddata` s parametrem názvu fixtures souboru, který se má načíst:
 

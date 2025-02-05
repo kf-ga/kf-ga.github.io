@@ -170,6 +170,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../1_static/01_html.html">HTML</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_static/02_css.html">Základy CSS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_static/03_layouts.html">CSS Layouty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_static/04_bootstrap.html">Bootstrap framework</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">JavaScript</span></p>
 <ul class="nav bd-sidenav">
@@ -447,7 +448,14 @@ document.write(`
 </pre></div>
 </div>
 <p>Atribut <code class="docutils literal notranslate"><span class="pre">model</span></code> obsahuje název modelu, který se má vytvářet ve formátu <code class="docutils literal notranslate"><span class="pre">&lt;název</span> <span class="pre">aplikace&gt;.&lt;třída</span> <span class="pre">modelu&gt;</span></code>. Atribut <code class="docutils literal notranslate"><span class="pre">pk</span></code> obsahuje primární klíč, který se má pro objekt nastavit a pomocí kterého se pak budou další objekty odkazovat. Atribut <code class="docutils literal notranslate"><span class="pre">fields</span></code> obsahuje hodnoty, které se mají objektu nastavit.</p>
-<p>Fixtures soubory by měly být umístěny v adresáři <code class="docutils literal notranslate"><span class="pre">fixtures</span></code> a to buď v kořenovém adresáři projektu, nebo v adresáři aplikace.</p>
+<p>Fixtures soubory by měly být umístěny v adresáři <code class="docutils literal notranslate"><span class="pre">fixtures</span></code> a to buď v kořenovém adresáři projektu, nebo v adresáři aplikace. Adresáře, kde má Django fixtures soubory hledat je možné konfigurovat v souboru <code class="docutils literal notranslate"><span class="pre">settings.py</span></code> pomocí direktivy <code class="docutils literal notranslate"><span class="pre">FIXTURE_DIRS</span></code>. Takto se například nastaví, aby Django vyhledával v adresáři <code class="docutils literal notranslate"><span class="pre">fixtures</span></code> v kořenovém adresáři projektu:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># my_project/settings.py</span>
+
+<span class="n">FIXTURE_DIRS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">BASE_DIR</span> <span class="o">/</span> <span class="s2">&quot;fixtures/&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
 <p>Načtení fixtures do databáze se provádí pomocí příkazu <code class="docutils literal notranslate"><span class="pre">loaddata</span></code> s parametrem názvu fixtures souboru, který se má načíst:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>manage.py<span class="w"> </span>loaddata<span class="w"> </span>books
 </pre></div>

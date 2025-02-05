@@ -53,7 +53,7 @@ Python Virtual Environment (**venv**) je izolované prostředí, které umožňu
     Pro Git Bash:
 
     ```bash
-    source .venv\Scripts\activate
+    source .venv/Scripts/activate
     ```
 
 ### Soubor requirements.txt

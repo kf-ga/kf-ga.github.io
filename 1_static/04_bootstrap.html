@@ -1,0 +1,661 @@
+
+<!DOCTYPE html>
+
+
+<html lang="cs" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZX7DQPSHE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RZX7DQPSHE');
+    </script>
+    
+    <title>Bootstrap framework &#8212; Webové aplikace</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/local.css?v=1256093c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=4cdba38b"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../_static/translations.js?v=0275affc"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '1_static/04_bootstrap';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Rejstřík" href="../genindex.html" />
+    <link rel="search" title="Vyhledávání" href="../search.html" />
+    <link rel="next" title="Seznámení s JavaScriptem" href="../2_javascript/01_intro.html" />
+    <link rel="prev" title="CSS Layouty" href="03_layouts.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="cs"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Webové aplikace</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Vyhledávání" aria-label="Vyhledávání" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Vyhledávání</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Úvod</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../0_introduction/01_overview.html">Úvod do internetových technologií</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0_introduction/04_git.html">Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0_introduction/05_markdown.html">Markdown</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statický web</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_html.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_css.html">Základy CSS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_layouts.html">CSS Layouty</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Bootstrap framework</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">JavaScript</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../2_javascript/01_intro.html">Seznámení s JavaScriptem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_javascript/02_blocks.html">Řídící bloky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_javascript/03_methods.html">Funkce a třídy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_javascript/04_modules.html">Moduly v JavaScriptu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_javascript/05_dom.html">Document Object Model</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../3_python/01_intro.html">Seznámení s jazykem Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_python/02_types.html">Datové typy v Pythonu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_python/03_blocks.html">Řídící bloky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_python/04_methods.html">Funkce a třídy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_python/05_packages.html">Balíčky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_python/06_pip.html">PIP, Python Virtual Environment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Django</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../4_django/01_framework.html">Webové frameworky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_django/02_project.html">Seznámení s Django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_django/03_views.html">Pohledy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_django/04_templates.html">Šablony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_django/05_models.html">Modely a ORM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_django/06_admin.html">Admin rozhraní</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4_django/07_fixtures.html">Fixtures</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Webové protokoly</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../5_protocols/01_http.html">HTTP</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Webdesign</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../6_webdesign/01_wireframe.html">Wireframe návrh</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ostatní</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../7_other/04_console.html">Základy práce v konzoli</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Materiály</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../materials.html">Materiály k výuce</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Stáhněte si tuto stránku">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/1_static/04_bootstrap.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Stáhněte si zdrojový soubor"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Tisk do PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Režim celé obrazovky"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Vyhledávání" aria-label="Vyhledávání" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Bootstrap framework</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Obsah </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nastaveni-bootstrapu">Nastavení Bootstrapu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tvorba-layoutu">Tvorba layoutu</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#breakpointy">Breakpointy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kontejnery">Kontejnery</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vyuziti-bootstrap-komponent">Využití Bootstrap komponent</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tlacitka">Tlačítka</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#navigacni-lista">Navigační lišta</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#obrazky">Obrázky</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="bootstrap-framework">
+<h1>Bootstrap framework<a class="headerlink" href="#bootstrap-framework" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://getbootstrap.com/docs/5.3/getting-started/introduction/">Oficiální dokumentace Bootstrap 5</a></p></li>
+<li><p><a class="reference external" href="https://www.w3schools.com/bootstrap5/index.php">Tutoriál Bootstrap 5 od W3C</a></p></li>
+</ul>
+<p>Bootstrap je jeden z nejpopulárnějších frontend frameworků pro rychlý vývoj responzivních webových aplikací. Byl vyvinutý týmem v Twitteru a poprvé vydán v roce 2011. Bootstrap poskytuje rozsáhlou sbírku předdefinovaných CSS stylů, komponent a JavaScript pluginů, které usnadňují vývoj kvalitního a vizuálně přitažlivého webového uživatelského rozhraní.</p>
+<section id="nastaveni-bootstrapu">
+<h2>1.&nbsp;&nbsp;Nastavení Bootstrapu<a class="headerlink" href="#nastaveni-bootstrapu" title="Link to this heading">#</a></h2>
+<p>Nejjednodušší způsob, jak začít používat Bootstrap, je přidat do <code class="docutils literal notranslate"><span class="pre">&lt;head&gt;</span></code> soubor se styly pro Bootstrap:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">integrity</span><span class="o">=</span><span class="s">&quot;sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65&quot;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&quot;anonymous&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>A na konec <code class="docutils literal notranslate"><span class="pre">&lt;body&gt;</span></code> (před <code class="docutils literal notranslate"><span class="pre">&lt;/body&gt;</span></code> tag) JavaScript:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js&quot;</span> <span class="na">integrity</span><span class="o">=</span><span class="s">&quot;sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4&quot;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&quot;anonymous&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>První soubor je CSS s definicemi stylů pro Bootstrap prvky, druhý je pak JavaScript, který některým Bootstrap prvkům přidává interaktivitu.</p>
+<p>Bootstrap je sadou definic CSS stylů (tříd), které se aplikují na HTML elementy. Přidáváním těchto tříd k HTML elementům může vývojář snadno vytvořit nejen základní responzivní layout stránky, ale i velkou škálu prvků stránky jako tlačítka, navigační menu, formuláře a další komponenty, které z hlediska chování a vzhledu respektují obvyklou praxi ve světě webových aplikací.</p>
+</section>
+<section id="tvorba-layoutu">
+<h2>2.&nbsp;&nbsp;Tvorba layoutu<a class="headerlink" href="#tvorba-layoutu" title="Link to this heading">#</a></h2>
+<section id="breakpointy">
+<h3>2.1.&nbsp;&nbsp;Breakpointy<a class="headerlink" href="#breakpointy" title="Link to this heading">#</a></h3>
+<p>V Bootstrapu je <strong>breakpoint</strong> klíčový pojem, který odkazuje na šířku viewportu. Na základě techto breakpointů se mění chování prvků na stránce podle toho jak je obrazovka aktuálně široká. Bootstrap využívá několik předdefinovaných breakpointů, a pracují s minimální šířkou viewport:</p>
+<ul class="simple">
+<li><p><strong>Extra small</strong>, <strong><code class="docutils literal notranslate"><span class="pre">xs</span></code></strong>: Aplikuje se pro všechna zařízení a nemá minimální šířku. Styly pro <code class="docutils literal notranslate"><span class="pre">xs</span></code> jsou aplikovány, dokud není dosaženo dalšího breakpointu.</p></li>
+<li><p><strong>Small</strong>, <strong><code class="docutils literal notranslate"><span class="pre">sm</span></code></strong>: Aplikuje se pro viewport s minimální šířkou 576px.</p></li>
+<li><p><strong>Medium</strong>, <strong><code class="docutils literal notranslate"><span class="pre">md</span></code></strong>: Aplikuje se pro viewport s minimální šířkou 768px.</p></li>
+<li><p><strong>Large</strong>, <strong><code class="docutils literal notranslate"><span class="pre">lg</span></code></strong>: Aplikuje se pro viewport s minimální šířkou 992px.</p></li>
+<li><p><strong>Extra large</strong>, <strong><code class="docutils literal notranslate"><span class="pre">xl</span></code></strong>: Aplikuje se pro viewport s minimální šířkou 1200px.</p></li>
+<li><p><strong>Extra extra large</strong>, <strong><code class="docutils literal notranslate"><span class="pre">xxl</span></code></strong>: Aplikuje se pro viewport s minimální šířkou 1400px.</p></li>
+</ul>
+<p>Zkratky pro breakpointy se pak objevují v řadě CSS tříd, jak uvidíme dále.</p>
+</section>
+<section id="kontejnery">
+<h3>2.2.&nbsp;&nbsp;Kontejnery<a class="headerlink" href="#kontejnery" title="Link to this heading">#</a></h3>
+<p>V Bootstrapu jsou <strong>kontejnery</strong> základním stavebním prvkem, který umožňuje uspořádat obsah stránky do čitelné a strukturované formy. Existují tři typy kontejnerů:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">.container</span></code></strong>: Tento standardní kontejner je responzivní s pevnou šířkou, která se mění v závislosti na velikosti viewportu. Například na velkých obrazovkách bude mít kontejner šířku 1140px, zatímco na středních bude mít 720px.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">.container-fluid</span></code></strong>: Kontejner, který je vždy 100% široký bez ohledu na velikost viewportu. Využívá se pro designy, které potřebují využít celou šířku viewportu.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">.container-{breakpoint}</span></code></strong>: Tyto kontejnery umožňují kontejnerům být fluidními až do specifického breakpointu. Například <code class="docutils literal notranslate"><span class="pre">.container-md</span></code> je fluidní do velikosti viewportu Medium (768px) a má pevnou šířku pro větší viewporty.</p></li>
+</ul>
+<p>Chování kontejnerů je přesně popsáno v tabulce <a class="reference external" href="https://getbootstrap.com/docs/5.3/layout/containers/">zde</a>.</p>
+<p>Kontejner může fungovat samostatně, ale obvykle se do něj vkládají <strong>řádky</strong> (<strong>rows</strong>) a do nich <strong>sloupce</strong> (<strong>columns</strong>) u kterých se opět definuje, jak se mají chovat v různých zařízeních. Toto skládání je založeno na CSS flexboxu a v Bootstrapu se označuje jako <strong>grid</strong>:</p>
+<p>Příklad:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;row&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col&quot;</span><span class="p">&gt;</span>Sloupec 1<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col&quot;</span><span class="p">&gt;</span>Sloupec 2<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col&quot;</span><span class="p">&gt;</span>Sloupec 3<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Tento kód vytvoří tři sloupce, které se rovnoměrně rozdělí v rámci kontejneru. Bootstrap ale umožňuje daleko flexibilnější kontrolu nad šířkami sloupců v kontejneru. Každý kontejner je rozdělen na 12 sloupců, a třídy <code class="docutils literal notranslate"><span class="pre">col</span></code> je možné doplnit o číslo od 1 do 12, která určuje, kolik sloupců v kontejneru má zabírat:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;row&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-4&quot;</span><span class="p">&gt;</span>Sloupec šířky 4/12<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-6&quot;</span><span class="p">&gt;</span>Sloupec šířky 6/12<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-2&quot;</span><span class="p">&gt;</span>Sloupec šířky 2/12<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Pokud by se stalo, že další sloupec by nebylo již v řádku místo, přeteče do nového řádku.</p>
+<p>Třídy <code class="docutils literal notranslate"><span class="pre">col</span></code> navíc mohou obsahovat i zkratku breakpointu, která určuje <strong>od</strong> které velikosti viewportu se má šířka displeje aplikovat, např.:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;row&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-4&quot;</span><span class="p">&gt;</span>Sloupec šířky 4/12, ale až od velikosti Medium<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-4&quot;</span><span class="p">&gt;</span>Sloupec šířky 4/12, ale až od velikosti Medium<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-4&quot;</span><span class="p">&gt;</span>Sloupec šířky 4/12, ale až od velikosti Medium<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Styly třídy <code class="docutils literal notranslate"><span class="pre">.col-md-4</span></code> zde platí až od velikosti Medium, pro menší zařízení se elementy <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> chovají jako jako standardní blokové elementy a jsou zobrazeny pod sebou. Takto lze tedy vytvořit třísloupcový layout stránky pro Medium (a větší) zařízení, který se ale zobrazí pod sebou na menších zařízeních.</p>
+<div class="note admonition">
+<p class="admonition-title">Poznámka</p>
+<p>Pokud třída <code class="docutils literal notranslate"><span class="pre">col</span></code> nemá u sebe žádnou zkratku breakpointu, chápe se to jako výchozí velikost platící od nejmenšího viewportu (<code class="docutils literal notranslate"><span class="pre">xs</span></code>).</p>
+</div>
+<p>Třídy lze navíc kombinovat a definovat tak chování pro celou škálu velikostí zařízení, například:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container-lg&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;row&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-4 col-lg-2&quot;</span><span class="p">&gt;</span>První sloupec<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-4 col-lg-8&quot;</span><span class="p">&gt;</span>Druhý sloupec<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-4 col-lg-2&quot;</span><span class="p">&gt;</span>Třetí sloupec<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Vyzkoušejte si jak se chová předchozí rozvržení na různých velikostech zařízení.</p>
+<p>Bootstrap kontejnery jsou mocným nástrojem a všechny funkce a možnosti naleznete v <a class="reference external" href="https://getbootstrap.com/docs/5.3/layout/grid/">oficiální dokumentaci</a>.</p>
+</section>
+</section>
+<section id="vyuziti-bootstrap-komponent">
+<h2>3.&nbsp;&nbsp;Využití Bootstrap komponent<a class="headerlink" href="#vyuziti-bootstrap-komponent" title="Link to this heading">#</a></h2>
+<p>Bootstrap nabízí pestrou škálu předstylovaných komponent respektující obvyklou praxi při návrhu uživatelských rozhraní na webu. Podívejme se na některé z nich.</p>
+<section id="tlacitka">
+<h3>3.1.&nbsp;&nbsp;Tlačítka<a class="headerlink" href="#tlacitka" title="Link to this heading">#</a></h3>
+<p>Tlačítka se v Bootstrapu definují pomocí třídy <code class="docutils literal notranslate"><span class="pre">btn</span></code> a poté třídy <code class="docutils literal notranslate"><span class="pre">btn-{color}</span></code>, kde <code class="docutils literal notranslate"><span class="pre">{color}</span></code> je jedna z následujících hodnot <code class="docutils literal notranslate"><span class="pre">primary</span></code>, <code class="docutils literal notranslate"><span class="pre">secondary</span></code>, <code class="docutils literal notranslate"><span class="pre">success</span></code>, <code class="docutils literal notranslate"><span class="pre">danger</span></code>, <code class="docutils literal notranslate"><span class="pre">warning</span></code>, <code class="docutils literal notranslate"><span class="pre">info</span></code>, <code class="docutils literal notranslate"><span class="pre">light</span></code>, <code class="docutils literal notranslate"><span class="pre">dark</span></code> nebo <code class="docutils literal notranslate"><span class="pre">link</span></code>.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="p">&gt;</span>Primary<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-secondary&quot;</span><span class="p">&gt;</span>Secondary<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-success&quot;</span><span class="p">&gt;</span>Success<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-danger&quot;</span><span class="p">&gt;</span>Danger<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-warning&quot;</span><span class="p">&gt;</span>Warning<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-info&quot;</span><span class="p">&gt;</span>Info<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-light&quot;</span><span class="p">&gt;</span>Light<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-dark&quot;</span><span class="p">&gt;</span>Dark<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-link&quot;</span><span class="p">&gt;</span>Link<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Alternativně je možné přidat třídu <code class="docutils literal notranslate"><span class="pre">btn-outline-{color}</span></code>, což zobrazí tlačítko s ohraničením, ale bez barvy pozadí. Případně <code class="docutils literal notranslate"><span class="pre">btn-lg</span></code> pro velké nebo <code class="docutils literal notranslate"><span class="pre">btn-sm</span></code> pro malé tlačítka:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-primary btn-lg&quot;</span><span class="p">&gt;</span>Primární akce<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-outline-secondary btn-sm&quot;</span><span class="p">&gt;</span>Alternativní akce<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Často se také hodí použít styl zobrazení tlačítka pro obyčejné odkazy:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="p">&gt;</span>Primární akce<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-secondary&quot;</span><span class="p">&gt;</span>Alternativní akce<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="navigacni-lista">
+<h3>3.2.&nbsp;&nbsp;Navigační lišta<a class="headerlink" href="#navigacni-lista" title="Link to this heading">#</a></h3>
+<p>Navigační lišta je jednou z nejdůležitějších komponent, které se používají na webu. Pomocí navigační lišty se uživatel může pohybovat mezi jednotlivými stránkami webu. Bootstrap umožňuje jednoduše vytvořit responzivní navigační lištu pomocí třídy <code class="docutils literal notranslate"><span class="pre">navbar</span></code>:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;navbar navbar-expand-lg navbar-light bg-light&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container-fluid&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;navbar-brand&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;</span>Navbar<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;navbar-toggler&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">data-bs-toggle</span><span class="o">=</span><span class="s">&quot;collapse&quot;</span> <span class="na">data-bs-target</span><span class="o">=</span><span class="s">&quot;#navbarNavAltMarkup&quot;</span> <span class="na">aria-controls</span><span class="o">=</span><span class="s">&quot;navbarNavAltMarkup&quot;</span> <span class="na">aria-expanded</span><span class="o">=</span><span class="s">&quot;false&quot;</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&quot;Toggle navigation&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;navbar-toggler-icon&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;collapse navbar-collapse&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;navbarNavAltMarkup&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;navbar-nav&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;nav-link active&quot;</span> <span class="na">aria-current</span><span class="o">=</span><span class="s">&quot;page&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;</span>Home<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;nav-link&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;</span>Features<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;nav-link&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;</span>Pricing<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;nav-link disabled&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">&quot;-1&quot;</span> <span class="na">aria-disabled</span><span class="o">=</span><span class="s">&quot;true&quot;</span><span class="p">&gt;</span>Disabled<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Příklad z <a class="reference external" href="https://getbootstrap.com/docs/5.3/components/navbar/">dokumentace Bootstrapu</a>, kde také naleznete detailní vysvětlení a další možnosti jak navigační lištu tvořit.</p>
+<p>Tato navigační lišta obsahuje několik odkazů, které se ale na menších zařízeních (hranici menšího určuje třída <code class="docutils literal notranslate"><span class="pre">.navbar-expand-lg</span></code> s breakpointem na Large) zobrazí do rozbalovacího menu. Pokud chcete, aby navigační lišta byla vždycky zobrazena, stačí přidat třídu <code class="docutils literal notranslate"><span class="pre">.navbar-expand</span></code> (tedy žádný breakpoint) do navigační lišty.</p>
+</section>
+<section id="obrazky">
+<h3>3.3.&nbsp;&nbsp;Obrázky<a class="headerlink" href="#obrazky" title="Link to this heading">#</a></h3>
+<p>I pro obyčejné obrázky je většinou důležité se chovat správně v různých situací. Bootstrap nabízí opět <a class="reference external" href="https://getbootstrap.com/docs/5.3/content/images/">celou paletu</a> nástrojů jak s obrázky pracovat. Je libo například responzivní obrázek:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;img-fluid&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;...&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Nebo kulatý obrázek tak oblíbený na webu pro zobrazování portrétů:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;cinqueterre.jpg&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;rounded-circle&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Cinque Terre&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Toto je jen malá ukázka z prvků Bootstrapu, které můžete využít pro rychlou tvorbu moderně vypadajícího designu stránky. Vše ostatní naleznete v <a class="reference external" href="https://getbootstrap.com/docs/5.3/getting-started/introduction/">oficiální dokumentaci</a> nebo <a class="reference external" href="https://www.w3schools.com/bootstrap5/index.php">Tutoriálu od W3C</a>.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="03_layouts.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">předchozí</p>
+        <p class="prev-next-title">CSS Layouty</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../2_javascript/01_intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">další</p>
+        <p class="prev-next-title">Seznámení s JavaScriptem</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Obsah
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nastaveni-bootstrapu">Nastavení Bootstrapu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tvorba-layoutu">Tvorba layoutu</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#breakpointy">Breakpointy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kontejnery">Kontejnery</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vyuziti-bootstrap-komponent">Využití Bootstrap komponent</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tlacitka">Tlačítka</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#navigacni-lista">Navigační lišta</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#obrazky">Obrázky</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Podle kf
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, kf..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
