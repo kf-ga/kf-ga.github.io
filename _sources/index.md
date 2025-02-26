@@ -62,6 +62,7 @@ Programování webových aplikací
 4_django/10_sessions.md
 4_django/11_api.md
 4_django/12_deploy.md
+4_django/13_queries.md
 ```
 
 ```{toctree}

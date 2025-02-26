@@ -23,6 +23,7 @@ Slouží ke změně aktuálního adresáře
 ### Vytvoření adresáře `mkdir`
 
 - `mkdir my_dir`: Vytvoří v aktuálním adresáři nový adresář v s názvem `my_dir`.
+- `mkdir -p my_dir/sub_dir/other_dir`: Vytvoří v aktuálním adresáři několik vnořených adresářů.
 
 ### Odstranění souboru `rm`
 

@@ -53,8 +53,6 @@ Chování kontejnerů je přesně popsáno v tabulce [zde](https://getbootstrap.
 
 Kontejner může fungovat samostatně, ale obvykle se do něj vkládají **řádky** (**rows**) a do nich **sloupce** (**columns**) u kterých se opět definuje, jak se mají chovat v různých zařízeních. Toto skládání je založeno na CSS flexboxu a v Bootstrapu se označuje jako **grid**:
 
-Příklad:
-
 ```html
 <div class="container">
     <div class="row">

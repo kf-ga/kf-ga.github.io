@@ -143,6 +143,14 @@ Pokud proměnná obsahuje HTML značky, Django je ve výchozí konfiguraci escap
 Filtr `safe` použijte, pouze pokud jse si absolutně jisti, že obsah proměnné je bezpečný a neobsahuje škodlivý kód. Zejména dávejte pozor, pokud takto zobrazujete obsah, který pochází od uživatele, který by tak mohl vložit například tag `<script>` nebo `<iframe>` a spustit tak na Vaší stránce kód z cizí stránky. Tento typ útoku se nazývá [Cross-Site Scripting (XSS)](https://en.wikipedia.org/wiki/Cross-site_scripting).
 ```
 
+### `linebreaksbr`
+
+Filtr `linebreaksbr` převede nové řádk (`\n`) v textu na HTML tagy `<br>`, což umožňuje zachovat zalomení řádků při zobrazení textu v HTML.
+
+```django
+{{ text | linebreaksbr }}
+```
+
 ### Řetězení
 
 ```django
