@@ -200,6 +200,7 @@
 <li class="toctree-l1"><a class="reference internal" href="4_django/05_models.html">Modely a ORM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4_django/06_admin.html">Admin rozhraní</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4_django/07_fixtures.html">Fixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_django/08_forms.html">Formuláře</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4_django/12_deploy.html">Produkční prostředí</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Webové protokoly</span></p>
@@ -369,13 +370,28 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="materialy-k-vyuce">
 <h1>Materiály k výuce<a class="headerlink" href="#materialy-k-vyuce" title="Link to this heading">#</a></h1>
+<ul>
+<li><p>Vzorový HTML dokument pro testování CSS selektorů:</p>
+<p><a class="reference download internal" download="" href="_downloads/5df8acded4ae7249a945d81ed1f77aaa/sandbox.html"><code class="xref download docutils literal notranslate"><span class="pre">sandbox.html</span></code></a></p>
+</li>
+<li><p>Stránka pro testování CSS layoutu</p>
+<p><a class="reference download internal" download="" href="_downloads/fdae16355794e11fd03a390a3248bf23/layout.zip"><code class="xref download docutils literal notranslate"><span class="pre">layout.zip</span></code></a></p>
+</li>
+<li><p>Seznam článků z irozhlas.cz</p>
+<p><a class="reference download internal" download="" href="_downloads/55747ce1b3aa6fea6b8a71e2b55912de/articles.json"><code class="xref download docutils literal notranslate"><span class="pre">articles.json</span></code></a></p>
+</li>
+<li><p>Nástroj na nastavení Django projektu na svs.gyarab.cz</p>
+<p><a class="reference download internal" download="" href="_downloads/efbcaf6c639c0468b606117f52c1553d/svs.py"><code class="xref download docutils literal notranslate"><span class="pre">svs.py</span></code></a></p>
+<p><strong>Použití</strong></p>
+<p>Stáhněte soubor <code class="docutils literal notranslate"><span class="pre">svs.py</span></code> do vašeho repozitáře, soubor musí být umístěn na stejné úrovni jako <code class="docutils literal notranslate"><span class="pre">manage.py</span></code>. Skript nabízí následující příkazy:</p>
 <ul class="simple">
-<li><p>Vzorový HTML dokument pro testování CSS selektorů:
-<a class="reference download internal" download="" href="_downloads/5df8acded4ae7249a945d81ed1f77aaa/sandbox.html"><code class="xref download docutils literal notranslate"><span class="pre">sandbox.html</span></code></a></p></li>
-<li><p>Stránka pro testování CSS layoutu:
-<a class="reference download internal" download="" href="_downloads/fdae16355794e11fd03a390a3248bf23/layout.zip"><code class="xref download docutils literal notranslate"><span class="pre">layout.zip</span></code></a></p></li>
-<li><p>Seznam článků z irozhlas.cz:
-<a class="reference download internal" download="" href="_downloads/55747ce1b3aa6fea6b8a71e2b55912de/articles.json"><code class="xref download docutils literal notranslate"><span class="pre">articles.json</span></code></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">svs.py</span></code> - Zobrazí nápovědu</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">svs.py</span> <span class="pre">setup</span></code> - Nastaví Django projekt na SVS serveru</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">svs.py</span> <span class="pre">info</span></code> - Zobrazí informace a stav nastavení Django projektu</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">svs.py</span> <span class="pre">update</span></code> - Aktualizuje projekt</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">svs.py</span> <span class="pre">clean</span></code> - Smaže všechna vytvořená nastavení</p></li>
+</ul>
+</li>
 </ul>
 </section>
 

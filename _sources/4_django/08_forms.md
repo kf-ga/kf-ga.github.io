@@ -1,9 +1,9 @@
 Formuláře
 =========
 
-* [Návody Django - Formuláře](https://docs.djangoproject.com/en/5.0/topics/forms/)
-* [Referenční dokumentace Django - Forms API](https://docs.djangoproject.com/en/5.0/ref/forms/api/)
-* [Referenční dokumentace Django - Form fields](https://docs.djangoproject.com/en/5.0/ref/forms/fields/)
+* [Návody Django - Formuláře](https://docs.djangoproject.com/en/5.1/topics/forms/)
+* [Referenční dokumentace Django - Forms API](https://docs.djangoproject.com/en/5.1/ref/forms/api/)
+* [Referenční dokumentace Django - Form fields](https://docs.djangoproject.com/en/5.1/ref/forms/fields/)
 
 
 Formuláře v Django přinášejí bohatou podporu pro celý životní cyklus formuláře, od vytvoření HTML kódu formuláře po zpracování a kontrolu odeslaných dat.
@@ -13,16 +13,17 @@ Třída `forms.Form`
 
 Třída `forms.Form` v Django je základní třídou pro vytváření formulářů. Odvozením z této třídy a přidáním položek formuláře definujete vlastní formulář (podobně jako se definují v Django modely):
 
+Třídy formulářů se obvykle ukládají do souboru `forms.py` v adresáři aplikace.
+
 ```python
 # my_app/forms.py
 from django import forms
 
 class CommentForm(forms.Form):
-    name = forms.CharField()
+    name = forms.CharField(max_length=100)
     rating = forms.IntegerField()
-    comment = forms.TextField()
+    comment = forms.CharField(widget=forms.Textarea)
 ```
-Třídy formulářů se obvykle ukládají do souboru `forms.py` v adresáři aplikace.
 
 Django přináší pestrou sadů typů položek formuláře (**fields**), které se hodí pro většinu situací:
 
@@ -33,13 +34,13 @@ Django přináší pestrou sadů typů položek formuláře (**fields**), které
 - **`BooleanField`**: výběr ano/ne (zaškrtávací políčko)
 - **`ChoiceField`**: pro výběr z pevně daných možností
 
-Všechny Fields je možné dále konfigurovat, například u `CharField` je možné [nastavit](https://docs.djangoproject.com/en/5.0/ref/forms/fields/#charfield) `max_length` určující maximální délku zadávaného řetězce, nebo u `IntegerField` je možné [nastavit](https://docs.djangoproject.com/en/5.0/ref/forms/fields/#integerfield) `min_value` a `max_value` definující povolený rozsah hodnot.
+Všechny Fields je možné dále konfigurovat, například u `CharField` je možné [nastavit](https://docs.djangoproject.com/en/5.1/ref/forms/fields/#charfield) `max_length` určující maximální délku zadávaného řetězce, nebo u `IntegerField` je možné [nastavit](https://docs.djangoproject.com/en/5.1/ref/forms/fields/#integerfield) `min_value` a `max_value` definující povolený rozsah hodnot.
 
-Úplný seznam možných položek formuláře, včetně možností jejich konfigurace naleznete v [dokumentaci].(https://docs.djangoproject.com/en/5.0/ref/forms/fields/).
+Úplný seznam možných položek formuláře, včetně možností jejich konfigurace naleznete v [dokumentaci].(https://docs.djangoproject.com/en/5.1/ref/forms/fields/).
 
 ### Společné parametry
 
-Krom parametrů specifických pro každý typ položky [existují parametry](https://docs.djangoproject.com/en/5.0/ref/forms/fields/#core-field-arguments) nastavitelné pro všechny typy. Jsou to zejména:
+Krom parametrů specifických pro každý typ položky [existují parametry](https://docs.djangoproject.com/en/5.1/ref/forms/fields/#core-field-arguments) nastavitelné pro všechny typy. Jsou to zejména:
 
 - **`required`**: zda je pole povinné (výchozí hodnota je `True`)
 - **`label`**: popisek pole, který se bude zobrazovat uživateli
@@ -94,14 +95,14 @@ Funkce `as_div` transformuje položky formuláře, do HTML kódu, kdy jednotliv�
 <!-- ... -->
 ```
 
-Krom `as_div` je možné použít [další styly formátování](https://docs.djangoproject.com/en/5.0/ref/forms/api/#output-styles).
+Krom `as_div` je možné použít [další styly formátování](https://docs.djangoproject.com/en/5.1/ref/forms/api/#output-styles).
 Značka `{% csrf_token %}` vloží do formuláře speciální token, který slouží k ověření původu formuláře a k ochraně proti útokům typu *[Cross-site request forgery](https://cs.wikipedia.org/wiki/Cross-site_request_forgery)*.
 
 
 Zpracování formuláře
 --------------------
 
-Posledním úkolem v životním cyklu formuláře je zpracování odeslaných dat. To se v Django realizuje v pohledu, kde se přidá větev programu, reagující na odeslání. Vytvořme nejprve model pro ukládání odeslaných dat do databáze:
+Posledním úkolem v životním cyklu formuláře je zpracování odeslaných dat. To se v Django realizuje v pohledu, kde se přidá větev programu. Vytvořme nejprve model pro ukládání odeslaných dat do databáze:
 
 ```python
 # my_app/models.py
@@ -113,7 +114,7 @@ class Comment(models.Model):
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
 ```
 
-A následně upravíme kód pohledu tak, aby odeslaná data z formuláře ukládal do databáze:
+A následně upravíme kód pohledu tak, aby odeslaná data z formuláře ukládal do databáze. V případě, že uživatel odeslal formulář na dané url (pohled), bude metoda požadavku `POST`, což nám umožní zpracovat odeslaná data:
 
 ```python
 # my_app/views.py
@@ -136,11 +137,9 @@ def book(request, id):
     return render(request, "my_app/book.html", {"book": book, "review_form": review_form})
 
 ```
+Do formuláře se předá struktura `request.POST`, obsahující "syrová" data požadavku. Třída formuláře tato data načte a ověří. Pokud správně projde validace odeslaných dat formuláře (`form.is_valid()`), bude v objektu formuláře atribut `cleaned_data`, což je slovník s hodnotami formuláře, které uživatel odeslal a se kterými je možné dále nakládat dle potřeby, například je uložit do databáze.
 
-Pokud správně projde validace odeslaných dat formuláře (`form.is_valid()`), bude v objektu formuláře atribut `cleaned_data`, což je slovník s hodnotami formuláře, které uživatel odeslal a se kterými je možné nakládat dle logiky aplikace, například je uložit do databáze.
-
-
-Po úspěšném zpracování následuje zpravidla přesměrování na další stránku (pomocí `HttpResponseRedirect`), například s potvrzením či jinou informací pro uživatele. Přesměrování je nezbytné proto, aby se zabránilo nechtěnému znovuodeslání formuláře. Pokud by totiž uživatel dal po odeslání formuláře obnovit stránku v prohlížeči, znamenalo by to opětovné odeslání dat formuláře. Prohlížeče na toto opakované odesílání sice upozorňují ("Confirm form resubmission"), nicméně dobrá webová aplikace by měla takových hlášek uživatele preventivně ušetřit,
+Po úspěšném zpracování následuje zpravidla přesměrování na další stránku (pomocí `HttpResponseRedirect`), například s potvrzením či jinou informací pro uživatele. Přesměrování je nezbytné proto, aby se zabránilo nechtěnému opakovanému odeslání formuláře. Pokud by totiž uživatel dal po odeslání formuláře obnovit stránku v prohlížeči, znamenalo by to opětovné odeslání dat formuláře. Prohlížeče na toto opakované odesílání sice upozorňují ("Confirm form resubmission"), nicméně dobrá webová aplikace by měla takových hlášek uživatele preventivně ušetřit,
 
 ### Třída `forms.ModelForm`
 
@@ -209,7 +208,7 @@ if request.POST and form.is_valid():
 Takto vytvořený formulář bude mít svá pole již předvyplněna hodnotami existujícího objektu. Po odeslání formuláře se existující objekt aktualizuje.
 ````
 
-Všechny možností práce se třídou `forms.ModelForm` naleznete v [dokumentaci](https://docs.djangoproject.com/en/5.0/topics/forms/modelforms/).
+Všechny možností práce se třídou `forms.ModelForm` naleznete v [dokumentaci](https://docs.djangoproject.com/en/5.1/topics/forms/modelforms/).
 
 
 ### Práce s relacemi ve formulářích
@@ -270,7 +269,7 @@ Všimněte si, že funkce `book.authors.set` je volána až po zavolání `book.
 Balíček Crispy Forms
 --------------------
 
-Balíček Crispy Forms je oblíbený nástroj v Django pro zobrazování esteticky příjemných a uživatelsky přívětivých formulářů. Tento balíček umožňuje rychlé stylování formulářů a podporuje různé frontendové frameworky jako Bootstrap.
+Balíček Crispy Forms je oblíbený nástroj v Django pro zobrazování esteticky příjemných a uživatelsky přívětivých formulářů. Tento balíček umožňuje rychlé stylování formulářů a podporuje různé frontend frameworky jako Bootstrap.
 
 ### Instalace
 
@@ -307,7 +306,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap5'
 `FormHelper` je třída v Crispy Forms, která umožňuje konfiguraci zobrazení formulářů. Pomocí ní lze definovat layout, styly, a další vlastnosti formulářů. Nabízí několik základních konfiguračních proměnných:
 
 - **`form_method`**: Určuje HTTP metodu formuláře (např. `'post'`, `'get'`).
-- **`form_action`**: Cíl formuláře, kam mají být data odeslána.
+- **`form_action`**: Url formuláře, kam mají být data odeslána. Odpovídá atributu `action` u tagu `<form>`, může být prázdný; formulář se pak odesílá na stejnou url, na které je zobrazen.
 - **`form_tag`**: Boolean hodnota určující, zda má být formulář obalen tagem `<form>`.
 - **`layout`**: Objekt, který definuje, jak jsou pole formuláře uspořádány.
 
@@ -318,28 +317,16 @@ CRISPY_TEMPLATE_PACK = 'bootstrap5'
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Row, Field, Submit
 
-class ReviewCrispyForm(forms.ModelForm):
-    class Meta:
-        model = Review
-        fields = ['name', 'rating', 'comment']
-        labels = {
-            'name': "Vaše jméno",
-            'rating': "Vaše hodnocení",
-            'comment': "Váš komentář"
-        }
-        help_texts = {
-            'rating': "Hodnocení musí být celé číslo mezi 1 a 10"
-        }
-        error_messages = {
-            'name': {
-                'required': "Jméno je povinné pole"
-            }
-        }
-
+class CommentForm(forms.Form):
+    name = forms.CharField(max_length=100)
+    rating = forms.IntegerField()
+    comment = forms.CharField(widget=forms.Textarea)
+    
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_method = 'post'
+        
         self.helper.layout = Layout(
             Row(
                 Field('name'),
