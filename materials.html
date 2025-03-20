@@ -390,7 +390,13 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">svs.py</span> <span class="pre">info</span></code> - Zobrazí informace a stav nastavení Django projektu</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">svs.py</span> <span class="pre">update</span></code> - Aktualizuje projekt</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">svs.py</span> <span class="pre">clean</span></code> - Smaže všechna vytvořená nastavení</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">svs.py</span> <span class="pre">loaddata</span> <span class="pre">&lt;fixture&gt;</span></code> - Načte fixture <code class="docutils literal notranslate"><span class="pre">&lt;fixture&gt;</span></code></p></li>
 </ul>
+<p>Skript vytvoří konfigurační soubor <code class="docutils literal notranslate"><span class="pre">settings_svs.py</span></code>, který obsahuje nastavení specifická pro SVS server. Pokud chcete spouštět další příkazy Django v kontextu tohoto nastavení, je potřeba před spouštěný příkaz nastavit  environment proměnnou <code class="docutils literal notranslate"><span class="pre">DJANGO_SETTINGS_MODULE</span></code>, např:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">DJANGO_SETTINGS_MODULE</span><span class="o">=</span>cms.settings_svs<span class="w"> </span>.venv/bin/python<span class="w"> </span>manage.py<span class="w"> </span>createsuperuser
+</pre></div>
+</div>
+<p>SVS nainstaluje také balíčky <code class="docutils literal notranslate"><span class="pre">gunicorn</span></code> (server pro spouštění Django aplikací) a <code class="docutils literal notranslate"><span class="pre">psycopg</span></code> (balíček pro práci s PostgreSQL databází)</p>
 </li>
 </ul>
 </section>

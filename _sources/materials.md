@@ -25,5 +25,13 @@ Materiály k výuce
     - `python3 svs.py info` - Zobrazí informace a stav nastavení Django projektu
     - `python3 svs.py update` - Aktualizuje projekt
     - `python3 svs.py clean` - Smaže všechna vytvořená nastavení
+    - `python3 svs.py loaddata <fixture>` - Načte fixture `<fixture>`
 
+    Skript vytvoří konfigurační soubor `settings_svs.py`, který obsahuje nastavení specifická pro SVS server. Pokud chcete spouštět další příkazy Django v kontextu tohoto nastavení, je potřeba před spouštěný příkaz nastavit  environment proměnnou `DJANGO_SETTINGS_MODULE`, např:
+    
+    ```sh
+    DJANGO_SETTINGS_MODULE=cms.settings_svs .venv/bin/python manage.py createsuperuser
+    ```
+
+    SVS nainstaluje také balíčky `gunicorn` (server pro spouštění Django aplikací) a `psycopg` (balíček pro práci s PostgreSQL databází)
 
