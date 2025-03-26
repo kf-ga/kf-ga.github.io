@@ -153,23 +153,17 @@ Debugging ve VSCode
 IDE Vscode umožňuje vestavěné ladění projektů na Django frameworku. Pokud ho chcete zapnout, přidejte do souboru `.vscode/launch.json` následující profil:
 
 ```json
-{
-    "name": "Django",
-    "type": "python",
-    "request": "launch",
-    "stopOnEntry": false,
-    "program": "${workspaceRoot}/manage.py",
-    "args": [
-        "runserver",
-        "--noreload" 
-    ],
-    "debugOptions": [
-        "WaitOnAbnormalExit",
-        "WaitOnNormalExit",
-        "RedirectOutput",
-        "DjangoDebugging"
-    ]
-}
+    {
+        "name": "Django debug server",
+        "type": "debugpy",
+        "request": "launch",
+        "stopOnEntry": false,
+        "program": "${workspaceRoot}/manage.py",
+        "args": [
+            "runserver",
+            "--noreload"  // nedělat autoreload serveru, může způsobit problémy s debugováním
+        ]
+    }  
 ```
 
 Po spuštění tohoto profilu spustí VSCode vývojový Django server a propojí ho s IDE, takže vám budou fungovat breakpointy, inspektor proměnných apod.

@@ -202,6 +202,7 @@
 <li class="toctree-l1"><a class="reference internal" href="06_admin.html">Admin rozhraní</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07_fixtures.html">Fixtures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="08_forms.html">Formuláře</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_files.html">Práce se soubory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="12_deploy.html">Produkční prostředí</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Webové protokoly</span></p>
@@ -511,23 +512,17 @@ python<span class="w"> </span>manage.py<span class="w"> </span>startapp<span cla
 <section id="debugging-ve-vscode">
 <h2>5.&nbsp;&nbsp;Debugging ve VSCode<a class="headerlink" href="#debugging-ve-vscode" title="Link to this heading">#</a></h2>
 <p>IDE Vscode umožňuje vestavěné ladění projektů na Django frameworku. Pokud ho chcete zapnout, přidejte do souboru <code class="docutils literal notranslate"><span class="pre">.vscode/launch.json</span></code> následující profil:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Django&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;python&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;request&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;launch&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;stopOnEntry&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;program&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${workspaceRoot}/manage.py&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="s2">&quot;runserver&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="s2">&quot;--noreload&quot;</span><span class="w"> </span>
-<span class="w">    </span><span class="p">],</span>
-<span class="w">    </span><span class="nt">&quot;debugOptions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="s2">&quot;WaitOnAbnormalExit&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="s2">&quot;WaitOnNormalExit&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="s2">&quot;RedirectOutput&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="s2">&quot;DjangoDebugging&quot;</span>
-<span class="w">    </span><span class="p">]</span>
-<span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Django debug server&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;debugpy&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;request&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;launch&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;stopOnEntry&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;program&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${workspaceRoot}/manage.py&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="s2">&quot;runserver&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;--noreload&quot;</span><span class="w">  </span><span class="c1">// nedělat autoreload serveru, může způsobit problémy s debugováním</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span><span class="w">  </span>
 </pre></div>
 </div>
 <p>Po spuštění tohoto profilu spustí VSCode vývojový Django server a propojí ho s IDE, takže vám budou fungovat breakpointy, inspektor proměnných apod.</p>

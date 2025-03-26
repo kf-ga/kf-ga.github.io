@@ -271,7 +271,7 @@ def about(request):
 ```{admonition} Django debug-toolbar
 :class: tip
 
-Pokud chcete zobrazit na vaší stránce užitečnou debug lištu, a získat přehled o tom, co se ve vaší aplikaci přesně děje, nainstalujte si balíček `[django-debug-toolbar](https://django-debug-toolbar.readthedocs.io/en/latest/installation.html)`.
+Pokud chcete zobrazit na vaší stránce užitečnou debug lištu, a získat přehled o tom, co se ve vaší aplikaci přesně děje, nainstalujte si balíček [django-debug-toolbar](https://django-debug-toolbar.readthedocs.io/en/latest/installation.html).
 ```
 
 

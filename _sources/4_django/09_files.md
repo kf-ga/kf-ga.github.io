@@ -10,8 +10,8 @@ Práce se soubory v Django
 
 Django poskytuje robustní podporu pro práci se soubory prostřednictvím polí  **`FileField`** a **`ImageField`**, které lze použít v modelech.
 
-- **`FileField`** je pole modelu určené k ukládání souborů. Umožňuje specifikovat cestu kam se má soubor ukládat a poskytuje API pro práci s tímto souborem.
-- **`ImageField`** rozšiřuje funkcionalitu `FileField` tím, že kontroluje, zda nahraný soubor je platný obrázek.
+- **`FileField`**: je pole modelu určené k ukládání souborů. Umožňuje specifikovat cestu kam se má soubor ukládat a poskytuje API pro práci s tímto souborem.
+- **`ImageField`**: rozšiřuje funkcionalitu `FileField` tím, že kontroluje, zda nahraný soubor je platný obrázek.
  
 Django ukládá soubory do adresáře `MEDIA_ROOT`, specifikovaného v konfiguračním souboru settings.py v projektu:
 
@@ -28,7 +28,7 @@ A dále je potřeba ještě nastavit `MEDIA_URL`, což je url adresa, pod kterou
 # my_project/settings.py
 
 # ...
-MEDIA_URL = 'media'
+MEDIA_URL = 'media/'
 ```
 
 ```{admonition} Poznámka
