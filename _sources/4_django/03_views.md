@@ -18,7 +18,7 @@ Architektura Django aplikace
 V Django přebírá velkou část roli komponenty Controller samotný Django framework. V Django frameworku proto hovoříme o architektuře **MVT** (**Model-View-Template**):
 
 - **Model** zůstává stejný, reprezentuje data a jejich logiku.
-- **View** (pohled) v Django přebírá některé role komponenty Controller z MVC a reprezentuje pohled na na data (na Model).
+- **View** (pohled) v Django přebírá některé role komponenty Controller z MVC a reprezentuje pohled na data (model).
 - **Template** (šablona) je textový soubor, který definuje strukturu stránky nebo její části obvykle pomocí HTML rozšířených o speciální značky.
 
 Rozdělení projektu na tyto logické části umožňuje jednodušší správu a údržbu kódu při vývoji webové aplikace. Každá komponenta má svůj specifický účel a mění se nezávisle na ostatních. Usnadňuje také práci na projektu pro větší týmy, kdy se část týmu může věnovat vnitřní logice aplikace (Model), část způsobu prezentace uživateli (View) a část vizuální stránce a designu aplikace (Template). Díky rozdělení může každá část pracovat více nezávisle na zbytku týmu.

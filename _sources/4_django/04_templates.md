@@ -140,7 +140,7 @@ Pokud proměnná obsahuje HTML značky, Django je ve výchozí konfiguraci escap
 ```{admonition} Pozor!
 :class: warning
 
-Filtr `safe` použijte, pouze pokud jse si absolutně jisti, že obsah proměnné je bezpečný a neobsahuje škodlivý kód. Zejména dávejte pozor, pokud takto zobrazujete obsah, který pochází od uživatele, který by tak mohl vložit například tag `<script>` nebo `<iframe>` a spustit tak na Vaší stránce kód z cizí stránky. Tento typ útoku se nazývá [Cross-Site Scripting (XSS)](https://en.wikipedia.org/wiki/Cross-site_scripting).
+Filtr `safe` použijte, pouze pokud jste si absolutně jisti, že obsah proměnné je bezpečný a neobsahuje škodlivý kód. Zejména dávejte pozor, pokud takto zobrazujete obsah, který pochází od uživatele, který by tak mohl vložit například tag `<script>` nebo `<iframe>` a spustit tak na Vaší stránce kód z cizí stránky. Tento typ útoku se nazývá [Cross-Site Scripting (XSS)](https://en.wikipedia.org/wiki/Cross-site_scripting).
 ```
 
 ### `linebreaksbr`

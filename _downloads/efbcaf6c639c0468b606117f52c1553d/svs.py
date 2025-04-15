@@ -322,7 +322,7 @@ class SVS():
         systemd_env_file = self.SYSTEMD_DIR / f"{self.domain}.service.env"
 
         if not self.SYSTEMD_DIR.exists():
-            print(f"🟩 Creating systemd directory {self.systemd_dir} ...")
+            print(f"🟩 Creating systemd directory {self.SYSTEMD_DIR} ...")
             self.SYSTEMD_DIR.mkdir(parents=True, exist_ok=True)
 
         if not self.LOGS_DIR.exists():

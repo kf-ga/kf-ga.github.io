@@ -110,5 +110,5 @@ python manage.py dumpdata my_app > my_app/fixtures/bookshelf.json
 ```{admonition} Fixtures v repozitáři
 :class: tip
 
-Zatímco samotné databázové soubory nemají bít součástí distribuce projektu, například v GitHub repozitáři, u fixtures je naopak žádoucí, aby v projektu zahrnuty byly. Představují formu testovacích dat, které může uživatel, který Django projekt zkouší ihned a jednoduše použít k počátečnímu naplnění databáze.
+Zatímco samotné databázové soubory nemají být součástí distribuce projektu, například v GitHub repozitáři, u fixtures je naopak žádoucí, aby v projektu zahrnuty byly. Představují formu testovacích dat, které může uživatel, který Django projekt zkouší ihned a jednoduše použít k počátečnímu naplnění databáze.
 ```

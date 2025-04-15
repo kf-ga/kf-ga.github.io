@@ -130,7 +130,7 @@ Ukážeme si základní postup jak zobrazit v prohlížeči pomocí Django "Hell
 
     ```{code-block} python
     :linenos:
-    :emphasize-lines: 3, 7
+    :emphasize-lines: 5, 9
     #my_project/urls.py
 
     from django.contrib import admin
