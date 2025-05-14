@@ -124,7 +124,6 @@ def measure_hashing_time(hash_functions, n=20):
     print("-" * 45)
     for hash_func, verify_func in hash_functions:
         start_time = time.time()
-        hashed = None
         for password in passwords:
             hash_func(password)
         elapsed_time = (time.time() - start_time) / n
@@ -142,7 +141,6 @@ def bruteforce_crack(verify_function, hashed_password, charset, max_length):
 def measure_cracking_time(hash_functions):
     charset = "abcdefghijklmnopqrstuvwxyz"
     password = "db"
-    results = []
 
     print("")
     print(f"{'Cracking hash':<30}{'Time (seconds)':<15}{'Success':<10}")
@@ -154,8 +152,6 @@ def measure_cracking_time(hash_functions):
         elapsed_time = time.time() - start_time
         success = cracked_password == password
         print(f"{hash_func.__name__:<30}{elapsed_time:<15.6f}{success:<10}{cracked_password}")
-
-        
 
 if __name__ == "__main__":
     hash_functions = [
