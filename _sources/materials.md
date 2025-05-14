@@ -35,3 +35,9 @@ Materiály k výuce
 
     SVS nainstaluje také balíčky `gunicorn` (server pro spouštění Django aplikací) a `psycopg` (balíček pro práci s PostgreSQL databází)
 
+* Měření hash funkcí
+    
+    {download}`hashes.py<_static/examples/hashes.py>`
+
+    Vyžaduje Python balíčky `bcrypt` a `argon2-cffi`
+
