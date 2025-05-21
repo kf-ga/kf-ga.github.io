@@ -156,15 +156,15 @@ def measure_cracking_time(hash_functions):
 if __name__ == "__main__":
     hash_functions = [
         (hash_sha256, verify_sha256),
-       # (hash_scrypt_n2e14, verify_scrypt),
-       # (hash_scrypt_n2e15, verify_scrypt),
-       # (hash_scrypt_n2e16, verify_scrypt),
-       # (hash_bcrypt_rounds12, verify_bcrypt),
-       # (hash_bcrypt_rounds13, verify_bcrypt),
-       # (hash_bcrypt_rounds14, verify_bcrypt),
-       # (hash_argon2_time_cost2, verify_argon2),
-       # (hash_argon2_time_cost3, verify_argon2),
-       # (hash_argon2_time_cost4, verify_argon2),
+        (hash_scrypt_n2e14, verify_scrypt),
+        (hash_scrypt_n2e15, verify_scrypt),
+        (hash_scrypt_n2e16, verify_scrypt),
+        (hash_bcrypt_rounds12, verify_bcrypt),
+        (hash_bcrypt_rounds13, verify_bcrypt),
+        (hash_bcrypt_rounds14, verify_bcrypt),
+        (hash_argon2_time_cost2, verify_argon2),
+        (hash_argon2_time_cost3, verify_argon2),
+        (hash_argon2_time_cost4, verify_argon2),
     ]
 
     create_hash_verification_table(hash_functions, "neco1234")

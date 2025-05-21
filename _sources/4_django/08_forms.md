@@ -56,7 +56,7 @@ from django import forms
 class CommentForm(forms.Form):
     name = forms.CharField(max_length=100, label="Vaše jméno")
     rating = forms.IntegerField(min_value=1, max_value=10, initial=5, label="Vaše hodnocení")
-    comment = forms.TextField(label="Váš komentář")
+    comment = forms.CharField(widget=forms.Textarea, label="Váš komentář")
 ```
 
 Zobrazení formuláře
