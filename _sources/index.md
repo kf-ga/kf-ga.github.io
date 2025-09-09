@@ -10,7 +10,7 @@ Informatika
 ```
 
 ```{toctree}
-:caption: Kancelářský software
+:caption: Software
 :maxdepth: 1
 
 1_office/01_shortcuts.md
