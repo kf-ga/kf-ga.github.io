@@ -9,7 +9,6 @@ Informatika
 0_intro/00_intro.md
 ```
 
-
 ```{toctree}
 :caption: Kancelářský software
 :maxdepth: 1
@@ -36,6 +35,13 @@ Informatika
 2_python/10_graphs.md
 ```
 
+```{toctree}
+:caption: Webové technologie
+:maxdepth: 1
+
+a_web/01_html.md
+a_web/02_css.md
+```
 
 ```{toctree}
 :caption: Ostatní 
@@ -43,3 +49,4 @@ Informatika
 
 9_other/01_materials.md
 ```
+

@@ -1,0 +1,669 @@
+
+<!DOCTYPE html>
+
+
+<html lang="cs" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZX7DQPSHE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RZX7DQPSHE');
+    </script>
+    
+    <title>Datové struktury &#8212; Informatika</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/local.css?v=1256093c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=4cdba38b"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/translations.js?v=22e1c300"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '2_python/05_structures';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Rejstřík" href="../genindex.html" />
+    <link rel="search" title="Vyhledávání" href="../search.html" />
+    <link rel="next" title="Funkce" href="06_functions.html" />
+    <link rel="prev" title="Cykly v Pythonu" href="04_cycles.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="cs"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Přejít k hlavnímu obsahu</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Zpět na začátek</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/favicon.png" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../_static/favicon.png" class="logo__image only-dark" alt=""/>`);</script>
+  
+  
+    <p class="title logo__title">Informatika</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Vyhledávání" aria-label="Vyhledávání" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Vyhledávání</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Kancelářský software</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../1_office/01_shortcuts.html">Zkratky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_office/02_typography.html">Typografie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_office/03_spreadsheet.html">Funkce tabulkových procesorů</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_office/04_is.html">Informační systémy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_office/05_database.html">Databáze</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_algorithms.html">Algoritmizace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_variables.html">Proměnné</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_conditions.html">Podmínky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_cycles.html">Cykly v Pythonu</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Datové struktury</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_functions.html">Funkce</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_modules.html">Balíčky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_pip.html">PIP, Python Virtual Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_graphs.html">Grafy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Webové technologie</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../a_web/01_html.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../a_web/02_css.html">Základy CSS</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ostatní</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../9_other/01_materials.html">Materiály k výuce</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Stáhněte si tuto stránku">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/2_python/05_structures.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Stáhněte si zdrojový soubor"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Tisk do PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Režim celé obrazovky"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="světlý/tmavý" aria-label="světlý/tmavý" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Vyhledávání" aria-label="Vyhledávání" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Datové struktury</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Obsah </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zakladni-datove-typy">Základní datové typy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pole-list">Pole <code class="docutils literal notranslate"><span class="pre">list</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#n-tice-tuple">N-tice <code class="docutils literal notranslate"><span class="pre">tuple</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slovnik-dict">Slovník <code class="docutils literal notranslate"><span class="pre">dict</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ulohy-na-vnorene-cykly">🔂 Úlohy na <strong>vnořené cykly</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mnozina-set">Množina <code class="docutils literal notranslate"><span class="pre">set</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prace-s-poli-rezy">Práce s poli - řezy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prazdne-indexy">Prázdné indexy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zaporne-indexy">Záporné indexy</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-in">Operátor in</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#priklad-se-seznamem">Příklad se seznamem:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#priklad-s-retezcem">Příklad s řetězcem:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#priklad-se-slovnikem">Příklad se slovníkem:</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="datove-struktury">
+<h1>Datové struktury<a class="headerlink" href="#datove-struktury" title="Link to this heading">#</a></h1>
+<section id="zakladni-datove-typy">
+<h2>1.&nbsp;&nbsp;Základní datové typy<a class="headerlink" href="#zakladni-datove-typy" title="Link to this heading">#</a></h2>
+<p>V Pythonu existuje několik základních datových typů s robustní vestavěnou funkcionalitou, která je ale opět v duchu Pythonu hodně minimalistická, intuitivní a snadno čitelná.</p>
+<section id="pole-list">
+<h3>1.1.&nbsp;&nbsp;Pole <code class="docutils literal notranslate"><span class="pre">list</span></code><a class="headerlink" href="#pole-list" title="Link to this heading">#</a></h3>
+<p>Pole (<strong><code class="docutils literal notranslate"><span class="pre">list</span></code></strong>) v Pythonu je uspořádaná kolekce prvků, které mohou být různých typů. Prvky v poli jsou indexovány celočíselně od nuly, nicméně prvky v poli mohou být různého typu:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># 4</span>
+</pre></div>
+</div>
+<p>Objekt pole nabízí sadu základních funkcí a operátorů pro snadnou práci:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">append(item)</span></code>: Přidá prvek item na konec pole.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">insert(index,</span> <span class="pre">item)</span></code>: Přidá prvek item do pole na pozici index.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">remove(item)</span></code>: Odstraní první výskyt prvku p v poli.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pop(index)</span></code>: Odstraní prvek na pozici index (nebo poslední, pokud index není zadán). Prvek je vrácen jako návratová hodnota funkce.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">count(item)</span></code>: Vrací počet výskytů prvku item v poli</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">index(item)</span></code>: Vrací index prvního výskytu prvku item v poli.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sort(reverse=False,</span> <span class="pre">comp=None)</span></code>: Seřadí pole od nejmenšího prvku po největší. Volitelný parametr reverse obrátí řazení prvků a volitelný parametr comp umožňuje definovat vlastní funkci pro porovnání.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code>: Operátor sčítání vytvoří nové pole sloučením obou polí.</p></li>
+</ul>
+<p>Nad poli lze tak snadno vystavět datové struktury jako pole nebo zásobník. Úplný seznam funkcí a chování polí naleznete v <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range">dokumentaci</a>.</p>
+</section>
+<section id="n-tice-tuple">
+<h3>1.2.&nbsp;&nbsp;N-tice <code class="docutils literal notranslate"><span class="pre">tuple</span></code><a class="headerlink" href="#n-tice-tuple" title="Link to this heading">#</a></h3>
+<p>N-tice (<strong><code class="docutils literal notranslate"><span class="pre">tuple</span></code></strong>) je podobná poli, ale je neměnná, což znamená, že po jejím vytvoření nelze její prvky měnit. N-tice jsou také definovány pomocí kulatých závorek <code class="docutils literal notranslate"><span class="pre">()</span></code>, které ale není nutné v řadě případů explicitně zapisovat:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> 
+</pre></div>
+</div>
+<p>Vzhledem k tomu, že n-tice jsou neměnné, mají i omezenější sadu funkcí. Z výše uvedených funkcí pro pole, nabízí akorát funkce <code class="docutils literal notranslate"><span class="pre">count</span></code> a <code class="docutils literal notranslate"><span class="pre">index</span></code>, které mají stejný význam. Je možné také využít operátor <code class="docutils literal notranslate"><span class="pre">+</span></code>, neboť ten vytváří novou n-tici, která obsahuje prvky obou operandů.</p>
+<p>N-tice se v Pythonu také často využívají jako návratové hodnoty funkcí, pokud je potřeba vrátit více proměnných najednou:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">-</span><span class="n">b</span> 
+
+<span class="n">add</span><span class="p">,</span> <span class="n">sub</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Výše uvedená funkce vrátí n-tici obsahující dva prvky - součet a rozdíl argumentů. Povšimněte si také, že n-tici (návratovou hodnotu) je možné “rozbalit”.</p>
+</section>
+<section id="slovnik-dict">
+<h3>1.3.&nbsp;&nbsp;Slovník <code class="docutils literal notranslate"><span class="pre">dict</span></code><a class="headerlink" href="#slovnik-dict" title="Link to this heading">#</a></h3>
+<p>Slovník (<strong><code class="docutils literal notranslate"><span class="pre">dict</span></code></strong>) v Pythonu je kolekce prvků, kde každý prvek je pár <code class="docutils literal notranslate"><span class="pre">klíč:hodnota</span></code> a zapisuje se do složených závorek <code class="docutils literal notranslate"><span class="pre">{}</span></code>. Klíče musí být v rámci jednoho slovníku jedinečné a mohou být číslo nebo řetězec:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="mi">0</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Slovník také nabízí pestrou sadu vestavěných funkcí:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">get(key,</span> <span class="pre">default)</span></code>: Vrátí hodnotu klíče key, pokud je k dispozici, jinak vrátí default.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pop(key,</span> <span class="pre">default)</span></code>: Odstraní ze slovníku klíč key a vrátí jeho hodnotu. Pokud takový klíč neexistuje, vrátí hodnotu default.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">keys()</span></code>: Vrátí seznam všech klíčů ve slovníku</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">values()</span></code>: Vrátí seznam všech hodnot ve slovníku</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">items()</span></code>: Transformuje slovník do seznamu dvojic (klíč, hodnota). To může být někdy praktické při procházení slovníku:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">my_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="ulohy-na-vnorene-cykly">
+<h2>2.&nbsp;&nbsp;🔂 Úlohy na <strong>vnořené cykly</strong><a class="headerlink" href="#ulohy-na-vnorene-cykly" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">del</span></code>: Odstraní prvek ze slovníku:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="n">my_dict</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="k">del</span> <span class="n">my_dict</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">]</span>
+<span class="n">my_dict</span><span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
+</pre></div>
+</div>
+<section id="mnozina-set">
+<h3>2.1.&nbsp;&nbsp;Množina <code class="docutils literal notranslate"><span class="pre">set</span></code><a class="headerlink" href="#mnozina-set" title="Link to this heading">#</a></h3>
+<p>Množina (<strong><code class="docutils literal notranslate"><span class="pre">set</span></code></strong>) v Pythonu je kolekce jedinečných prvků, což znamená, že žádný prvek v setu se nemůže vyskytovat vícekrát. Tento datový typ je velmi užitečný pro množinové operace, jako je testování členství prvku v množině, sjednocení, průniky apod… Množina se v Pythonu definuje ve složených závorkách <code class="docutils literal notranslate"><span class="pre">{}</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_set</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Základní funkce, které nabízí Python <code class="docutils literal notranslate"><span class="pre">set</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">add(item)</span></code>: Přidá prvek <code class="docutils literal notranslate"><span class="pre">item</span></code> do setu, pokud již není přítomný.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">remove(item)</span></code>: Odebere prvek <code class="docutils literal notranslate"><span class="pre">item</span></code> ze setu s vyvolá výjimku KeyError, pokud prvek není v setu.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">discard(item)</span></code>: Odebere prvek <code class="docutils literal notranslate"><span class="pre">item</span></code> ze setu, pokud je přítomen a nevyvolává chybu, pokud prvek není v setu.</p></li>
+</ul>
+<p>Množinové operace:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">union(other_set)</span></code>: Vrací nový set obsahující všechny prvky z aktuálního setu a <code class="docutils literal notranslate"><span class="pre">other_set</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">intersection(other_set)</span></code>: Vrací nový set obsahující prvky, které jsou jak v aktuálním setu, tak v <code class="docutils literal notranslate"><span class="pre">other_set</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">difference(other_set)</span></code>: Vrací nový set obsahující prvky, které jsou v aktuálním setu, ale nejsou v <code class="docutils literal notranslate"><span class="pre">other_set</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">symmetric_difference(other_set)</span></code>: Vrací nový set obsahující prvky, které jsou buď v aktuálním setu, nebo v druhém setu, ale ne v obou současně.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">issubset(other_set)</span></code>: Vrací <code class="docutils literal notranslate"><span class="pre">True</span></code>, pokud jsou všechny prvky aktuálního setu obsaženy v druhém setu (test na podmnožinu).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">issuperset(other_set)</span></code>: Vrací <code class="docutils literal notranslate"><span class="pre">True</span></code>, pokud aktuální set obsahuje všechny prvky druhého setu (test na nadmnožinu).</p></li>
+</ul>
+<p>Každý prvek ve slovníku je unikátní a pokud přidáte již existující prvek, nebude se prvek do setu opakovaně vkládat:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># {1, 2, &#39;a&#39;}</span>
+<span class="n">a</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># {1, 2, &#39;a&#39;}</span>
+</pre></div>
+</div>
+<p>Úplný seznam funkcí slovníku a detailní popis funkcionality naleznete v <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#typesmapping">dokumentaci</a>.</p>
+</section>
+</section>
+<section id="prace-s-poli-rezy">
+<h2>3.&nbsp;&nbsp;Práce s poli - řezy<a class="headerlink" href="#prace-s-poli-rezy" title="Link to this heading">#</a></h2>
+<p><strong>Řezy</strong> (<strong>slices</strong>) je v Pythonu užitečná technika pro výběr podmnožin prvků z datových struktur, jako jsou seznamy, n-tice (tuples), a řetězce (strings). Řezy umožňují specifikovat indexy pro výběr rozsahu prvků.</p>
+<p>Kromě základní notace <code class="docutils literal notranslate"><span class="pre">[n]</span></code> pro výběr konkrétního prvku, nabízí Python i notaci <code class="docutils literal notranslate"><span class="pre">[m:n]</span></code> umožňující výběr prvků od indexu <code class="docutils literal notranslate"><span class="pre">m</span></code> (včetně) do indexu <code class="docutils literal notranslate"><span class="pre">n</span></code> (výlučně). To znamená, že prvek na pozici <code class="docutils literal notranslate"><span class="pre">m</span></code> bude zahrnut, zatímco prvek na pozici <code class="docutils literal notranslate"><span class="pre">n</span></code> už zahrnut nebude. Návratovou hodnotou je nový seznam (případně n-tice či řetězec), který obsahuje vybrané prvky.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># [20, 30]</span>
+</pre></div>
+</div>
+<p>Nebo s řetězci:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_str</span> <span class="o">=</span> <span class="s2">&quot;Hello World!&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mys</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span> <span class="c1"># Hell</span>
+</pre></div>
+</div>
+<section id="prazdne-indexy">
+<h3>3.1.&nbsp;&nbsp;Prázdné indexy<a class="headerlink" href="#prazdne-indexy" title="Link to this heading">#</a></h3>
+<p>Index <code class="docutils literal notranslate"><span class="pre">n</span></code>, nebo <code class="docutils literal notranslate"><span class="pre">m</span></code> může být ponechán i prázdný, což je chápáno, tak, že bere pozice úplně od začátku (<code class="docutils literal notranslate"><span class="pre">m</span></code>) resp. až na konec (<code class="docutils literal notranslate"><span class="pre">n</span></code>):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="mi">3</span><span class="p">:])</span> <span class="c1"># [40, 50]</span>
+</pre></div>
+</div>
+</section>
+<section id="zaporne-indexy">
+<h3>3.2.&nbsp;&nbsp;Záporné indexy<a class="headerlink" href="#zaporne-indexy" title="Link to this heading">#</a></h3>
+<p>Záporné indexy umožňují odkazovat na prvky od konce datové struktury. Například, index <code class="docutils literal notranslate"><span class="pre">-1</span></code> odkazuje na poslední prvek, <code class="docutils literal notranslate"><span class="pre">-2</span></code> na předposlední prvek.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># [30, 40]</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="operator-in">
+<h2>4.&nbsp;&nbsp;Operátor in<a class="headerlink" href="#operator-in" title="Link to this heading">#</a></h2>
+<p>Operátor <code class="docutils literal notranslate"><span class="pre">in</span></code> v Pythonu se používá k testování, zda se určitá hodnota nachází v sekvenci (například v proměnné typu <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, <code class="docutils literal notranslate"><span class="pre">string</span></code>) nebo klíč v slovníku. Pokud je hodnota přítomna, operátor <code class="docutils literal notranslate"><span class="pre">in</span></code> vrátí <code class="docutils literal notranslate"><span class="pre">True</span></code>, v opačném případě <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<section id="priklad-se-seznamem">
+<h3>4.1.&nbsp;&nbsp;Příklad se seznamem:<a class="headerlink" href="#priklad-se-seznamem" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="ow">in</span> <span class="n">my_list</span><span class="p">)</span> <span class="c1"># True</span>
+</pre></div>
+</div>
+</section>
+<section id="priklad-s-retezcem">
+<h3>4.2.&nbsp;&nbsp;Příklad s řetězcem:<a class="headerlink" href="#priklad-s-retezcem" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_str</span> <span class="o">=</span> <span class="s2">&quot;Hello, world!&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hell&quot;</span> <span class="ow">in</span> <span class="n">my_str</span><span class="p">)</span> <span class="c1"># True</span>
+</pre></div>
+</div>
+</section>
+<section id="priklad-se-slovnikem">
+<h3>4.3.&nbsp;&nbsp;Příklad se slovníkem:<a class="headerlink" href="#priklad-se-slovnikem" title="Link to this heading">#</a></h3>
+<p>Operátor <code class="docutils literal notranslate"><span class="pre">in</span></code> může být použit k ověření, zda se <strong>klíč</strong> (nikoliv hodnota) nachází ve slovníku:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a&quot;</span> <span class="ow">in</span> <span class="n">my_dict</span><span class="p">)</span> <span class="c1"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="ow">in</span> <span class="n">my_dict</span><span class="p">)</span> <span class="c1"># False</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="04_cycles.html"
+       title="předchozí stránka">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">předchozí</p>
+        <p class="prev-next-title">Cykly v Pythonu</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="06_functions.html"
+       title="další stránka">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">další</p>
+        <p class="prev-next-title">Funkce</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Obsah
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zakladni-datove-typy">Základní datové typy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pole-list">Pole <code class="docutils literal notranslate"><span class="pre">list</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#n-tice-tuple">N-tice <code class="docutils literal notranslate"><span class="pre">tuple</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slovnik-dict">Slovník <code class="docutils literal notranslate"><span class="pre">dict</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ulohy-na-vnorene-cykly">🔂 Úlohy na <strong>vnořené cykly</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mnozina-set">Množina <code class="docutils literal notranslate"><span class="pre">set</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prace-s-poli-rezy">Práce s poli - řezy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prazdne-indexy">Prázdné indexy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zaporne-indexy">Záporné indexy</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-in">Operátor in</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#priklad-se-seznamem">Příklad se seznamem:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#priklad-s-retezcem">Příklad s řetězcem:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#priklad-se-slovnikem">Příklad se slovníkem:</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Podle kf
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, kf..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

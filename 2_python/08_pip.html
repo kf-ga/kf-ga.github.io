@@ -17,7 +17,7 @@
         gtag('config', 'G-RZX7DQPSHE');
     </script>
     
-    <title>Informace o výuce &#8212; Informatika</title>
+    <title>PIP, Python Virtual Environment &#8212; Informatika</title>
   
   
   
@@ -53,12 +53,12 @@
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script src="../_static/translations.js?v=22e1c300"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '0_intro/00_intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '2_python/08_pip';</script>
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Rejstřík" href="../genindex.html" />
     <link rel="search" title="Vyhledávání" href="../search.html" />
-    <link rel="next" title="HTML" href="../a_web/01_html.html" />
-    <link rel="prev" title="Informatika" href="../index.html" />
+    <link rel="next" title="Grafy" href="10_graphs.html" />
+    <link rel="prev" title="Balíčky" href="07_modules.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="cs"/>
   </head>
@@ -170,14 +170,34 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Informatika</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Informace o výuce</a></li>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Kancelářský software</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../1_office/01_shortcuts.html">Zkratky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_office/02_typography.html">Typografie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_office/03_spreadsheet.html">Funkce tabulkových procesorů</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_office/04_is.html">Informační systémy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_office/05_database.html">Databáze</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Kancelářský software</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_algorithms.html">Algoritmizace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_variables.html">Proměnné</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_conditions.html">Podmínky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_cycles.html">Cykly v Pythonu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_structures.html">Datové struktury</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_functions.html">Funkce</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_modules.html">Balíčky</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">PIP, Python Virtual Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_graphs.html">Grafy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Webové technologie</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../a_web/01_html.html">HTML</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../a_web/02_css.html">Základy CSS</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ostatní</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../9_other/01_materials.html">Materiály k výuce</a></li>
 </ul>
 
     </div>
@@ -232,7 +252,7 @@
       
       
       
-      <li><a href="../_sources/0_intro/00_intro.md" target="_blank"
+      <li><a href="../_sources/2_python/08_pip.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Stáhněte si zdrojový soubor"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -303,7 +323,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -314,11 +336,24 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Informace o výuce</h1>
+    <h1>PIP, Python Virtual Environment</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Obsah </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pip-python-package-index">PIP (Python Package Index)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-virtual-environment">Python Virtual Environment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soubor-requirements-txt">Soubor requirements.txt</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#podpora-venv-ve-vscode">Podpora venv ve VSCode</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -328,22 +363,68 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="informace-o-vyuce">
-<h1>Informace o výuce<a class="headerlink" href="#informace-o-vyuce" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="pip-python-virtual-environment">
+<h1>PIP, Python Virtual Environment<a class="headerlink" href="#pip-python-virtual-environment" title="Link to this heading">#</a></h1>
+<section id="pip-python-package-index">
+<h2>1.&nbsp;&nbsp;PIP (Python Package Index)<a class="headerlink" href="#pip-python-package-index" title="Link to this heading">#</a></h2>
+<p>PIP je nástroj pro správu balíčků v Pythonu. Jeho hlavní funkcí je instalace a správa balíčků z Python Package Index (PyPI), kde naleznete nepřebernou sadu hotových balíčků pro použití ve vašich projektech.</p>
+<p>PIP se primárně ovládá přes příkazový řádek. Můžete instalovat, aktualizovat a odinstalovat balíčky.</p>
+<p>Typické příkazy:</p>
 <ul class="simple">
-<li><p><strong>Vyučující</strong>:</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">package_name</span></code>: Instaluje balíček <code class="docutils literal notranslate"><span class="pre">package_name</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code>: Instaluje všechny balíčky uvedené v <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">uninstall</span> <span class="pre">package_name</span></code>: Odinstaluje balíček <code class="docutils literal notranslate"><span class="pre">package_name</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">freeze</span></code>: Vypíše všechny nainstalované balíčky a jejich verze.</p></li>
 </ul>
-<p>Kamil Foltin</p>
-<p>email: kamil.foltin&#64;gyarab.cz</p>
+</section>
+<section id="python-virtual-environment">
+<h2>2.&nbsp;&nbsp;Python Virtual Environment<a class="headerlink" href="#python-virtual-environment" title="Link to this heading">#</a></h2>
+<p>Python Virtual Environment (<strong>venv</strong>) je izolované prostředí, které umožňuje instalovat balíčky Pythonu pro konkrétní projekt odděleně od ostatních projektů. Základní postup pro práci s venv ve vašem projektu:</p>
+<ol class="arabic">
+<li><p><strong>Vytvoření virtuálního prostředí:</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+</pre></div>
+</div>
+<p>Tento příkaz vytvoří nový adresář <code class="docutils literal notranslate"><span class="pre">.venv</span></code>, který obsahuje izolované prostředí Pythonu. V tomto adresáři budou také umístěny balíčky instalované pomocí nástroje <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">.venv</span></code> adresář v <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>:</strong></p>
+<p>Je důležité přidat adresář <code class="docutils literal notranslate"><span class="pre">.venv/</span></code> do <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>, aby se tento adresář neukládal do systému Git.</p>
+</li>
+<li><p><strong>Aktivace venv:</strong></p>
+<p>Po vytvoření prostředí je potřeba ho ještě aktivovat. To je obecně potřeba udělat v každém novém okně konzole, nebo po novém přihlášení k počítači.</p>
 <ul class="simple">
-<li><p><strong>Konzultační hodiny</strong>:</p></li>
+<li><p><strong>Pro Linux:</strong></p></li>
 </ul>
-<p>Ideálně v úterý a ve středu případně po domluvě</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+</pre></div>
+</div>
 <ul class="simple">
-<li><p><strong>Web soutěže CyberCup</strong>:</p></li>
+<li><p><strong>Pro Windows:</strong></p></li>
 </ul>
-<p><a class="reference external" href="https://sites.google.com/gyarab.cz/cybercup/domovsk%C3%A1-str%C3%A1nka">https://sites.google.com/gyarab.cz/cybercup/domovsk%C3%A1-str%C3%A1nka</a></p>
-<p>Další info brzy…</p>
+<p>Pokud používáte PowerShell na Windows, příkaz bude:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>.venv<span class="se">\S</span>cripts<span class="se">\A</span>ctivate.ps1
+</pre></div>
+</div>
+<p>Pro Git Bash:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>.venv/Scripts/activate
+</pre></div>
+</div>
+</li>
+</ol>
+<section id="soubor-requirements-txt">
+<h3>2.1.&nbsp;&nbsp;Soubor requirements.txt<a class="headerlink" href="#soubor-requirements-txt" title="Link to this heading">#</a></h3>
+<p>Soubor <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> je textový soubor, ve kterém jsou po řádcích uvedeny všechny balíčky Pythonu a jejich verze, které jsou potřeba pro váš projekt. Na rozdíl od adresáře <code class="docutils literal notranslate"><span class="pre">.venv</span></code> by naopak soubor <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> měl být součástí repozitáře Vašeho projektu aby kdokoliv bude repozitář chtít použít mohl na základě souboru <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> snadno nainstalovat všechny závislosti projektu.</p>
+<p>Pro instalaci balíčků uvedených v <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> použijeme příkaz:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+<p>Tento příkaz projde soubor <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> a nainstaluje všechny balíčky uvedené v tomto souboru do aktivovaného virtuálního prostředí.</p>
+</section>
+<section id="podpora-venv-ve-vscode">
+<h3>2.2.&nbsp;&nbsp;Podpora venv ve VSCode<a class="headerlink" href="#podpora-venv-ve-vscode" title="Link to this heading">#</a></h3>
+<p>IDE VSCode má vestavěnou podporu pro virtuální prostředí. Detaily o jeho fungování naleznete v <a class="reference external" href="https://code.visualstudio.com/docs/python/environments">dokumentaci VSCode</a>.</p>
+</section>
+</section>
 </section>
 
 
@@ -358,20 +439,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../index.html"
+       href="07_modules.html"
        title="předchozí stránka">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">předchozí</p>
-        <p class="prev-next-title">Informatika</p>
+        <p class="prev-next-title">Balíčky</p>
       </div>
     </a>
     <a class="right-next"
-       href="../a_web/01_html.html"
+       href="10_graphs.html"
        title="další stránka">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">další</p>
-        <p class="prev-next-title">HTML</p>
+        <p class="prev-next-title">Grafy</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -381,6 +462,26 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Obsah
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pip-python-package-index">PIP (Python Package Index)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-virtual-environment">Python Virtual Environment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soubor-requirements-txt">Soubor requirements.txt</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#podpora-venv-ve-vscode">Podpora venv ve VSCode</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

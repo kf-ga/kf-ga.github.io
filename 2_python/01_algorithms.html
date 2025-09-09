@@ -1,0 +1,618 @@
+
+<!DOCTYPE html>
+
+
+<html lang="cs" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZX7DQPSHE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RZX7DQPSHE');
+    </script>
+    
+    <title>Algoritmizace &#8212; Informatika</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/local.css?v=1256093c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=4cdba38b"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/translations.js?v=22e1c300"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '2_python/01_algorithms';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Rejstřík" href="../genindex.html" />
+    <link rel="search" title="Vyhledávání" href="../search.html" />
+    <link rel="next" title="Proměnné" href="02_variables.html" />
+    <link rel="prev" title="Databáze" href="../1_office/05_database.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="cs"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Přejít k hlavnímu obsahu</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Zpět na začátek</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/favicon.png" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../_static/favicon.png" class="logo__image only-dark" alt=""/>`);</script>
+  
+  
+    <p class="title logo__title">Informatika</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Vyhledávání" aria-label="Vyhledávání" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Vyhledávání</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Kancelářský software</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../1_office/01_shortcuts.html">Zkratky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_office/02_typography.html">Typografie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_office/03_spreadsheet.html">Funkce tabulkových procesorů</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_office/04_is.html">Informační systémy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_office/05_database.html">Databáze</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Algoritmizace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_variables.html">Proměnné</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_conditions.html">Podmínky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_cycles.html">Cykly v Pythonu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_structures.html">Datové struktury</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_functions.html">Funkce</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_modules.html">Balíčky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_pip.html">PIP, Python Virtual Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_graphs.html">Grafy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Webové technologie</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../a_web/01_html.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../a_web/02_css.html">Základy CSS</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ostatní</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../9_other/01_materials.html">Materiály k výuce</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Stáhněte si tuto stránku">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/2_python/01_algorithms.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Stáhněte si zdrojový soubor"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Tisk do PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Režim celé obrazovky"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="světlý/tmavý" aria-label="světlý/tmavý" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Vyhledávání" aria-label="Vyhledávání" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Algoritmizace</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Obsah </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zakladni-vlastnosti-algoritmu">Základní vlastnosti algoritmů</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#potreba-programovaciho-jazyka">Potřeba programovacího jazyka</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nejcasteji-pouzivane-programovaci-jazyky">Nejčastěji používané programovací jazyky</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#javascript">JavaScript</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#java">Java</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c">C++</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">C#</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#php">PHP</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#go">Go</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kotlin">Kotlin</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programovaci-jazyk-python">Programovací jazyk Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strucny-popis-jazyka">Stručný popis jazyka</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standardni-vystup-print">Standardní výstup: <code class="docutils literal notranslate"><span class="pre">print()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hello-world-program">Hello World program</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prace-s-chybami">Práce s chybami</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jak-pracovat-s-chybami">Jak pracovat s chybami</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="algoritmizace">
+<h1>Algoritmizace<a class="headerlink" href="#algoritmizace" title="Link to this heading">#</a></h1>
+<p>Algoritmizace je proces navrhování a popisování kroků, které je třeba vykonat k dosažení konkrétního cíle nebo vyřešení problému. Tento proces můžeme přirovnat k receptu na vaření: pokud máte dobře napsaný recept, víte přesně, jaké kroky a v jakém pořadí máte vykonat, abyste dosáhli požadovaného výsledku. Stejně tak algoritmus popisuje konkrétní posloupnost kroků, které je třeba provést, aby program správně fungoval.</p>
+<section id="zakladni-vlastnosti-algoritmu">
+<h2>1.&nbsp;&nbsp;Základní vlastnosti algoritmů<a class="headerlink" href="#zakladni-vlastnosti-algoritmu" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Opakovatelnost:</strong> Algoritmus je sekvence kroků, které lze opakovat a aplikovat na různé vstupy.</p></li>
+<li><p><strong>Determinismus:</strong> Každý krok algoritmu musí být jednoznačně definován, což znamená, že pro stejný vstup bude algoritmus vždy vykonávat stejné kroky a dávat stejný výstup.</p></li>
+<li><p><strong>Konečnost:</strong> Algoritmus by měl mít konečný počet kroků a musí skončit po provedení všech operací.</p></li>
+</ul>
+<p>Příkladem mohou být například algoritmy na sčítání, násobení a dělení “na papíře”. Tyto algoritmy mají jasný opakovatelný postup, pro stejná vstupní čísla dávají vždy stejný výsledek (determinismus) v konečném počtu kroků.</p>
+</section>
+<section id="potreba-programovaciho-jazyka">
+<h2>2.&nbsp;&nbsp;Potřeba programovacího jazyka<a class="headerlink" href="#potreba-programovaciho-jazyka" title="Link to this heading">#</a></h2>
+<p>Pro popis algoritmu lze použít sice přirozený jazyk (čeština, angličtina), nicméně tyto jazyky jsou často nejednoznačné, popis některých kroků může být velmi zdlouhavý a často také pracují s implicitním kontextem, u kterého se předpokládá, že ho čtenář zná, nicméně každý může pracovat s trochu jinou verzí toho kontextu.</p>
+<p>Proto abychom mohli algoritmus zapsat a nechat počítač, aby jej vykonal, potřebujeme <strong>programovací jazyk</strong>. Tyto jazyky jsou navrženy tak, aby jejich zápis měl vždy jednoznačnou interpretaci. Programovací jazyk musí být srozumitelný jak pro člověka, který píše kód, tak pro počítač, který jej vykoná a slouží tak jako “komunikační můstek” mezi člověkem a počítačem.</p>
+</section>
+<section id="nejcasteji-pouzivane-programovaci-jazyky">
+<h2>3.&nbsp;&nbsp;Nejčastěji používané programovací jazyky<a class="headerlink" href="#nejcasteji-pouzivane-programovaci-jazyky" title="Link to this heading">#</a></h2>
+<section id="javascript">
+<h3>3.1.&nbsp;&nbsp;JavaScript<a class="headerlink" href="#javascript" title="Link to this heading">#</a></h3>
+<p>JavaScript je jazyk používaný především pro vývoj webových aplikací. Umožňuje vytvářet interaktivní prvky na webových stránkách, jako jsou animace, formuláře nebo dynamický obsah. Setkáme se s ním v prohlížečích a při vývoji front-endu i back-endu (např. pomocí Node.js).</p>
+</section>
+<section id="java">
+<h3>3.2.&nbsp;&nbsp;Java<a class="headerlink" href="#java" title="Link to this heading">#</a></h3>
+<p>Java je univerzální programovací jazyk, který se často používá pro vývoj podnikových aplikací, mobilních aplikací (zejména pro Android) a serverových aplikací. Díky své přenositelnosti je oblíbený v různých prostředích.</p>
+</section>
+<section id="c">
+<h3>3.3.&nbsp;&nbsp;C++<a class="headerlink" href="#c" title="Link to this heading">#</a></h3>
+<p>C++ je výkonný jazyk používaný pro vývoj softwaru, který vyžaduje vysoký výkon, jako jsou hry, operační systémy nebo vestavěné systémy. Je známý svou rychlostí a kontrolou nad hardwarovými prostředky.</p>
+</section>
+<section id="id1">
+<h3>3.4.&nbsp;&nbsp;C#<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>C# je jazyk vyvinutý společností Microsoft, který se používá pro vývoj aplikací na platformě .NET. Často se s ním setkáme při vývoji desktopových aplikací, her (pomocí Unity) a webových aplikací.</p>
+</section>
+<section id="php">
+<h3>3.5.&nbsp;&nbsp;PHP<a class="headerlink" href="#php" title="Link to this heading">#</a></h3>
+<p>PHP je skriptovací jazyk používaný především pro vývoj webových stránek a aplikací na straně serveru. Je populární díky své jednoduchosti a širokému využití v systémech pro správu obsahu, jako je WordPress.</p>
+</section>
+<section id="go">
+<h3>3.6.&nbsp;&nbsp;Go<a class="headerlink" href="#go" title="Link to this heading">#</a></h3>
+<p>Go (nebo Golang) je jazyk vyvinutý společností Google, který je známý svou jednoduchostí, rychlostí a podporou paralelního zpracování. Používá se pro vývoj serverových aplikací a cloudových služeb.</p>
+</section>
+<section id="kotlin">
+<h3>3.7.&nbsp;&nbsp;Kotlin<a class="headerlink" href="#kotlin" title="Link to this heading">#</a></h3>
+<p>Kotlin je moderní jazyk, který je plně kompatibilní s Javou. Používá se především pro vývoj aplikací pro Android a získává stále větší popularitu díky své jednoduchosti a expresivní syntaxi.</p>
+<div class="note admonition">
+<p class="admonition-title">Co to je syntaxe?</p>
+<p><strong>Syntaxe</strong> je pravidlo nebo sada pravidel, která určují, jak správně sestavit věty, slova nebo příkazy v daném jazyce. V kontextu programování syntaxe definuje, jaké kombinace symbolů a klíčových slov jsou povoleny a jaký mají význam. Podobně jako v přirozených jazycích, i v programovacích jazycích je syntaxe klíčová pro správné porozumění a interpretaci. I přirozené jazyky mohou mít velmi odlišnou syntaxi, například arabština nebo japonština.</p>
+</div>
+</section>
+</section>
+<section id="programovaci-jazyk-python">
+<h2>4.&nbsp;&nbsp;Programovací jazyk Python<a class="headerlink" href="#programovaci-jazyk-python" title="Link to this heading">#</a></h2>
+<p>Jedním z nejlepších jazyků pro začátečníky je <strong>Python</strong>. Je známý svou jednoduchostí, čitelností a širokým využitím. Python se používá pro webové aplikace, datovou analýzu, strojové učení a mnoho dalších oblastí. Python je také dynamicky typovaný jazyk, což znamená, že nemusíme předem specifikovat typy proměnných.</p>
+<section id="strucny-popis-jazyka">
+<h3>4.1.&nbsp;&nbsp;Stručný popis jazyka<a class="headerlink" href="#strucny-popis-jazyka" title="Link to this heading">#</a></h3>
+<p>Python je <strong>vysoký jazyk</strong>, což znamená, že se zaměřuje na jednoduchost a srozumitelnost, místo toho, aby se zabýval detaily, jak počítač provádí operace. Díky jeho jednoduché syntaxi a velkému množství knihoven je Python vhodný pro začátečníky, kteří chtějí začít s programováním.</p>
+</section>
+<section id="standardni-vystup-print">
+<h3>4.2.&nbsp;&nbsp;Standardní výstup: <code class="docutils literal notranslate"><span class="pre">print()</span></code><a class="headerlink" href="#standardni-vystup-print" title="Link to this heading">#</a></h3>
+<p>V Pythonu používáme funkci <code class="docutils literal notranslate"><span class="pre">print()</span></code>, abychom poslali nějaký text nebo hodnotu na obrazovku, tedy <strong>výstup</strong> programu. Je to základní nástroj pro komunikaci s uživatelem.</p>
+<p>Příklad použití:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ahoj světe!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Tento program vypíše na obrazovku text:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Ahoj světe!
+</pre></div>
+</div>
+</section>
+<section id="hello-world-program">
+<h3>4.3.&nbsp;&nbsp;Hello World program<a class="headerlink" href="#hello-world-program" title="Link to this heading">#</a></h3>
+<p>Nejjednodušší způsob, jak začít s programováním v jakémkoli jazyce, je napsat program, který vypíše text “Hello, World!” na obrazovku. V Pythonu to vypadá takto:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="prace-s-chybami">
+<h2>5.&nbsp;&nbsp;Práce s chybami<a class="headerlink" href="#prace-s-chybami" title="Link to this heading">#</a></h2>
+<p>Při programování je důležité naučit se číst a rozumět chybovým hláškám. Tyto hlášky nám poskytují informace o tom, kde a jaká chyba nastala, což nám pomáhá rychleji problém vyřešit.</p>
+<p>Pokud zapomeneme použít závorky u funkce <code class="docutils literal notranslate"><span class="pre">print</span></code>, Python nám zobrazí chybu:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="s2">&quot;Hello, World!&quot;</span>
+</pre></div>
+</div>
+<p>Chybová hláška:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>File &quot;hello.py&quot;, line 1
+    print &quot;Hello, World!&quot;
+          ^
+SyntaxError: Missing parentheses in call to &#39;print&#39;. Did you mean print(&quot;Hello, World!&quot;)?
+</pre></div>
+</div>
+<p>Pokud uděláme překlep v názvu funkce, Python nám oznámí, že taková funkce neexistuje:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pritn</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Chybová hláška:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">File</span> <span class="s2">&quot;hello.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="n">pritn</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">)</span>
+<span class="ne">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s1">&#39;pritn&#39;</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
+</pre></div>
+</div>
+<section id="jak-pracovat-s-chybami">
+<h3>5.1.&nbsp;&nbsp;Jak pracovat s chybami<a class="headerlink" href="#jak-pracovat-s-chybami" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Pečlivě čtěte chybové hlášky</strong> – většinou obsahují informace o tom, kde a proč chyba nastala.</p></li>
+<li><p><strong>Zkontrolujte kód na uvedeném řádku</strong> – chyba se často nachází na řádku uvedeném v chybové hlášce nebo těsně před ním.</p></li>
+<li><p><strong>Používejte online zdroje</strong> – pokud si s chybou nevíte rady, zkuste hledat řešení na internetu podle textu chybové hlášky.</p></li>
+</ol>
+<p>Práce s chybami je důležitou součástí programování a zejména v začátcích se budete s nejrůznějšími chybovými hláškami setkávat velmi často. Je proto důležité se naučit s chybovými hláškami pracovat a postupem času se tak zlepšíte v rychlém odhalování a opravování chyb.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../1_office/05_database.html"
+       title="předchozí stránka">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">předchozí</p>
+        <p class="prev-next-title">Databáze</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="02_variables.html"
+       title="další stránka">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">další</p>
+        <p class="prev-next-title">Proměnné</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Obsah
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zakladni-vlastnosti-algoritmu">Základní vlastnosti algoritmů</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#potreba-programovaciho-jazyka">Potřeba programovacího jazyka</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nejcasteji-pouzivane-programovaci-jazyky">Nejčastěji používané programovací jazyky</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#javascript">JavaScript</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#java">Java</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c">C++</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">C#</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#php">PHP</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#go">Go</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kotlin">Kotlin</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programovaci-jazyk-python">Programovací jazyk Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strucny-popis-jazyka">Stručný popis jazyka</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standardni-vystup-print">Standardní výstup: <code class="docutils literal notranslate"><span class="pre">print()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hello-world-program">Hello World program</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prace-s-chybami">Práce s chybami</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jak-pracovat-s-chybami">Jak pracovat s chybami</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Podle kf
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, kf..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

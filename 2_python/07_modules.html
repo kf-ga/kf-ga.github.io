@@ -17,7 +17,7 @@
         gtag('config', 'G-RZX7DQPSHE');
     </script>
     
-    <title>Informace o výuce &#8212; Informatika</title>
+    <title>Balíčky &#8212; Informatika</title>
   
   
   
@@ -53,12 +53,12 @@
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script src="../_static/translations.js?v=22e1c300"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '0_intro/00_intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '2_python/07_modules';</script>
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Rejstřík" href="../genindex.html" />
     <link rel="search" title="Vyhledávání" href="../search.html" />
-    <link rel="next" title="HTML" href="../a_web/01_html.html" />
-    <link rel="prev" title="Informatika" href="../index.html" />
+    <link rel="next" title="PIP, Python Virtual Environment" href="08_pip.html" />
+    <link rel="prev" title="Funkce" href="06_functions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="cs"/>
   </head>
@@ -170,14 +170,34 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Informatika</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Informace o výuce</a></li>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Kancelářský software</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../1_office/01_shortcuts.html">Zkratky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_office/02_typography.html">Typografie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_office/03_spreadsheet.html">Funkce tabulkových procesorů</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_office/04_is.html">Informační systémy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_office/05_database.html">Databáze</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Kancelářský software</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_algorithms.html">Algoritmizace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_variables.html">Proměnné</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_conditions.html">Podmínky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_cycles.html">Cykly v Pythonu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_structures.html">Datové struktury</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_functions.html">Funkce</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Balíčky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_pip.html">PIP, Python Virtual Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_graphs.html">Grafy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Webové technologie</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../a_web/01_html.html">HTML</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../a_web/02_css.html">Základy CSS</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ostatní</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../9_other/01_materials.html">Materiály k výuce</a></li>
 </ul>
 
     </div>
@@ -232,7 +252,7 @@
       
       
       
-      <li><a href="../_sources/0_intro/00_intro.md" target="_blank"
+      <li><a href="../_sources/2_python/07_modules.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Stáhněte si zdrojový soubor"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -303,7 +323,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -314,11 +336,24 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Informace o výuce</h1>
+    <h1>Balíčky</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Obsah </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fungovani-balicku-jako-adresaru">Fungování balíčků jako adresářů</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#struktura-importu">Struktura importů</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#priklady-pouziti-v-kodu">Příklady použití v kódu</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spousteni-skriptu-z-konzole">Spouštění skriptu z konzole</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -328,22 +363,58 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="informace-o-vyuce">
-<h1>Informace o výuce<a class="headerlink" href="#informace-o-vyuce" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="balicky">
+<h1>Balíčky<a class="headerlink" href="#balicky" title="Link to this heading">#</a></h1>
+<p>Každý Python soubor se nazývá modul (<strong>module</strong>). Balíčky (<strong>package</strong>) umožňují organizovat moduly do adresářů pro snadnější správu a opětovné použití kódu. Balíčky pomáhají rozdělit projekt do logických částí a poskytují mechanismus pro zapouzdření různých funkcí, tříd a proměnných.</p>
+<section id="fungovani-balicku-jako-adresaru">
+<h2>1.&nbsp;&nbsp;Fungování balíčků jako adresářů<a class="headerlink" href="#fungovani-balicku-jako-adresaru" title="Link to this heading">#</a></h2>
+<p>Balíček v Pythonu je v podstatě adresář obsahující jeden nebo více modulů (souborů <code class="docutils literal notranslate"><span class="pre">.py</span></code>) a soubor <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>. Tento soubor <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> může být prázdný, ale jeho přítomnost označuje, že daný adresář by měl být považován za Python balíček.</p>
+<div class="note admonition">
+<p class="admonition-title">Poznámka</p>
+<p>Ve verzích Pythonu 3.3 a vyšších není soubor <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> nutný pro rozpoznání adresářů jako balíčků, ale stále se používá pro výše uvedené účely.</p>
+</div>
+<section id="struktura-importu">
+<h3>1.1.&nbsp;&nbsp;Struktura importů<a class="headerlink" href="#struktura-importu" title="Link to this heading">#</a></h3>
+<p>Rozdělení na balíček a modul slouží ke strukturování projektu v adresářové struktuře. Při importování se oba chovají prakticky stejně a není praktický rozdíl, jestli importujete modul nebo balíček.</p>
+<p>Python poskytuje několik způsobů, jak importovat kód:</p>
 <ul class="simple">
-<li><p><strong>Vyučující</strong>:</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">modul</span></code></strong>: Importuje celý modul. Po importu se odkazuje na proměnné, funkce a třídy (<strong>symboly</strong>) plnou cestou, včetně názvu modulu, například <code class="docutils literal notranslate"><span class="pre">modul.my_function()</span></code>.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">modul</span> <span class="pre">as</span> <span class="pre">m</span></code></strong>: Importuje modul pod alternativním jménem (aliasem), což je užitečné pro zkrácení názvu nebo při řešení konfliktů jmen dvou modulů. K symbolům modulu se pak přistupuje přes alias, například <code class="docutils literal notranslate"><span class="pre">m.my_function()</span></code>.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">modul</span> <span class="pre">import</span> <span class="pre">my_function</span></code></strong>: Importuje specifický symbol z modulu, umožňuje používat importovaný symbol přímo bez prefixu modulu, například <code class="docutils literal notranslate"><span class="pre">my_function()</span></code>.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">modul</span> <span class="pre">import</span> <span class="pre">*</span></code></strong>: Importuje všechny symboly. Tato praxe není doporučena pro většinu případů, protože snižuje čitelnost kódu a může vést k nechtěným konfliktům jmen.</p></li>
 </ul>
-<p>Kamil Foltin</p>
-<p>email: kamil.foltin&#64;gyarab.cz</p>
-<ul class="simple">
-<li><p><strong>Konzultační hodiny</strong>:</p></li>
-</ul>
-<p>Ideálně v úterý a ve středu případně po domluvě</p>
-<ul class="simple">
-<li><p><strong>Web soutěže CyberCup</strong>:</p></li>
-</ul>
-<p><a class="reference external" href="https://sites.google.com/gyarab.cz/cybercup/domovsk%C3%A1-str%C3%A1nka">https://sites.google.com/gyarab.cz/cybercup/domovsk%C3%A1-str%C3%A1nka</a></p>
-<p>Další info brzy…</p>
+</section>
+<section id="priklady-pouziti-v-kodu">
+<h3>1.2.&nbsp;&nbsp;Příklady použití v kódu<a class="headerlink" href="#priklady-pouziti-v-kodu" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>  <span class="c1"># Použití funkce sqrt z modulu math</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">sqrt</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>  <span class="c1"># Přímé použití funkce sqrt bez prefixu</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">m</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>  <span class="c1"># Použití funkce sqrt s aliasem modulu</span>
+</pre></div>
+</div>
+</section>
+<section id="spousteni-skriptu-z-konzole">
+<h3>1.3.&nbsp;&nbsp;Spouštění skriptu z konzole<a class="headerlink" href="#spousteni-skriptu-z-konzole" title="Link to this heading">#</a></h3>
+<p>Některé moduly dovolují nejen používání v importu, ale mohou být spouštěny přímo z konzole. Pro rozlišení, zda je balíček (.py soubor) importován nebo přímo spouštěn použijte test:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Launching from console&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Pokud je skript spuštěn přímo z konzole, například příkazem:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>test.py
+</pre></div>
+</div>
+<p>nebo</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>test.py
+</pre></div>
+</div>
+<p>Bude proměnná <code class="docutils literal notranslate"><span class="pre">__main__</span></code> mít hodnotu <code class="docutils literal notranslate"><span class="pre">__main__</span></code>. Pokud bude stejný modul importován z jiného modulu pomocí <code class="docutils literal notranslate"><span class="pre">import</span></code>, bude mít proměnná <code class="docutils literal notranslate"><span class="pre">__name__</span></code> jako hodnotu název importovaného modulu.</p>
+</section>
+</section>
 </section>
 
 
@@ -358,20 +429,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../index.html"
+       href="06_functions.html"
        title="předchozí stránka">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">předchozí</p>
-        <p class="prev-next-title">Informatika</p>
+        <p class="prev-next-title">Funkce</p>
       </div>
     </a>
     <a class="right-next"
-       href="../a_web/01_html.html"
+       href="08_pip.html"
        title="další stránka">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">další</p>
-        <p class="prev-next-title">HTML</p>
+        <p class="prev-next-title">PIP, Python Virtual Environment</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -381,6 +452,26 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Obsah
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fungovani-balicku-jako-adresaru">Fungování balíčků jako adresářů</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#struktura-importu">Struktura importů</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#priklady-pouziti-v-kodu">Příklady použití v kódu</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spousteni-skriptu-z-konzole">Spouštění skriptu z konzole</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
