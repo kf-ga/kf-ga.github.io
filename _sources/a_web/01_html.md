@@ -36,14 +36,6 @@ Dále je možné k HTML tagům připojit **HTML atributy**:
 
 Atributy slouží k detailnější specifikaci vlastností elementu nebo k jejich identifikaci, ale nejsou přímo zobrazované.
 
-```{admonition} HTML element a HTML tag
-:class: note
-
-Označení *HTML tag* nebo jen *tag* (česky značka) se používá pro označení značky v HTML, například `<h1>`, `<div>` atd., nebo také *ukončovací tag*, například `</h1>`, `</div>`.
-
-Naproti tomu, *HTML element* zahrnuje nejen samotnou značku, ale také všechno uvnitř této značky, včetně obsahu, vnořených elementů a dalších atributů. Takže zatímco "tag" je pouze samotná značka, *element* zahrnuje celou strukturu, kterou HTML tag definuje. 
-```
-
 Značky je možné do sebe (až na výjimky) vnořovat, je však důležité zachovat správné párování otevíracích a uzavíracích značek. Pro přehlednost kódu je pak dobré používat odsazování:
 
 ```{myst-example}
@@ -277,29 +269,6 @@ Kromě atributů specifických pro konkrétní značky existuje další sada atr
 <div style="color: red;"> Červený text </div>
 ```
 
-
-Zobrazení `inline` a `block`
-----------------------------
-
-HTML si automaticky řídí tok textu a zalamování textu a ve většině případů nezachovává nové řádky tak, jak jsou ve zdrojovém kódu.
-
-Příklad:
-
-```{myst-example}
-:highlight: html
-<p>
-První řádek
-Druhý řádek
-</p>
-```
-
-V HTML se pracuje s konceptem tzv. `inline` a `block` elementů. 
-
-**`inline` elementy** zaberou pouze tolik místa, kolik je potřeba k zobrazení jejich obsahu. Nezačínají na novém řádku a nezaberou celou šířku. Používají se především pro **formátování v rámci odstavce textu**. Příklady inline elementů: `<span>`, `<a>`, `<strong>`, `<em>`, `<b>`, `<i>` atd.
-
-
-Naproti tomu **`block` elementy** zaberou celou šířku dostupného prostoru na stránce a zobrazují na novém řádku. Jsou určeny pro **strukturování obsahu**. Příklady block elementů: `<div>`, `<p>`, `<h1>` až `<h6>`, `<ul>`, `<ol>`, `<li>`,  `<section>`, `<header>`, `<footer>` atd.
-
 ### Zalomení řádku `<br>`
 
  Pro explicitní vložení nového řádku vložte tag `<br>` (break): 
@@ -322,42 +291,6 @@ Druhý řádek
 
 Povšimněte si, že tag `<br>` je jedním z tagů, které není potřeba ukončovat, nicméně často se v kódu setkáte i se **self-closing** variantou tohoto tagu `<br/>`, která zachovává kompatibilitu s jazykem XML.
 ```
-
-Tagy pro obecné formátování
----------------------------
-
-Kromě tagů, které se používají pro formátování textu a mají zpravidla typickou formátovací funkci, existují i tagy, které se používají pro obecné formátování a strukturování větších celků stránky.
-
-
-### Tagy `<div>`, `<span>`
-
-Tagy `<div>` a `<span>` slouží k logickému seskupování obsahu. 
-
-- **`<div>`** je blokový (`block`) element, který vytváří oddělení svého obsahu od okolního obsahu. Často se používá pro rozvržení stránky do logických sekcí, například menu, článek, záhlaví stránky apod.
-- **`<span>`** je řádkový (`inline`) element, který v základu nijak neodděluje svůj obsah. Používá se pro zvýraznění nebo označení částí textu. 
-
-### Komentáře
-
-Jako komentář se v HTML považuje text uzavřený mezi `<!--` a `-->`:
-
-```html
-<!-- Komentář  -->
-```
-
-### Sémantické tagy
-
-Sémantické tagy popisují význam části dokumentu, nikoli jeho vzhled. Usnadňují orientaci v kódu a jeho správnou interpretaci prohlížeči i vyhledávači. 
-
-Příklady sémantických tagů:
-
-- `<header>` - záhlaví stránky nebo sekce
-- `<nav>` - navigace/menu
-- `<main>` - hlavní obsah stránky
-- `<article>` - samostatný článek
-- `<aside>` - postranní sloupec (doplňující obsah)  
-- `<footer>` - zápatí stránky
-- `<section>` - tematická sekce stránky
-
 
 HTML Entity
 -----------
@@ -403,60 +336,6 @@ Nepoužití entit v tomto příkladu by mělo za následek nevalidní HTML kód.
 :highlight: html
 Hodně&nbsp;moc&nbsp;dlouhý&nbsp;řádek.&nbsp;Hodně&nbsp;moc&nbsp;dlouhý&nbsp;řádek.&nbsp;Hodně&nbsp;moc&nbsp;dlouhý&nbsp;řádek.&nbsp;Hodně&nbsp;moc&nbsp;dlouhý&nbsp;řádek.&nbsp;Hodně&nbsp;moc&nbsp;dlouhý&nbsp;řádek.
 ```
-
-Meta informace
---------------
-
-Do sekce <head> lze vložit meta informace o stránce, které se nezobrazují přímo v obsahu stránky, ale lze pomocí nich specifikovat dodatečné informace o stránce. Zde jsou uvedeny některé nejčastější meta parametry.
-
-### Kódování stránky
-
-Ačkoliv je dnes běžným standardem kódování unicode (utf-8) a obvykle je to výchozí nastavení všech prohlížečů, je dobré kódování stránky explicitně specifikovat:
-
-```html
-<meta charset="utf-8">
-```
-
-### Favicon
-
-Favicon (zkratka z favorite icon) je ikonka stránky, která se zobrazuje v záložce stránky, v oblíbených apod.
-
-```html
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-```
-
-Podporované jsou různé formáty ikonky, nejčastěji `.ico`, `.png` a `.svg`.
-
-### Název, popis a klíčová slova
-
-Trojice meta informací title, description, keywords specifikuje název stránky, stručný popis obsahu stránky a klíčová slova stránky. Jejich význam sloužil hlavně k tomu, aby vyhledávače stránku lépe zaindexovaly, nicméně dnes už vyhledávače obsah techto informací spíše ignorují (přesné algoritmy řazení ve vyhledávačích jsou přísným tajemstvím), nicméně se tyto meta informace stále často na stránkách objevují.
-
-```html
-<meta name="title" content="W3Schools.com">
-<meta name="description" content="Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, Python, PHP, Bootstrap, Java, XML and more.">
-<meta name="keywords" content="HTML, Python, CSS, SQL, JavaScript, How to, PHP, Java, C, C++, C#, jQuery, Bootstrap, Colors, W3.CSS, XML, MySQL, Icons, NodeJS, React, Graphics, Angular, R, AI, Git, Data Science, Code Game, Tutorials, Programming, Web Development, Training, Learning, Quiz, Exercises, Courses, Lessons, References, Examples, Learn to code, Source code, Demos, Tips, Website">
-```
-
-### Informace pro sociální sítě
-
-Při sdílení stránky na sociálních sítích mohou sociální sítě využít následující meta informace k zobrazení náhledu stránky.
-
-```html
-<meta property="og:title" content="Title of the page">
-<meta property="og:description" content="Description of the page">
-<meta property="og:image" content="image.jpg">
-<meta property="og:url" content="https://www.example.com/page-url">
-```
-
-Některé sociální sítě mají i vlastní sadu meta informací, například Twitter/X: 
-
-```html
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Title of the page">
-<meta name="twitter:description" content="Description of the page">
-<meta name="twitter:image" content="image.jpg">
-```
-
 
 Časté chyby při psaní HTML
 --------------------------

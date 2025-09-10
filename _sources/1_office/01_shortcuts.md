@@ -29,7 +29,9 @@ Okna, záložky
 
 - **`Alt+Tab`**: Přepínání mezi otevřenými aplikacemi.
 - **`Ctrl+Tab`**: Přepínání mezi záložkami v rámci aplikace.
+- **`Ctrl+W`**: Uzavře aktuální záložku.
 - **`Alt+F4`**: Zavře aktuální okno nebo aplikaci.
+
 
 Práce s textem
 ---------------
@@ -59,4 +61,5 @@ Jiné
 - **`Win+Shift+S`**: Pořízení výřezu obrazovky (screenshot).
 - **`F2`**: Přejmenuje vybraný soubor nebo položku.
 - **`F5`** / **`Ctrl+R`**: Obnoví aktuální webovou stránku.
+- **`F11`**: Přepíná celoobrayovkový (full-screen) režim
 

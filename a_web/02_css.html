@@ -53,14 +53,6 @@
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script src="../_static/translations.js?v=22e1c300"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs"></script>
-    <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs";import elkLayouts from "https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs";mermaid.registerLayoutLoaders(elkLayouts);mermaid.initialize({startOnLoad:false});</script>
-    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
-    <script type="module">
-import mermaid from "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs";
-window.addEventListener("load", () => mermaid.run());
-</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'a_web/02_css';</script>
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Rejstřík" href="../genindex.html" />
@@ -346,9 +338,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selektor-na-tridu">Selektor na třídu</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selektor-na-id">Selektor na id</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pseudotridy">Pseudotřídy</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kombinace-selektoru">Kombinace selektorů</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selektory-vnorenych-elementu">Selektory vnořených elementů</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adresovani-vice-selektory">Adresování více selektory</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zakladni-css-styly">Základní CSS styly</a><ul class="nav section-nav flex-column">
@@ -356,17 +345,9 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pozadi-background">Pozadí <code class="docutils literal notranslate"><span class="pre">background</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#font-font">Font <code class="docutils literal notranslate"><span class="pre">font</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formatovani-textu">Formátování textu</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#css-box-model">CSS box model</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#width-a-height"><code class="docutils literal notranslate"><span class="pre">width</span></code> a <code class="docutils literal notranslate"><span class="pre">height</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#margin-a-padding"><code class="docutils literal notranslate"><span class="pre">margin</span></code> a <code class="docutils literal notranslate"><span class="pre">padding</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#border"><code class="docutils literal notranslate"><span class="pre">border</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vychozi-styly-prohlizece">Výchozí styly prohlížeče</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#priorita-stylu">Priorita stylů</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pouziti-important">Použití <code class="docutils literal notranslate"><span class="pre">!important</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -509,65 +490,6 @@ document.write(`
 </div>
 <p>Tento styl změní barvu textu všech odkazů na zelenou, když na ně ale uživatel najede myší, změní barvu na červenou. CSS nabízí celou řadu pseudotříd jejich seznam naleznete v <a class="reference external" href="https://www.w3schools.com/css/css_pseudo_classes.asp">CSS Tutoriálu</a></p>
 </section>
-<section id="kombinace-selektoru">
-<h3>4.5.&nbsp;&nbsp;Kombinace selektorů<a class="headerlink" href="#kombinace-selektoru" title="Link to this heading">#</a></h3>
-<p>Selektory je možné kombinovat, například:</p>
-<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="p">.</span><span class="nc">my_class</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c">/*...*/</span><span class="w"> </span><span class="p">}</span>
-</pre></div>
-</div>
-<p>cílí na všechny elementy <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> a které mají vlastnost <code class="docutils literal notranslate"><span class="pre">class</span></code> nastaven na hodnotu <code class="docutils literal notranslate"><span class="pre">my_class</span></code>. Zacílí tedy třeba na <code class="docutils literal notranslate"><span class="pre">&lt;p</span> <span class="pre">class=&quot;my_class&quot;&gt;</span> <span class="pre">...</span> <span class="pre">&lt;/p&gt;</span></code> ale už ne na <code class="docutils literal notranslate"><span class="pre">&lt;div</span> <span class="pre">class=&quot;my_class&quot;&gt;</span> <span class="pre">...</span> <span class="pre">&lt;/div&gt;</span></code>.</p>
-<p>Podobně lze dělat selektory <code class="docutils literal notranslate"><span class="pre">div#my_id</span></code> (element <code class="docutils literal notranslate"><span class="pre">div</span></code> mající <code class="docutils literal notranslate"><span class="pre">id</span></code> <code class="docutils literal notranslate"><span class="pre">my_id</span></code>), nebo <code class="docutils literal notranslate"><span class="pre">div.my_class:hover</span></code> (elementy <code class="docutils literal notranslate"><span class="pre">div</span></code> mající <code class="docutils literal notranslate"><span class="pre">class</span></code> nastavenu na <code class="docutils literal notranslate"><span class="pre">my_class</span></code> po najetí myší)</p>
-</section>
-<section id="selektory-vnorenych-elementu">
-<h3>4.6.&nbsp;&nbsp;Selektory vnořených elementů<a class="headerlink" href="#selektory-vnorenych-elementu" title="Link to this heading">#</a></h3>
-<p>Pomocí <strong>descendant selektor</strong>u <code class="docutils literal notranslate"> </code> (mezera) je možné také přesněji adresovat konkrétní vnořené elementy. Například:</p>
-<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">article</span><span class="w"> </span><span class="nt">p</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-</pre></div>
-</div>
-<p>Adresuje všechny <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> elementy, které jsou vnořené do elementu s třídou <code class="docutils literal notranslate"><span class="pre">article</span></code> a to ať už jako přímý nebo nepřímý potomek. Například:</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;article&quot;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>jsem červenej<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</pre></div>
-</div>
-<p>ale i</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;article&quot;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;in&quot;</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>já taky<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</pre></div>
-</div>
-<p>Pomocí <strong>child selektor</strong>u <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> lze adresovat <strong>přímé</strong> potomky elementu. Selektor</p>
-<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">article</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">p</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-</pre></div>
-</div>
-<p>aplikuje styl na všechny elementy <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code>, které jsou přímo vnořené do elementu s třídou <code class="docutils literal notranslate"><span class="pre">article</span></code>. Například</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;article&quot;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>jsem červenej<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</pre></div>
-</div>
-<p>ale už ne zde:</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;article&quot;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;in&quot;</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>ale já už nejsem<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</pre></div>
-</div>
-<p>Adresování je možné kombinovat, například <code class="docutils literal notranslate"><span class="pre">div.menu</span> <span class="pre">&gt;</span> <span class="pre">ul</span> <span class="pre">&gt;</span> <span class="pre">li</span> <span class="pre">a</span></code> vybere všechny odkazy <code class="docutils literal notranslate"><span class="pre">&lt;a&gt;</span></code> umístěné v elementu <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code>, jež je přímo umístěn v <code class="docutils literal notranslate"><span class="pre">&lt;ul&gt;</span></code>, který je přímo umístěn v elementu <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> mající vlastnost <code class="docutils literal notranslate"><span class="pre">class</span></code> nastavenu na <code class="docutils literal notranslate"><span class="pre">menu</span></code> (tudíž už třeba ne ve vnořeném seznamu).</p>
-</section>
-<section id="adresovani-vice-selektory">
-<h3>4.7.&nbsp;&nbsp;Adresování více selektory<a class="headerlink" href="#adresovani-vice-selektory" title="Link to this heading">#</a></h3>
-<p>V jedné definici stylů je možné také použít více selektorů najednou oddělených čárkou <code class="docutils literal notranslate"><span class="pre">,</span></code>. Styl se pak aplikuje na všechny elementy, které vyhovují některému ze selektorů. Například:</p>
-<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">article</span><span class="w"> </span><span class="nt">p</span><span class="o">,</span><span class="w"> </span><span class="nt">h1</span><span class="o">,</span><span class="w"> </span><span class="p">.</span><span class="nc">red</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
-<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span><span class="w"> </span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>Styl se aplikuje na všechny elementy <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> vnořené do elementu s třídou <code class="docutils literal notranslate"><span class="pre">article</span></code> dále na <code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;</span></code> a všechny elementy s třídou <code class="docutils literal notranslate"><span class="pre">red</span></code>.</p>
-</section>
 </section>
 <section id="zakladni-css-styly">
 <h2>5.&nbsp;&nbsp;Základní CSS styly<a class="headerlink" href="#zakladni-css-styly" title="Link to this heading">#</a></h2>
@@ -624,25 +546,8 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">text-decoration</span></code>: Dekorace textu (<code class="docutils literal notranslate"><span class="pre">underline</span></code>, <code class="docutils literal notranslate"><span class="pre">line-through</span></code>, <code class="docutils literal notranslate"><span class="pre">overline</span></code>)</p></li>
 </ul>
 </section>
-</section>
-<section id="css-box-model">
-<h2>6.&nbsp;&nbsp;CSS box model<a class="headerlink" href="#css-box-model" title="Link to this heading">#</a></h2>
-<p>CSS box model je základní koncept, který definuje rozměry a umístění jednotlivých elementů. Každý element představuje obdélníkový box, u kterého lze nastavit vlastnosti <code class="docutils literal notranslate"><span class="pre">width</span></code> a <code class="docutils literal notranslate"><span class="pre">height</span></code>. Dále lze u boxu nastavit vlastnost <code class="docutils literal notranslate"><span class="pre">padding</span></code>, která definuje odsazení dovnitř elementu a <code class="docutils literal notranslate"><span class="pre">margin</span></code>, která definuje vnější odsazení. Dále do box modelu spadá vlastnost <code class="docutils literal notranslate"><span class="pre">border</span></code>, která definuje rámeček elementu.</p>
-<pre  class="mermaid">
-        flowchart TD
-    subgraph Margin [Margin]
-        style Margin fill:#FF3, stroke-width:0px
-        subgraph Border [Border]
-            style Border fill:#9F3,stroke-width:0px
-            subgraph Padding [Padding]
-                style Padding fill:#FF3, stroke-width:0px
-                Content[Obsah elementu]
-            end
-        end
-    end
-    </pre><p>Způsob, jak je box model počítán lze také explicitně změnit pro konkrétní elementy pomocí vlastnosti <code class="docutils literal notranslate"><span class="pre">box-sizing</span></code>.</p>
 <section id="width-a-height">
-<h3>6.1.&nbsp;&nbsp;<code class="docutils literal notranslate"><span class="pre">width</span></code> a <code class="docutils literal notranslate"><span class="pre">height</span></code><a class="headerlink" href="#width-a-height" title="Link to this heading">#</a></h3>
+<h3>5.5.&nbsp;&nbsp;<code class="docutils literal notranslate"><span class="pre">width</span></code> a <code class="docutils literal notranslate"><span class="pre">height</span></code><a class="headerlink" href="#width-a-height" title="Link to this heading">#</a></h3>
 <p>Základními vlastnostmi, které lze nastavit je výška a šířka elementu. Hodnoty se mohou zadávat v několika jednotkách</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">px</span></code>: pixely, například <code class="docutils literal notranslate"><span class="pre">100px</span></code></p></li>
@@ -652,7 +557,7 @@ document.write(`
 </ul>
 </section>
 <section id="margin-a-padding">
-<h3>6.2.&nbsp;&nbsp;<code class="docutils literal notranslate"><span class="pre">margin</span></code> a <code class="docutils literal notranslate"><span class="pre">padding</span></code><a class="headerlink" href="#margin-a-padding" title="Link to this heading">#</a></h3>
+<h3>5.6.&nbsp;&nbsp;<code class="docutils literal notranslate"><span class="pre">margin</span></code> a <code class="docutils literal notranslate"><span class="pre">padding</span></code><a class="headerlink" href="#margin-a-padding" title="Link to this heading">#</a></h3>
 <p>U vlastností <code class="docutils literal notranslate"><span class="pre">padding</span></code> a <code class="docutils literal notranslate"><span class="pre">margin</span></code> můžeme nastavit buď jednu hodnotu, která se pak aplikuje na všechny strany boxu, dvě hodnoty, kde se první hodnota použije na horní <code class="docutils literal notranslate"><span class="pre">top</span></code> a dolní <code class="docutils literal notranslate"><span class="pre">bottom</span></code> odsazení a druhá hodnota na levé <code class="docutils literal notranslate"><span class="pre">left</span></code> a pravé <code class="docutils literal notranslate"><span class="pre">right</span></code> odsazení. Dále je možné zapsat čtyři hodnoty, které se pak aplikují odsazení shora <code class="docutils literal notranslate"><span class="pre">top</span></code>, zprava <code class="docutils literal notranslate"><span class="pre">right</span></code>, odspodu <code class="docutils literal notranslate"><span class="pre">bottom</span></code> a zleva <code class="docutils literal notranslate"><span class="pre">left</span></code>.</p>
 <p>Je možné také použít odvozené vlastnosti <code class="docutils literal notranslate"><span class="pre">margin-left</span></code>, <code class="docutils literal notranslate"><span class="pre">margin-right</span></code>, <code class="docutils literal notranslate"><span class="pre">margin-top</span></code> a <code class="docutils literal notranslate"><span class="pre">margin-bottom</span></code> a analogicky pro <code class="docutils literal notranslate"><span class="pre">padding</span></code> <code class="docutils literal notranslate"><span class="pre">padding-left</span></code>, <code class="docutils literal notranslate"><span class="pre">padding-right</span></code>, <code class="docutils literal notranslate"><span class="pre">padding-top</span></code> a <code class="docutils literal notranslate"><span class="pre">padding-bottom</span></code>. Zápis:</p>
 <div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">box</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="kt">px</span><span class="w"> </span><span class="mi">14</span><span class="kt">px</span><span class="w"> </span><span class="mi">16</span><span class="kt">px</span><span class="w"> </span><span class="mi">18</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
@@ -667,83 +572,15 @@ document.write(`
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="note admonition">
-<p class="admonition-title">Margin collapse</p>
-<p><strong>Margin collapse</strong> (kolaps okrajů) je termín v CSS, který popisuje princip, kdy se vertikální okraje (margins) dvou sousedních elementů sloučí do jednoho okraje, který je roven většímu z obou původních okrajů. Tento jev se vyskytuje pouze u vertikálních okrajů a neovlivňuje horizontální okraje.</p>
-</div>
 </section>
 <section id="border">
-<h3>6.3.&nbsp;&nbsp;<code class="docutils literal notranslate"><span class="pre">border</span></code><a class="headerlink" href="#border" title="Link to this heading">#</a></h3>
+<h3>5.7.&nbsp;&nbsp;<code class="docutils literal notranslate"><span class="pre">border</span></code><a class="headerlink" href="#border" title="Link to this heading">#</a></h3>
 <p>Definuje okraj kolem elementu. Lze specifikovat</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">border-width</span></code>: šířku rámečku</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">border-style</span></code>: styl okraje, povoleny hodnoty <code class="docutils literal notranslate"><span class="pre">solid</span></code>, <code class="docutils literal notranslate"><span class="pre">dotted</span></code>, <code class="docutils literal notranslate"><span class="pre">dashed</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code>, <code class="docutils literal notranslate"><span class="pre">groove</span></code>, <code class="docutils literal notranslate"><span class="pre">ridge</span></code>, <code class="docutils literal notranslate"><span class="pre">inset</span></code> a <code class="docutils literal notranslate"><span class="pre">outset</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">border-color</span></code>: barva rámečku</p></li>
 </ul>
-<div class="note admonition">
-<p class="admonition-title">Skutečná velikost</p>
-<p>Atributy <code class="docutils literal notranslate"><span class="pre">width</span></code> a <code class="docutils literal notranslate"><span class="pre">height</span></code> definují velikost samotného obsahu elementu. Element ale bude ve skutečnosti větší o <code class="docutils literal notranslate"><span class="pre">padding</span></code>, <code class="docutils literal notranslate"><span class="pre">border</span></code> a <code class="docutils literal notranslate"><span class="pre">margin</span></code> (pokud tedy nedojde <em>margin collapse</em>). Pokud se Vám stane, že element nemá přesně takovou velikost, jakou si myslíte, že by měl mít, můžete si ve vývojářské konzoli u každého elementu nechat tento box model zobrazit a uvidíte přesně jak prohlížeč dospěl k rozměrům vybraného elementu.</p>
-</div>
-</section>
-</section>
-<section id="vychozi-styly-prohlizece">
-<h2>7.&nbsp;&nbsp;Výchozí styly prohlížeče<a class="headerlink" href="#vychozi-styly-prohlizece" title="Link to this heading">#</a></h2>
-<p>Výchozí styly prohlížeče jsou základní styly, které každý webový prohlížeč aplikuje na HTML dokumenty před jakoukoliv další CSS definicí. Tyto styly slouží k zajištění základního vzhledu webových stránek, pokud stránka žádné styly nemá, nebo nejsou definovány vývojářem. Například, většina prohlížečů přidává <code class="docutils literal notranslate"><span class="pre">margin</span></code> a <code class="docutils literal notranslate"><span class="pre">padding</span></code> k elementům jako <code class="docutils literal notranslate"><span class="pre">&lt;body&gt;</span></code> a <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code>, nastaví velikost u titulků <code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;</span></code> až <code class="docutils literal notranslate"><span class="pre">&lt;h6&gt;</span></code> atd. Výchozí styly si lze představit jako CSS soubor, který je implicitně vložen do každé stránky. Ukázka takového výchozího stylu pro prohlížeč <a class="reference external" href="https://searchfox.org/mozilla-central/source/layout/style/res/html.css">Firefox</a> nebo <a class="reference external" href="https://chromium.googlesource.com/chromium/blink/+/master/Source/core/css/html.css">Chrome</a>.</p>
-</section>
-<section id="priorita-stylu">
-<h2>8.&nbsp;&nbsp;Priorita stylů<a class="headerlink" href="#priorita-stylu" title="Link to this heading">#</a></h2>
-<p>Pokud jsou pro jeden element definovány styly ve více zdrojích, obecně se rozhoduje se podle následujícího pořadí:</p>
-<ol class="arabic simple">
-<li><p><strong>Inline styly</strong>: Styly přímo ve vlastnost <code class="docutils literal notranslate"><span class="pre">style</span></code> u HTML elementu mají nejvyšší prioritu.</p></li>
-<li><p><strong>Externí a interní CSS</strong>: Styly definované v externích nebo interních CSS. Přičemž platí, že styly definované později (v rámci jednoho souboru, nebo v souboru, který je vložen později) přepisují styly definované dříve.</p></li>
-<li><p><strong>Výchozí styly prohlížeče</strong>: Základní styly, které používá prohlížeč.</p></li>
-</ol>
-<p>Dále ovšem vstupuje do hry tzv. <a class="reference external" href="https://www.w3schools.com/css/css_specificity.asp">specificita selektoru</a>, kde se pracuje s tzv. <em>váhou</em> selektoru. To celý systém poněkud zesložiťuje a je obecně lepší pracovat se styly tak, aby se předešlo nejednoznačnostem.</p>
-<section id="pouziti-important">
-<h3>8.1.&nbsp;&nbsp;Použití <code class="docutils literal notranslate"><span class="pre">!important</span></code><a class="headerlink" href="#pouziti-important" title="Link to this heading">#</a></h3>
-<p>V CSS se setkáme ještě s klíčovým slovem <code class="docutils literal notranslate"><span class="pre">!important</span></code>, které je možné použít za každou CSS vlastnost. Pravidlo s <code class="docutils literal notranslate"><span class="pre">!important</span></code> má vyšší prioritu než pravidla bez <code class="docutils literal notranslate"><span class="pre">!important</span></code>, i když jsou méně specifická nebo později definovaná:</p>
-<div class="myst-example docutils">
-<div class="myst-example-source docutils">
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!doctype html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;cs&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
-<span class="w">            </span><span class="p">.</span><span class="nc">blue</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="w"> </span><span class="cp">!important</span><span class="p">;</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">            </span><span class="p">.</span><span class="nc">red</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">        </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">&gt;</span>červenej<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;blue red&quot;</span><span class="p">&gt;</span>modrej<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</pre></div>
-</div>
-</div>
-<div class="myst-example-render docutils">
-<p>&lt;!doctype html&gt;</p>
-<html lang="cs">
-    <head>
-        <style>
-            .blue {
-                color: blue !important;
-            }
-            .red {
-                color: red;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="red">červenej</div>
-        <div class="blue red">modrej</div>
-    </body>
-</html>
-</div>
-</div>
 </section>
 </section>
 </section>
@@ -797,9 +634,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selektor-na-tridu">Selektor na třídu</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selektor-na-id">Selektor na id</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pseudotridy">Pseudotřídy</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kombinace-selektoru">Kombinace selektorů</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selektory-vnorenych-elementu">Selektory vnořených elementů</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adresovani-vice-selektory">Adresování více selektory</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zakladni-css-styly">Základní CSS styly</a><ul class="nav section-nav flex-column">
@@ -807,17 +641,9 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pozadi-background">Pozadí <code class="docutils literal notranslate"><span class="pre">background</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#font-font">Font <code class="docutils literal notranslate"><span class="pre">font</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formatovani-textu">Formátování textu</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#css-box-model">CSS box model</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#width-a-height"><code class="docutils literal notranslate"><span class="pre">width</span></code> a <code class="docutils literal notranslate"><span class="pre">height</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#margin-a-padding"><code class="docutils literal notranslate"><span class="pre">margin</span></code> a <code class="docutils literal notranslate"><span class="pre">padding</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#border"><code class="docutils literal notranslate"><span class="pre">border</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vychozi-styly-prohlizece">Výchozí styly prohlížeče</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#priorita-stylu">Priorita stylů</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pouziti-important">Použití <code class="docutils literal notranslate"><span class="pre">!important</span></code></a></li>
 </ul>
 </li>
 </ul>

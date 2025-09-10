@@ -153,85 +153,6 @@ a:hover { color: red; }
 Tento styl změní barvu textu všech odkazů na zelenou, když na ně ale uživatel najede myší, změní barvu na červenou. CSS nabízí celou řadu pseudotříd jejich seznam naleznete v [CSS Tutoriálu](https://www.w3schools.com/css/css_pseudo_classes.asp)
 
 
-### Kombinace selektorů
-
-Selektory je možné kombinovat, například:
-
-```css
-p.my_class { /*...*/ }
-```
-
-cílí na všechny elementy `<p>` a které mají vlastnost `class` nastaven na hodnotu `my_class`. Zacílí tedy třeba na `<p class="my_class"> ... </p>` ale už ne na `<div class="my_class"> ... </div>`.
-
-Podobně lze dělat selektory `div#my_id` (element `div` mající `id` `my_id`), nebo `div.my_class:hover` (elementy `div` mající `class` nastavenu na `my_class` po najetí myší)
-
-
-### Selektory vnořených elementů
-
-Pomocí **descendant selektor**u ` ` (mezera) je možné také přesněji adresovat konkrétní vnořené elementy. Například:
-
-```css
-.article p { color: red; }
-```
-
-Adresuje všechny `<p>` elementy, které jsou vnořené do elementu s třídou `article` a to ať už jako přímý nebo nepřímý potomek. Například:
-
-```html
-    <div class="article">
-        <p>jsem červenej</p>
-    </div>
-```
-
-ale i
-
-```html
-    <div class="article">
-        <div class="in">
-            <p>já taky</p>
-        </div>
-    </div>
-```
-
-Pomocí **child selektor**u `>` lze adresovat **přímé** potomky elementu. Selektor
-
-```css
-.article > p { color: red; }
-```
-
-aplikuje styl na všechny elementy `<p>`, které jsou přímo vnořené do elementu s třídou `article`. Například
-
-```html
-    <div class="article">
-        <p>jsem červenej</p>
-    </div>
-```
-
-ale už ne zde:
-
-```html
-    <div class="article">
-        <div class="in">
-            <p>ale já už nejsem</p>
-        </div>
-    </div>
-```
-
-Adresování je možné kombinovat, například `div.menu > ul > li a` vybere všechny odkazy `<a>` umístěné v elementu `<li>`, jež je přímo umístěn v `<ul>`, který je přímo umístěn v elementu `<div>` mající vlastnost `class` nastavenu na `menu` (tudíž už třeba ne ve vnořeném seznamu).
-
-
-### Adresování více selektory
-
-V jedné definici stylů je možné také použít více selektorů najednou oddělených čárkou `,`. Styl se pak aplikuje na všechny elementy, které vyhovují některému ze selektorů. Například:
-
-```css
-.article p, h1, .red { 
-    color: red; 
-}
-```
-
-Styl se aplikuje na všechny elementy `<p>` vnořené do elementu s třídou `article` dále na `<h1>` a všechny elementy s třídou `red`.
-
-
 Základní CSS styly
 ------------------
 
@@ -293,28 +214,6 @@ Všechny výše uvedené lze zapsat i inline pouze do vlastnosti `font`. Pro spr
 * `line-height`: Výška řádku 
 * `text-decoration`: Dekorace textu (`underline`, `line-through`, `overline`)
 
-
-CSS box model
--------------
-
-CSS box model je základní koncept, který definuje rozměry a umístění jednotlivých elementů. Každý element představuje obdélníkový box, u kterého lze nastavit vlastnosti `width` a `height`. Dále lze u boxu nastavit vlastnost `padding`, která definuje odsazení dovnitř elementu a `margin`, která definuje vnější odsazení. Dále do box modelu spadá vlastnost `border`, která definuje rámeček elementu.
-
-```{mermaid}
-flowchart TD
-    subgraph Margin [Margin]
-        style Margin fill:#FF3, stroke-width:0px
-        subgraph Border [Border]
-            style Border fill:#9F3,stroke-width:0px
-            subgraph Padding [Padding]
-                style Padding fill:#FF3, stroke-width:0px
-                Content[Obsah elementu]
-            end
-        end
-    end
-```
-
-Způsob, jak je box model počítán lze také explicitně změnit pro konkrétní elementy pomocí vlastnosti `box-sizing`.
-
 ### `width` a `height`
 
 Základními vlastnostmi, které lze nastavit je výška a šířka elementu. Hodnoty se mohou zadávat v několika jednotkách
@@ -346,67 +245,9 @@ je ekvivalentní zápisu
 }
 ```
 
-```{admonition} Margin collapse
-:class: note
-
-**Margin collapse** (kolaps okrajů) je termín v CSS, který popisuje princip, kdy se vertikální okraje (margins) dvou sousedních elementů sloučí do jednoho okraje, který je roven většímu z obou původních okrajů. Tento jev se vyskytuje pouze u vertikálních okrajů a neovlivňuje horizontální okraje.
-```
-
 ### `border`
 
 Definuje okraj kolem elementu. Lze specifikovat 
 - `border-width`: šířku rámečku
 - `border-style`: styl okraje, povoleny hodnoty `solid`, `dotted`, `dashed`, `double`, `groove`, `ridge`, `inset` a `outset`
 - `border-color`: barva rámečku 
-
-
-```{admonition} Skutečná velikost
-:class: note
-
-Atributy `width` a `height` definují velikost samotného obsahu elementu. Element ale bude ve skutečnosti větší o `padding`, `border` a `margin` (pokud tedy nedojde *margin collapse*). Pokud se Vám stane, že element nemá přesně takovou velikost, jakou si myslíte, že by měl mít, můžete si ve vývojářské konzoli u každého elementu nechat tento box model zobrazit a uvidíte přesně jak prohlížeč dospěl k rozměrům vybraného elementu.
-```
-
-
-Výchozí styly prohlížeče
-------------------------
-
-Výchozí styly prohlížeče jsou základní styly, které každý webový prohlížeč aplikuje na HTML dokumenty před jakoukoliv další CSS definicí. Tyto styly slouží k zajištění základního vzhledu webových stránek, pokud stránka žádné styly nemá, nebo nejsou definovány vývojářem. Například, většina prohlížečů přidává `margin` a `padding` k elementům jako `<body>` a `<p>`, nastaví velikost u titulků `<h1>` až `<h6>` atd. Výchozí styly si lze představit jako CSS soubor, který je implicitně vložen do každé stránky. Ukázka takového výchozího stylu pro prohlížeč [Firefox](https://searchfox.org/mozilla-central/source/layout/style/res/html.css) nebo [Chrome](https://chromium.googlesource.com/chromium/blink/+/master/Source/core/css/html.css).
-
-
-Priorita stylů
---------------
-
-Pokud jsou pro jeden element definovány styly ve více zdrojích, obecně se rozhoduje se podle následujícího pořadí:
-
-1. **Inline styly**: Styly přímo ve vlastnost `style` u HTML elementu mají nejvyšší prioritu.
-2. **Externí a interní CSS**: Styly definované v externích nebo interních CSS. Přičemž platí, že styly definované později (v rámci jednoho souboru, nebo v souboru, který je vložen později) přepisují styly definované dříve.
-3. **Výchozí styly prohlížeče**: Základní styly, které používá prohlížeč.
-
-Dále ovšem vstupuje do hry tzv. [specificita selektoru](https://www.w3schools.com/css/css_specificity.asp), kde se pracuje s tzv. *váhou* selektoru. To celý systém poněkud zesložiťuje a je obecně lepší pracovat se styly tak, aby se předešlo nejednoznačnostem.
-
-
-### Použití `!important`
-
-V CSS se setkáme ještě s klíčovým slovem `!important`, které je možné použít za každou CSS vlastnost. Pravidlo s `!important` má vyšší prioritu než pravidla bez `!important`, i když jsou méně specifická nebo později definovaná:
-
-```{myst-example}
-:highlight: html
-<!doctype html>
-<html lang="cs">
-    <head>
-        <style>
-            .blue {
-                color: blue !important;
-            }
-            .red {
-                color: red;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="red">červenej</div>
-        <div class="blue red">modrej</div>
-    </body>
-</html>
-
-```
