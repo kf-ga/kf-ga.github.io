@@ -8,10 +8,8 @@ Typografie
 
 Typografie je obor, který se zabývá tvorbou a uspořádáním písma a textu tak, aby byl čitelný, přehledný a esteticky působivý. Zahrnuje pravidla pro výběr fontů, velikostí, řádkování, zarovnání, práci s mezerami, interpunkcí a dalšími prvky sazby textu.
 
-Psaní mezer a interpunkce
--------------------------
-
-Správné používání mezer a interpunkčních znamének je základem čitelného a profesionálního textu. Níže jsou uvedena základní pravidla a příklady správného zápisu.
+Základní pravidla
+-----------------
 
 ### Mezera mezi slovy
 
