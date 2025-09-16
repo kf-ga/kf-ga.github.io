@@ -38,7 +38,7 @@ Práce s textem
 
 - **`Alt + číslo`**: Vloží znak podle kódu (na Windows pomocí numerické klávesnice).
     - **`Alt+64`**: Zavináč `@`
-    - **`Alt+0160`**: Neoddělitelná mezera
+    - **`Alt+0160`** / **`Shift+Space`**: Neoddělitelná mezera
     - **`Alt+0132`**: Otevírací české uvozovky „
     - **`Alt+0147`**: Uzavírací české uvozovky “
 - **`Win+.`**: Otevře tabulku se smajlíky / emoji.
@@ -61,5 +61,5 @@ Jiné
 - **`Win+Shift+S`**: Pořízení výřezu obrazovky (screenshot).
 - **`F2`**: Přejmenuje vybraný soubor nebo položku.
 - **`F5`** / **`Ctrl+R`**: Obnoví aktuální webovou stránku.
-- **`F11`**: Přepíná celoobrayovkový (full-screen) režim
+- **`F11`**: Přepíná celoobrazovkový (full-screen) režim
 

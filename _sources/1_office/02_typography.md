@@ -3,6 +3,8 @@ Typografie
 
 - [Unicode tabulka](https://symbl.cc/en/unicode-table/)
 - [Citace.com](https://www.citace.com)
+- [Overleaf.com](https://www.overleaf.com)
+- [Learn LaTeX](https://www.overleaf.com/learn)
 
 Typografie je obor, který se zabývá tvorbou a uspořádáním písma a textu tak, aby byl čitelný, přehledný a esteticky působivý. Zahrnuje pravidla pro výběr fontů, velikostí, řádkování, zarovnání, práci s mezerami, interpunkcí a dalšími prvky sazby textu.
 
@@ -39,11 +41,11 @@ Pokud věta končí zkratkou s tečkou, druhá tečka se již nepíše.
 - *Správně: Setkání proběhlo v 15 hod.*
 - *Špatně: Setkání proběhlo v 15 hod..*
 
-Existují samozřejmě i některé výjimky, např. Ph.D., M.D., OSN a jiné. V cizích jazycích mohou být jiná pravidla. Pokud si nejste jisti, konzultujte s [chytřejšími](https://chatgpt.com).
+Existují samozřejmě i některé výjimky (např. *Ph.D.*, *M.D.* a jiné). V cizích jazycích mohou být jiná pravidla. Pokud si nejste jisti, konzultujte s [chytřejšími](https://google.com).
 
 #### Pevná (neoddělitelná) mezera
 
-Pevná mezera (`U+00A0`, nezlomitelná, vkládá se např. pomocí klávesové zkratky `ALT+0160`) je druh mezery, která se nikdy nezalomí na konci řádku. Používá se mezi jednoznakovými předložkami nebo spojkami a následujícím slovem, aby nezůstaly na konci řádku (např. *k domu*, *a lidé*) nebo u zkratek, titulů, iniciál a dlouhých čísel (např. „PhDr. Jan Novák“, „1 000 000“), kde by zalomení na konci řádku zhoršilo čitelnost textu.
+Pevná mezera (`U+00A0`, nezlomitelná, vkládá se např. pomocí klávesové zkratky `Alt+0160` nebo `Shift+Space`) je druh mezery, která se nikdy nezalomí na konci řádku. Používá se mezi jednoznakovými předložkami nebo spojkami a následujícím slovem, aby nezůstaly na konci řádku (např. *k domu*, *a lidé*) nebo u zkratek, titulů, iniciál a dlouhých čísel (např. *PhDr. Jan Novák*, *1 000 000*), kde by zalomení na konci řádku zhoršilo čitelnost textu.
 
 ### Závorky
 
@@ -303,3 +305,13 @@ Vdovy a sirotci jsou typografické chyby, které zhoršují estetiku a čitelnos
 **Sirotek** je naopak první řádek odstavce, který zůstane osamocený na konci stránky nebo sloupce. Oba případy narušují vizuální kontinuitu textu a mohou čtenáře rušit. 
 
 Pro jejich odstranění používejte nástroje textového editoru, jako je kontrola zalomení stránek, pevné mezery nebo úprava řádkování a odsazení.
+
+
+LaTeX
+-----
+
+**LaTeX** (vyslovuje se *Latech*) je systém pro sazbu dokumentů založený na značkách (markup), který je považován za zlatý standard v typografii a to zejména v akademické sféře.
+
+LaTeX velmi důsledně odděluje obsah dokumentu od stylu zobrazení a spolu s širokým ekosystémem balíčků podporuje celou řadu typografických prvků napříč různými obory.
+
+Pokud chcete z LaTeXem začít, doporučuji například online nástroj [Overleaf.com](https://www.overleaf.com).
