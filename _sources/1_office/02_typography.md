@@ -2,7 +2,7 @@ Typografie
 ==========
 
 - [Unicode tabulka](https://symbl.cc/en/unicode-table/)
-- [Lorem Ipsum generátor](https://loremipsum.io)
+- [Lorem Ipsum generátor](http://www.lorem-ipsum.cz)
 - [Citace.com](https://www.citace.com)
 - [Overleaf.com](https://www.overleaf.com)
 - [Learn LaTeX](https://www.overleaf.com/learn)
