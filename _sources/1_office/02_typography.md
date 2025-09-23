@@ -224,6 +224,9 @@ Matematické vzorce podléhají specifickým typografickým pravidlům. Pro jeji
 - **Dvojité písmo** mají některé speciální množiny.
 
     **Příklad:** $\mathbb{R}$ (reálná čísla), $\mathbb{C}$ (komplexní čísla)
+    
+Tyto speciální znaky naleznete v Unicode tabulce například v [Letterlike Symbols](https://symbl.cc/en/unicode-table/#letterlike-symbols) nebo [Mathematical Alphanumeric Symbols](https://symbl.cc/en/unicode-table/#mathematical-alphanumeric-symbols).
+
 
 ```{admonition} Dbejte zvyklostí
 :class: tip

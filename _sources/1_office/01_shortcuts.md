@@ -38,7 +38,7 @@ Práce s textem
 
 - **`Alt + číslo`**: Vloží znak podle kódu (na Windows pomocí numerické klávesnice).
     - **`Alt+64`**: Zavináč `@`
-    - **`Alt+0160`** / **`Shift+Space`**: Neoddělitelná mezera
+    - **`Alt+0160`** / **`Ctrl+Shift+Space`** (Word/Excel): Neoddělitelná mezera
     - **`Alt+0132`**: Otevírací české uvozovky „
     - **`Alt+0147`**: Uzavírací české uvozovky “
 - **`Win+.`**: Otevře tabulku se smajlíky / emoji.
