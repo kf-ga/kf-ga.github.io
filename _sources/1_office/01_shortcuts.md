@@ -13,8 +13,8 @@ Schránka
 Editace
 -------
 
-- **`Ctrl+Z`**: Zpět, vrátí poslední akci.
-- **`Ctrl+Y`**: Znovu, opakuje poslední vrácenou akci.
+- **`Ctrl+Z`**: Zpět – vrátí poslední akci.
+- **`Ctrl+Y`**: Znovu – opakuje poslední vrácenou akci.
 
 Souborové operace
 -----------------
@@ -37,7 +37,7 @@ Práce s textem
 ---------------
 
 - **`Alt + číslo`**: Vloží znak podle kódu (na Windows pomocí numerické klávesnice).
-    - **`Alt+64`**: Zavináč
+    - **`Alt+64`**: Zavináč `@`
     - **`Alt+0160`** / **`Ctrl+Shift+Space`** (Word/Excel): Neoddělitelná mezera
     - **`Alt+0132`**: Otevírací české uvozovky „
     - **`Alt+0147`**: Uzavírací české uvozovky “
