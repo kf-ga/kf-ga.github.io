@@ -338,6 +338,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zavorky">Závorky</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vypustka-tri-tecky">Výpustka (tři tečky)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pomlcka-spojovnik-minus">Pomlčka, spojovník, mínus</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lomitko">Lomítko</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uvozovky">Uvozovky</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#uvozovky-v-jinych-jazycich">Uvozovky v jiných jazycích</a></li>
 </ul>
@@ -371,6 +372,7 @@ document.write(`
 <h1>Typografie<a class="headerlink" href="#typografie" title="Link to this heading">#</a></h1>
 <ul class="simple">
 <li><p><a class="reference external" href="https://symbl.cc/en/unicode-table/">Unicode tabulka</a></p></li>
+<li><p><a class="reference external" href="https://loremipsum.io">Lorem Ipsum generátor</a></p></li>
 <li><p><a class="reference external" href="https://www.citace.com">Citace.com</a></p></li>
 <li><p><a class="reference external" href="https://www.overleaf.com">Overleaf.com</a></p></li>
 <li><p><a class="reference external" href="https://www.overleaf.com/learn">Learn LaTeX</a></p></li>
@@ -437,12 +439,26 @@ document.write(`
 <p>Ve striktní typografii je třeba rozlišovat tři druhy znaků pro pomlčky podle způsobu použití:</p>
 <ul class="simple">
 <li><p><strong>Spojovník <code class="docutils literal notranslate"><span class="pre">-</span></code></strong>: Znak dostupný na běžné klávesnici. Používá se ke spojování slov (např. <em>česko-anglický</em>, <em>ping-pong</em>, <em>bude-li</em>, <em>play-off</em>, <em>Brno-město</em>) nebo v technických označeních např. <em>ISBN: 978-1-119-47386-2</em>. Píše se bez mezer.</p></li>
-<li><p><strong>Pomlčka <code class="docutils literal notranslate"><span class="pre">–</span></code> (<code class="docutils literal notranslate"><span class="pre">U+2013</span></code>)</strong>: Je o něco delší než spojovník. Používá se pro vyjádření intervalů a úseků (např. <em>Praha–Brno</em>, <em>strana 4–12</em>). Píše se bez mezer, pokud jsou oba výrazy bez mezer, jinak se používají mezery z obou stran (např. <em>Praha – Karlovy Vary</em>, <em>cena 12 000 – 20 000 Kč</em>). Dále je možné pomlčku použít k oddělení částí vět, namísto čárek.</p></li>
+<li><p><strong>Pomlčka <code class="docutils literal notranslate"><span class="pre">–</span></code> (<code class="docutils literal notranslate"><span class="pre">U+2013</span></code>)</strong>: Je o něco delší než spojovník. Používá se pro vyjádření intervalů a úseků (např. <em>Praha–Brno</em>, <em>strana 4–12</em>). Píše se bez mezer, pokud jsou oba výrazy bez mezer, jinak se používají mezery z obou stran (např. <em>Praha – Karlovy Vary</em>, <em>cena 12 000 – 20 000 Kč</em>). Dále je možné pomlčku použít k oddělení částí vět, kdy se píše mezera z obou stran.</p></li>
 <li><p><strong>Mínus <code class="docutils literal notranslate"><span class="pre">−</span></code> (<code class="docutils literal notranslate"><span class="pre">U+2212</span></code>)</strong>: Používá se v matematických výrazech, má stejné zarovnání jako znaménko plus (<code class="docutils literal notranslate"><span class="pre">+-</span></code> vs. <code class="docutils literal notranslate"><span class="pre">+−</span></code>).</p></li>
 </ul>
 </section>
+<section id="lomitko">
+<h3>1.6.&nbsp;&nbsp;Lomítko<a class="headerlink" href="#lomitko" title="Link to this heading">#</a></h3>
+<p>Lomítko (<code class="docutils literal notranslate"><span class="pre">/</span></code>) se používá k oddělení částí textu nebo čísel, například ve zlomcích, datech, nebo při označení alternativ. Píše se bez mezer z obou stran. Pokud lomítko odděluje delší (víceslovné) výrazy nebo celé věty, je vhodné použít mezeru z obou stran pro lepší čitelnost.</p>
+<p><strong>Příklad:</strong></p>
+<ul class="simple">
+<li><p><em>Správně: 1/2, ano/ne, pan/paní, student/ka</em></p></li>
+<li><p><em>Špatně: 1 / 2, ano / ne, student / ka</em></p></li>
+</ul>
+<p><strong>Příklad:</strong></p>
+<ul class="simple">
+<li><p><em>Správně: vážený pane / vážená paní</em></p></li>
+<li><p><em>Špatně: vážený pane/vážená paní</em></p></li>
+</ul>
+</section>
 <section id="uvozovky">
-<h3>1.6.&nbsp;&nbsp;Uvozovky<a class="headerlink" href="#uvozovky" title="Link to this heading">#</a></h3>
+<h3>1.7.&nbsp;&nbsp;Uvozovky<a class="headerlink" href="#uvozovky" title="Link to this heading">#</a></h3>
 <p>Uvozovky se v různých jazycích zapisují odlišně a mají svá specifická pravidla pro použití. V češtině i dalších jazycích je důležité rozlišovat správné tvary uvozovek a jejich umístění v textu.</p>
 <p>V češtině se používají uvozovky, které mají tvar dole <code class="docutils literal notranslate"><span class="pre">„</span></code> a nahoře <code class="docutils literal notranslate"><span class="pre">“</span></code> (Unicode: <code class="docutils literal notranslate"><span class="pre">U+201E</span></code> a <code class="docutils literal notranslate"><span class="pre">U+201C</span></code>). Pokud je potřeba vkládat uvozovky uvnitř již uvozeného textu, používají se jednoduché uvozovky ve tvaru <code class="docutils literal notranslate"><span class="pre">‚</span></code> a <code class="docutils literal notranslate"><span class="pre">‘</span></code> (<code class="docutils literal notranslate"><span class="pre">U+201A</span></code> a <code class="docutils literal notranslate"><span class="pre">U+2018</span></code>).</p>
 <p><strong>Příklad:</strong></p>
@@ -495,7 +511,7 @@ document.write(`
 </section>
 </section>
 <section id="cisla">
-<h3>1.7.&nbsp;&nbsp;Čísla<a class="headerlink" href="#cisla" title="Link to this heading">#</a></h3>
+<h3>1.8.&nbsp;&nbsp;Čísla<a class="headerlink" href="#cisla" title="Link to this heading">#</a></h3>
 <p>Při psaní čísel v textu je důležité dodržovat správná typografická pravidla, která se mohou lišit podle jazyka a kontextu:</p>
 <ul class="simple">
 <li><p><strong>Desetinná čísla</strong> se v češtině oddělují čárkou (např. <em>3,14</em>), v angličtině tečkou (např. <em>3.14</em>).</p></li>
@@ -538,7 +554,7 @@ document.write(`
 </div>
 </section>
 <section id="datum-a-cas">
-<h3>1.8.&nbsp;&nbsp;Datum a čas<a class="headerlink" href="#datum-a-cas" title="Link to this heading">#</a></h3>
+<h3>1.9.&nbsp;&nbsp;Datum a čas<a class="headerlink" href="#datum-a-cas" title="Link to this heading">#</a></h3>
 <p><strong>Datum</strong> lze v češtině zapisovat ve formátu <code class="docutils literal notranslate"><span class="pre">DD.MM.YYYY</span></code> s počátečními nulami, který se používá spíše ve formálním textu, úřední a obchodní komunikaci (např. <em>15.09.2025</em>). Je ale povolen i zápis <code class="docutils literal notranslate"><span class="pre">DD.</span> <span class="pre">MM.</span> <span class="pre">YYYY</span></code>, kde se vynechávají počáteční nuly (například <em>15. 9. 2025</em>), případně slovní zápis měsíce (např. <em>15. září 2025</em>).</p>
 <p>Dále je možné použít zápis v mezinárodním formátu <code class="docutils literal notranslate"><span class="pre">YYYY-MM-DD</span></code> (<a class="reference external" href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>), případně úplný zápis včetně časové zóny v případech, kdy je nutné explicitně specifikovat datum, čas a časovou zónu: <code class="docutils literal notranslate"><span class="pre">2025-09-15T14:30:45+01:00</span></code>.</p>
 <p><strong>Čas</strong> zapisujeme ve 24hodinovém formátu odděleném dvojtečkou nebo tečkou bez mezer (například <em>14:00</em> nebo <em>14.00</em>) a pokud je třeba uvést i vteřiny, zapisujeme čas jako <em>14:00:23</em>.</p>
@@ -577,7 +593,7 @@ document.write(`
 <p>Datum a čas v tabulkách zarovnávejte doprava pro lepší přehlednost. Stejně tak je dobré v tabulkovém zobrazení použít formát data s úvodními nulami pro lepší zarovnání.</p>
 </section>
 <section id="jednotky">
-<h3>1.9.&nbsp;&nbsp;Jednotky<a class="headerlink" href="#jednotky" title="Link to this heading">#</a></h3>
+<h3>1.10.&nbsp;&nbsp;Jednotky<a class="headerlink" href="#jednotky" title="Link to this heading">#</a></h3>
 <p><strong>Jednotku</strong> obvykle uvádíme za číslem a oddělujeme ji mezerou (např. <em>10 kg</em>, <em>25 °C</em>). Pro <strong>složené jednotky</strong> používáme buď znak lomítka <code class="docutils literal notranslate"><span class="pre">/</span></code> (např. <em>km/h</em>), nebo střední tečku <code class="docutils literal notranslate"><span class="pre">·</span></code> (např. <em>W·s</em>) a to bez mezery. Použití <code class="docutils literal notranslate"><span class="pre">·</span></code> je nutné k tomu, aby se zabránilo nejednoznačnostem, např. <em>ms</em> (milisekunda) a <em>m·s</em> (metr-sekunda).</p>
 <p>Výjimkou je zápis <strong>úhlu</strong>, kde používáme speciální znaky pro stupně, minuty a vteřiny bez mezer (např. <em>45°</em>, <em>20°10′5″</em>).</p>
 <p>Při psaní <strong>procent</strong> rozlišujeme zápis s mezerou, např. <em>5 %</em>, který čteme jako <em>pět procent</em>. Zápis bez mezery, např. <em>5%</em>, se chápe jako přídavné jméno <em>pětiprocentní</em>.</p>
@@ -599,7 +615,7 @@ document.write(`
 <p>Zápis měn může mít opět svá specifika v různých jazycích, např. v angličtině se používá i umístění před číslem (např. <em>USD 20</em>, nebo bez mezery <em>$20</em>), nicméně například ve finančních výkazech se může vyskytovat označení i za číslem. Konzultujte proto v případě nejistoty doporučený styl psaní pro jazyk a kontext ve kterém je dokument psán.</p>
 </section>
 <section id="matematicke-vzorce">
-<h3>1.10.&nbsp;&nbsp;Matematické vzorce<a class="headerlink" href="#matematicke-vzorce" title="Link to this heading">#</a></h3>
+<h3>1.11.&nbsp;&nbsp;Matematické vzorce<a class="headerlink" href="#matematicke-vzorce" title="Link to this heading">#</a></h3>
 <p>Matematické vzorce podléhají specifickým typografickým pravidlům. Pro jejich zápis používejte specializovaný editor rovnic (obvykle součást textového editoru), který většinu zásad automaticky dodrží a zajistí správnou sazbu. V některých případech je však vhodné provést ruční doladění podle následujících doporučení:</p>
 <ul>
 <li><p><strong>Proměnné</strong> se píší kurzívou.</p>
@@ -628,7 +644,7 @@ document.write(`
 </div>
 </section>
 <section id="fonty">
-<h3>1.11.&nbsp;&nbsp;Fonty<a class="headerlink" href="#fonty" title="Link to this heading">#</a></h3>
+<h3>1.12.&nbsp;&nbsp;Fonty<a class="headerlink" href="#fonty" title="Link to this heading">#</a></h3>
 <p>V typografii rozlišujeme tři základní typy fontů, jejichž použití má své typické účely.</p>
 <ul>
 <li><p><strong>Bezpatkové (Sans-Serif)</strong>: Například fonty <em>Arial</em>, <em>Helvetica</em> jsou preferované pro digitální obrazovky, prezentace, infografiky a obecně méně rozsáhlé (jednořádkové) texty nebo popisky. V tištěném textu se obvykle (pokud vůbec) používají jen v nadpisech a jiných krátkých textech. Zobrazení bezpatkového písma na obrazovkách s nižším rozlišením je čistší s menším množstvím vizuálních artefaktů a je tak lépe čitelné.</p>
@@ -649,7 +665,7 @@ document.write(`
 </div>
 </section>
 <section id="barvy-v-typografii">
-<h3>1.12.&nbsp;&nbsp;Barvy v typografii<a class="headerlink" href="#barvy-v-typografii" title="Link to this heading">#</a></h3>
+<h3>1.13.&nbsp;&nbsp;Barvy v typografii<a class="headerlink" href="#barvy-v-typografii" title="Link to this heading">#</a></h3>
 <p>Barvy hrají v typografii důležitou roli, protože ovlivňují čitelnost, vizuální hierarchii a celkový dojem z dokumentu. Správné použití barev může text zpřehlednit a zvýraznit důležité informace, zatímco nevhodná volba barev může čitelnost výrazně zhoršit.</p>
 <ul class="simple">
 <li><p><strong>Základní barevné schéma</strong>: Nejlepší čitelnosti v tištěných dokumentech dosáhnete <strong>černým textem na bílém pozadí</strong> (nebo velmi světlém pozadí). Černé na bílém je i preferovaná varianta pro prezentace, protože při projekci nemusí být úplně ideální světelné podmínky a světlý text na tmavém pozadí může být rozmazaný a špatně čitelný. V textech určených výhradně pro digitální obrazovky je možné zvolit základní kombinaci bílého textu na tmavém pozadí, které méně namáhá oči.</p></li>
@@ -658,7 +674,7 @@ document.write(`
 </ul>
 </section>
 <section id="radkovani">
-<h3>1.13.&nbsp;&nbsp;Řádkování<a class="headerlink" href="#radkovani" title="Link to this heading">#</a></h3>
+<h3>1.14.&nbsp;&nbsp;Řádkování<a class="headerlink" href="#radkovani" title="Link to this heading">#</a></h3>
 <p>Řádkování (anglicky <em>line spacing</em> nebo <em>leading</em>) označuje vzdálenost mezi jednotlivými řádky textu. Správné nastavení řádkování je klíčové pro čitelnost a estetiku dokumentu. Řádkování se udává buď číselně (např. 1,1) nebo v procentech (110 %) a označuje vzdálenost mezi řádky oproti základní výšce fontu.</p>
 <ul class="simple">
 <li><p><strong>Obvyklé nastavení:</strong> Pro běžné dokumenty se doporučuje řádkování v rozmezí <strong>1,1 – 1,2</strong>. Toto nastavení zajišťuje, že text není příliš stísněný ani příliš rozvolněný.</p></li>
@@ -667,7 +683,7 @@ document.write(`
 <p>Je důležité zachovat <strong>jednotné řádkování v celém dokumentu</strong>. Nekonzistentní řádkování působí rušivě a zhoršuje orientaci v textu.</p>
 </section>
 <section id="odsazovani">
-<h3>1.14.&nbsp;&nbsp;Odsazování<a class="headerlink" href="#odsazovani" title="Link to this heading">#</a></h3>
+<h3>1.15.&nbsp;&nbsp;Odsazování<a class="headerlink" href="#odsazovani" title="Link to this heading">#</a></h3>
 <p>Odsazování v textu slouží ke zvýšení přehlednosti a usnadnění orientace čtenáře. Existují dva základní způsoby odsazování odstavců:</p>
 <ul class="simple">
 <li><p><strong>Horizontální odsazení prvního řádku:</strong> První řádek každého odstavce je odsazen doprava. Tento způsob je běžný zejména v tištěných dokumentech, knihách a odborných textech. Odsazení prvního řádku se někdy nepoužívá u prvního odstavce za nadpisem nebo po jiném výrazném oddělení (např. po obrázku, tabulce).</p></li>
@@ -677,7 +693,7 @@ document.write(`
 <p><strong>Nadpisy:</strong> Nadpisy by měly mít <strong>větší mezeru před i za sebou</strong>, aby byly vizuálně oddělené od okolního textu. Obvykle se nastavuje větší mezera nad nadpisem než pod ním, případně se používá dvojnásobné řádkování oproti běžnému textu.</p>
 </section>
 <section id="citace">
-<h3>1.15.&nbsp;&nbsp;Citace<a class="headerlink" href="#citace" title="Link to this heading">#</a></h3>
+<h3>1.16.&nbsp;&nbsp;Citace<a class="headerlink" href="#citace" title="Link to this heading">#</a></h3>
 <p>Citace zdrojů jsou klíčové zejména v odborných, akademických a vědeckých textech. Správné citování umožňuje čtenáři ověřit informace, chrání autora před plagiátorstvím a prokazuje respekt k původním autorům.</p>
 <ul class="simple">
 <li><p><strong>Označení citace v textu:</strong> Nejčastěji se používá číselné označení v hranatých závorkách (např. [1], [2]) nebo horní index (např. ¹, ²). Samotná citace je pak pod příslušným číslem uvedena v seznamu citací buď v zápatí stránky nebo na konci dokumentu.</p></li>
@@ -687,13 +703,13 @@ document.write(`
 </ul>
 </section>
 <section id="cislovani-stranek">
-<h3>1.16.&nbsp;&nbsp;Číslování stránek<a class="headerlink" href="#cislovani-stranek" title="Link to this heading">#</a></h3>
+<h3>1.17.&nbsp;&nbsp;Číslování stránek<a class="headerlink" href="#cislovani-stranek" title="Link to this heading">#</a></h3>
 <p>Čísla stránek se nejčastěji umisťují do zápatí (dolní okraj stránky), a to buď na střed, nebo na vnější okraj stránky (tj. na pravý okraj u lichých stran, na levý okraj u sudých stran). Umístění na vnější okraj je běžné zejména u knih a brožur, protože při vazbě zůstává číslo stránky dobře viditelné.</p>
 <p>Úvodní části dokumentu, jako je titulní strana, anotace, poděkování nebo obsah, se obvykle nečíslují, případně se pro úvodní části dokumentu (před hlavním textem) používá odlišný styl číslování, například malé římské číslice (i, ii, iii, …). Hlavní část dokumentu (od první kapitoly) se pak čísluje arabskými číslicemi (1, 2, 3, …).</p>
 <p>V některých citačních stylech nebo podle požadavků školy/instituce se mohou pravidla pro číslování stránek lišit. Vždy si ověřte konkrétní požadavky pro daný typ dokumentu.</p>
 </section>
 <section id="vdovy-a-sirotci">
-<h3>1.17.&nbsp;&nbsp;Vdovy a sirotci<a class="headerlink" href="#vdovy-a-sirotci" title="Link to this heading">#</a></h3>
+<h3>1.18.&nbsp;&nbsp;Vdovy a sirotci<a class="headerlink" href="#vdovy-a-sirotci" title="Link to this heading">#</a></h3>
 <p>Vdovy a sirotci jsou typografické chyby, které zhoršují estetiku a čitelnost textu.</p>
 <p><strong>Vdova</strong> je poslední řádek odstavce, který se objeví osamocený na začátku nové stránky nebo sloupce.</p>
 <p><strong>Sirotek</strong> je naopak první řádek odstavce, který zůstane osamocený na konci stránky nebo sloupce. Oba případy narušují vizuální kontinuitu textu a mohou čtenáře rušit.</p>
@@ -702,7 +718,7 @@ document.write(`
 </section>
 <section id="latex">
 <h2>2.&nbsp;&nbsp;LaTeX<a class="headerlink" href="#latex" title="Link to this heading">#</a></h2>
-<p><strong>LaTeX</strong> (vyslovuje se <em>Latech</em>) je systém pro sazbu dokumentů založený na značkách (markup), který je považován za zlatý standard v typografii a to zejména v akademické sféře.</p>
+<p><strong>LaTeX</strong> (vyslovuje se <em>Lay-tech</em>) je systém pro sazbu dokumentů založený na značkách (markup), který je považován za zlatý standard v typografii a to zejména v akademické sféře.</p>
 <p>LaTeX velmi důsledně odděluje obsah dokumentu od stylu zobrazení a spolu s širokým ekosystémem balíčků podporuje celou řadu typografických prvků napříč různými obory.</p>
 <p>Pokud chcete z LaTeXem začít, doporučuji například online nástroj <a class="reference external" href="https://www.overleaf.com">Overleaf.com</a>.</p>
 </section>
@@ -762,6 +778,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zavorky">Závorky</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vypustka-tri-tecky">Výpustka (tři tečky)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pomlcka-spojovnik-minus">Pomlčka, spojovník, mínus</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lomitko">Lomítko</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uvozovky">Uvozovky</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#uvozovky-v-jinych-jazycich">Uvozovky v jiných jazycích</a></li>
 </ul>

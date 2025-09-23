@@ -2,6 +2,7 @@ Typografie
 ==========
 
 - [Unicode tabulka](https://symbl.cc/en/unicode-table/)
+- [Lorem Ipsum generátor](https://loremipsum.io)
 - [Citace.com](https://www.citace.com)
 - [Overleaf.com](https://www.overleaf.com)
 - [Learn LaTeX](https://www.overleaf.com/learn)
@@ -74,8 +75,21 @@ Místo tří samostatných teček se používá speciální znak výpustky `…`
 Ve striktní typografii je třeba rozlišovat tři druhy znaků pro pomlčky podle způsobu použití:
 
 - **Spojovník `-`**: Znak dostupný na běžné klávesnici. Používá se ke spojování slov (např. *česko-anglický*, *ping-pong*, *bude-li*, *play-off*, *Brno-město*) nebo v technických označeních např. *ISBN: 978-1-119-47386-2*. Píše se bez mezer.
-- **Pomlčka `–` (`U+2013`)**: Je o něco delší než spojovník. Používá se pro vyjádření intervalů a úseků (např. *Praha–Brno*, *strana 4–12*). Píše se bez mezer, pokud jsou oba výrazy bez mezer, jinak se používají mezery z obou stran (např. *Praha – Karlovy Vary*, *cena 12 000 – 20 000 Kč*). Dále je možné pomlčku použít k oddělení částí vět, namísto čárek.
+- **Pomlčka `–` (`U+2013`)**: Je o něco delší než spojovník. Používá se pro vyjádření intervalů a úseků (např. *Praha–Brno*, *strana 4–12*). Píše se bez mezer, pokud jsou oba výrazy bez mezer, jinak se používají mezery z obou stran (např. *Praha – Karlovy Vary*, *cena 12 000 – 20 000 Kč*). Dále je možné pomlčku použít k oddělení částí vět, kdy se píše mezera z obou stran.
 - **Mínus `−` (`U+2212`)**: Používá se v matematických výrazech, má stejné zarovnání jako znaménko plus (`+-` vs. `+−`).
+
+### Lomítko
+
+Lomítko (`/`) se používá k oddělení částí textu nebo čísel, například ve zlomcích, datech, nebo při označení alternativ. Píše se bez mezer z obou stran. Pokud lomítko odděluje delší (víceslovné) výrazy nebo celé věty, je vhodné použít mezeru z obou stran pro lepší čitelnost.
+
+**Příklad:**
+- *Správně: 1/2, ano/ne, pan/paní, student/ka*
+- *Špatně: 1 / 2, ano / ne, student / ka*
+
+**Příklad:**
+- *Správně: vážený pane / vážená paní*
+- *Špatně: vážený pane/vážená paní*
+
 
 ### Uvozovky
 
@@ -308,7 +322,7 @@ Pro jejich odstranění používejte nástroje textového editoru, jako je kontr
 LaTeX
 -----
 
-**LaTeX** (vyslovuje se *Latech*) je systém pro sazbu dokumentů založený na značkách (markup), který je považován za zlatý standard v typografii a to zejména v akademické sféře.
+**LaTeX** (vyslovuje se *Lay-tech*) je systém pro sazbu dokumentů založený na značkách (markup), který je považován za zlatý standard v typografii a to zejména v akademické sféře.
 
 LaTeX velmi důsledně odděluje obsah dokumentu od stylu zobrazení a spolu s širokým ekosystémem balíčků podporuje celou řadu typografických prvků napříč různými obory.
 
