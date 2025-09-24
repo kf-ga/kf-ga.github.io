@@ -253,7 +253,7 @@ Kromě těchto základních tříd fontů existuje i celá řada dalších typů
 
 ```{admonition} Comic Sans
 :class: warning
-Comic Sans je nechvalně známý font, navržen jako neformální, hravý font určený pro komiksy a dětské materiály. Jeho použití v seriózních, formálních nebo odborných dokumentech je považováno za nevhodné, ale přesto se ním setkáváme velmi často. 
+Comic Sans je nechvalně známý font, navržen jako neformální, hravý font určený pro komiksy a dětské materiály. Jeho použití v seriózních, formálních nebo odborných dokumentech je považováno za nevhodné, ale přesto se s ním setkáváme velmi často. 
 
 Jeho použití je vnímáno jako znak neznalosti typografických pravidel až špatného vkusu. Pokud potřebujete neformální vzhled, zvažte jiné moderní fonty, které lépe odpovídají účelu dokumentu.
 ```
