@@ -20,23 +20,23 @@ Mezi jednotlivými slovy píšeme vždy pouze jednu mezeru. Více mezer za sebou
 
 Za interpunkčními znaménky (`.`, `,`, `:`, `;`, `?`, `!`) píšeme mezeru pouze za znaménkem, nikdy před ním.
 
-**Příklad:**
+*Příklad:*
 - *Správně: „Ahoj, jak se máš?“*
 - *Špatně: „Ahoj ,jak se máš ?“*
 
 Toto pravidlo platí i pro iniciály a zkratky. 
 
-**Příklad:** *T. G. Masaryk, s. r. o., př. n. l., hod.*
+*Příklad:* *T. G. Masaryk, s. r. o., př. n. l., hod.*
 
 Pokud se v textu vyskytne více interpunkčních znamének za sebou, mezera se píše až za poslední interpunkční znak.
 
-**Příklad:**
+*Příklad:*
 - *Správně: Přijel v 8 hod., tj. přesně na čas.*
 - *Špatně: Přijel v 8 hod. , tj. přesně na čas.*
 
 Pokud věta končí zkratkou s tečkou, druhá tečka se již nepíše. 
 
-**Příklad:**
+*Příklad:*
 - *Správně: Setkání proběhlo v 15 hod.*
 - *Špatně: Setkání proběhlo v 15 hod..*
 
@@ -50,7 +50,7 @@ Pevná mezera (`U+00A0`, nezlomitelná, vkládá se např. pomocí klávesové z
 
 Před otevírací závorkou a za zavírací závorkou píšeme mezeru, uvnitř závorky mezery nepíšeme.
 
-**Příklad:**
+*Příklad:*
 - *Správně: „Text (v závorce) pokračuje.“*
 - *Špatně: „Text( v závorce )pokračuje.“*
 
@@ -62,7 +62,7 @@ Pokud potřebujete použít závorky uvnitř jiných závorek, doporučuje se st
 2. Prostřední: hranaté závorky `[ ]`
 3. Vnitřní: složené závorky `{ }`
 
-**Příklad:** *Text (s vysvětlením [a dalším {vnořeným} údajem]) pokračuje.*
+*Příklad:* *Text (s vysvětlením [a dalším {vnořeným} údajem]) pokračuje.*
 
 V češtině se v běžném textu vnořené závorky používají spíše výjimečně. Pokud je to možné, snažte se strukturovat text tak, aby vnořování nebylo nutné.
 
@@ -82,11 +82,11 @@ Ve striktní typografii je třeba rozlišovat tři druhy znaků pro pomlčky pod
 
 Lomítko (`/`) se používá k oddělení částí textu nebo čísel, například ve zlomcích, datech, nebo při označení alternativ. Píše se bez mezer z obou stran. Pokud lomítko odděluje delší (víceslovné) výrazy nebo celé věty, je vhodné použít mezeru z obou stran pro lepší čitelnost.
 
-**Příklad:**
+*Příklad:*
 - *Správně: 1/2, ano/ne, pan/paní, student/ka*
 - *Špatně: 1 / 2, ano / ne, student / ka*
 
-**Příklad:**
+*Příklad:*
 - *Správně: vážený pane / vážená paní*
 - *Špatně: vážený pane/vážená paní*
 
@@ -97,7 +97,7 @@ Uvozovky se v různých jazycích zapisují odlišně a mají svá specifická p
 
 V češtině se používají uvozovky, které mají tvar dole `„` a nahoře `“` (Unicode: `U+201E` a `U+201C`). Pokud je potřeba vkládat uvozovky uvnitř již uvozeného textu, používají se jednoduché uvozovky ve tvaru `‚` a `‘` (`U+201A` a `U+2018`).
 
-**Příklad:**
+*Příklad:*
 - *Správně:*
     - *„To je skvělý nápad,“ řekl učitel.*
     - *„Řekl mi: ‚Přijď zítra.‘“*
@@ -105,7 +105,7 @@ V češtině se používají uvozovky, které mají tvar dole `„` a nahoře `�
 
 Mezera se píše stejně jako u závorek – vně uvozovek, tedy před otevírací uvozovkou a za zavírací uvozovkou. Pokud věta končí uzavírací uvozovkou, tečka nebo jiné interpunkční znaménko se píše hned za uvozovku bez mezery.
 
-**Příklad:**
+*Příklad:*
 - *Správně: Řekl: „Přijdu později.“*
 - *Špatně: Řekl: „ Přijdu později “ .*
 
@@ -127,7 +127,7 @@ Při psaní v cizím jazyce je vhodné ověřit správný tvar uvozovek a jejich
 Při psaní čísel v textu je důležité dodržovat správná typografická pravidla, která se mohou lišit podle jazyka a kontextu:
 
 - **Desetinná čísla** se v češtině oddělují čárkou (např. *3,14*), v angličtině tečkou (např. *3.14*).
-- **Řády tisíců** se oddělují mezerou (např. *1 000 000*). Oddělování řádů tisíců je vyžadováno až od pěticiferných čísel, pro čtyřciferná je oddělování volitelné. U letopočtů se mezera nikdy nepoužívá (např. *2024*).
+- **Řády tisíců** se oddělují mezerou (např. *1 000 000*). Oddělování řádů tisíců je vyžadováno až od pěticiferných čísel, pro čtyřciferná je oddělování volitelné. U letopočtů se mezera nikdy nepoužívá (např. *2024*).
 - **Exponenty a indexy** zapisujte pomocí speciálních Unicode znaků (např. *m²*, *H₂O*) nebo pomocí horního a dolního indexu. Nemíchejte různé styly zápisu exponentů a indexů v jednom dokumentu.
 
 Atypická čísla (např. normy, standardy, GPS souřadnice apod.) mohou mít specifický zápis podle příslušných norem.
@@ -136,7 +136,7 @@ Zápis čísel se liší podle jazykových zvyklostí, v některých jazycích m
 
 | Jazyk                 | Příklad zápisu        |
 |-----------------------|----------------------:|
-| Čeština               | 1 234 567,89          |
+| Čeština               | 1 234 567,89          |
 | Britská angličtina    | 1,234,567.89          |
 | Americká angličtina   | 1,234,567.89          |
 | Němčina               | 1.234.567,89          |
@@ -170,11 +170,11 @@ Datum a čas v tabulkách zarovnávejte doprava pro lepší přehlednost. Stejn�
 
 ### Jednotky
 
-**Jednotku** obvykle uvádíme za číslem a oddělujeme ji mezerou (např. *10 kg*, *25 °C*). Pro **složené jednotky** používáme buď znak lomítka `/` (např. *km/h*), nebo střední tečku `·` (např. *W·s*) a to bez mezery. Použití `·` je nutné k tomu, aby se zabránilo nejednoznačnostem, např. *ms* (milisekunda) a *m·s* (metr-sekunda).
+**Jednotku** obvykle uvádíme za číslem a oddělujeme ji mezerou (např. *10 kg*, *25 °C*). Pro **složené jednotky** používáme buď znak lomítka `/` (např. *km/h*), nebo střední tečku `·` (např. *W·s*) a to bez mezery. Použití `·` je nutné k tomu, aby se zabránilo nejednoznačnostem, např. *ms* (milisekunda) a *m·s* (metr-sekunda).
 
 Výjimkou je zápis **úhlu**, kde používáme speciální znaky pro stupně, minuty a vteřiny bez mezer (např. *45°*, *20°10′5″*).
 
-Při psaní **procent** rozlišujeme zápis s mezerou, např. *5 %*, který čteme jako *pět procent*. Zápis bez mezery, např. *5%*, se chápe jako přídavné jméno *pětiprocentní*.
+Při psaní **procent** rozlišujeme zápis s mezerou, např. *5 %*, který čteme jako *pět procent*. Zápis bez mezery, např. *5%*, se chápe jako přídavné jméno *pětiprocentní*.
 
 Podobná pravidla se týkají také zápisu **měnových jednotek** a to jak speciálních znaků a zkratek (*Kč*, *zł**, *$*, *€*, *£*) tak i mezinárodních kódů ([ISO 4217](https://en.wikipedia.org/wiki/ISO_4217)) (*USD*, *EUR*, *CZK*). 
 
@@ -182,7 +182,7 @@ Podobná pravidla se týkají také zápisu **měnových jednotek** a to jak spe
 :class: note
 Se zápisem jednotek bez mezery se můžeme méně častěji setkat i u jiných jednotek a má pak význam přídavného jména jako u procent.
 
-**Příklad:**
+*Příklad:*
 - *napětí 12 V (napětí dvanáct voltů)*
 - *12V baterie (dvanáctivoltová baterie)*
 - *100Kč kupón (stokorunový kupón)*
@@ -201,29 +201,29 @@ Matematické vzorce podléhají specifickým typografickým pravidlům. Pro jeji
 
 - **Proměnné** se píší kurzívou.
 
-    **Příklad:** $x$, $y$, $z$
+    *Příklad:* $x$, $y$, $z$
 
 - **Známé funkce, operátory, čísla, jednotky** se píší základním (upright) stylem.
 
-    **Příklad:** $f(x) = \sin x + 3$, $d = 10\,\mathrm{m}$
+    *Příklad:* $f(x) = \sin x + 3$, $d = 10\,\mathrm{m}$
 
 - **Konstanty**: Standardní matematické konstanty je doporučeno v moderním stylu zapisovat základním (upright) stylem, ale  často se setkáme i se zápisem kurzívou. Konstanty specifické pro nějaký obor (např. fyzika) nebo konkrétní úlohu se zapisují kurzívou.
 
-    **Příklad:** $c$ (rychlost světla), $G$ (gravitační konstanta), $h$ (Planckova konstanta)
+    *Příklad:* $c$ (rychlost světla), $G$ (gravitační konstanta), $h$ (Planckova konstanta)
 
-    **Příklad:** $\mathrm{e}$ (Eulerovo číslo), $\mathrm{\pi}$ (Ludolfovo číslo), $\mathrm{i}$ (imaginární jednotka), ale i $e$, $\pi$, $i$
+    *Příklad:* $\mathrm{e}$ (Eulerovo číslo), $\mathrm{\pi}$ (Ludolfovo číslo), $\mathrm{i}$ (imaginární jednotka), ale i $e$, $\pi$, $i$
 
 - **Vektory** se zapisují tučně (bold) nebo s šipkou nad písmenem. Někdy se lze setkat také se zápisem tučnou kurzívou (vektor je stále proměnná).
 
-    **Příklad:** $\mathbf{v} = (v_1, v_2)$ nebo $\vec{v} = (v_1, v_2)$
+    *Příklad:* $\mathbf{v} = (v_1, v_2)$ nebo $\vec{v} = (v_1, v_2)$
 
 - **Množiny** se zapisují obvykle velkým písmenem a často se používá zápis pomocí speciálních Unicode symbolů.
 
-    **Příklad:** $A$, $\mathcal{M}$
+    *Příklad:* $A$, $\mathcal{M}$
 
 - **Dvojité písmo** mají některé speciální množiny.
 
-    **Příklad:** $\mathbb{R}$ (reálná čísla), $\mathbb{C}$ (komplexní čísla)
+    *Příklad:* $\mathbb{R}$ (reálná čísla), $\mathbb{C}$ (komplexní čísla)
     
 Tyto speciální znaky naleznete v Unicode tabulce například v [Letterlike Symbols](https://symbl.cc/en/unicode-table/#letterlike-symbols) nebo [Mathematical Alphanumeric Symbols](https://symbl.cc/en/unicode-table/#mathematical-alphanumeric-symbols).
 

@@ -57,7 +57,7 @@
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Rejstřík" href="../genindex.html" />
     <link rel="search" title="Vyhledávání" href="../search.html" />
-    <link rel="next" title="Informační systémy" href="04_is.html" />
+    <link rel="next" title="HTML" href="../a_web/01_html.html" />
     <link rel="prev" title="Typografie" href="02_typography.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="cs"/>
@@ -170,34 +170,16 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Kancelářský software</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Software</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_shortcuts.html">Zkratky</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_typography.html">Typografie</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Funkce tabulkových procesorů</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04_is.html">Informační systémy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05_database.html">Databáze</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../2_python/01_algorithms.html">Algoritmizace</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_python/02_variables.html">Proměnné</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_python/03_conditions.html">Podmínky</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_python/04_cycles.html">Cykly v Pythonu</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_python/05_structures.html">Datové struktury</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_python/06_functions.html">Funkce</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_python/07_modules.html">Balíčky</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_python/08_pip.html">PIP, Python Virtual Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2_python/10_graphs.html">Grafy</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Webové technologie</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../a_web/01_html.html">HTML</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../a_web/02_css.html">Základy CSS</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ostatní</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../9_other/01_materials.html">Materiály k výuce</a></li>
 </ul>
 
     </div>
@@ -354,7 +336,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aritmeticke-funkce">Aritmetické funkce</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logicke-funkce">Logické funkce</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#textove-funkce">Textové funkce</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dalsi-uzitecne">Další užitečné</a></li>
 </ul>
 </li>
 </ul>
@@ -370,10 +351,13 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="funkce-tabulkovych-procesoru">
 <h1>Funkce tabulkových procesorů<a class="headerlink" href="#funkce-tabulkovych-procesoru" title="Link to this heading">#</a></h1>
-<p>Tabulkové procesory jako <strong>Microsoft Excel</strong>, <strong>LibreOffice Calc</strong> nebo <strong>Google Sheets</strong> umožňují efektivní práci s daty pomocí funkcí a vzorců.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://support.google.com/docs/table/25273">Referenční příručka funkcí Google Sheets</a></p></li>
+<li><p><a class="reference external" href="https://support.microsoft.com/en-us/office/excel-functions-by-category-5f91f4e9-7b42-46d2-9bd1-63f26a86c0eb">Referenční příručka funkcí MS Excel</a></p></li>
+</ul>
 <section id="zapis-vzorcu">
 <h2>1.&nbsp;&nbsp;Zápis vzorců<a class="headerlink" href="#zapis-vzorcu" title="Link to this heading">#</a></h2>
-<p><strong>Vzorce</strong> se zapisují do buňky pomocí znaku <code class="docutils literal notranslate"><span class="pre">=</span></code> za kterým následuje výraz pro výpočet obsahu buňky. Výraz může obsahovat buď konkrétní hodnoty nebo odkaz na jinou buňku. Například vzorec <code class="docutils literal notranslate"><span class="pre">=A5+10</span></code> provede součet buňek <code class="docutils literal notranslate"><span class="pre">A5</span></code> a  čísla 10, pokud dojde ke změně obsahu buňky <code class="docutils literal notranslate"><span class="pre">A5</span></code>, výsledek se automaticky přepočítá.</p>
+<p><strong>Vzorce</strong> se zapisují do buňky pomocí znaku <code class="docutils literal notranslate"><span class="pre">=</span></code> za kterým následuje výraz pro výpočet obsahu buňky. Výraz může obsahovat buď konkrétní hodnoty nebo odkaz na jinou buňku. Například vzorec <code class="docutils literal notranslate"><span class="pre">=A5+10</span></code> provede součet buněk <code class="docutils literal notranslate"><span class="pre">A5</span></code> a  čísla 10, pokud dojde ke změně obsahu buňky <code class="docutils literal notranslate"><span class="pre">A5</span></code>, výsledek se automaticky přepočítá.</p>
 <p>Při zápisu vzorců můžete používat základní aritmetické operátory:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -411,17 +395,21 @@ document.write(`
 <h3>1.1.&nbsp;&nbsp;Funkce<a class="headerlink" href="#funkce" title="Link to this heading">#</a></h3>
 <p>Výraz může obsahovat také volání <strong>funkce</strong>, která provede nějakou složitější operaci. Zápis funkce vypadá takto:</p>
 <p><code class="docutils literal notranslate"><span class="pre">NAME(argument1,</span> <span class="pre">argument2)</span></code></p>
-<p>kde <code class="docutils literal notranslate"><span class="pre">NAME</span></code> je <strong>název</strong> volané funkce <code class="docutils literal notranslate"><span class="pre">argument1</span></code>, <code class="docutils literal notranslate"><span class="pre">argument2</span></code> jsou <strong>argumenty</strong> (<strong>parametry</strong>). Každá funkce má specifikovaný počet parametrů, některé funkce mohou mít libovolný počet parametrů. Konkrétní počet a význam parametrů lze najít v dokumentaci k příslušnému tabulkovému procesoru. Ikdyž většina základních funkcí má stejný název a parametry ve všech tabulkových procesorech, u některých složitějších funkcí se může způsob použití lišit.</p>
-<p>Kromě odkazů na konkrétní buňky mohou některé funkce pracovat také s celými rozsahy buněk. Rozsahy se zapisují počáteční a koncovou (včetně) buňkou rozsahu oddělenou dvojtečkou <code class="docutils literal notranslate"><span class="pre">:</span></code>, např.<code class="docutils literal notranslate"><span class="pre">B4:B8</span></code>, což značí rozsah od buňky B4 až do buňky B8 včetně. Rozsahy mohou být i vícerozměrné (pokud je daná funkce podporuje), např. <code class="docutils literal notranslate"><span class="pre">B4:C8</span></code>.</p>
-<p>Dále je možné zapsat rozsah přes celý sloupec nebo řádek:
-- <strong><code class="docutils literal notranslate"><span class="pre">B:B</span></code></strong>: označuje celý sloupec <code class="docutils literal notranslate"><span class="pre">B</span></code>
-- <strong><code class="docutils literal notranslate"><span class="pre">B4:B</span></code></strong>: značí sloupec <code class="docutils literal notranslate"><span class="pre">B</span></code> od řádku <code class="docutils literal notranslate"><span class="pre">4</span></code> včetně
-- <strong><code class="docutils literal notranslate"><span class="pre">7:7</span></code></strong>: celý řádek <code class="docutils literal notranslate"><span class="pre">7</span></code>
-- <strong><code class="docutils literal notranslate"><span class="pre">C7:7</span></code></strong>: řádek <code class="docutils literal notranslate"><span class="pre">7</span></code> od sloupce <code class="docutils literal notranslate"><span class="pre">C</span></code> včetně</p>
-<p>Při kopírování nebo přesouvání buňky se vzorcem se automaticky aktualizují odkazy na buňky a rozsahy o relativní posun vůči původní buňce. Pokud takovou fukci pro výpočet nechceme, je možné zafixovat sloupec či řádek předsazením symbolu <code class="docutils literal notranslate"><span class="pre">$</span></code>:
-- <strong><code class="docutils literal notranslate"><span class="pre">$B7</span></code></strong>: fixuje sloupec B
-- <strong><code class="docutils literal notranslate"><span class="pre">B$7</span></code></strong>: fixuje řádek 7
-- <strong><code class="docutils literal notranslate"><span class="pre">$B$7</span></code></strong>: fixuje buňku B7</p>
+<p>kde <code class="docutils literal notranslate"><span class="pre">NAME</span></code> je <strong>název</strong> volané funkce <code class="docutils literal notranslate"><span class="pre">argument1</span></code>, <code class="docutils literal notranslate"><span class="pre">argument2</span></code> jsou <strong>argumenty</strong> (<strong>parametry</strong>). Každá funkce má specifikovaný počet parametrů a některé funkce mohou mít libovolný počet parametrů. Konkrétní počet a význam parametrů lze najít v dokumentaci k příslušnému tabulkovému procesoru. I když většina základních funkcí má stejný název a parametry ve všech tabulkových procesorech, u některých složitějších funkcí se může způsob použití lišit.</p>
+<p>Kromě odkazů na konkrétní buňky mohou některé funkce pracovat také s celými rozsahy buněk. Rozsahy se zapisují počáteční a koncovou (včetně) buňkou rozsahu oddělenou dvojtečkou <code class="docutils literal notranslate"><span class="pre">:</span></code>, např. <code class="docutils literal notranslate"><span class="pre">B4:B8</span></code>, což značí rozsah od buňky B4 až do buňky B8 včetně. Rozsahy mohou být i vícerozměrné (pokud je daná funkce podporuje), např. <code class="docutils literal notranslate"><span class="pre">B4:C8</span></code>.</p>
+<p>Dále je možné zapsat rozsah přes celý sloupec nebo řádek:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">B:B</span></code></strong>: označuje celý sloupec <code class="docutils literal notranslate"><span class="pre">B</span></code></p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">B4:B</span></code></strong>: značí sloupec <code class="docutils literal notranslate"><span class="pre">B</span></code> od řádku <code class="docutils literal notranslate"><span class="pre">4</span></code> včetně</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">7:7</span></code></strong>: celý řádek <code class="docutils literal notranslate"><span class="pre">7</span></code></p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">C7:7</span></code></strong>: řádek <code class="docutils literal notranslate"><span class="pre">7</span></code> od sloupce <code class="docutils literal notranslate"><span class="pre">C</span></code> včetně</p></li>
+</ul>
+<p>Při kopírování nebo přesouvání buňky se vzorcem se automaticky aktualizují odkazy na buňky a rozsahy o relativní posun vůči původní buňce. Pokud takovou funkci pro výpočet nechceme, je možné zafixovat sloupec či řádek předsazením symbolu <code class="docutils literal notranslate"><span class="pre">$</span></code>:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">$B7</span></code></strong>: fixuje sloupec B</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">B$7</span></code></strong>: fixuje řádek 7</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">$B$7</span></code></strong>: fixuje buňku B7</p></li>
+</ul>
 <p>Krom číselných parametrů nebo odkazů na buňky či rozsah mohou některé funkce podporovat i textové proměnné, které se zapisují do dvojitých uvozovek např. <code class="docutils literal notranslate"><span class="pre">&quot;text&quot;</span></code>.</p>
 <div class="note admonition">
 <p class="admonition-title">Čárka nebo středník?</p>
@@ -433,97 +421,84 @@ document.write(`
 <h2>2.&nbsp;&nbsp;Nejčastěji používané funkce<a class="headerlink" href="#nejcasteji-pouzivane-funkce" title="Link to this heading">#</a></h2>
 <section id="aritmeticke-funkce">
 <h3>2.1.&nbsp;&nbsp;Aritmetické funkce<a class="headerlink" href="#aritmeticke-funkce" title="Link to this heading">#</a></h3>
-<ul class="simple">
+<ul>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">SUM(range)</span></code></strong>: Sečte všechny číselné hodnoty v rozsahu <code class="docutils literal notranslate"><span class="pre">range</span></code>. Text ignoruje.<br />
 <em>Příklad:</em> <code class="docutils literal notranslate"><span class="pre">=SUM(A2:A100)</span></code></p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">AVERAGE(range)</span></code></strong>: Vypočítá aritmetický průměr hodnot v rozsahu <code class="docutils literal notranslate"><span class="pre">range</span></code>.<br />
-<em>Příklad:</em> <code class="docutils literal notranslate"><span class="pre">=AVERAGE(B2:B10)</span></code></p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">COUNT(range)</span></code></strong>: Vrátí počet neprázdných číselných buněk v rozsahu <code class="docutils literal notranslate"><span class="pre">range</span></code>.<br />
-<em>Příklad:</em> <code class="docutils literal notranslate"><span class="pre">=COUNT(C2:C20)</span></code></p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">ROUND(value,</span> <span class="pre">decimals)</span></code></strong>: Zaokrouhlí číslo <code class="docutils literal notranslate"><span class="pre">value</span></code> na zadaný počet desetinných míst <code class="docutils literal notranslate"><span class="pre">decimals</span></code>. Paremetr <code class="docutils literal notranslate"><span class="pre">decimals</span></code> je nepovinný a pokud není zadán, zaokrouhluje funkce na celé číslo.
-<em>Příklad:</em> <code class="docutils literal notranslate"><span class="pre">=ROUND(D2,</span> <span class="pre">2)</span></code></p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">ROUNDUP(value,</span> <span class="pre">decimals)</span></code></strong>: Zaokrouhlí číslo <code class="docutils literal notranslate"><span class="pre">value</span></code> nahoru na počet desetinných míst <code class="docutils literal notranslate"><span class="pre">decimals</span></code>. Paremetr <code class="docutils literal notranslate"><span class="pre">decimals</span></code> je nepovinný a pokud není zadán, zaokrouhluje funkce na celé číslo nahoru.
-<em>Příklad:</em> <code class="docutils literal notranslate"><span class="pre">=ROUNDUP(E2,</span> <span class="pre">0)</span></code></p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">ROUNDDOWN(hodnota,</span> <span class="pre">decimals)</span></code></strong>: Zaokrouhlí číslo <code class="docutils literal notranslate"><span class="pre">value</span></code> dolů na počet desetinných míst <code class="docutils literal notranslate"><span class="pre">decimals</span></code>. Parametr <code class="docutils literal notranslate"><span class="pre">decimals</span></code> je nepovinný a pokud není zadán, zaokrouhluje funkce na celé číslo dolů.
-<em>Příklad:</em> <code class="docutils literal notranslate"><span class="pre">=ROUNDDOWN(E2,</span> <span class="pre">0)</span></code></p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">AVERAGE(range)</span></code></strong>: Vypočítá aritmetický průměr hodnot v rozsahu <code class="docutils literal notranslate"><span class="pre">range</span></code>.</p>
+<p><em>Příklad:</em> <code class="docutils literal notranslate"><span class="pre">=AVERAGE(B2:B10)</span></code></p>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">COUNT(range)</span></code></strong>: Vrátí počet neprázdných číselných buněk v rozsahu <code class="docutils literal notranslate"><span class="pre">range</span></code>.</p>
+<p><em>Příklad:</em> <code class="docutils literal notranslate"><span class="pre">=COUNT(C2:C20)</span></code></p>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">ROUND(value,</span> <span class="pre">decimals)</span></code></strong>: Zaokrouhlí číslo <code class="docutils literal notranslate"><span class="pre">value</span></code> na zadaný počet desetinných míst <code class="docutils literal notranslate"><span class="pre">decimals</span></code>. Parametr <code class="docutils literal notranslate"><span class="pre">decimals</span></code> je nepovinný a pokud není zadán, zaokrouhluje funkce na celé číslo.</p>
+<p><em>Příklad:</em> <code class="docutils literal notranslate"><span class="pre">=ROUND(D2,</span> <span class="pre">2)</span></code></p>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">ROUNDUP(value,</span> <span class="pre">decimals)</span></code></strong>: Zaokrouhlí číslo <code class="docutils literal notranslate"><span class="pre">value</span></code> nahoru na počet desetinných míst <code class="docutils literal notranslate"><span class="pre">decimals</span></code>. Parametr <code class="docutils literal notranslate"><span class="pre">decimals</span></code> je nepovinný a pokud není zadán, zaokrouhluje funkce na celé číslo nahoru.</p>
+<p><em>Příklad:</em> <code class="docutils literal notranslate"><span class="pre">=ROUNDUP(E2,</span> <span class="pre">0)</span></code></p>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">ROUNDDOWN(hodnota,</span> <span class="pre">decimals)</span></code></strong>: Zaokrouhlí číslo <code class="docutils literal notranslate"><span class="pre">value</span></code> dolů na počet desetinných míst <code class="docutils literal notranslate"><span class="pre">decimals</span></code>. Parametr <code class="docutils literal notranslate"><span class="pre">decimals</span></code> je nepovinný a pokud není zadán, zaokrouhluje funkce na celé číslo dolů.</p>
+<p><em>Příklad:</em> <code class="docutils literal notranslate"><span class="pre">=ROUNDDOWN(E2,</span> <span class="pre">0)</span></code></p>
+</li>
 </ul>
 </section>
 <section id="logicke-funkce">
 <h3>2.2.&nbsp;&nbsp;Logické funkce<a class="headerlink" href="#logicke-funkce" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">IF(condition,</span> <span class="pre">value_if_true,</span> <span class="pre">value_if_false)</span></code></strong>: Vyhodnotí logickou podmínku <code class="docutils literal notranslate"><span class="pre">condition</span></code> a pokud je podmínka pravdivá, vrací funkce hodnotu <code class="docutils literal notranslate"><span class="pre">value_if_true</span></code>, pokud nepravdivá, vrací <code class="docutils literal notranslate"><span class="pre">value_if_false</span></code>.</p></li>
-</ul>
+<ul>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">IF(condition,</span> <span class="pre">value_if_true,</span> <span class="pre">value_if_false)</span></code></strong>: Vyhodnotí logickou podmínku <code class="docutils literal notranslate"><span class="pre">condition</span></code> a pokud je podmínka pravdivá, vrací funkce hodnotu <code class="docutils literal notranslate"><span class="pre">value_if_true</span></code>, pokud nepravdivá, vrací <code class="docutils literal notranslate"><span class="pre">value_if_false</span></code>.</p>
 <p><em>Příklad:</em> <code class="docutils literal notranslate"><span class="pre">=IF(A2</span> <span class="pre">&gt;</span> <span class="pre">5,</span> <span class="pre">&quot;ANO&quot;,</span> <span class="pre">&quot;NE&quot;)</span></code> - Pokud je číslo v buňce <code class="docutils literal notranslate"><span class="pre">A2</span></code> větší než <code class="docutils literal notranslate"><span class="pre">5</span></code>, vrací funkce text <code class="docutils literal notranslate"><span class="pre">ANO</span></code>, pokud ne, vrací text <code class="docutils literal notranslate"><span class="pre">NE</span></code></p>
 <p>Ve vyhodnocování podmínky je možné použít operátory <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;&gt;</span></code> (nerovná se). Pokud chceme testovat textovou hodnotu, nezapomeňte textu uvést do dvojitých uvozovek, např. <code class="docutils literal notranslate"><span class="pre">A4</span> <span class="pre">=</span> <span class="pre">&quot;hello&quot;</span></code>.</p>
-<ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">COUNTIF(range,</span> <span class="pre">condition)</span></code></strong>: Spočítá počet buněk v rozsahu <code class="docutils literal notranslate"><span class="pre">range</span></code>, které splňují zadanou podmínku <code class="docutils literal notranslate"><span class="pre">condition</span></code>. Podmínka může být například porovnání nebo textový řetězec.</p></li>
-</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">COUNTIF(range,</span> <span class="pre">condition)</span></code></strong>: Spočítá počet buněk v rozsahu <code class="docutils literal notranslate"><span class="pre">range</span></code>, které splňují zadanou podmínku <code class="docutils literal notranslate"><span class="pre">condition</span></code>. Podmínka může být například porovnání nebo textový řetězec.</p>
 <p><em>Příklad:</em> <code class="docutils literal notranslate"><span class="pre">=COUNTIF(A2:A10,</span> <span class="pre">&quot;&gt;5&quot;)</span></code> - Spočítá počet buněk v rozsahu <code class="docutils literal notranslate"><span class="pre">A2:A10</span></code>, které obsahují hodnotu větší než 5.</p>
-<ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">SUMIF(range,</span> <span class="pre">condition,</span> <span class="pre">[sum_range])</span></code></strong>: Sečte hodnoty v rozsahu <code class="docutils literal notranslate"><span class="pre">sum_range</span></code>, pokud odpovídající buňky v rozsahu <code class="docutils literal notranslate"><span class="pre">range</span></code> splňují zadanou podmínku <code class="docutils literal notranslate"><span class="pre">condition</span></code>. Pokud není <code class="docutils literal notranslate"><span class="pre">sum_range</span></code> zadán, sčítají se hodnoty přímo z <code class="docutils literal notranslate"><span class="pre">range</span></code>.</p></li>
-</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">SUMIF(range,</span> <span class="pre">condition,</span> <span class="pre">[sum_range])</span></code></strong>: Sečte hodnoty v rozsahu <code class="docutils literal notranslate"><span class="pre">sum_range</span></code>, pokud odpovídající buňky v rozsahu <code class="docutils literal notranslate"><span class="pre">range</span></code> splňují zadanou podmínku <code class="docutils literal notranslate"><span class="pre">condition</span></code>. Pokud není <code class="docutils literal notranslate"><span class="pre">sum_range</span></code> zadán, sčítají se hodnoty přímo z <code class="docutils literal notranslate"><span class="pre">range</span></code>. Funkce podporuje pouze jednu podmínku, pokud potřebujete více podmínek, použijte <code class="docutils literal notranslate"><span class="pre">SUMIFS</span></code>.</p>
 <p><em>Příklad:</em> <code class="docutils literal notranslate"><span class="pre">=SUMIF(A2:A10,</span> <span class="pre">&quot;&gt;5&quot;,</span> <span class="pre">B2:B10)</span></code> - Sečte hodnoty v rozsahu <code class="docutils literal notranslate"><span class="pre">B2:B10</span></code>, kde odpovídající buňky v rozsahu <code class="docutils literal notranslate"><span class="pre">A2:A10</span></code> obsahují hodnotu větší než 5.</p>
-<ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">AND(condition1,</span> <span class="pre">condition2,</span> <span class="pre">...)</span></code></strong>: Vrátí logickou hodnotu <code class="docutils literal notranslate"><span class="pre">TRUE</span></code>, pokud jsou všechny podmínky splněny. Funkce může mít libovolný počet parametrů.</p></li>
-</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">AND(condition1,</span> <span class="pre">condition2,</span> <span class="pre">…)</span></code></strong>: Vrátí logickou hodnotu <code class="docutils literal notranslate"><span class="pre">TRUE</span></code>, pokud jsou všechny podmínky splněny. Funkce může mít libovolný počet parametrů.</p>
 <p><em>Příklad:</em> <code class="docutils literal notranslate"><span class="pre">=AND(A2</span> <span class="pre">&gt;</span> <span class="pre">5,</span> <span class="pre">B2</span> <span class="pre">&lt;</span> <span class="pre">10)</span></code></p>
-<ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">OR(condition1,</span> <span class="pre">condition2,</span> <span class="pre">...)</span></code></strong>: Vrátí logickou hodnotu <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>, pokud je alespoň jedna podmínka splněna. Funkce může mít libovolný počet parametrů.</p></li>
-</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">OR(condition1,</span> <span class="pre">condition2,</span> <span class="pre">…)</span></code></strong>: Vrátí logickou hodnotu <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>, pokud je alespoň jedna podmínka splněna. Funkce může mít libovolný počet parametrů.</p>
 <p><em>Příklad:</em> <code class="docutils literal notranslate"><span class="pre">=OR(A2</span> <span class="pre">&gt;</span> <span class="pre">5,</span> <span class="pre">B2</span> <span class="pre">&lt;</span> <span class="pre">10)</span></code></p>
-<ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">NOT(condition)</span></code></strong>: Neguje logickou hodnotu parametru <code class="docutils literal notranslate"><span class="pre">condition</span></code>.</p></li>
-</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">NOT(condition)</span></code></strong>: Neguje logickou hodnotu parametru <code class="docutils literal notranslate"><span class="pre">condition</span></code>.</p>
 <p><em>Příklad:</em> <code class="docutils literal notranslate"><span class="pre">=NOT(A2</span> <span class="pre">=</span> <span class="pre">0)</span></code></p>
-<p>Fuknce <code class="docutils literal notranslate"><span class="pre">AND</span></code>, <code class="docutils literal notranslate"><span class="pre">OR</span></code>, <code class="docutils literal notranslate"><span class="pre">NOT</span></code> je možné stejně jako jiné funkce vnořovat a sestavit tak komplexní logický výraz.</p>
+<p>Funkce <code class="docutils literal notranslate"><span class="pre">AND</span></code>, <code class="docutils literal notranslate"><span class="pre">OR</span></code>, <code class="docutils literal notranslate"><span class="pre">NOT</span></code> je možné stejně jako jiné funkce vnořovat a sestavit tak komplexní logický výraz.</p>
 <p><em>Příklad:</em> <code class="docutils literal notranslate"><span class="pre">=IF(OR(AND(A2</span> <span class="pre">&gt;</span> <span class="pre">5,</span> <span class="pre">B2</span> <span class="pre">=</span> <span class="pre">0),</span> <span class="pre">A2</span> <span class="pre">&lt;=</span> <span class="pre">5),</span> <span class="pre">&quot;ANO&quot;,</span> <span class="pre">&quot;NE&quot;)</span></code></p>
+</li>
+</ul>
 </section>
 <section id="textove-funkce">
 <h3>2.3.&nbsp;&nbsp;Textové funkce<a class="headerlink" href="#textove-funkce" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">CONCAT(text1,</span> <span class="pre">text2,</span> <span class="pre">...)</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">CONCATENATE(text1,</span> <span class="pre">text2,</span> <span class="pre">...)</span></code></strong>: Spojí více textových řetězců do jednoho. Funkce může mít libovolný počet parametrů.</p></li>
-</ul>
+<ul>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">CONCAT(text1,</span> <span class="pre">text2,</span> <span class="pre">…)</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">CONCATENATE(text1,</span> <span class="pre">text2,</span> <span class="pre">…)</span></code></strong>: Spojí více textových řetězců do jednoho. Funkce může mít libovolný počet parametrů.</p>
 <p><em>Příklad:</em> <code class="docutils literal notranslate"><span class="pre">=CONCAT(A2,</span> <span class="pre">&quot;</span> <span class="pre">&quot;,</span> <span class="pre">B2)</span></code></p>
-<ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">TEXTJOIN(delimiter,</span> <span class="pre">ignore_empty,</span> <span class="pre">text1,</span> <span class="pre">text2,</span> <span class="pre">...)</span></code></strong>: Spojí argumenty <code class="docutils literal notranslate"><span class="pre">text1</span></code>, <code class="docutils literal notranslate"><span class="pre">text2</span></code> (a další) oddělovačem <code class="docutils literal notranslate"><span class="pre">delimiter</span></code>. Pokud je parametr <code class="docutils literal notranslate"><span class="pre">ignore_empty</span></code> <code class="docutils literal notranslate"><span class="pre">TRUE</span></code>, přeskakuje funkce prázdné buňky. Parametry <code class="docutils literal notranslate"><span class="pre">text1</span></code>, <code class="docutils literal notranslate"><span class="pre">text2</span></code> mohou být také celé rozsahy buněk.</p></li>
-</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">TEXTJOIN(delimiter,</span> <span class="pre">ignore_empty,</span> <span class="pre">text1,</span> <span class="pre">text2,</span> <span class="pre">…)</span></code></strong>: Spojí argumenty <code class="docutils literal notranslate"><span class="pre">text1</span></code>, <code class="docutils literal notranslate"><span class="pre">text2</span></code> (a další) oddělovačem <code class="docutils literal notranslate"><span class="pre">delimiter</span></code>. Pokud je parametr <code class="docutils literal notranslate"><span class="pre">ignore_empty</span></code> <code class="docutils literal notranslate"><span class="pre">TRUE</span></code>, přeskakuje funkce prázdné buňky. Parametry <code class="docutils literal notranslate"><span class="pre">text1</span></code>, <code class="docutils literal notranslate"><span class="pre">text2</span></code> mohou být také celé rozsahy buněk.</p>
 <p><em>Příklad:</em>  <code class="docutils literal notranslate"><span class="pre">=TEXTJOIN(&quot;,</span> <span class="pre">&quot;,</span> <span class="pre">TRUE,</span> <span class="pre">A2:A10)</span></code></p>
-<ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">LEN(text)</span></code></strong>: Vrátí délku textového řetězce.</p></li>
-</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">LEN(text)</span></code></strong>: Vrátí délku textového řetězce.</p>
 <p><em>Příklad:</em> <code class="docutils literal notranslate"><span class="pre">=LEN(A2)</span></code></p>
-<ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">LEFT(text,</span> <span class="pre">count)</span></code></strong>: Vrátí zleva počet znaků <code class="docutils literal notranslate"><span class="pre">count</span></code> z textového parametru <code class="docutils literal notranslate"><span class="pre">text</span></code>.</p></li>
-</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">LEFT(text,</span> <span class="pre">count)</span></code></strong>: Vrátí zleva počet znaků <code class="docutils literal notranslate"><span class="pre">count</span></code> z textového parametru <code class="docutils literal notranslate"><span class="pre">text</span></code>.</p>
 <p><em>Příklad:</em> <code class="docutils literal notranslate"><span class="pre">=LEFT(A2,</span> <span class="pre">3)</span></code></p>
-<ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">RIGHT(text,</span> <span class="pre">count)</span></code></strong>: Vrátí zprava počet znaků <code class="docutils literal notranslate"><span class="pre">count</span></code> z textového parametru <code class="docutils literal notranslate"><span class="pre">text</span></code>.</p></li>
-</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">RIGHT(text,</span> <span class="pre">count)</span></code></strong>: Vrátí zprava počet znaků <code class="docutils literal notranslate"><span class="pre">count</span></code> z textového parametru <code class="docutils literal notranslate"><span class="pre">text</span></code>.</p>
 <p><em>Příklad:</em> <code class="docutils literal notranslate"><span class="pre">=RIGHT(A2,</span> <span class="pre">2)</span></code></p>
-<ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">MID(text,</span> <span class="pre">start,</span> <span class="pre">end)</span></code></strong>: Vrátí část textu text od znaku na pozici <code class="docutils literal notranslate"><span class="pre">start</span></code> do znaku na pozici <code class="docutils literal notranslate"><span class="pre">end</span></code> (včetně). Index prvního znaku v řetězci je 1.<br />
-<em>Příklad:</em> <code class="docutils literal notranslate"><span class="pre">=MID(A2,</span> <span class="pre">2,</span> <span class="pre">4)</span></code></p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">TRIM(text)</span></code></strong>: Odstraní nadbytečné mezery z textu <code class="docutils literal notranslate"><span class="pre">text</span></code>.<br />
-<em>Příklad:</em> <code class="docutils literal notranslate"><span class="pre">=TRIM(A2)</span></code></p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">SEARCH(search,</span> <span class="pre">text,</span> <span class="pre">[start_num])</span></code></strong>: Vyhledá pozici prvního výskytu textu <code class="docutils literal notranslate"><span class="pre">search</span></code> v textu <code class="docutils literal notranslate"><span class="pre">text</span></code>. Volitelný parametr <code class="docutils literal notranslate"><span class="pre">start_num</span></code> určuje, od kterého znaku má hledání začít (výchozí je 1). Funkce vrací pozici nalezeného textu jako číslo, nebo chybu pokud text nenajde.</p></li>
-</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">MID(text,</span> <span class="pre">start,</span> <span class="pre">end)</span></code></strong>: Vrátí část textu text od znaku na pozici <code class="docutils literal notranslate"><span class="pre">start</span></code> do znaku na pozici <code class="docutils literal notranslate"><span class="pre">end</span></code> (včetně). Index prvního znaku v řetězci je 1.</p>
+<p><em>Příklad:</em> <code class="docutils literal notranslate"><span class="pre">=MID(A2,</span> <span class="pre">2,</span> <span class="pre">4)</span></code></p>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">TRIM(text)</span></code></strong>: Odstraní nadbytečné mezery z textu <code class="docutils literal notranslate"><span class="pre">text</span></code>.</p>
+<p><em>Příklad:</em> <code class="docutils literal notranslate"><span class="pre">=TRIM(A2)</span></code></p>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">SEARCH(search,</span> <span class="pre">text,</span> <span class="pre">[start_num])</span></code></strong>: Vyhledá pozici prvního výskytu textu <code class="docutils literal notranslate"><span class="pre">search</span></code> v textu <code class="docutils literal notranslate"><span class="pre">text</span></code>. Volitelný parametr <code class="docutils literal notranslate"><span class="pre">start_num</span></code> určuje, od kterého znaku má hledání začít (výchozí je 1). Funkce vrací pozici nalezeného textu jako číslo, nebo chybu pokud text nenajde.</p>
 <p><em>Příklad:</em> <code class="docutils literal notranslate"><span class="pre">=SEARCH(&quot;abc&quot;,</span> <span class="pre">A2)</span></code> – Vrátí pozici, kde se v buňce <code class="docutils literal notranslate"><span class="pre">A2</span></code> poprvé vyskytuje řetězec <code class="docutils literal notranslate"><span class="pre">&quot;abc&quot;</span></code>.</p>
-<ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">TEXT(value,</span> <span class="pre">format_text)</span></code></strong>: Převede číslo nebo datum na text podle zadaného formátu <code class="docutils literal notranslate"><span class="pre">format_text</span></code>. Formátovací řetězec určuje, jak bude výstupní text vypadat.</p></li>
-</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">TEXT(value,</span> <span class="pre">format_text)</span></code></strong>: Převede číslo nebo datum na text podle zadaného formátu <code class="docutils literal notranslate"><span class="pre">format_text</span></code>. Formátovací řetězec určuje, jak bude výstupní text vypadat.</p>
 <p><em>Příklad:</em> <code class="docutils literal notranslate"><span class="pre">=TEXT(A2,</span> <span class="pre">&quot;0.00&quot;)</span></code> - Převede číslo v buňce <code class="docutils literal notranslate"><span class="pre">A2</span></code> na text s dvěma desetinnými místy.<br />
 <em>Příklad:</em> <code class="docutils literal notranslate"><span class="pre">=TEXT(A2,</span> <span class="pre">&quot;dd/mm/yyyy&quot;)</span></code> - Převede datum v buňce <code class="docutils literal notranslate"><span class="pre">A2</span></code> na text ve formátu <code class="docutils literal notranslate"><span class="pre">den/měsíc/rok</span></code>.</p>
-</section>
-<section id="dalsi-uzitecne">
-<h3>2.4.&nbsp;&nbsp;Další užitečné<a class="headerlink" href="#dalsi-uzitecne" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">VLOOKUP(lookup_value,</span> <span class="pre">table_array,</span> <span class="pre">col_index_num,</span> <span class="pre">[range_lookup])</span></code></strong>: Vyhledá hodnotu <code class="docutils literal notranslate"><span class="pre">lookup_value</span></code> ve sloupci první oblasti <code class="docutils literal notranslate"><span class="pre">table_array</span></code> a vrátí hodnotu zadaného sloupce <code class="docutils literal notranslate"><span class="pre">col_index_num</span></code>. Volitelný parametr <code class="docutils literal notranslate"><span class="pre">range_lookup</span></code> určuje, zda hledání musí být přesné (<code class="docutils literal notranslate"><span class="pre">FALSE</span></code>) nebo přibližné (<code class="docutils literal notranslate"><span class="pre">TRUE</span></code>).</p></li>
+</li>
 </ul>
-<p><em>Příklad:</em> <code class="docutils literal notranslate"><span class="pre">=VLOOKUP(1001,</span> <span class="pre">A2:C10,</span> <span class="pre">2,</span> <span class="pre">FALSE)</span></code> - Vyhledá hodnotu <code class="docutils literal notranslate"><span class="pre">1001</span></code> v prvním sloupci oblasti <code class="docutils literal notranslate"><span class="pre">A2:C10</span></code> a vrátí odpovídající hodnotu z druhého sloupce.</p>
-<ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">HLOOKUP(lookup_value,</span> <span class="pre">table_array,</span> <span class="pre">row_index_num,</span> <span class="pre">[range_lookup])</span></code></strong>: Vyhledá hodnotu <code class="docutils literal notranslate"><span class="pre">lookup_value</span></code> v prvním řádku oblasti <code class="docutils literal notranslate"><span class="pre">table_array</span></code> a vrátí hodnotu zadaného řádku <code class="docutils literal notranslate"><span class="pre">row_index_num</span></code>. Volitelný parametr <code class="docutils literal notranslate"><span class="pre">range_lookup</span></code> určuje, zda hledání musí být přesné (<code class="docutils literal notranslate"><span class="pre">FALSE</span></code>) nebo přibližné (<code class="docutils literal notranslate"><span class="pre">TRUE</span></code>).</p></li>
-</ul>
-<p><em>Příklad:</em> <code class="docutils literal notranslate"><span class="pre">=HLOOKUP(&quot;January&quot;,</span> <span class="pre">A1:E5,</span> <span class="pre">3,</span> <span class="pre">TRUE)</span></code> - Vyhledá hodnotu <code class="docutils literal notranslate"><span class="pre">&quot;January&quot;</span></code> v prvním řádku oblasti <code class="docutils literal notranslate"><span class="pre">A1:E5</span></code> a vrátí odpovídající hodnotu ze třetího řádku.</p>
 </section>
 </section>
 </section>
@@ -549,11 +524,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="04_is.html"
+       href="../a_web/01_html.html"
        title="další stránka">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">další</p>
-        <p class="prev-next-title">Informační systémy</p>
+        <p class="prev-next-title">HTML</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -581,7 +556,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aritmeticke-funkce">Aritmetické funkce</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logicke-funkce">Logické funkce</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#textove-funkce">Textové funkce</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dalsi-uzitecne">Další užitečné</a></li>
 </ul>
 </li>
 </ul>
