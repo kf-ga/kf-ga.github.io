@@ -1,5 +1,5 @@
-Funkce tabulkových procesorů
-============================
+Tabulkové procesory
+===================
 
 - [Referenční příručka funkcí Google Sheets](https://support.google.com/docs/table/25273)
 - [Referenční příručka funkcí MS Excel](https://support.microsoft.com/en-us/office/excel-functions-by-category-5f91f4e9-7b42-46d2-9bd1-63f26a86c0eb)
@@ -42,9 +42,9 @@ Dále je možné zapsat rozsah přes celý sloupec nebo řádek:
 
 Při kopírování nebo přesouvání buňky se vzorcem se automaticky aktualizují odkazy na buňky a rozsahy o relativní posun vůči původní buňce. Pokud takovou funkci pro výpočet nechceme, je možné zafixovat sloupec či řádek předsazením symbolu `$`:
 
-- **`$B7`**: fixuje sloupec B
-- **`B$7`**: fixuje řádek 7
-- **`$B$7`**: fixuje buňku B7
+- **`$B7`**: fixuje sloupec `B`
+- **`B$7`**: fixuje řádek `7`
+- **`$B$7`**: fixuje buňku `B7`
 
 Krom číselných parametrů nebo odkazů na buňky či rozsah mohou některé funkce podporovat i textové proměnné, které se zapisují do dvojitých uvozovek např. `"text"`.
 
