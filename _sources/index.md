@@ -18,6 +18,7 @@ Informatika
 1_office/03_spreadsheet.md
 1_office/04_is.md
 1_office/05_database.md
+1_office/06_presentations.md
 ```
 
 ```{toctree}
