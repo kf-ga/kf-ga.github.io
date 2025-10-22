@@ -53,7 +53,7 @@ V Google Tabulkách můžete použít také následující zápisy:
 ```{admonition} Celý sloupec
 :class: tip
 
-Pokud potřebujete v MS Excel nebo LibreOffice Calc sečíst hodnoty v celém sloupci až od konkrétního řádku, můžete použít na*Příklad:*
+Pokud potřebujete v MS Excel nebo LibreOffice Calc sečíst hodnoty v celém sloupci až od konkrétního řádku, můžete použít například:
 
 - **`B4:B1000000`**: sloupec `B` od řádku `4` po řádek `1000000`
 - **`C7:ZZ7`**: řádek `7` od sloupce `C` po sloupec `ZZ`
