@@ -1,88 +1,82 @@
 Algoritmizace
 =============
 
+- [Python](https://www.python.org/downloads/)
+- [Visual Studio Code](https://code.visualstudio.com)
+
 Algoritmizace je proces navrhování a popisování kroků, které je třeba vykonat k dosažení konkrétního cíle nebo vyřešení problému. Tento proces můžeme přirovnat k receptu na vaření: pokud máte dobře napsaný recept, víte přesně, jaké kroky a v jakém pořadí máte vykonat, abyste dosáhli požadovaného výsledku. Stejně tak algoritmus popisuje konkrétní posloupnost kroků, které je třeba provést, aby program správně fungoval.
 
+Další příklady algoritmů:
+- Matematické operace: sčítání, odčítání, násobení, dělení, řešení kvadratické rovnice apod.
+- Hledání nejkratší cesty mezi dvěma body.
+- Seřazení jmen podle abecedy.
 
 Základní vlastnosti algoritmů
 -----------------------------
 
-* **Opakovatelnost:** Algoritmus je sekvence kroků, které lze opakovat a aplikovat na různé vstupy.
-* **Determinismus:** Každý krok algoritmu musí být jednoznačně definován, což znamená, že pro stejný vstup bude algoritmus vždy vykonávat stejné kroky a dávat stejný výstup.
-* **Konečnost:** Algoritmus by měl mít konečný počet kroků a musí skončit po provedení všech operací.
-
-Příkladem mohou být například algoritmy na sčítání, násobení a dělení "na papíře". Tyto algoritmy mají jasný opakovatelný postup, pro stejná vstupní čísla dávají vždy stejný výsledek (determinismus) v konečném počtu kroků.
-
+- **Opakovatelnost:** Algoritmus je sekvence kroků, kterou lze opakovaně aplikovat na různé vstupy.
+- **Determinismus:** Každý krok algoritmu musí být jednoznačně definován, což znamená, že pro stejný vstup bude algoritmus vždy vykonávat stejné kroky a dávat stejný výstup. Algoritmus v sobě může mít prvky náhodnosti (např. simulace hodu kostkou); ty jsou však explicitně definovány a taková náhodnost se chápe jako součást vstupu algoritmu.
+- **Konečnost:** Algoritmus musí být popsatelný konečným počtem kroků. To ale nutně neznamená, že algoritmus musí někdy skončit. Kroky se mohou opakovat v nekonečné smyčce (například text běžící na LED panelu).
 
 Potřeba programovacího jazyka
 -----------------------------
 
-Pro popis algoritmu lze použít sice přirozený jazyk (čeština, angličtina), nicméně tyto jazyky jsou často nejednoznačné, popis některých kroků může být velmi zdlouhavý a často také pracují s implicitním kontextem, u kterého se předpokládá, že ho čtenář zná, nicméně každý může pracovat s trochu jinou verzí toho kontextu. 
+Pro popis algoritmu lze sice použít přirozený jazyk (čeština, angličtina), avšak tyto jazyky jsou často nejednoznačné, popis některých kroků může být velmi zdlouhavý a často také pracují s implicitním kontextem (kulturním, společenským nebo i jiným), o němž se předpokládá, že jej čtenář zná; každý však může pracovat s trochu jinou verzí tohoto kontextu. To vede k nejednoznačnostem v interpretaci přirozeného jazyka a narušuje tak požadavek na determinismus algoritmu.
 
-Proto abychom mohli algoritmus zapsat a nechat počítač, aby jej vykonal, potřebujeme **programovací jazyk**. Tyto jazyky jsou navrženy tak, aby jejich zápis měl vždy jednoznačnou interpretaci. Programovací jazyk musí být srozumitelný jak pro člověka, který píše kód, tak pro počítač, který jej vykoná a slouží tak jako "komunikační můstek" mezi člověkem a počítačem.
+Abychom mohli algoritmus zapsat a nechat počítač, aby jej vykonal, potřebujeme **programovací jazyk**. Programovací jazyky jsou navrženy tak, aby jejich zápis měl vždy jednoznačnou interpretaci. Programovací jazyk musí být srozumitelný jak pro člověka, který píše kód, tak pro počítač, který jej vykoná, a slouží tak jako „komunikační můstek“ mezi člověkem a počítačem.
 
 Nejčastěji používané programovací jazyky
 ----------------------------------------
 
-### JavaScript
-JavaScript je jazyk používaný především pro vývoj webových aplikací. Umožňuje vytvářet interaktivní prvky na webových stránkách, jako jsou animace, formuláře nebo dynamický obsah. Setkáme se s ním v prohlížečích a při vývoji front-endu i back-endu (např. pomocí Node.js).
+- **Python**
 
-### Java
-Java je univerzální programovací jazyk, který se často používá pro vývoj podnikových aplikací, mobilních aplikací (zejména pro Android) a serverových aplikací. Díky své přenositelnosti je oblíbený v různých prostředích.
+    Python je moderní, vysoce čitelný a snadno naučitelný programovací jazyk, kterému se dále budeme podrobně věnovat.
 
-### C++
-C++ je výkonný jazyk používaný pro vývoj softwaru, který vyžaduje vysoký výkon, jako jsou hry, operační systémy nebo vestavěné systémy. Je známý svou rychlostí a kontrolou nad hardwarovými prostředky.
+- **JavaScript**
 
-### C#
-C# je jazyk vyvinutý společností Microsoft, který se používá pro vývoj aplikací na platformě .NET. Často se s ním setkáme při vývoji desktopových aplikací, her (pomocí Unity) a webových aplikací.
+    JavaScript je jazyk používaný především pro vývoj webových aplikací. Umožňuje vytvářet interaktivní prvky na webových stránkách, jako jsou animace, formuláře nebo dynamický obsah.
 
-### PHP
-PHP je skriptovací jazyk používaný především pro vývoj webových stránek a aplikací na straně serveru. Je populární díky své jednoduchosti a širokému využití v systémech pro správu obsahu, jako je WordPress.
+- **Java**
 
-### Go
-Go (nebo Golang) je jazyk vyvinutý společností Google, který je známý svou jednoduchostí, rychlostí a podporou paralelního zpracování. Používá se pro vývoj serverových aplikací a cloudových služeb.
+    Java je univerzální programovací jazyk, který se často používá pro vývoj podnikových aplikací, mobilních aplikací (zejména pro Android) a serverových aplikací.
 
-### Kotlin
-Kotlin je moderní jazyk, který je plně kompatibilní s Javou. Používá se především pro vývoj aplikací pro Android a získává stále větší popularitu díky své jednoduchosti a expresivní syntaxi.
+- **C++**
+
+    C++ je výkonný jazyk používaný pro vývoj softwaru, který vyžaduje vysoký výkon, jako jsou hry, operační systémy nebo vestavěné systémy. Je známý svou rychlostí a kontrolou nad hardwarovými prostředky.
+
+- **C#**
+
+    C# (C-sharp) je jazyk vyvinutý společností Microsoft, který se používá pro vývoj aplikací na platformě .NET. Často se s ním setkáme při vývoji desktopových aplikací, her (pomocí Unity) a webových aplikací.
+
+- **PHP**
+
+    PHP je skriptovací jazyk používaný především pro vývoj webových stránek a aplikací na straně serveru. Je populární díky své jednoduchosti a širokému využití v systémech pro správu obsahu, jako je WordPress.
+
+Programovacích jazyků jsou [stovky](https://en.wikipedia.org/wiki/List_of_programming_languages); kromě několika málo desítek mainstreamových jazyků existují i jazyky určené pro velmi specifické účely, jiné jsou spíše [obskurními experimenty](https://en.wikipedia.org/wiki/Esoteric_programming_language) než praktickými jazyky.
 
 ```{admonition} Co to je syntaxe?
 :class: note
-**Syntaxe** je pravidlo nebo sada pravidel, která určují, jak správně sestavit věty, slova nebo příkazy v daném jazyce. V kontextu programování syntaxe definuje, jaké kombinace symbolů a klíčových slov jsou povoleny a jaký mají význam. Podobně jako v přirozených jazycích, i v programovacích jazycích je syntaxe klíčová pro správné porozumění a interpretaci. I přirozené jazyky mohou mít velmi odlišnou syntaxi, například arabština nebo japonština.
+**Syntaxe** je sada pravidel, která určují, jak správně sestavit slova, věty nebo příkazy v daném jazyce.
+
+V kontextu programování syntaxe definuje, jaké kombinace symbolů a klíčových slov jsou povoleny a jaký mají význam. Podobně jako v přirozených jazycích, i v programovacích jazycích je syntaxe klíčová pro správné porozumění a interpretaci.
 ```
 
 Programovací jazyk Python
 -------------------------
 
-Jedním z nejlepších jazyků pro začátečníky je **Python**. Je známý svou jednoduchostí, čitelností a širokým využitím. Python se používá pro webové aplikace, datovou analýzu, strojové učení a mnoho dalších oblastí. Python je také dynamicky typovaný jazyk, což znamená, že nemusíme předem specifikovat typy proměnných.
+Jedním z nejlepších programovacích jazyků pro začátečníky je **Python**. Je známý svou jednoduchostí, čitelností a širokým využitím. Nabízí obrovský ekosystém komunitně spravovaných balíčků pro nejrůznější aplikace od práce s obrazem, zvukem a textem přes webové nástroje, datovou analytiku, strojové učení a mnoho dalších oblastí.
 
-### Stručný popis jazyka
+### Hello, World !
 
-Python je **vysoký jazyk**, což znamená, že se zaměřuje na jednoduchost a srozumitelnost, místo toho, aby se zabýval detaily, jak počítač provádí operace. Díky jeho jednoduché syntaxi a velkému množství knihoven je Python vhodný pro začátečníky, kteří chtějí začít s programováním.
+Nejjednodušší způsob, jak začít s programováním v jakémkoli jazyce, je napsat program, který vypíše text "Hello, World!" na obrazovku.
 
-### Standardní výstup: `print()`
-
-V Pythonu používáme funkci `print()`, abychom poslali nějaký text nebo hodnotu na obrazovku, tedy **výstup** programu. Je to základní nástroj pro komunikaci s uživatelem.
-
-Příklad použití:
-
-```python
-print("Ahoj světe!")
-```
-
-Tento program vypíše na obrazovku text:
-
-```
-Ahoj světe!
-```
-
-### Hello World program
-
-Nejjednodušší způsob, jak začít s programováním v jakémkoli jazyce, je napsat program, který vypíše text "Hello, World!" na obrazovku. V Pythonu to vypadá takto:
+V Pythonu program vypadá takto:
 
 ```python
 print("Hello, World!")
 ```
 
+Program „Hello, World!“ je nejjednodušší možný spustitelný program, který slouží hlavně k tomu, abyste si otestovali, zda máte správně nastaveno vývojové prostředí.
 
 Práce s chybami
 ---------------
@@ -97,13 +91,12 @@ print "Hello, World!"
 
 Chybová hláška:
 
-```
+```python
 File "hello.py", line 1
     print "Hello, World!"
           ^
 SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Hello, World!")?
 ```
-
 
 Pokud uděláme překlep v názvu funkce, Python nám oznámí, že taková funkce neexistuje:
 
@@ -123,6 +116,58 @@ NameError: name 'pritn' is not defined
 
 1. **Pečlivě čtěte chybové hlášky** – většinou obsahují informace o tom, kde a proč chyba nastala.
 2. **Zkontrolujte kód na uvedeném řádku** – chyba se často nachází na řádku uvedeném v chybové hlášce nebo těsně před ním.
-3. **Používejte online zdroje** – pokud si s chybou nevíte rady, zkuste hledat řešení na internetu podle textu chybové hlášky.
+3. **Používejte online zdroje** – pokud si s chybou nevíte rady, zkuste hledat řešení na Internetu podle textu chybové hlášky.
 
-Práce s chybami je důležitou součástí programování a zejména v začátcích se budete s nejrůznějšími chybovými hláškami setkávat velmi často. Je proto důležité se naučit s chybovými hláškami pracovat a postupem času se tak zlepšíte v rychlém odhalování a opravování chyb.
+Práce s chybami je důležitou součástí programování a zejména v začátcích se budete s nejrůznějšími chybovými hláškami setkávat velmi často. Je proto důležité se chybových hlášek nebát a naučit se je číst.
+
+Úlohy
+-----
+
+1) Vyzkoušejte napsat a spustit program Hello, World.
+
+2) Zkuste záměrně vytvořit v programu následující chyby a sledujte, jaké chybové hlášky to způsobí:
+    ```python
+    print("Hello, World)
+
+    prin("Hello, World")
+
+    print"Hello, World")
+    ```
+
+3) Vyzkoušejte do funkce `print` vložit algebraické výrazy. Otestujte, co se stane, pokud zadáte např.:
+    ```python
+    print(7+2)
+
+    print(3*2)
+
+    print(15/2)
+
+    print(4**2)
+
+    print(2*(1-5))
+
+    print(4/0)
+    ```
+
+4) Vyzkoušejte si spustit následující příkazy a vysvětlete, proč vypisují to, co vypisují:
+    ```python
+    print("11" + "4")
+
+    print("11 + 4")
+
+    print("11" + 4)
+
+    print(2 * "2")
+    ```
+
+5) Vypište více hodnot v jednom volání a experimentujte s parametry `sep` a `end`. Předpovězte výstup.
+    
+    ```python
+    print("A", "B", 1, 2+3)
+
+    print("A", "B", sep="-")
+
+    print("A", end="")
+
+    print("jablko", "hruška", "švestka", sep=", ", end=".\n")
+    ```
