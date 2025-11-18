@@ -57,7 +57,7 @@
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Rejstřík" href="../genindex.html" />
     <link rel="search" title="Vyhledávání" href="../search.html" />
-    <link rel="next" title="Podmínky" href="03_conditions.html" />
+    <link rel="next" title="HTML" href="../a_web/01_html.html" />
     <link rel="prev" title="Algoritmizace" href="01_algorithms.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="cs"/>
@@ -170,34 +170,21 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Kancelářský software</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Software</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../1_office/01_shortcuts.html">Zkratky</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_office/02_typography.html">Typografie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1_office/03_spreadsheet.html">Funkce tabulkových procesorů</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1_office/04_is.html">Informační systémy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1_office/05_database.html">Databáze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_office/03_spreadsheet.html">Tabulkové procesory</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_algorithms.html">Algoritmizace</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Proměnné</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03_conditions.html">Podmínky</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04_cycles.html">Cykly v Pythonu</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05_structures.html">Datové struktury</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06_functions.html">Funkce</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07_modules.html">Balíčky</a></li>
-<li class="toctree-l1"><a class="reference internal" href="08_pip.html">PIP, Python Virtual Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="10_graphs.html">Grafy</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Webové technologie</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../a_web/01_html.html">HTML</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../a_web/02_css.html">Základy CSS</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ostatní</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../9_other/01_materials.html">Materiály k výuce</a></li>
 </ul>
 
     </div>
@@ -346,13 +333,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nazvy-promennych">Názvy proměnných</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formatovani-retezcu">Formátování řetězců</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datove-typy-v-pythonu">Datové typy v Pythonu</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nacteni-promenne-ze-vstupu">Načtení proměnné ze vstupu</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operatory-v-pythonu">Operátory v Pythonu</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aritmeticke-operatory">Aritmetické operátory</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#porovnavaci-operatory">Porovnávací operátory:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logicke-operatory">Logické operátory:</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ulohy">Úlohy</a></li>
@@ -369,32 +355,89 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="promenne">
 <h1>Proměnné<a class="headerlink" href="#promenne" title="Link to this heading">#</a></h1>
-<p><strong>Proměnná</strong> je pojmenované místo v paměti, do kterého můžeme uložit hodnotu. Tu hodnotu můžeme později přečíst, změnit nebo s ní dále pracovat. Můžeme si ji představit jako krabičku s nálepkou (jménem), do které vložíme nějaký obsah.</p>
-<p>V Pythonu se proměnná vytvoří automaticky při prvním přiřazení pomocí operátoru přiřazení <code class="docutils literal notranslate"><span class="pre">=</span></code>:</p>
+<p><strong>Proměnná</strong> je pojmenované místo v paměti, do kterého můžeme uložit hodnotu. Tu hodnotu můžeme později přečíst, změnit nebo s ní dále pracovat. Můžeme si ji představit jako buňku v tabulkovém procesoru nebo jako krabičku s nálepkou (jménem), do které vložíme nějaký obsah.</p>
+<p>V Pythonu se proměnná definuje automaticky při prvním přiřazení pomocí <strong>operátoru přiřazení <code class="docutils literal notranslate"><span class="pre">=</span></code></strong>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Petr&quot;</span>
 <span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
 </pre></div>
 </div>
 <p>Zde jsme vytvořili dvě proměnné:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> obsahuje text</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">age</span></code> obsahuje číslo</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> obsahuje textovou hodnotu <code class="docutils literal notranslate"><span class="pre">&quot;Petr&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">age</span></code> obsahuje číslo <code class="docutils literal notranslate"><span class="pre">25</span></code></p></li>
 </ul>
 <p>Proměnnou můžeme použít jako parametr funkce <code class="docutils literal notranslate"><span class="pre">print</span></code>, což zobrazí její aktuální hodnotu:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
 </pre></div>
 </div>
+<section id="nazvy-promennych">
+<h2>1.&nbsp;&nbsp;Názvy proměnných<a class="headerlink" href="#nazvy-promennych" title="Link to this heading">#</a></h2>
+<p>Pojmenování proměnných má Pythonu svá pravidla:</p>
+<ul class="simple">
+<li><p>Proměnná může obsahovat písmena (<code class="docutils literal notranslate"><span class="pre">A–Z</span></code>, <code class="docutils literal notranslate"><span class="pre">a–z</span></code>), číslice <code class="docutils literal notranslate"><span class="pre">0–9</span></code> a podtržítko <code class="docutils literal notranslate"><span class="pre">_</span></code>.</p></li>
+<li><p>Nesmí začínat číslicí.</p></li>
+<li><p>Může obsahovat i například české znaky (Unicode), jejich používání se ale nedoporučuje.</p></li>
+<li><p>Nesmí obsahovat mezery a speciální znaky jako <code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">+</span> <span class="pre">*</span> <span class="pre">/</span> <span class="pre">.</span> <span class="pre">,</span> <span class="pre">;</span> <span class="pre">:</span> <span class="pre">!</span> <span class="pre">?</span> <span class="pre">&#64;</span> <span class="pre">#</span> <span class="pre">$</span> <span class="pre">%</span> <span class="pre">^</span> <span class="pre">&amp;</span> <span class="pre">(</span> <span class="pre">)</span> <span class="pre">[</span> <span class="pre">]</span> <span class="pre">{</span> <span class="pre">}</span> <span class="pre">'</span> <span class="pre">&quot;</span> <span class="pre">\</span> <span class="pre">|</span> <span class="pre">&lt;</span> <span class="pre">&gt;</span></code>, které mají v Pythonu jiný význam.</p></li>
+<li><p>Nesmí být klíčové slovo Pythonu (<code class="docutils literal notranslate"><span class="pre">for</span></code>, <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">class</span></code>, <code class="docutils literal notranslate"><span class="pre">True</span></code>, <code class="docutils literal notranslate"><span class="pre">None</span></code> atd.).</p></li>
+<li><p>Rozlišují se velká a malá písmena. Proměnná <code class="docutils literal notranslate"><span class="pre">name</span></code> a <code class="docutils literal notranslate"><span class="pre">Name</span></code> jsou dvě různé proměnné.</p></li>
+</ul>
+<p><em>Příklady:</em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Platné</span>
+<span class="n">jmeno</span> <span class="o">=</span> <span class="s2">&quot;Petr&quot;</span>
+<span class="n">vek1</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">first_name</span> <span class="o">=</span> <span class="s2">&quot;Anna&quot;</span>
+<span class="n">_cache</span> <span class="o">=</span> <span class="s2">&quot;lokální&quot;</span>
+<span class="n">průměr</span> <span class="o">=</span> <span class="mf">3.5</span> <span class="c1"># platné (Unicode), ale diakritiku raději ne</span>
+
+<span class="c1"># Neplatné</span>
+<span class="c1"># 1vek = 25</span>
+<span class="c1"># moje-jmeno = &quot;Petr&quot;</span>
+<span class="c1"># moje jmeno = &quot;Petr&quot;</span>
+<span class="c1"># class = 1</span>
+<span class="c1"># cena$ = 10</span>
+</pre></div>
+</div>
+<p>Obecně platí v Pythonu doporučení používat pro názvy proměnných pouze malá písmena anglické abecedy, číslice a znak <code class="docutils literal notranslate"><span class="pre">_</span></code>. Pokud má proměnná víceslovný název, je konvencí v Python <strong>snake_case</strong> zápis, kdy jednotlivá slova jsou oddělena podtržítkem <code class="docutils literal notranslate"><span class="pre">_</span></code>, např.:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">first_name</span> <span class="o">=</span> <span class="s2">&quot;Linus&quot;</span>
+<span class="n">last_name</span> <span class="o">=</span> <span class="s2">&quot;Torvalds&quot;</span>
+</pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Cases</p>
+<p>Kromě snake_case stylu se občas setkáme i se styly <strong>camelCase</strong> (<code class="docutils literal notranslate"><span class="pre">firstName</span></code>, <code class="docutils literal notranslate"><span class="pre">lastName</span></code>), <strong>kebab-case</strong> (<code class="docutils literal notranslate"><span class="pre">first-name</span></code>, <code class="docutils literal notranslate"><span class="pre">last-name</span></code>), <strong>CapitalCammelCase</strong> (<code class="docutils literal notranslate"><span class="pre">FirstName</span></code>, <code class="docutils literal notranslate"><span class="pre">LastName</span></code>) nebo <strong>UPPER_CASE</strong> (<code class="docutils literal notranslate"><span class="pre">FISRT_NAME</span></code>, <code class="docutils literal notranslate"><span class="pre">LAST_NAME</span></code>), které se používají buď v jiných jazycích, nebo i v Pythonu, pokud má proměnná nebo jiný objekt specifický význam.</p>
+</div>
+</section>
 <section id="formatovani-retezcu">
-<h2>1.&nbsp;&nbsp;Formátování řetězců<a class="headerlink" href="#formatovani-retezcu" title="Link to this heading">#</a></h2>
-<p>Často je potřeba zobrazit hodnotu proměnné, která je součástí delšího textového řetězce nebo informační hlášky. V Pythonu je nejmodernější a doporučený způsob formátování řetězců pomocí tzv. <strong>f-strings</strong> (formatted string literals). Tyto f-stringy jsou uvedeny znakem <code class="docutils literal notranslate"><span class="pre">f</span></code> a umožňují vkládání hodnot proměnných přímo do řetězce s pomocí závorek <code class="docutils literal notranslate"><span class="pre">{}</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ty jsi </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> a je ti </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2"> let&quot;</span><span class="p">)</span>
+<h2>2.&nbsp;&nbsp;Formátování řetězců<a class="headerlink" href="#formatovani-retezcu" title="Link to this heading">#</a></h2>
+<p>Často je potřeba zobrazit hodnotu proměnné jako součástí delšího textu nebo informační hlášky. V Pythonu je nejmodernější a doporučený způsob formátování textů pomocí <strong>f-strings</strong> (formatted string literals). Tyto f-stringy jsou uvedeny znakem <code class="docutils literal notranslate"><span class="pre">f</span></code> a umožňují vkládání hodnot proměnných přímo do textu s pomocí závorek <code class="docutils literal notranslate"><span class="pre">{}</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Petr&quot;</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jmenuješ se </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> a je ti </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2"> let&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>F-stringy je možné také použít na formátování čísel, například přidáním nul na začátek:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">order_no</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">order_no</span><span class="si">:</span><span class="s2">03</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>              <span class="c1"># 007</span>
+
+<span class="n">minutes</span><span class="p">,</span> <span class="n">seconds</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">minutes</span><span class="si">:</span><span class="s2">02</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">seconds</span><span class="si">:</span><span class="s2">02</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># 03:05</span>
+</pre></div>
+</div>
+<p>Nebo specifikací kolik desetinných míst se má zobrazovat:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">price</span> <span class="o">=</span> <span class="mf">123.4567</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">price</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>                <span class="c1"># 123.46</span>
+</pre></div>
+</div>
+<p>Případně kombinace obojího:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">value</span> <span class="o">=</span> <span class="mf">3.1</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">value</span><span class="si">:</span><span class="s2">08.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>              <span class="c1"># 00003.10</span>
 </pre></div>
 </div>
 <p>F-string nabízí široké možnosti formátování, například zaokrouhlování desetinných čísel a další operace s proměnnými. Úplný seznam možností formátování naleznete například v <a class="reference external" href="https://www.w3schools.com/python/python_string_formatting.asp">referenční příručce od W3C</a>.</p>
 </section>
 <section id="datove-typy-v-pythonu">
-<h2>2.&nbsp;&nbsp;Datové typy v Pythonu<a class="headerlink" href="#datove-typy-v-pythonu" title="Link to this heading">#</a></h2>
+<h2>3.&nbsp;&nbsp;Datové typy v Pythonu<a class="headerlink" href="#datove-typy-v-pythonu" title="Link to this heading">#</a></h2>
 <p>Jako <strong>datový typ</strong> označujeme v programovacích jazycích typ hodnoty, se kterou pracujeme. Mezi základní datové typy v pythonu patří:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -426,7 +469,7 @@ document.write(`
 <p>Python je <strong>dynamicky typovaný jazyk</strong>, což znamená, že nemusíme předem určovat datový typ proměnné (což je nutné v některých jazycích například Java nebo C++) – Python si ho zjistí sám na základě typu hodnoty, kterou do proměnné uložíme.</p>
 </section>
 <section id="nacteni-promenne-ze-vstupu">
-<h2>3.&nbsp;&nbsp;Načtení proměnné ze vstupu<a class="headerlink" href="#nacteni-promenne-ze-vstupu" title="Link to this heading">#</a></h2>
+<h2>4.&nbsp;&nbsp;Načtení proměnné ze vstupu<a class="headerlink" href="#nacteni-promenne-ze-vstupu" title="Link to this heading">#</a></h2>
 <p>Python umožňuje načítat vstup od uživatele pomocí funkce <code class="docutils literal notranslate"><span class="pre">input</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Zadej své jméno: &quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ahoj, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
@@ -439,10 +482,10 @@ document.write(`
 </div>
 </section>
 <section id="operatory-v-pythonu">
-<h2>4.&nbsp;&nbsp;Operátory v Pythonu<a class="headerlink" href="#operatory-v-pythonu" title="Link to this heading">#</a></h2>
+<h2>5.&nbsp;&nbsp;Operátory v Pythonu<a class="headerlink" href="#operatory-v-pythonu" title="Link to this heading">#</a></h2>
 <p>Operátory slouží k provádění výpočtů a porovnání.</p>
 <section id="aritmeticke-operatory">
-<h3>4.1.&nbsp;&nbsp;Aritmetické operátory<a class="headerlink" href="#aritmeticke-operatory" title="Link to this heading">#</a></h3>
+<h3>5.1.&nbsp;&nbsp;Aritmetické operátory<a class="headerlink" href="#aritmeticke-operatory" title="Link to this heading">#</a></h3>
 <p>Výsledkem aritmetické operace je opět</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -513,79 +556,113 @@ document.write(`
 <span class="ne">TypeError</span><span class="p">:</span> <span class="n">unsupported</span> <span class="n">operand</span> <span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="o">/</span><span class="p">:</span> <span class="s1">&#39;str&#39;</span> <span class="ow">and</span> <span class="s1">&#39;int&#39;</span>
 </pre></div>
 </div>
-</section>
-<section id="porovnavaci-operatory">
-<h3>4.2.&nbsp;&nbsp;Porovnávací operátory:<a class="headerlink" href="#porovnavaci-operatory" title="Link to this heading">#</a></h3>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Operátor</p></th>
-<th class="head"><p>Význam</p></th>
-<th class="head"><p>Příklad</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">==</span></code></p></td>
-<td><p>Rovná se</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">==</span> <span class="pre">b</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">!=</span></code></p></td>
-<td><p>Není rovno</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">!=</span> <span class="pre">b</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></td>
-<td><p>Větší než</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&gt;</span> <span class="pre">b</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code></p></td>
-<td><p>Menší než</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></p></td>
-<td><p>Větší nebo rovno</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&gt;=</span> <span class="pre">b</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code></p></td>
-<td><p>Menší nebo rovno</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;=</span> <span class="pre">b</span></code></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section id="logicke-operatory">
-<h3>4.3.&nbsp;&nbsp;Logické operátory:<a class="headerlink" href="#logicke-operatory" title="Link to this heading">#</a></h3>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Operátor</p></th>
-<th class="head"><p>Popis</p></th>
-<th class="head"><p>Příklad</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">and</span></code></p></td>
-<td><p>Logické A</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">and</span> <span class="pre">False</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">or</span></code></p></td>
-<td><p>Logické NEBO</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">or</span> <span class="pre">False</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">not</span></code></p></td>
-<td><p>Logická negace</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">True</span></code></p></td>
-</tr>
-</tbody>
-</table>
+<p>Datový typ proměnné je možné zjistit pomocí funkce <code class="docutils literal notranslate"><span class="pre">type</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;5&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span> <span class="c1"># &lt;class &#39;int&#39;&gt;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">))</span> <span class="c1"># &lt;class &#39;str&#39;&gt;</span>
+
+</pre></div>
 </div>
 </section>
 </section>
 <section id="ulohy">
-<h2>5.&nbsp;&nbsp;Úlohy<a class="headerlink" href="#ulohy" title="Link to this heading">#</a></h2>
-<p><strong>Zadání:</strong>
-Zeptej se uživatele na jeho jméno, věk a město. Poté vypiš zprávu ve formátu:</p>
-<p><strong>Zadání:</strong>
-Uživatel zadá počet minut. Vypočítej, kolik je to <strong>celých hodin a zbytek minut</strong>, a výsledek pěkně vypiš.</p>
-<p>Úloha: vyzkoušet přetypovat hodnoty “abc”, 3, 3.14, True na různé typy</p>
+<h2>6.&nbsp;&nbsp;Úlohy<a class="headerlink" href="#ulohy" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Definujte celočíselné proměnné <code class="docutils literal notranslate"><span class="pre">a</span></code> a <code class="docutils literal notranslate"><span class="pre">b</span></code> (strany obdélníku) a vypište obsah obdélníku.</p></li>
+<li><p>Načtěte ze vstupu dvě číselné (desetinná čísla) proměnné <code class="docutils literal notranslate"><span class="pre">r</span></code> a <code class="docutils literal notranslate"><span class="pre">h</span></code> (poloměr a výška válce) a vypíše povrch a objem válce. Zaokrouhlete výpis hodnot na jedno desetinné místo.</p></li>
+<li><p>Vyzkoušejte použit proměnnou, která není v programu vůbec definována. Co se stane?</p></li>
+<li><p>Uživatel zadá počet minut. Vypište kolik je to celých hodin a zbylých minut.</p></li>
+<li><p>Uživatel zadá počet sekund. Převeďte je na hodiny, minuty a sekundy do tvaru <code class="docutils literal notranslate"><span class="pre">hh:mm:ss</span></code>.</p></li>
+<li><p>Uživatel zadá dvě čísla. Vypište součet, rozdíl, součin a podíl (podíl na 2 desetinná místa).</p></li>
+<li><p>Uživatel zadá tři čísla. Vypočtěte aritmetický průměr a vypište na 2 desetinná místa.</p></li>
+<li><p>Uživatel zadá teplotu ve °C. Přepočítejte na °F a vypište s přesností na 1 desetinné místo.</p></li>
+<li><p>Co se stane, pokud chcete ze vstupu načíst celočíselnou proměnnou, ale uživatel zadá text?</p></li>
+<li><p>Napište program, který načte číslo ze vstupu (předpokládejte, že bude tříciferné) a vypíše jeho ciferný součet.</p></li>
+<li><p>Doplňte následující tabulku s výsledky operací a chování zdůvodněte:</p></li>
+</ol>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Výraz</p></th>
+<th class="head"><p>Výsledek</p></th>
+<th class="head"><p>Typ výsledku</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">4</span></code></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">&quot;4&quot;</span></code></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">*</span> <span class="pre">4</span></code></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">*</span> <span class="pre">&quot;4&quot;</span></code></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;3&quot;</span> <span class="pre">*</span> <span class="pre">4</span></code></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;3&quot;</span> <span class="pre">*</span> <span class="pre">&quot;4&quot;</span></code></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">*</span> <span class="pre">4.5</span></code></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">*</span> <span class="pre">&quot;4.5&quot;</span></code></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;3&quot;</span> <span class="pre">*</span> <span class="pre">4.5</span></code></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol class="arabic simple" start="12">
+<li><p>Spočítejte výsledky výrazů a u každého vypište i typ výsledku:</p></li>
+</ol>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Výraz</p></th>
+<th class="head"><p>Výsledek</p></th>
+<th class="head"><p>Typ výsledku</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">7/2</span></code></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">7//2</span></code></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">7%2</span></code></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">7/2.0</span></code></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">7//2.0</span></code></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 </section>
 
@@ -610,11 +687,11 @@ Uživatel zadá počet minut. Vypočítej, kolik je to <strong>celých hodin a z
       </div>
     </a>
     <a class="right-next"
-       href="03_conditions.html"
+       href="../a_web/01_html.html"
        title="další stránka">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">další</p>
-        <p class="prev-next-title">Podmínky</p>
+        <p class="prev-next-title">HTML</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -634,13 +711,12 @@ Uživatel zadá počet minut. Vypočítej, kolik je to <strong>celých hodin a z
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nazvy-promennych">Názvy proměnných</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formatovani-retezcu">Formátování řetězců</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datove-typy-v-pythonu">Datové typy v Pythonu</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nacteni-promenne-ze-vstupu">Načtení proměnné ze vstupu</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operatory-v-pythonu">Operátory v Pythonu</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aritmeticke-operatory">Aritmetické operátory</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#porovnavaci-operatory">Porovnávací operátory:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logicke-operatory">Logické operátory:</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ulohy">Úlohy</a></li>
