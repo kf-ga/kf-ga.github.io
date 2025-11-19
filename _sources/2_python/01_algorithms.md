@@ -149,18 +149,8 @@ Práce s chybami je důležitou součástí programování a zejména v začátc
     print(4/0)
     ```
 
-4) Vyzkoušejte si spustit následující příkazy a vysvětlete, proč vypisují to, co vypisují:
-    ```python
-    print("11" + "4")
 
-    print("11 + 4")
-
-    print("11" + 4)
-
-    print(2 * "2")
-    ```
-
-5) Vypište více hodnot v jednom volání a experimentujte s parametry `sep` a `end`. Předpovězte výstup.
+4) Vypište více hodnot v jednom volání a experimentujte s parametry `sep` a `end`. Předpovězte výstup.
     
     ```python
     print("A", "B", 1, 2+3)
