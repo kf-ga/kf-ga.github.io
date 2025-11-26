@@ -53,11 +53,13 @@
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script src="../_static/translations.js?v=22e1c300"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '2_python/03_conditions';</script>
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Rejstřík" href="../genindex.html" />
     <link rel="search" title="Vyhledávání" href="../search.html" />
-    <link rel="next" title="Cykly v Pythonu" href="04_cycles.html" />
+    <link rel="next" title="HTML" href="../a_web/01_html.html" />
     <link rel="prev" title="Proměnné" href="02_variables.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="cs"/>
@@ -170,34 +172,22 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Kancelářský software</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Software</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../1_office/01_shortcuts.html">Zkratky</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_office/02_typography.html">Typografie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1_office/03_spreadsheet.html">Funkce tabulkových procesorů</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1_office/04_is.html">Informační systémy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1_office/05_database.html">Databáze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_office/03_spreadsheet.html">Tabulkové procesory</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_algorithms.html">Algoritmizace</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_variables.html">Proměnné</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Podmínky</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04_cycles.html">Cykly v Pythonu</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05_structures.html">Datové struktury</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06_functions.html">Funkce</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07_modules.html">Balíčky</a></li>
-<li class="toctree-l1"><a class="reference internal" href="08_pip.html">PIP, Python Virtual Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="10_graphs.html">Grafy</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Webové technologie</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../a_web/01_html.html">HTML</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../a_web/02_css.html">Základy CSS</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ostatní</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../9_other/01_materials.html">Materiály k výuce</a></li>
 </ul>
 
     </div>
@@ -347,22 +337,13 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konstrukce-if-elif-else">Konstrukce <code class="docutils literal notranslate"><span class="pre">if</span></code> - <code class="docutils literal notranslate"><span class="pre">elif</span></code> - <code class="docutils literal notranslate"><span class="pre">else</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#priklad">Příklad:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#porovnavaci-operatory">Porovnávací operátory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logicke-operatory">Logické operátory</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#odsazovani">Odsazování</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#co-je-pravda">Co je pravda?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Příklad:</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ulohy-k-procviceni">Úlohy k procvičení</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#porovnani-cisel">1. <strong>Porovnání čísel</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#klasifikace-znamky">2. <strong>Klasifikace známky</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prestupny-rok">3. <strong>Přestupný rok</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reseni-kvadraticke-rovnice">4. <strong>Řešení kvadratické rovnice</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parita-cisla">5. <strong>Parita čísla</strong></a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#co-je-pravda">Co je pravda?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ulohy-k-procviceni">Úlohy k procvičení</a></li>
 </ul>
             </nav>
         </div>
@@ -382,15 +363,17 @@ document.write(`
 <p>Větvení v Pythonu se dělá pomocí konstrukce <code class="docutils literal notranslate"><span class="pre">if</span></code> - <code class="docutils literal notranslate"><span class="pre">elif</span></code> - <code class="docutils literal notranslate"><span class="pre">else</span></code>, která má následující syntaxi:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">condition1</span><span class="p">:</span>
     <span class="c1"># kód, který se provede pokud je podmínka condition1 pravdivá</span>
-<span class="k">elif</span> <span class="n">condition1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Podmínka první splněna&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">condition2</span><span class="p">:</span>
     <span class="c1"># kód, který se provede pokud je podmínka condition2 pravdivá</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Podmínka druhá splněna&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="c1"># kód, který se provede pokud neplatí žádná z výše uvedených podmínek</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Žádná podmínka nebyla splněna&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Podmínku <code class="docutils literal notranslate"><span class="pre">elif</span></code> je možné opakovat vícekrát. V konstrukci <code class="docutils literal notranslate"><span class="pre">if</span></code> - <code class="docutils literal notranslate"><span class="pre">elif</span></code> - <code class="docutils literal notranslate"><span class="pre">else</span></code> se provede vždy jen jeden z bloků a to první z bloků, jehož podmínka je vyhodnocena jako pravdivá (<code class="docutils literal notranslate"><span class="pre">True</span></code>), případně blok <code class="docutils literal notranslate"><span class="pre">else</span></code>, pokud žádná z podmínek u <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code> nebyla splněna.</p>
-<section id="priklad">
-<h3>1.1.&nbsp;&nbsp;Příklad:<a class="headerlink" href="#priklad" title="Link to this heading">#</a></h3>
+<p>Podmínku <code class="docutils literal notranslate"><span class="pre">elif</span></code> je možné opakovat vícekrát. V konstrukci <code class="docutils literal notranslate"><span class="pre">if</span></code> - <code class="docutils literal notranslate"><span class="pre">elif</span></code> - <code class="docutils literal notranslate"><span class="pre">else</span></code> se provede vždy jen jeden z bloků a to první z bloků, jehož podmínka je vyhodnocena jako pravdivá (<code class="docutils literal notranslate"><span class="pre">True</span></code>), případně blok <code class="docutils literal notranslate"><span class="pre">else</span></code>, pokud žádná z podmínek u <code class="docutils literal notranslate"><span class="pre">if</span></code> nebo <code class="docutils literal notranslate"><span class="pre">elif</span></code> nebyla splněna.</p>
+<p><em>Příklad:</em></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">temp</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Zadej teplotu: &quot;</span><span class="p">))</span>
 
 <span class="k">if</span> <span class="n">teplota</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">:</span>
@@ -409,11 +392,74 @@ document.write(`
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nezletilý&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+<section id="porovnavaci-operatory">
+<h3>1.1.&nbsp;&nbsp;Porovnávací operátory<a class="headerlink" href="#porovnavaci-operatory" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operátor</p></th>
+<th class="head"><p>Význam</p></th>
+<th class="head"><p>Příklad</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">==</span></code></p></td>
+<td><p>Rovná se</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">==</span> <span class="pre">b</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">!=</span></code></p></td>
+<td><p>Nerovná se</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">!=</span> <span class="pre">b</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></td>
+<td><p>Větší než</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&gt;</span> <span class="pre">b</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code></p></td>
+<td><p>Menší než</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></p></td>
+<td><p>Větší nebo rovno</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&gt;=</span> <span class="pre">b</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code></p></td>
+<td><p>Menší nebo rovno</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;=</span> <span class="pre">b</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="logicke-operatory">
+<h3>1.2.&nbsp;&nbsp;Logické operátory<a class="headerlink" href="#logicke-operatory" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operátor</p></th>
+<th class="head"><p>Popis</p></th>
+<th class="head"><p>Příklad</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">and</span></code></p></td>
+<td><p>Logické A</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&gt;</span> <span class="pre">b</span> <span class="pre">and</span> <span class="pre">a</span> <span class="pre">&lt;=</span> <span class="pre">10</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">or</span></code></p></td>
+<td><p>Logické NEBO</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&gt;</span> <span class="pre">b</span> <span class="pre">or</span> <span class="pre">b</span> <span class="pre">==</span> <span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">not</span></code></p></td>
+<td><p>Logická negace</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">b</span> <span class="pre">&gt;</span> <span class="pre">5</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 </section>
 <section id="odsazovani">
 <h2>2.&nbsp;&nbsp;Odsazování<a class="headerlink" href="#odsazovani" title="Link to this heading">#</a></h2>
-<p><strong>Odsazování</strong> v Pythonu je klíčovou součástí syntaxe, která určuje strukturu kódu a definuje bloky kódu. Python spoléhá na odsazení (mezery nebo tabulátory) k označení hierarchie a logických bloků.</p>
+<p><strong>Odsazování</strong> v Pythonu je klíčovou součástí syntaxe, která určuje strukturu kódu a definuje <strong>bloky kódu</strong>. Python spoléhá na odsazení (mezery nebo tabulátory) k označení hierarchie a logických bloků.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="k">if</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
@@ -422,7 +468,7 @@ document.write(`
 <span class="n">y</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># tento příkaz se už provede vždy</span>
 </pre></div>
 </div>
-<p>Blok kódu následující po <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code> (a dalších konstrukcích) musí vždy obsahovat alespoň jeden příkaz.Pokud zatím nemáme hotový blok kódu, ale přesto chceme zachovat větvení (například pro doplnění kódu v budoucnu) můžeme použít klíčové <code class="docutils literal notranslate"><span class="pre">pass</span></code>, což je příkaz, který nevykoná nic, ale umožní zachovat hierarchii odsazování v Python kódu:</p>
+<p>Blok kódu následující po <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code> (a dalších konstrukcích) musí vždy obsahovat alespoň jeden příkaz. Pokud zatím nemáme hotový blok kódu, ale přesto chceme zachovat větvení (například pro doplnění kódu v budoucnu) můžeme použít klíčové <code class="docutils literal notranslate"><span class="pre">pass</span></code>, což je příkaz, který nevykoná nic, ale umožní zachovat hierarchii odsazování v Python kódu:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
     <span class="k">pass</span>  <span class="c1"># blok zatím prázdný, neobsahuje žádné příkazy, ale syntaxe je správná</span>
@@ -431,7 +477,7 @@ document.write(`
 </section>
 <section id="co-je-pravda">
 <h2>3.&nbsp;&nbsp;Co je pravda?<a class="headerlink" href="#co-je-pravda" title="Link to this heading">#</a></h2>
-<p>V Pythonu se v podmínkách nepoužívají jen booleovské hodnoty <code class="docutils literal notranslate"><span class="pre">True</span></code> a <code class="docutils literal notranslate"><span class="pre">False</span></code> nebo logické operátory vracející booleovské hodnoty. Každý objekt v Pythonu má svou “pravdivostní hodnotu”. Obecně lze říci, že objekty prázdné nebo nulové se vyhodnotí jako <code class="docutils literal notranslate"><span class="pre">False</span></code>, neprázdné nebo nenulové jako <code class="docutils literal notranslate"><span class="pre">True</span></code> .</p>
+<p>V Pythonu se v podmínkách používají booleovské hodnoty <code class="docutils literal notranslate"><span class="pre">True</span></code> a <code class="docutils literal notranslate"><span class="pre">False</span></code> nebo logické operátory vracející booleovské hodnoty. Každý objekt v Pythonu má svou <em>pravdivostní hodnotu</em>. Obecně lze říci, že objekty prázdné nebo nulové se vyhodnotí jako <code class="docutils literal notranslate"><span class="pre">False</span></code>, neprázdné nebo nenulové jako <code class="docutils literal notranslate"><span class="pre">True</span></code> .</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Hodnota</p></th>
@@ -455,8 +501,7 @@ document.write(`
 </table>
 </div>
 <p>To umožňuje zapisovat zkrácené podmínky a kód je pak čitelnější a přehlednější.</p>
-<section id="id1">
-<h3>3.1.&nbsp;&nbsp;Příklad:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p><em>Příklad:</em></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Zadej jméno: &quot;</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="n">name</span><span class="p">:</span>
@@ -466,38 +511,31 @@ document.write(`
 </pre></div>
 </div>
 </section>
-</section>
 <section id="ulohy-k-procviceni">
 <h2>4.&nbsp;&nbsp;Úlohy k procvičení<a class="headerlink" href="#ulohy-k-procviceni" title="Link to this heading">#</a></h2>
-<section id="porovnani-cisel">
-<h3>4.1.&nbsp;&nbsp;1. <strong>Porovnání čísel</strong><a class="headerlink" href="#porovnani-cisel" title="Link to this heading">#</a></h3>
-<p>Zeptej se uživatele na dvě čísla a vypiš, které je větší, nebo zda jsou stejná.</p>
-</section>
-<section id="klasifikace-znamky">
-<h3>4.2.&nbsp;&nbsp;2. <strong>Klasifikace známky</strong><a class="headerlink" href="#klasifikace-znamky" title="Link to this heading">#</a></h3>
-<p>Na vstupu zadej číslo 1–5 a vypiš slovní hodnocení (např. 1 = výborný, 5 = nedostatečný). Ošetři vstupy mimo rozsah.</p>
-</section>
-<section id="prestupny-rok">
-<h3>4.3.&nbsp;&nbsp;3. <strong>Přestupný rok</strong><a class="headerlink" href="#prestupny-rok" title="Link to this heading">#</a></h3>
-<p>Zeptej se na rok a rozhodni, zda je přestupný:</p>
-<ul class="simple">
-<li><p>je dělitelný 4 a není dělitelný 100, nebo je dělitelný 400.</p></li>
-</ul>
-</section>
-<section id="reseni-kvadraticke-rovnice">
-<h3>4.4.&nbsp;&nbsp;4. <strong>Řešení kvadratické rovnice</strong><a class="headerlink" href="#reseni-kvadraticke-rovnice" title="Link to this heading">#</a></h3>
-<p>Načti koeficienty <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>, <code class="docutils literal notranslate"><span class="pre">c</span></code> a rozhodni podle diskriminantu:</p>
-<ul class="simple">
-<li><p>D &lt; 0: žádné reálné řešení</p></li>
-<li><p>D = 0: jedno řešení</p></li>
-<li><p>D &gt; 0: dvě řešení</p></li>
-</ul>
-<p>(Diskriminant D = b² - 4ac)</p>
-</section>
-<section id="parita-cisla">
-<h3>4.5.&nbsp;&nbsp;5. <strong>Parita čísla</strong><a class="headerlink" href="#parita-cisla" title="Link to this heading">#</a></h3>
-<p>Zeptej se na číslo a vypiš, zda je <strong>sudé</strong> nebo <strong>liché</strong>.</p>
-</section>
+<ol class="arabic">
+<li><p><strong>Porovnání čísel</strong></p>
+<p>Zeptejte se uživatele na dvě čísla a vypište, které je větší, nebo zda jsou stejná.</p>
+</li>
+<li><p><strong>Největší a nejmenší</strong></p>
+<p>Uživatel zadá tři čísla. Vypište nejmenší a největší z nich.</p>
+</li>
+<li><p><strong>Seřazení čísel</strong></p>
+<p>Uživatel zadá tři čísla. Vypište čísla seřazená vzestupně podle velikosti.</p>
+</li>
+<li><p><strong>Parita čísla</strong></p>
+<p>Zeptejte se na číslo a vypište, zda je <strong>sudé</strong> nebo <strong>liché</strong>.</p>
+</li>
+<li><p><strong>Klasifikace známky</strong></p>
+<p>Na vstupu načtěte číslo 1–5 a vypište slovní hodnocení (např. 1 = výborný, 5 = nedostatečný). Ošetřete vstupy mimo rozsah.</p>
+</li>
+<li><p><strong>Přestupný rok</strong></p>
+<p>Načtěte rok a rozhodněte zda-li je to přestupný rok nebo ne.</p>
+</li>
+<li><p><strong>Řešení kvadratické rovnice</strong></p>
+<p>Načtěte koeficienty <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(c\)</span> kvadratické rovnice (<span class="math notranslate nohighlight">\(ax^2 + bx + c = 0\)</span>) a rozhodněte podle diskriminantu kolik má řešení a dále vypište všechna řešení rovnice.</p>
+</li>
+</ol>
 </section>
 </section>
 
@@ -522,11 +560,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="04_cycles.html"
+       href="../a_web/01_html.html"
        title="další stránka">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">další</p>
-        <p class="prev-next-title">Cykly v Pythonu</p>
+        <p class="prev-next-title">HTML</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -547,22 +585,13 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konstrukce-if-elif-else">Konstrukce <code class="docutils literal notranslate"><span class="pre">if</span></code> - <code class="docutils literal notranslate"><span class="pre">elif</span></code> - <code class="docutils literal notranslate"><span class="pre">else</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#priklad">Příklad:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#porovnavaci-operatory">Porovnávací operátory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logicke-operatory">Logické operátory</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#odsazovani">Odsazování</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#co-je-pravda">Co je pravda?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Příklad:</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ulohy-k-procviceni">Úlohy k procvičení</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#porovnani-cisel">1. <strong>Porovnání čísel</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#klasifikace-znamky">2. <strong>Klasifikace známky</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prestupny-rok">3. <strong>Přestupný rok</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reseni-kvadraticke-rovnice">4. <strong>Řešení kvadratické rovnice</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parita-cisla">5. <strong>Parita čísla</strong></a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#co-je-pravda">Co je pravda?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ulohy-k-procviceni">Úlohy k procvičení</a></li>
 </ul>
   </nav></div>
 

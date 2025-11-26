@@ -12,14 +12,17 @@ Větvení v Pythonu se dělá pomocí konstrukce `if` - `elif` - `else`, která 
 ```python
 if condition1:
     # kód, který se provede pokud je podmínka condition1 pravdivá
-elif condition1:
+    print("Podmínka první splněna")
+elif condition2:
     # kód, který se provede pokud je podmínka condition2 pravdivá
+    print("Podmínka druhá splněna")
 else:
     # kód, který se provede pokud neplatí žádná z výše uvedených podmínek
+    print("Žádná podmínka nebyla splněna")
 ```
-Podmínku `elif` je možné opakovat vícekrát. V konstrukci `if` - `elif` - `else` se provede vždy jen jeden z bloků a to první z bloků, jehož podmínka je vyhodnocena jako pravdivá (`True`), případně blok `else`, pokud žádná z podmínek u `if`, `elif` nebyla splněna.
+Podmínku `elif` je možné opakovat vícekrát. V konstrukci `if` - `elif` - `else` se provede vždy jen jeden z bloků a to první z bloků, jehož podmínka je vyhodnocena jako pravdivá (`True`), případně blok `else`, pokud žádná z podmínek u `if` nebo `elif` nebyla splněna.
 
-### Příklad:
+*Příklad:*
 
 ```python
 temp = int(input("Zadej teplotu: "))
@@ -42,11 +45,31 @@ else:
     print("Nezletilý")
 ```
 
+### Porovnávací operátory
+
+| Operátor | Význam           | Příklad  |
+| -------- | ---------------- | -------- |
+| `==`     | Rovná se         | `a == b` |
+| `!=`     | Nerovná se       | `a != b` |
+| `>`      | Větší než        | `a > b`  |
+| `<`      | Menší než        | `a < b`  |
+| `>=`     | Větší nebo rovno | `a >= b` |
+| `<=`     | Menší nebo rovno | `a <= b` |
+
+
+### Logické operátory
+
+| Operátor | Popis          | Příklad             |
+| -------- | -------------- | ------------------- |
+| `and`    | Logické A      | `a > b and a <= 10` |
+| `or`     | Logické NEBO   | `a > b or b == 1`   |
+| `not`    | Logická negace | `not b > 5`         |
+
 
 Odsazování
 ----------
 
-**Odsazování** v Pythonu je klíčovou součástí syntaxe, která určuje strukturu kódu a definuje bloky kódu. Python spoléhá na odsazení (mezery nebo tabulátory) k označení hierarchie a logických bloků.
+**Odsazování** v Pythonu je klíčovou součástí syntaxe, která určuje strukturu kódu a definuje **bloky kódu**. Python spoléhá na odsazení (mezery nebo tabulátory) k označení hierarchie a logických bloků.
 
 
 ```python
@@ -58,7 +81,7 @@ if num > 5:
 y = 3 # tento příkaz se už provede vždy
 ```
 
-Blok kódu následující po `if`, `elif`, `else` (a dalších konstrukcích) musí vždy obsahovat alespoň jeden příkaz.Pokud zatím nemáme hotový blok kódu, ale přesto chceme zachovat větvení (například pro doplnění kódu v budoucnu) můžeme použít klíčové `pass`, což je příkaz, který nevykoná nic, ale umožní zachovat hierarchii odsazování v Python kódu:
+Blok kódu následující po `if`, `elif`, `else` (a dalších konstrukcích) musí vždy obsahovat alespoň jeden příkaz. Pokud zatím nemáme hotový blok kódu, ale přesto chceme zachovat větvení (například pro doplnění kódu v budoucnu) můžeme použít klíčové `pass`, což je příkaz, který nevykoná nic, ale umožní zachovat hierarchii odsazování v Python kódu:
 
 ```python
 x = 5
@@ -69,7 +92,7 @@ if x > 0:
 Co je pravda?
 -------------
 
-V Pythonu se v podmínkách nepoužívají jen booleovské hodnoty `True` a `False` nebo logické operátory vracející booleovské hodnoty. Každý objekt v Pythonu má svou "pravdivostní hodnotu". Obecně lze říci, že objekty prázdné nebo nulové se vyhodnotí jako `False`, neprázdné nebo nenulové jako `True` .
+V Pythonu se v podmínkách používají booleovské hodnoty `True` a `False` nebo logické operátory vracející booleovské hodnoty. Každý objekt v Pythonu má svou *pravdivostní hodnotu*. Obecně lze říci, že objekty prázdné nebo nulové se vyhodnotí jako `False`, neprázdné nebo nenulové jako `True` .
 
 
 | Hodnota                               | Vyhodnotí se jako |
@@ -81,7 +104,7 @@ V Pythonu se v podmínkách nepoužívají jen booleovské hodnoty `True` a `Fal
 
 To umožňuje zapisovat zkrácené podmínky a kód je pak čitelnější a přehlednější.
 
-### Příklad:
+*Příklad:*
 
 ```python
 name = input("Zadej jméno: ")
@@ -96,30 +119,31 @@ else:
 Úlohy k procvičení
 ------------------
 
-### 1. **Porovnání čísel**
+1) **Porovnání čísel**
 
-Zeptej se uživatele na dvě čísla a vypiš, které je větší, nebo zda jsou stejná.
+    Zeptejte se uživatele na dvě čísla a vypište, které je větší, nebo zda jsou stejná.
 
-### 2. **Klasifikace známky**
+2) **Největší a nejmenší**
+  
+    Uživatel zadá tři čísla. Vypište nejmenší a největší z nich.
 
-Na vstupu zadej číslo 1–5 a vypiš slovní hodnocení (např. 1 = výborný, 5 = nedostatečný). Ošetři vstupy mimo rozsah.
+3) **Seřazení čísel**
+   
+    Uživatel zadá tři čísla. Vypište čísla seřazená vzestupně podle velikosti.
 
-### 3. **Přestupný rok**
+4) **Parita čísla**
 
-Zeptej se na rok a rozhodni, zda je přestupný:
+    Zeptejte se na číslo a vypište, zda je **sudé** nebo **liché**.
 
-* je dělitelný 4 a není dělitelný 100, nebo je dělitelný 400.
+5) **Klasifikace známky**
 
-### 4. **Řešení kvadratické rovnice**
+    Na vstupu načtěte číslo 1–5 a vypište slovní hodnocení (např. 1 = výborný, 5 = nedostatečný). Ošetřete vstupy mimo rozsah.
 
-Načti koeficienty `a`, `b`, `c` a rozhodni podle diskriminantu:
+6) **Přestupný rok**
 
-* D < 0: žádné reálné řešení
-* D = 0: jedno řešení
-* D > 0: dvě řešení
+    Načtěte rok a rozhodněte zda-li je to přestupný rok nebo ne.
 
-(Diskriminant D = b² - 4ac)
+7) **Řešení kvadratické rovnice**
 
-### 5. **Parita čísla**
+    Načtěte koeficienty $a$, $b$, $c$ kvadratické rovnice ($ax^2 + bx + c = 0$) a rozhodněte podle diskriminantu kolik má řešení a dále vypište všechna řešení rovnice.
 
-Zeptej se na číslo a vypiš, zda je **sudé** nebo **liché**.
