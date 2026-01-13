@@ -17,7 +17,7 @@
         gtag('config', 'G-RZX7DQPSHE');
     </script>
     
-    <title>Balíčky &#8212; Informatika</title>
+    <title>Moduly a balíčky &#8212; Informatika</title>
   
   
   
@@ -57,8 +57,8 @@
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Rejstřík" href="../genindex.html" />
     <link rel="search" title="Vyhledávání" href="../search.html" />
-    <link rel="next" title="PIP, Python Virtual Environment" href="08_pip.html" />
-    <link rel="prev" title="Funkce" href="06_functions.html" />
+    <link rel="next" title="HTML" href="../a_web/01_html.html" />
+    <link rel="prev" title="Cykly v Pythonu" href="04_cycles.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="cs"/>
   </head>
@@ -170,13 +170,11 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Kancelářský software</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Software</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../1_office/01_shortcuts.html">Zkratky</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_office/02_typography.html">Typografie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1_office/03_spreadsheet.html">Funkce tabulkových procesorů</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1_office/04_is.html">Informační systémy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1_office/05_database.html">Databáze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_office/03_spreadsheet.html">Tabulkové procesory</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
 <ul class="current nav bd-sidenav">
@@ -184,20 +182,12 @@
 <li class="toctree-l1"><a class="reference internal" href="02_variables.html">Proměnné</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_conditions.html">Podmínky</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_cycles.html">Cykly v Pythonu</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05_structures.html">Datové struktury</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06_functions.html">Funkce</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Balíčky</a></li>
-<li class="toctree-l1"><a class="reference internal" href="08_pip.html">PIP, Python Virtual Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="10_graphs.html">Grafy</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Moduly a balíčky</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Webové technologie</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../a_web/01_html.html">HTML</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../a_web/02_css.html">Základy CSS</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ostatní</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../9_other/01_materials.html">Materiály k výuce</a></li>
 </ul>
 
     </div>
@@ -336,7 +326,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Balíčky</h1>
+    <h1>Moduly a balíčky</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -346,12 +336,22 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fungovani-balicku-jako-adresaru">Fungování balíčků jako adresářů</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#struktura-importu">Struktura importů</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importovani-modulu">Importování modulů</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#priklady-pouziti-v-kodu">Příklady použití v kódu</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uzitecne-standardni-moduly">Užitečné standardní moduly</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modul-math">Modul <code class="docutils literal notranslate"><span class="pre">math</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modul-random">Modul <code class="docutils literal notranslate"><span class="pre">random</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modul-time">Modul <code class="docutils literal notranslate"><span class="pre">time</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modul-datetime">Modul <code class="docutils literal notranslate"><span class="pre">datetime</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fungovani-balicku-jako-adresaru">Fungování balíčků jako adresářů</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spousteni-skriptu-z-konzole">Spouštění skriptu z konzole</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ulohy-k-procviceni">Úlohy k procvičení</a></li>
 </ul>
             </nav>
         </div>
@@ -363,29 +363,20 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="balicky">
-<h1>Balíčky<a class="headerlink" href="#balicky" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="moduly-a-balicky">
+<h1>Moduly a balíčky<a class="headerlink" href="#moduly-a-balicky" title="Link to this heading">#</a></h1>
 <p>Každý Python soubor se nazývá modul (<strong>module</strong>). Balíčky (<strong>package</strong>) umožňují organizovat moduly do adresářů pro snadnější správu a opětovné použití kódu. Balíčky pomáhají rozdělit projekt do logických částí a poskytují mechanismus pro zapouzdření různých funkcí, tříd a proměnných.</p>
-<section id="fungovani-balicku-jako-adresaru">
-<h2>1.&nbsp;&nbsp;Fungování balíčků jako adresářů<a class="headerlink" href="#fungovani-balicku-jako-adresaru" title="Link to this heading">#</a></h2>
-<p>Balíček v Pythonu je v podstatě adresář obsahující jeden nebo více modulů (souborů <code class="docutils literal notranslate"><span class="pre">.py</span></code>) a soubor <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>. Tento soubor <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> může být prázdný, ale jeho přítomnost označuje, že daný adresář by měl být považován za Python balíček.</p>
-<div class="note admonition">
-<p class="admonition-title">Poznámka</p>
-<p>Ve verzích Pythonu 3.3 a vyšších není soubor <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> nutný pro rozpoznání adresářů jako balíčků, ale stále se používá pro výše uvedené účely.</p>
-</div>
-<section id="struktura-importu">
-<h3>1.1.&nbsp;&nbsp;Struktura importů<a class="headerlink" href="#struktura-importu" title="Link to this heading">#</a></h3>
-<p>Rozdělení na balíček a modul slouží ke strukturování projektu v adresářové struktuře. Při importování se oba chovají prakticky stejně a není praktický rozdíl, jestli importujete modul nebo balíček.</p>
-<p>Python poskytuje několik způsobů, jak importovat kód:</p>
+<section id="importovani-modulu">
+<h2>1.&nbsp;&nbsp;Importování modulů<a class="headerlink" href="#importovani-modulu" title="Link to this heading">#</a></h2>
+<p>Python poskytuje několik způsobů, jak importovat kód z jiných modulů:</p>
 <ul class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">modul</span></code></strong>: Importuje celý modul. Po importu se odkazuje na proměnné, funkce a třídy (<strong>symboly</strong>) plnou cestou, včetně názvu modulu, například <code class="docutils literal notranslate"><span class="pre">modul.my_function()</span></code>.</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">modul</span> <span class="pre">as</span> <span class="pre">m</span></code></strong>: Importuje modul pod alternativním jménem (aliasem), což je užitečné pro zkrácení názvu nebo při řešení konfliktů jmen dvou modulů. K symbolům modulu se pak přistupuje přes alias, například <code class="docutils literal notranslate"><span class="pre">m.my_function()</span></code>.</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">modul</span> <span class="pre">import</span> <span class="pre">my_function</span></code></strong>: Importuje specifický symbol z modulu, umožňuje používat importovaný symbol přímo bez prefixu modulu, například <code class="docutils literal notranslate"><span class="pre">my_function()</span></code>.</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">modul</span> <span class="pre">import</span> <span class="pre">*</span></code></strong>: Importuje všechny symboly. Tato praxe není doporučena pro většinu případů, protože snižuje čitelnost kódu a může vést k nechtěným konfliktům jmen.</p></li>
 </ul>
-</section>
 <section id="priklady-pouziti-v-kodu">
-<h3>1.2.&nbsp;&nbsp;Příklady použití v kódu<a class="headerlink" href="#priklady-pouziti-v-kodu" title="Link to this heading">#</a></h3>
+<h3>1.1.&nbsp;&nbsp;Příklady použití v kódu<a class="headerlink" href="#priklady-pouziti-v-kodu" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>  <span class="c1"># Použití funkce sqrt z modulu math</span>
 
@@ -397,9 +388,83 @@ document.write(`
 </pre></div>
 </div>
 </section>
+</section>
+<section id="uzitecne-standardni-moduly">
+<h2>2.&nbsp;&nbsp;Užitečné standardní moduly<a class="headerlink" href="#uzitecne-standardni-moduly" title="Link to this heading">#</a></h2>
+<p>Python má rozsáhlou standardní knihovnu modulů, které můžete okamžitě používat.</p>
+<section id="modul-math">
+<h3>2.1.&nbsp;&nbsp;Modul <code class="docutils literal notranslate"><span class="pre">math</span></code><a class="headerlink" href="#modul-math" title="Link to this heading">#</a></h3>
+<p>Obsahuje matematické funkce a konstanty.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>          <span class="c1"># Matematická konstanta π</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">16</span><span class="p">))</span>    <span class="c1"># Odmocnina (zkratka ze square root)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="mf">3.2</span><span class="p">))</span>   <span class="c1"># Zaokrouhlení nahoru</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="mf">3.8</span><span class="p">))</span>  <span class="c1"># Zaokrouhlení dolů</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span> <span class="c1"># Funkce sinus</span>
+</pre></div>
+</div>
+<p>Další funkce naleznete v <a class="reference external" href="https://docs.python.org/3/library/math.html">oficiální dokumentaci Pythonu</a>.</p>
+</section>
+<section id="modul-random">
+<h3>2.2.&nbsp;&nbsp;Modul <code class="docutils literal notranslate"><span class="pre">random</span></code><a class="headerlink" href="#modul-random" title="Link to this heading">#</a></h3>
+<p>Slouží pro generování náhodných čísel a výběr náhodných prvků.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>      <span class="c1"># Náhodné celé číslo od 1 do 10</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">())</span>            <span class="c1"># Náhodné desetinné číslo od 0.0 do 1.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]))</span> <span class="c1"># Náhodný prvek ze seznamu</span>
+
+<span class="n">cards</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">cards</span><span class="p">)</span>             <span class="c1"># Zamíchá seznam na místě</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cards</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Další funkce naleznete v <a class="reference external" href="https://docs.python.org/3/library/random.html">oficiální dokumentaci Pythonu</a>.</p>
+<div class="note admonition">
+<p class="admonition-title">Náhodné a pseudonáhodné</p>
+<p>Počítače jsou deterministické stroje, což znamená, že pokud jim zadáte stejný vstup a stejné instrukce, vždy vyprodukují stejný výstup. Proto je poměrně obtížné na u klasických počítačů generovat skutečně náhodná čísla (jako je hod kostkou v reálném světě).</p>
+<p>Místo toho se používají <strong>pseudonáhodná čísla</strong>. Ta jsou generována matematickým algoritmem (v Python modulu <code class="docutils literal notranslate"><span class="pre">random</span></code> se používá algoritmus <a class="reference external" href="https://en.wikipedia.org/wiki/Mersenne_Twister">Mersenne Twister</a>), který vytváří dlouhou posloupnost čísel, jež vypadají náhodně, ale jsou ve skutečnosti předem určená počáteční hodnotou, tzv. <strong>seed</strong> (semínko). Pokud nastavíte stejný seed, dostanete vždy stejnou posloupnost čísel. To je užitečné například při ladění programu (debugging), kdy potřebujete reprodukovat stejné chování.</p>
+<p>Pro kryptografické účely (hesla, šifrování) byste modul <code class="docutils literal notranslate"><span class="pre">random</span></code> neměli používat, protože jeho výstupy lze předvídat.</p>
+</div>
+</section>
+<section id="modul-time">
+<h3>2.3.&nbsp;&nbsp;Modul <code class="docutils literal notranslate"><span class="pre">time</span></code><a class="headerlink" href="#modul-time" title="Link to this heading">#</a></h3>
+<p>Poskytuje funkce pro práci s časem, měření času a pozastavení programu.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Start&quot;</span><span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>       <span class="c1"># Počká 2 sekundy</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;End&quot;</span><span class="p">)</span>
+
+<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="c1"># Aktuální čas v sekundách (timestamp)</span>
+<span class="c1"># ... nějaký kód ...</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Duration: </span><span class="si">{</span><span class="n">end</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Další funkce naleznete v <a class="reference external" href="https://docs.python.org/3/library/time.html">oficiální dokumentaci Pythonu</a>.</p>
+</section>
+<section id="modul-datetime">
+<h3>2.4.&nbsp;&nbsp;Modul <code class="docutils literal notranslate"><span class="pre">datetime</span></code><a class="headerlink" href="#modul-datetime" title="Link to this heading">#</a></h3>
+<p>Pro pokročilejší práci s datem a časem.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">now</span><span class="p">)</span>                  <span class="c1"># 2023-10-27 15:30:45.123456</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">now</span><span class="o">.</span><span class="n">year</span><span class="p">)</span>             <span class="c1"># 2023</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2">.%m.%Y %H:%M&quot;</span><span class="p">))</span> <span class="c1"># Formátovaný výpis: 27.10.2023 15:30</span>
+</pre></div>
+</div>
+<p>Další funkce naleznete v <a class="reference external" href="https://docs.python.org/3/library/datetime.html">oficiální dokumentaci Pythonu</a>.</p>
+</section>
+</section>
+<section id="fungovani-balicku-jako-adresaru">
+<h2>3.&nbsp;&nbsp;Fungování balíčků jako adresářů<a class="headerlink" href="#fungovani-balicku-jako-adresaru" title="Link to this heading">#</a></h2>
+<p>Balíček v Pythonu je v podstatě adresář obsahující jeden nebo více modulů (souborů <code class="docutils literal notranslate"><span class="pre">.py</span></code>) a soubor <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>. Tento soubor <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> může být prázdný, ale jeho přítomnost označuje, že daný adresář by měl být považován za Python balíček.</p>
 <section id="spousteni-skriptu-z-konzole">
-<h3>1.3.&nbsp;&nbsp;Spouštění skriptu z konzole<a class="headerlink" href="#spousteni-skriptu-z-konzole" title="Link to this heading">#</a></h3>
-<p>Některé moduly dovolují nejen používání v importu, ale mohou být spouštěny přímo z konzole. Pro rozlišení, zda je balíček (.py soubor) importován nebo přímo spouštěn použijte test:</p>
+<h3>3.1.&nbsp;&nbsp;Spouštění skriptu z konzole<a class="headerlink" href="#spousteni-skriptu-z-konzole" title="Link to this heading">#</a></h3>
+<p>Některé moduly dovolují nejen používání v importu, ale mohou být spouštěny přímo z terminálu. Pro rozlišení, zda je balíček (.py soubor) importován nebo přímo spouštěn použijte test:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Launching from console&quot;</span><span class="p">)</span>
 </pre></div>
@@ -412,8 +477,23 @@ document.write(`
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>test.py
 </pre></div>
 </div>
-<p>Bude proměnná <code class="docutils literal notranslate"><span class="pre">__main__</span></code> mít hodnotu <code class="docutils literal notranslate"><span class="pre">__main__</span></code>. Pokud bude stejný modul importován z jiného modulu pomocí <code class="docutils literal notranslate"><span class="pre">import</span></code>, bude mít proměnná <code class="docutils literal notranslate"><span class="pre">__name__</span></code> jako hodnotu název importovaného modulu.</p>
+<p>Bude proměnná <code class="docutils literal notranslate"><span class="pre">__name__</span></code> mít hodnotu <code class="docutils literal notranslate"><span class="pre">&quot;__main__&quot;</span></code>. Pokud bude stejný modul importován z jiného modulu pomocí <code class="docutils literal notranslate"><span class="pre">import</span></code>, bude mít proměnná <code class="docutils literal notranslate"><span class="pre">__name__</span></code> jako hodnotu název importovaného modulu.</p>
 </section>
+</section>
+<section id="ulohy-k-procviceni">
+<h2>4.&nbsp;&nbsp;Úlohy k procvičení<a class="headerlink" href="#ulohy-k-procviceni" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Výpočet přepony</strong>
+Pomocí modulu <code class="docutils literal notranslate"><span class="pre">math</span></code> vypočítejte délku přepony pravoúhlého trojúhelníku, pokud znáte délky odvěsen <code class="docutils literal notranslate"><span class="pre">a=3</span></code> a <code class="docutils literal notranslate"><span class="pre">b=4</span></code>.</p></li>
+<li><p><strong>Hod kostkou</strong>
+Napište program, který simuluje hod šestistěnnou kostkou (vygeneruje náhodné číslo 1–6) pomocí modulu <code class="docutils literal notranslate"><span class="pre">random</span></code>.</p></li>
+<li><p><strong>Odpočet</strong>
+Napište program, který vypíše čísla od 3 do 1 a mezi každým výpisem počká 1 sekundu (modul <code class="docutils literal notranslate"><span class="pre">time</span></code>). Nakonec vypíše “Start!”.</p></li>
+<li><p><strong>Aktuální datum</strong>
+Vypište aktuální datum ve formátu “Den. Měsíc. Rok” (např. “1. 1. 2024”) pomocí modulu <code class="docutils literal notranslate"><span class="pre">datetime</span></code>.</p></li>
+<li><p><strong>Náhodný výběr</strong>
+Máte seznam jmen <code class="docutils literal notranslate"><span class="pre">names</span> <span class="pre">=</span> <span class="pre">[&quot;Petr&quot;,</span> <span class="pre">&quot;Jan&quot;,</span> <span class="pre">&quot;Eva&quot;,</span> <span class="pre">&quot;Jana&quot;]</span></code>. Vyberte náhodně jedno jméno a vypište ho.</p></li>
+</ol>
 </section>
 </section>
 
@@ -429,20 +509,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="06_functions.html"
+       href="04_cycles.html"
        title="předchozí stránka">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">předchozí</p>
-        <p class="prev-next-title">Funkce</p>
+        <p class="prev-next-title">Cykly v Pythonu</p>
       </div>
     </a>
     <a class="right-next"
-       href="08_pip.html"
+       href="../a_web/01_html.html"
        title="další stránka">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">další</p>
-        <p class="prev-next-title">PIP, Python Virtual Environment</p>
+        <p class="prev-next-title">HTML</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -462,12 +542,22 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fungovani-balicku-jako-adresaru">Fungování balíčků jako adresářů</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#struktura-importu">Struktura importů</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importovani-modulu">Importování modulů</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#priklady-pouziti-v-kodu">Příklady použití v kódu</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uzitecne-standardni-moduly">Užitečné standardní moduly</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modul-math">Modul <code class="docutils literal notranslate"><span class="pre">math</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modul-random">Modul <code class="docutils literal notranslate"><span class="pre">random</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modul-time">Modul <code class="docutils literal notranslate"><span class="pre">time</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modul-datetime">Modul <code class="docutils literal notranslate"><span class="pre">datetime</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fungovani-balicku-jako-adresaru">Fungování balíčků jako adresářů</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spousteni-skriptu-z-konzole">Spouštění skriptu z konzole</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ulohy-k-procviceni">Úlohy k procvičení</a></li>
 </ul>
   </nav></div>
 

@@ -27,9 +27,9 @@ Podmínku `elif` je možné opakovat vícekrát. V konstrukci `if` - `elif` - `e
 ```python
 temp = int(input("Zadej teplotu: "))
 
-if teplota > 30:
+if temp > 30:
     print("Je horko.")
-elif teplota > 20:
+elif temp > 20:
     print("Je příjemně.")
 else:
     print("Je zima.")
@@ -38,8 +38,8 @@ else:
 Bloky `elif` a `else` jsou nepovinné a není tedy vždy nezbytně nutné je použít:
 
 ```python
-vek = 17
-if vek >= 18:
+age = 17
+if age >= 18:
     print("Dospělý")
 else:
     print("Nezletilý")

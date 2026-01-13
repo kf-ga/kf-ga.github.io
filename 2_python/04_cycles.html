@@ -57,7 +57,7 @@
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Rejstřík" href="../genindex.html" />
     <link rel="search" title="Vyhledávání" href="../search.html" />
-    <link rel="next" title="Datové struktury" href="05_structures.html" />
+    <link rel="next" title="Moduly a balíčky" href="07_modules.html" />
     <link rel="prev" title="Podmínky" href="03_conditions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="cs"/>
@@ -170,13 +170,11 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Kancelářský software</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Software</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../1_office/01_shortcuts.html">Zkratky</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../1_office/02_typography.html">Typografie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1_office/03_spreadsheet.html">Funkce tabulkových procesorů</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1_office/04_is.html">Informační systémy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../1_office/05_database.html">Databáze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_office/03_spreadsheet.html">Tabulkové procesory</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
 <ul class="current nav bd-sidenav">
@@ -184,20 +182,12 @@
 <li class="toctree-l1"><a class="reference internal" href="02_variables.html">Proměnné</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_conditions.html">Podmínky</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Cykly v Pythonu</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05_structures.html">Datové struktury</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06_functions.html">Funkce</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07_modules.html">Balíčky</a></li>
-<li class="toctree-l1"><a class="reference internal" href="08_pip.html">PIP, Python Virtual Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="10_graphs.html">Grafy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_modules.html">Moduly a balíčky</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Webové technologie</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../a_web/01_html.html">HTML</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../a_web/02_css.html">Základy CSS</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ostatní</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../9_other/01_materials.html">Materiály k výuce</a></li>
 </ul>
 
     </div>
@@ -348,18 +338,11 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cyklus-for">Cyklus <code class="docutils literal notranslate"><span class="pre">for</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pouziti-range">Použití <code class="docutils literal notranslate"><span class="pre">range()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#priklad-vypis-cisel-od-0-do-4">Příklad: výpis čísel od 0 do 4</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#priklad-vypis-sudych-cisel-od-2-do-10">Příklad: výpis sudých čísel od 2 do 10</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prochazeni-retezcu">Procházení řetězců</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cyklus-while">Cyklus <code class="docutils literal notranslate"><span class="pre">while</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#priklad-opakuj-dokud-uzivatel-nezada-ano">Příklad: opakuj dokud uživatel nezadá „ano“</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vnorovani-cyklu">Vnořování cyklů</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#priklad-vypis-35-hvezdicek">Příklad: výpis 3×5 hvězdiček</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cyklus-while">Cyklus <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vnorovani-cyklu">Vnořování cyklů</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ulohy-k-procviceni">Úlohy k procvičení</a></li>
 </ul>
             </nav>
@@ -374,39 +357,44 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="cykly-v-pythonu">
 <h1>Cykly v Pythonu<a class="headerlink" href="#cykly-v-pythonu" title="Link to this heading">#</a></h1>
-<p><strong>Cykly</strong> (<strong>loop</strong>) umožňují opakovat určitou část kódu. Místo toho, abychom psali stejný kód několikrát, použijeme cyklus a Python ho provede tolikrát, kolikrát chceme, nebo dokud platí určitá podmínka.</p>
+<p><strong>Cykly</strong> (<strong>loops</strong>) umožňují opakovat určitou část kódu. Místo toho, abychom psali stejný kód několikrát, použijeme cyklus a Python ho provede tolikrát, kolikrát chceme, nebo dokud platí určitá podmínka.</p>
 <section id="cyklus-for">
 <h2>1.&nbsp;&nbsp;Cyklus <code class="docutils literal notranslate"><span class="pre">for</span></code><a class="headerlink" href="#cyklus-for" title="Link to this heading">#</a></h2>
-<p>Cyklus <strong><code class="docutils literal notranslate"><span class="pre">for</span></code></strong> (<strong>for loop</strong>) slouží k opakování přes sekvence (např. seznamy) nebo přes rozsah čísel pomocí funkce <code class="docutils literal notranslate"><span class="pre">range()</span></code>.</p>
+<p>Cyklus <strong><code class="docutils literal notranslate"><span class="pre">for</span></code></strong> (<strong>for loop</strong>) slouží k opakování přes sekvence (např. seznamy) nebo přes rozsah čísel například pomocí funkce <code class="docutils literal notranslate"><span class="pre">range()</span></code>.</p>
 <section id="pouziti-range">
 <h3>1.1.&nbsp;&nbsp;Použití <code class="docutils literal notranslate"><span class="pre">range()</span></code><a class="headerlink" href="#pouziti-range" title="Link to this heading">#</a></h3>
 <p>Funkce <code class="docutils literal notranslate"><span class="pre">range()</span></code> generuje posloupnost čísel:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>            <span class="c1"># od 0 do end - 1</span>
-<span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>       <span class="c1"># od start do end - 1</span>
-<span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span> <span class="c1"># od start do end, s krokem step</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">range</span><span class="p">(</span><span class="n">stop</span><span class="p">)</span>             <span class="c1"># od 0 do stop - 1</span>
+<span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">)</span>      <span class="c1"># od start do stop - 1</span>
+<span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span> <span class="c1"># od start do stop, s krokem step</span>
 </pre></div>
 </div>
-</section>
-<section id="priklad-vypis-cisel-od-0-do-4">
-<h3>1.2.&nbsp;&nbsp;Příklad: výpis čísel od 0 do 4<a class="headerlink" href="#priklad-vypis-cisel-od-0-do-4" title="Link to this heading">#</a></h3>
+<p><em>Příklad:</em> Program vypíše čísla od 0 do 4.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="priklad-vypis-sudych-cisel-od-2-do-10">
-<h3>1.3.&nbsp;&nbsp;Příklad: výpis sudých čísel od 2 do 10<a class="headerlink" href="#priklad-vypis-sudych-cisel-od-2-do-10" title="Link to this heading">#</a></h3>
+<p><em>Příklad:</em> Program vypíše sudá čísla od 2 do 10.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="prochazeni-retezcu">
+<h3>1.2.&nbsp;&nbsp;Procházení řetězců<a class="headerlink" href="#prochazeni-retezcu" title="Link to this heading">#</a></h3>
+<p>Protože textový řetězec (<code class="docutils literal notranslate"><span class="pre">str</span></code>) je v Pythonu sekvence znaků, můžeme ho také procházet pomocí <code class="docutils literal notranslate"><span class="pre">for</span></code> cyklu po jednotlivých znacích.</p>
+<p><em>Příklad:</em> Program vypíše jednotlivá písmena slova “Python” pod sebe.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
+<span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">word</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 </section>
 <section id="cyklus-while">
 <h2>2.&nbsp;&nbsp;Cyklus <code class="docutils literal notranslate"><span class="pre">while</span></code><a class="headerlink" href="#cyklus-while" title="Link to this heading">#</a></h2>
-<p>Cyklus <strong><code class="docutils literal notranslate"><span class="pre">while</span></code></strong> (<strong>wile loop</strong>) opakuje blok kódu <strong>dokud platí podmínka</strong>. Pokud je podmínka nepravdivá (<code class="docutils literal notranslate"><span class="pre">False</span></code>), cyklus skončí.</p>
-<section id="priklad-opakuj-dokud-uzivatel-nezada-ano">
-<h3>2.1.&nbsp;&nbsp;Příklad: opakuj dokud uživatel nezadá „ano“<a class="headerlink" href="#priklad-opakuj-dokud-uzivatel-nezada-ano" title="Link to this heading">#</a></h3>
+<p>Cyklus <strong><code class="docutils literal notranslate"><span class="pre">while</span></code></strong> (<strong>while loop</strong>) opakuje blok kódu <strong>dokud platí podmínka</strong>. Pokud je podmínka nepravdivá (<code class="docutils literal notranslate"><span class="pre">False</span></code>), cyklus skončí.</p>
+<p><em>Příklad:</em> Program bude opakovaně vyzývat k zadání vstupu, dokud uživatel nezadá „yes“.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">test</span> <span class="o">=</span> <span class="s2">&quot;ano&quot;</span>
 <span class="n">answer</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
 <span class="k">while</span> <span class="n">answer</span> <span class="o">!=</span> <span class="n">test</span><span class="p">:</span>
@@ -422,69 +410,44 @@ document.write(`
 <p>Při použití cyklu <code class="docutils literal notranslate"><span class="pre">while</span></code> se vám snadno může stát, že program nechtěně napíšete tak, že podmínka nebude splněna nikdy a cyklus tak poběží stále a program nikdy neskončí. V programátorské hantýrce se tomu říká, že se program <strong>zacyklil</strong>. V takovém případě je nutné program násilně ukončit, například klávesovou zkratkou <code class="docutils literal notranslate"><span class="pre">Ctrl+C</span></code>.</p>
 </div>
 </section>
-</section>
 <section id="vnorovani-cyklu">
 <h2>3.&nbsp;&nbsp;Vnořování cyklů<a class="headerlink" href="#vnorovani-cyklu" title="Link to this heading">#</a></h2>
-<p>Cyklus může být uvnitř jiného cyklu – tomu říkáme <strong>vnořený cyklus</strong>. To je užitečné např. při práci s tabulkami, maticemi nebo kreslením vzorů.</p>
-<section id="priklad-vypis-35-hvezdicek">
-<h3>3.1.&nbsp;&nbsp;Příklad: výpis 3×5 hvězdiček<a class="headerlink" href="#priklad-vypis-35-hvezdicek" title="Link to this heading">#</a></h3>
+<p>Cyklus může být uvnitř jiného cyklu – tomu říkáme <strong>vnořený cyklus</strong>. To je užitečné např. při práci s tabulkami, maticemi nebo procházení složitějších struktur.</p>
+<p><em>Příklad:</em> Program vypíše obdélník z hvězdiček o rozměrech 3x5.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">()</span>  <span class="c1"># nový řádek</span>
 </pre></div>
 </div>
+<div class="note admonition">
+<p class="admonition-title">Odsazování</p>
 <p>Povšimněte si opět odsazování při vnořování cyklů. Každý blok musí být správně odsazen, jinak Python vyhodí chybu nebo se cyklus bude chovat jinak než by měl.</p>
-</section>
+</div>
 </section>
 <section id="ulohy-k-procviceni">
 <h2>4.&nbsp;&nbsp;Úlohy k procvičení<a class="headerlink" href="#ulohy-k-procviceni" title="Link to this heading">#</a></h2>
 <ol class="arabic">
-<li><p><strong>Výpis čísel od 1 do 10</strong></p>
-<ul class="simple">
-<li><p>Použij <code class="docutils literal notranslate"><span class="pre">range(1,</span> <span class="pre">11)</span></code>, vypiš každé číslo.</p></li>
-</ul>
-</li>
-<li><p><strong>Výpočet faktoriálu čísla</strong></p>
-<ul class="simple">
-<li><p>Načti číslo a vypočítej n! pomocí cyklu <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p></li>
-</ul>
-</li>
-<li><p><strong>Tabulka násobků čísla</strong></p>
-<ul class="simple">
-<li><p>Načti číslo <code class="docutils literal notranslate"><span class="pre">n</span></code> a vypiš jeho násobky od 1 do 10.</p></li>
-</ul>
-</li>
-<li><p><strong>Hádej číslo</strong></p>
-<ul class="simple">
-<li><p>Program má „tajné číslo“ a uživatel hádá, dokud ho netrefí.</p></li>
-<li><p>Rozšiřte program tak, aby program při neúspěšném pokusu hráči vždy napověděl, jestli je hledané číslo větší nebo menší.</p></li>
-<li><p>Přidejte počítání celkového počtu pokusů. Počet pokusů pak nakonec zobrazte.</p></li>
-</ul>
-</li>
-<li><p><strong>Součet zadaných čísel</strong></p>
-<ul class="simple">
-<li><p>Uživatel zadává čísla, dokud nezadá <code class="docutils literal notranslate"><span class="pre">0</span></code>. Na konci se vypíše jejich součet.</p></li>
-</ul>
-</li>
-<li><p><strong>Počítadlo pokusů</strong></p>
-<ul class="simple">
-<li><p>Opakuj dotaz, dokud uživatel nezadá heslo. Po zadání vypiš, kolikrát se spletl.</p></li>
-</ul>
-</li>
-<li><p><strong>Násobilka 1–10</strong></p>
-<ul class="simple">
-<li><p>Vypiš tabulku násobků čísel 1 až 10.</p></li>
-</ul>
-</li>
-<li><p><strong>Obdélník z hvězdiček</strong></p>
-<ul class="simple">
-<li><p>Načti šířku a výšku a vypiš odpovídající obdélník složený z <code class="docutils literal notranslate"><span class="pre">*</span></code>.</p></li>
-</ul>
-</li>
-<li><p><strong>Pravoúhlý trojúhelník</strong></p>
-<ul>
-<li><p>Vypiš trojúhelník z hvězdiček podle zadaného počtu řádků:</p>
+<li><p><strong>Výpis čísel od 1 do 10</strong>
+Použij <code class="docutils literal notranslate"><span class="pre">range(1,</span> <span class="pre">11)</span></code>, vypiš každé číslo.</p></li>
+<li><p><strong>Výpočet faktoriálu čísla</strong>
+Načti číslo a vypočítej n! pomocí cyklu <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p></li>
+<li><p><strong>Tabulka násobků čísla</strong>
+Načti číslo <code class="docutils literal notranslate"><span class="pre">n</span></code> a vypiš jeho násobky od 1 do 10.</p></li>
+<li><p><strong>Hádej číslo</strong>
+Program má „tajné číslo“ a uživatel hádá, dokud ho netrefí.
+Rozšiřte program tak, aby program při neúspěšném pokusu hráči vždy napověděl, jestli je hledané číslo větší nebo menší.
+Přidejte počítání celkového počtu pokusů. Počet pokusů pak nakonec zobrazte.</p></li>
+<li><p><strong>Součet zadaných čísel</strong>
+Uživatel zadává čísla, dokud nezadá <code class="docutils literal notranslate"><span class="pre">0</span></code>. Na konci se vypíše jejich součet.</p></li>
+<li><p><strong>Počítadlo pokusů</strong>
+Opakuj dotaz, dokud uživatel nezadá heslo. Po zadání vypiš, kolikrát se spletl.</p></li>
+<li><p><strong>Malá násobilka</strong>
+Vypiš tabulku násobků čísel 1 až 10.</p></li>
+<li><p><strong>Obdélník z hvězdiček</strong>
+Načti šířku a výšku a vypiš odpovídající obdélník složený z <code class="docutils literal notranslate"><span class="pre">*</span></code>.</p></li>
+<li><p><strong>Pravoúhlý trojúhelník</strong>
+Vypiš trojúhelník z hvězdiček podle zadaného počtu řádků:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span>
 <span class="o">*</span> <span class="o">*</span>
 <span class="o">*</span> <span class="o">*</span> <span class="o">*</span>
@@ -492,11 +455,48 @@ document.write(`
 </pre></div>
 </div>
 </li>
-</ul>
-</li>
+<li><p><strong>Ciferný součet</strong>
+Napište program, který načte číslo ze vstupu (libovolně veliké) a vypíše jeho ciferný součet.</p></li>
+<li><p><strong>Leet speak</strong>
+Napište program, který převede zadané slovo do leet speak, tedy například slovo <code class="docutils literal notranslate"><span class="pre">HESLO</span></code> převede na <code class="docutils literal notranslate"><span class="pre">H35L0</span></code>.</p></li>
 </ol>
-<hr class="docutils" />
-<p>V další kapitole se naučíme používat <strong>seznamy</strong>, které nám umožní uchovávat více hodnot v jedné proměnné. To se výborně hodí v kombinaci s cykly!</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Písmeno</p></th>
+<th class="head text-center"><p>Znak</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>A</p></td>
+<td class="text-center"><p>4</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>B</p></td>
+<td class="text-center"><p>8</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>E</p></td>
+<td class="text-center"><p>3</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>G</p></td>
+<td class="text-center"><p>6</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>I</p></td>
+<td class="text-center"><p>1</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>O</p></td>
+<td class="text-center"><p>0</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>S</p></td>
+<td class="text-center"><p>5</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>T</p></td>
+<td class="text-center"><p>7</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Z</p></td>
+<td class="text-center"><p>2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 </section>
 
@@ -521,11 +521,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="05_structures.html"
+       href="07_modules.html"
        title="další stránka">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">další</p>
-        <p class="prev-next-title">Datové struktury</p>
+        <p class="prev-next-title">Moduly a balíčky</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -547,18 +547,11 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cyklus-for">Cyklus <code class="docutils literal notranslate"><span class="pre">for</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pouziti-range">Použití <code class="docutils literal notranslate"><span class="pre">range()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#priklad-vypis-cisel-od-0-do-4">Příklad: výpis čísel od 0 do 4</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#priklad-vypis-sudych-cisel-od-2-do-10">Příklad: výpis sudých čísel od 2 do 10</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prochazeni-retezcu">Procházení řetězců</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cyklus-while">Cyklus <code class="docutils literal notranslate"><span class="pre">while</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#priklad-opakuj-dokud-uzivatel-nezada-ano">Příklad: opakuj dokud uživatel nezadá „ano“</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vnorovani-cyklu">Vnořování cyklů</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#priklad-vypis-35-hvezdicek">Příklad: výpis 3×5 hvězdiček</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cyklus-while">Cyklus <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vnorovani-cyklu">Vnořování cyklů</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ulohy-k-procviceni">Úlohy k procvičení</a></li>
 </ul>
   </nav></div>
