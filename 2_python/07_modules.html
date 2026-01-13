@@ -58,7 +58,7 @@
     <link rel="index" title="Rejstřík" href="../genindex.html" />
     <link rel="search" title="Vyhledávání" href="../search.html" />
     <link rel="next" title="HTML" href="../a_web/01_html.html" />
-    <link rel="prev" title="Cykly v Pythonu" href="04_cycles.html" />
+    <link rel="prev" title="Cykly" href="04_cycles.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="cs"/>
   </head>
@@ -181,7 +181,7 @@
 <li class="toctree-l1"><a class="reference internal" href="01_algorithms.html">Algoritmizace</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_variables.html">Proměnné</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_conditions.html">Podmínky</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04_cycles.html">Cykly v Pythonu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_cycles.html">Cykly</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Moduly a balíčky</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Webové technologie</span></p>
@@ -347,10 +347,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modul-datetime">Modul <code class="docutils literal notranslate"><span class="pre">datetime</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fungovani-balicku-jako-adresaru">Fungování balíčků jako adresářů</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spousteni-skriptu-z-konzole">Spouštění skriptu z konzole</a></li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ulohy-k-procviceni">Úlohy k procvičení</a></li>
 </ul>
             </nav>
@@ -459,40 +455,24 @@ document.write(`
 <p>Další funkce naleznete v <a class="reference external" href="https://docs.python.org/3/library/datetime.html">oficiální dokumentaci Pythonu</a>.</p>
 </section>
 </section>
-<section id="fungovani-balicku-jako-adresaru">
-<h2>3.&nbsp;&nbsp;Fungování balíčků jako adresářů<a class="headerlink" href="#fungovani-balicku-jako-adresaru" title="Link to this heading">#</a></h2>
-<p>Balíček v Pythonu je v podstatě adresář obsahující jeden nebo více modulů (souborů <code class="docutils literal notranslate"><span class="pre">.py</span></code>) a soubor <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>. Tento soubor <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> může být prázdný, ale jeho přítomnost označuje, že daný adresář by měl být považován za Python balíček.</p>
-<section id="spousteni-skriptu-z-konzole">
-<h3>3.1.&nbsp;&nbsp;Spouštění skriptu z konzole<a class="headerlink" href="#spousteni-skriptu-z-konzole" title="Link to this heading">#</a></h3>
-<p>Některé moduly dovolují nejen používání v importu, ale mohou být spouštěny přímo z terminálu. Pro rozlišení, zda je balíček (.py soubor) importován nebo přímo spouštěn použijte test:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Launching from console&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Pokud je skript spuštěn přímo z konzole, například příkazem:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>test.py
-</pre></div>
-</div>
-<p>nebo</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>test.py
-</pre></div>
-</div>
-<p>Bude proměnná <code class="docutils literal notranslate"><span class="pre">__name__</span></code> mít hodnotu <code class="docutils literal notranslate"><span class="pre">&quot;__main__&quot;</span></code>. Pokud bude stejný modul importován z jiného modulu pomocí <code class="docutils literal notranslate"><span class="pre">import</span></code>, bude mít proměnná <code class="docutils literal notranslate"><span class="pre">__name__</span></code> jako hodnotu název importovaného modulu.</p>
-</section>
-</section>
 <section id="ulohy-k-procviceni">
-<h2>4.&nbsp;&nbsp;Úlohy k procvičení<a class="headerlink" href="#ulohy-k-procviceni" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p><strong>Výpočet přepony</strong>
-Pomocí modulu <code class="docutils literal notranslate"><span class="pre">math</span></code> vypočítejte délku přepony pravoúhlého trojúhelníku, pokud znáte délky odvěsen <code class="docutils literal notranslate"><span class="pre">a=3</span></code> a <code class="docutils literal notranslate"><span class="pre">b=4</span></code>.</p></li>
-<li><p><strong>Hod kostkou</strong>
-Napište program, který simuluje hod šestistěnnou kostkou (vygeneruje náhodné číslo 1–6) pomocí modulu <code class="docutils literal notranslate"><span class="pre">random</span></code>.</p></li>
-<li><p><strong>Odpočet</strong>
-Napište program, který vypíše čísla od 3 do 1 a mezi každým výpisem počká 1 sekundu (modul <code class="docutils literal notranslate"><span class="pre">time</span></code>). Nakonec vypíše “Start!”.</p></li>
-<li><p><strong>Aktuální datum</strong>
-Vypište aktuální datum ve formátu “Den. Měsíc. Rok” (např. “1. 1. 2024”) pomocí modulu <code class="docutils literal notranslate"><span class="pre">datetime</span></code>.</p></li>
-<li><p><strong>Náhodný výběr</strong>
-Máte seznam jmen <code class="docutils literal notranslate"><span class="pre">names</span> <span class="pre">=</span> <span class="pre">[&quot;Petr&quot;,</span> <span class="pre">&quot;Jan&quot;,</span> <span class="pre">&quot;Eva&quot;,</span> <span class="pre">&quot;Jana&quot;]</span></code>. Vyberte náhodně jedno jméno a vypište ho.</p></li>
+<h2>3.&nbsp;&nbsp;Úlohy k procvičení<a class="headerlink" href="#ulohy-k-procviceni" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p><strong>Výpočet přepony</strong></p>
+<p>Pomocí modulu <code class="docutils literal notranslate"><span class="pre">math</span></code> vypočítejte délku přepony pravoúhlého trojúhelníku, pokud znáte délky odvěsen <code class="docutils literal notranslate"><span class="pre">a=3</span></code> a <code class="docutils literal notranslate"><span class="pre">b=4</span></code>.</p>
+</li>
+<li><p><strong>Hod kostkou</strong></p>
+<p>Napište program, který simuluje hod šestistěnnou kostkou (vygeneruje náhodné číslo 1–6) pomocí modulu <code class="docutils literal notranslate"><span class="pre">random</span></code>.</p>
+</li>
+<li><p><strong>Odpočet</strong></p>
+<p>Napište program, který vypíše čísla od 3 do 1 a mezi každým výpisem počká 1 sekundu (modul <code class="docutils literal notranslate"><span class="pre">time</span></code>). Nakonec vypíše “Start!”.</p>
+</li>
+<li><p><strong>Aktuální datum</strong></p>
+<p>Vypište aktuální datum ve formátu “D. M. Y” (např. “1. 1. 2024”) pomocí modulu <code class="docutils literal notranslate"><span class="pre">datetime</span></code>.</p>
+</li>
+<li><p><strong>Náhodný výběr</strong></p>
+<p>Máte seznam jmen <code class="docutils literal notranslate"><span class="pre">names</span> <span class="pre">=</span> <span class="pre">[&quot;Petr&quot;,</span> <span class="pre">&quot;Jan&quot;,</span> <span class="pre">&quot;Eva&quot;,</span> <span class="pre">&quot;Jana&quot;]</span></code>. Vyberte náhodně jedno jméno a vypište ho.</p>
+</li>
 </ol>
 </section>
 </section>
@@ -514,7 +494,7 @@ Máte seznam jmen <code class="docutils literal notranslate"><span class="pre">n
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">předchozí</p>
-        <p class="prev-next-title">Cykly v Pythonu</p>
+        <p class="prev-next-title">Cykly</p>
       </div>
     </a>
     <a class="right-next"
@@ -551,10 +531,6 @@ Máte seznam jmen <code class="docutils literal notranslate"><span class="pre">n
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modul-random">Modul <code class="docutils literal notranslate"><span class="pre">random</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modul-time">Modul <code class="docutils literal notranslate"><span class="pre">time</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modul-datetime">Modul <code class="docutils literal notranslate"><span class="pre">datetime</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fungovani-balicku-jako-adresaru">Fungování balíčků jako adresářů</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spousteni-skriptu-z-konzole">Spouštění skriptu z konzole</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ulohy-k-procviceni">Úlohy k procvičení</a></li>

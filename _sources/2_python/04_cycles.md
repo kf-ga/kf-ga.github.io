@@ -1,5 +1,5 @@
-Cykly v Pythonu
-===============
+Cykly
+=====
 
 **Cykly** (**loops**) umožňují opakovat určitou část kódu. Místo toho, abychom psali stejný kód několikrát, použijeme cyklus a Python ho provede tolikrát, kolikrát chceme, nebo dokud platí určitá podmínka.
 
@@ -93,32 +93,41 @@ Povšimněte si opět odsazování při vnořování cyklů. Každý blok musí 
 ------------------
 
 1. **Výpis čísel od 1 do 10**
+
    Použij `range(1, 11)`, vypiš každé číslo.
 
 2. **Výpočet faktoriálu čísla**
+
    Načti číslo a vypočítej n! pomocí cyklu `for`.
 
 3. **Tabulka násobků čísla**
+
    Načti číslo `n` a vypiš jeho násobky od 1 do 10.
 
 4. **Hádej číslo**
+
    Program má „tajné číslo“ a uživatel hádá, dokud ho netrefí. 
    Rozšiřte program tak, aby program při neúspěšném pokusu hráči vždy napověděl, jestli je hledané číslo větší nebo menší.
    Přidejte počítání celkového počtu pokusů. Počet pokusů pak nakonec zobrazte.
 
 5. **Součet zadaných čísel**
+
    Uživatel zadává čísla, dokud nezadá `0`. Na konci se vypíše jejich součet.
 
 6. **Počítadlo pokusů**
+
    Opakuj dotaz, dokud uživatel nezadá heslo. Po zadání vypiš, kolikrát se spletl.
 
 7. **Malá násobilka**
+
    Vypiš tabulku násobků čísel 1 až 10.
 
 8. **Obdélník z hvězdiček**
+
    Načti šířku a výšku a vypiš odpovídající obdélník složený z `*`.
 
 9. **Pravoúhlý trojúhelník**
+
    Vypiš trojúhelník z hvězdiček podle zadaného počtu řádků:
    ```
    *
@@ -128,11 +137,15 @@ Povšimněte si opět odsazování při vnořování cyklů. Každý blok musí 
    ```
 
 10. **Ciferný součet**
+
    Napište program, který načte číslo ze vstupu (libovolně veliké) a vypíše jeho ciferný součet.
 
 
 11. **Leet speak**
+
    Napište program, který převede zadané slovo do leet speak, tedy například slovo `HESLO` převede na `H35L0`.
+
+   Převodní tabulka:
 
    | Písmeno | Znak |
    |:-------:|:----:|

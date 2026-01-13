@@ -113,49 +113,25 @@ print(now.strftime("%d.%m.%Y %H:%M")) # Formátovaný výpis: 27.10.2023 15:30
 
 Další funkce naleznete v [oficiální dokumentaci Pythonu](https://docs.python.org/3/library/datetime.html).
 
-Fungování balíčků jako adresářů
--------------------------------
-
-Balíček v Pythonu je v podstatě adresář obsahující jeden nebo více modulů (souborů `.py`) a soubor `__init__.py`. Tento soubor `__init__.py` může být prázdný, ale jeho přítomnost označuje, že daný adresář by měl být považován za Python balíček.
-
-
-### Spouštění skriptu z konzole
-
-Některé moduly dovolují nejen používání v importu, ale mohou být spouštěny přímo z terminálu. Pro rozlišení, zda je balíček (.py soubor) importován nebo přímo spouštěn použijte test:
-
-```python
-if __name__ == "__main__":
-    print("Launching from console")
-```
-
-Pokud je skript spuštěn přímo z konzole, například příkazem:
-
-```sh
-python test.py
-```
-
-nebo 
-
-```sh
-python -m test.py
-```
-
-Bude proměnná `__name__` mít hodnotu `"__main__"`. Pokud bude stejný modul importován z jiného modulu pomocí `import`, bude mít proměnná `__name__` jako hodnotu název importovaného modulu.
-
 Úlohy k procvičení
 ------------------
 
 1. **Výpočet přepony**
+
    Pomocí modulu `math` vypočítejte délku přepony pravoúhlého trojúhelníku, pokud znáte délky odvěsen `a=3` a `b=4`.
 
 2. **Hod kostkou**
+
    Napište program, který simuluje hod šestistěnnou kostkou (vygeneruje náhodné číslo 1–6) pomocí modulu `random`.
 
 3. **Odpočet**
+
    Napište program, který vypíše čísla od 3 do 1 a mezi každým výpisem počká 1 sekundu (modul `time`). Nakonec vypíše "Start!".
 
 4. **Aktuální datum**
-   Vypište aktuální datum ve formátu "Den. Měsíc. Rok" (např. "1. 1. 2024") pomocí modulu `datetime`.
+
+   Vypište aktuální datum ve formátu "D. M. Y" (např. "1. 1. 2024") pomocí modulu `datetime`.
 
 5. **Náhodný výběr**
+
    Máte seznam jmen `names = ["Petr", "Jan", "Eva", "Jana"]`. Vyberte náhodně jedno jméno a vypište ho.
