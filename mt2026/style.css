@@ -1,0 +1,37 @@
+
+body {
+    color: white;
+    background-color: #202846;
+}
+a {
+    color: #07F7FE;
+    text-decoration: none;
+}
+a:hover {
+    color: #07F7FE;
+    text-decoration: underline;
+}
+
+.badge {
+    border-color: white;
+    color: #202846;
+    background-color: #07F7FE;
+    box-shadow: 0px 0px 8px #07F7FE;
+}
+h1 {
+    color: #07F7FE;
+}
+h2 {
+    border-bottom: 2px solid #07F7FE;
+}
+
+table tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+table tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+table th, table td {
+    padding: 3px;
+}
