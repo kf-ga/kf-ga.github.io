@@ -1,0 +1,1547 @@
+
+<!DOCTYPE html>
+
+
+<html lang="cs" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZX7DQPSHE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RZX7DQPSHE');
+    </script>
+    
+    <title>Databáze &#8212; Informatika</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/local.css?v=1256093c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=4cdba38b"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/translations.js?v=22e1c300"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs";
+
+
+
+
+
+const initStyles = () => {
+    const defaultStyle = document.createElement('style');
+    defaultStyle.textContent = `pre.mermaid {
+    /* Same as .mermaid-container > pre */
+    display: block;
+    width: 100%;
+}
+
+pre.mermaid > svg {
+    /* Same as .mermaid-container > pre > svg */
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}`;
+    document.head.appendChild(defaultStyle);
+
+    const fullscreenStyle = document.createElement('style');
+    fullscreenStyle.textContent = `.mermaid-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.mermaid-container > pre {
+    display: block;
+    width: 100%;
+}
+
+.mermaid-container > pre > svg {
+    height: 500px;
+    width: 100%;
+    max-width: 100% !important;
+}
+
+.mermaid-fullscreen-btn {
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    line-height: 1;
+    padding: 0;
+    color: #333;
+}
+
+.mermaid-fullscreen-btn:hover {
+    opacity: 100% !important;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-btn.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-btn.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal {
+    display: none;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 95vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    z-index: 9999;
+    padding: 20px;
+    overflow: auto;
+}
+
+.mermaid-fullscreen-modal.dark-theme {
+    background: rgba(0, 0, 0, 0.98);
+}
+
+.mermaid-fullscreen-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen {
+    position: relative;
+    width: 95vw;
+    height: 90vh;
+    max-width: 95vw;
+    max-height: 90vh;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen.dark-theme {
+    background: #1a1a1a;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.mermaid-container-fullscreen pre.mermaid {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mermaid-container-fullscreen .mermaid svg {
+    height: 100% !important;
+    width: 100% !important;
+    cursor: grab;
+}
+
+.mermaid-fullscreen-close {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+    font-size: 24px;
+    line-height: 1;
+    color: #333;
+}
+
+.mermaid-fullscreen-close:hover {
+    background: white;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+}
+
+.mermaid-fullscreen-close.dark-theme {
+    background: rgba(50, 50, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #e0e0e0;
+}
+
+.mermaid-fullscreen-close.dark-theme:hover {
+    background: rgba(60, 60, 60, 1);
+    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.2);
+}
+
+.mermaid-fullscreen-modal .mermaid-fullscreen-btn {
+    display: none !important;
+}`;
+    document.head.appendChild(fullscreenStyle);
+}
+
+// Detect if page has dark background
+const isDarkTheme = () => {
+    // We use a set of heuristics:
+    // 1. Check for common dark mode classes or attributes
+    // 2. Check computed background color brightness
+    if (document.documentElement.classList.contains('dark') ||
+        document.documentElement.getAttribute('data-theme') === 'dark' ||
+        document.body.classList.contains('dark') ||
+        document.body.getAttribute('data-theme') === 'dark') {
+        // console.log("Dark theme detected via class/attribute");
+        return true;
+    }
+    if (document.documentElement.classList.contains('light') ||
+        document.documentElement.getAttribute('data-theme') === 'light' ||
+        document.body.classList.contains('light') ||
+        document.body.getAttribute('data-theme') === 'light') {
+        // console.log("Light theme detected via class/attribute");
+        return false;
+    }
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // console.log("Dark theme detected via prefers-color-scheme");
+        return true;
+    }
+    const bgColor = window.getComputedStyle(document.body).backgroundColor;
+    const match = bgColor.match(/rgb\((\d+),\s*(\d+),\s*(\d+)/);
+    if (match) {
+        const r = parseInt(match[1]);
+        const g = parseInt(match[2]);
+        const b = parseInt(match[3]);
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        // console.log("Background color brightness:", brightness);
+        return brightness < 128;
+    }
+    // console.log("No dark or light theme detected, defaulting to light theme");
+    return false;
+};
+
+let darkTheme = isDarkTheme();
+let modal = null;
+let modalContent = null;
+let previousScrollOffset = [window.scrollX, window.scrollY];
+
+const runMermaid = async (rerun) => {
+    console.log("Running mermaid diagrams, rerun =", rerun);
+    // clear all existing mermaid charts
+    let all_mermaids = document.querySelectorAll(".mermaid");
+
+    if (rerun) {
+        all_mermaids.forEach((el) => {
+            if(!el.hasAttribute("data-original-code")) {
+                // store original code
+                // console.log(`Storing original code for first run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+            if(el.getAttribute("data-processed") === "true") {
+                // remove and restore original
+                el.removeAttribute("data-processed");
+                // console.log(`Restoring original code for re-run: `, el.getAttribute('data-original-code'));
+                el.innerHTML = el.getAttribute('data-original-code');
+            } else {
+                // store original code
+                // console.log(`Storing original code for re-run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+        });
+        await mermaid.run();
+    }
+
+    all_mermaids = document.querySelectorAll(".mermaid");
+    const mermaids_processed = document.querySelectorAll(".mermaid[data-processed='true']");
+
+    if ("False" === "True") {
+        const mermaids_to_add_zoom = -1 === -1 ? all_mermaids.length : -1;
+        if(mermaids_to_add_zoom > 0) {
+            var svgs = d3.selectAll("");
+            if(all_mermaids.length !== mermaids_processed.length) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else if(svgs.size() !== mermaids_to_add_zoom) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            } else {
+                svgs.each(function() {
+                    var svg = d3.select(this);
+                    svg.html("<g class='wrapper'>" + svg.html() + "</g>");
+                    var inner = svg.select("g");
+                    var zoom = d3.zoom().on("zoom", function(event) {
+                        inner.attr("transform", event.transform);
+                    });
+                    svg.call(zoom);
+                });
+            }
+        }
+    } else if(all_mermaids.length !== mermaids_processed.length) {
+        // Wait for mermaid to process all diagrams
+        setTimeout(() => runMermaid(false), 200);
+        return;
+    }
+
+    // Stop here if not adding fullscreen capability
+    if ("True" !== "True") return;
+
+    if (modal !== null ) {
+        // Destroy existing modal
+        modal.remove();
+        modal = null;
+        modalContent = null;
+    }
+
+    modal = document.createElement('div');
+    modal.className = 'mermaid-fullscreen-modal' + (darkTheme ? ' dark-theme' : '');
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Fullscreen diagram viewer');
+    modal.innerHTML = `
+        <button class="mermaid-fullscreen-close${darkTheme ? ' dark-theme' : ''}" aria-label="Close fullscreen">✕</button>
+        <div class="mermaid-container-fullscreen${darkTheme ? ' dark-theme' : ''}"></div>
+    `;
+    document.body.appendChild(modal);
+
+    modalContent = modal.querySelector('.mermaid-container-fullscreen');
+    const closeBtn = modal.querySelector('.mermaid-fullscreen-close');
+
+    const closeModal = () => {
+        modal.classList.remove('active');
+        modalContent.innerHTML = '';
+        document.body.style.overflow = ''
+        window.scrollTo({left: previousScrollOffset[0], top: previousScrollOffset[1], behavior: 'instant'});
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    document.querySelectorAll('.mermaid').forEach((mermaidDiv) => {
+        if (mermaidDiv.parentNode.classList.contains('mermaid-container') ||
+            mermaidDiv.closest('.mermaid-fullscreen-modal')) {
+            // Already processed, adjust button class if needed
+            const existingBtn = mermaidDiv.parentNode.querySelector('.mermaid-fullscreen-btn');
+            if (existingBtn) {
+                existingBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+            }
+            return;
+        }
+
+        const container = document.createElement('div');
+        container.className = 'mermaid-container';
+        mermaidDiv.parentNode.insertBefore(container, mermaidDiv);
+        container.appendChild(mermaidDiv);
+
+        const fullscreenBtn = document.createElement('button');
+        fullscreenBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+        fullscreenBtn.setAttribute('aria-label', 'View diagram in fullscreen');
+        fullscreenBtn.textContent = '⛶';
+        fullscreenBtn.style.opacity = '50%';
+
+        // Calculate dynamic position based on diagram's margin and padding
+        const diagramStyle = window.getComputedStyle(mermaidDiv);
+        const marginTop = parseFloat(diagramStyle.marginTop) || 0;
+        const marginRight = parseFloat(diagramStyle.marginRight) || 0;
+        const paddingTop = parseFloat(diagramStyle.paddingTop) || 0;
+        const paddingRight = parseFloat(diagramStyle.paddingRight) || 0;
+        fullscreenBtn.style.top = `${marginTop + paddingTop + 4}px`;
+        fullscreenBtn.style.right = `${marginRight + paddingRight + 4}px`;
+
+        fullscreenBtn.addEventListener('click', () => {
+            previousScrollOffset = [window.scroll, window.scrollY];
+            const clone = mermaidDiv.cloneNode(true);
+            modalContent.innerHTML = '';
+            modalContent.appendChild(clone);
+
+            const svg = clone.querySelector('svg');
+            if (svg) {
+                svg.removeAttribute('width');
+                svg.removeAttribute('height');
+                svg.style.width = '100%';
+                svg.style.height = 'auto';
+                svg.style.maxWidth = '100%';
+                svg.style.sdisplay = 'block';
+
+                if ("False" === "True") {
+                    setTimeout(() => {
+                        const g = svg.querySelector('g');
+                        if (g) {
+                            var svgD3 = d3.select(svg);
+                            svgD3.html("<g class='wrapper'>" + svgD3.html() + "</g>");
+                            var inner = svgD3.select("g");
+                            var zoom = d3.zoom().on("zoom", function(event) {
+                                inner.attr("transform", event.transform);
+                            });
+                            svgD3.call(zoom);
+                        }
+                    }, 100);
+                }
+            }
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        container.appendChild(fullscreenBtn);
+    });
+};
+
+const load = async () => {
+    initStyles();
+
+    await runMermaid(true);
+
+    const reRunIfThemeChanges = async () => {
+        const newDarkTheme = isDarkTheme();
+        if (newDarkTheme !== darkTheme) {
+            darkTheme = newDarkTheme;
+            console.log("Theme change detected, re-running mermaid with", darkTheme ? "dark" : "default", "theme");
+            await mermaid.initialize(
+                {...JSON.parse(
+                    `{"startOnLoad": false}`
+                ),
+                ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+                }
+            );
+            await runMermaid(true);
+        }
+    };
+
+    // Update theme classes when theme changes
+    const themeObserver = new MutationObserver(reRunIfThemeChanges);
+    themeObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+    themeObserver.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+};
+
+
+
+
+
+console.log("Initializing mermaid with", darkTheme ? "dark" : "default", "theme");
+mermaid.initialize(
+    {...JSON.parse(
+        `{"startOnLoad": false}`
+    ),
+    ...{ darkMode: darkTheme, theme: darkTheme ? 'dark' : 'default' },
+    }
+);
+
+window.addEventListener("load", load);</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '3_is/02_database';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Rejstřík" href="../genindex.html" />
+    <link rel="search" title="Vyhledávání" href="../search.html" />
+    <link rel="next" title="Algoritmizace" href="../2_python/01_algorithms.html" />
+    <link rel="prev" title="Informační systémy" href="01_is.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="cs"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Přejít k hlavnímu obsahu</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Zpět na začátek</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/favicon.png" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../_static/favicon.png" class="logo__image only-dark" alt=""/>`);</script>
+  
+  
+    <p class="title logo__title">Informatika</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Vyhledávání" aria-label="Vyhledávání" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Vyhledávání</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Software</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../1_office/01_shortcuts.html">Zkratky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_office/02_typography.html">Typografie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_office/03_spreadsheet.html">Tabulkové procesory</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Informační systémy</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_is.html">Informační systémy</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Databáze</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../2_python/01_algorithms.html">Algoritmizace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_python/02_variables.html">Proměnné</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_python/03_conditions.html">Podmínky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_python/04_cycles.html">Cykly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_python/07_modules.html">Moduly a balíčky</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Webové technologie</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../a_web/01_html.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../a_web/02_css.html">Základy CSS</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Stáhněte si tuto stránku">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/3_is/02_database.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Stáhněte si zdrojový soubor"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Tisk do PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Režim celé obrazovky"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="světlý/tmavý" aria-label="světlý/tmavý" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Vyhledávání" aria-label="Vyhledávání" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Databáze</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Obsah </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relacni-databaze">Relační databáze</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prirozeny-a-umely-klic">Přirozený a umělý klíč</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#typy-relaci-vztahu">Typy relací (vztahů)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#one-to-one-jeden-na-jednoho">1:1 (one-to-one) — Jeden na jednoho</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#n-one-to-many-jeden-na-mnoho">1:N (one-to-many) — Jeden na mnoho</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#m-n-many-to-many-mnoho-na-mnoho">M:N (many-to-many) — Mnoho na mnoho</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalizace-databaze">Normalizace databáze</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vychozi-nenormalizovana-tabulka">Výchozí (nenormalizovaná) tabulka</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#krok-1-prvni-normalni-forma-1nf">Krok 1 — První normální forma (1NF)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#krok-2-druha-normalni-forma-2nf">Krok 2 — Druhá normální forma (2NF)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#krok-3-treti-normalni-forma-3nf">Krok 3 — Třetí normální forma (3NF)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vysledek-normalizace">Výsledek normalizace</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dalsi-normalni-formy">Další normální formy</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#er-diagram">ER diagram</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zakladni-pravidla-er-diagramu">Základní pravidla ER diagramu</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vztah-1-n-trida-a-student">Vztah 1:N — Třída a Student</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vztah-m-n-student-a-predmet">Vztah M:N — Student a Předmět</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vysledny-diagram-skolni-is">Výsledný diagram — školní IS</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#databazove-systemy">Databázové systémy</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="databaze">
+<h1>Databáze<a class="headerlink" href="#databaze" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Relational_database">Relational database – Wikipedia</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model">ER diagram – Wikipedia</a></p></li>
+<li><p><a class="reference external" href="https://cs.wikipedia.org/wiki/Normalizace_datab%C3%A1ze">Normalizace databáze – Wikipedie</a></p></li>
+</ul>
+<p>V <a class="reference internal" href="01_is.html"><span class="std std-doc">předchozí kapitole</span></a> jsme si ukázali, z čeho se skládá informační systém — procesy, role a entity. V této kapitole se zaměříme na <strong>databázi</strong>, tedy na to, jak jsou data v informačním systému organizována a uložena.</p>
+<p>Základy moderních databázových systémů položil v roce 1970 <a class="reference external" href="https://en.wikipedia.org/wiki/Edgar_F._Codd">Edgar F. Codd</a> z IBM, který publikoval článek <em>A Relational Model of Data for Large Shared Data Banks</em> a navrhl <strong>relační model</strong> — data uložená v tabulkách propojených vzájemnými vztahy. V 70.–80. letech pak vznikl jazyk <strong>SQL</strong> (<a class="reference external" href="https://cs.wikipedia.org/wiki/SQL">Structured Query Language</a>) pro dotazování v databázi a první komerční systémy (Oracle, IBM DB2). Dnes se vedle relačních databází prosazují i <a class="reference external" href="https://cs.wikipedia.org/wiki/NoSQL"><strong>NoSQL</strong> databáze</a> (MongoDB, Redis) pro specifické účely, relační model ale zůstává standardem pro většinu informačních systémů.</p>
+<section id="relacni-databaze">
+<h2>1.&nbsp;&nbsp;Relační databáze<a class="headerlink" href="#relacni-databaze" title="Link to this heading">#</a></h2>
+<p><strong>Relační databáze</strong> ukládá data do <strong>tabulek</strong>, které jsou vzájemně propojeny pomocí <strong>vztahů</strong> (<strong>relací</strong>). Každá tabulka odpovídá jedné entitě.</p>
+<p>Ukažme si, jak by mohly vypadat ukázkové tabulky pro entity <code class="docutils literal notranslate"><span class="pre">Třída</span></code> a <code class="docutils literal notranslate"><span class="pre">Student</span></code> z našeho školního informačního systému:</p>
+<p><strong>Tabulka <code class="docutils literal notranslate"><span class="pre">Třída</span></code>:</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>ID</p></th>
+<th class="head"><p>Název</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>1.A</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>1.B</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>2.A</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Tabulka <code class="docutils literal notranslate"><span class="pre">Student</span></code>:</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>ID</p></th>
+<th class="head"><p>Jméno</p></th>
+<th class="head"><p>Příjmení</p></th>
+<th class="head"><p>Pohlaví</p></th>
+<th class="head"><p>Bydliště</p></th>
+<th class="head"><p>ID třídy</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Jan</p></td>
+<td><p>Novák</p></td>
+<td><p>M</p></td>
+<td><p>Praha, U Lesa 12</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Petra</p></td>
+<td><p>Svobodová</p></td>
+<td><p>F</p></td>
+<td><p>Praha, Květnová 45</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Tomáš</p></td>
+<td><p>Dvořák</p></td>
+<td><p>M</p></td>
+<td><p>Praha, Sluneční 8</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Lucie</p></td>
+<td><p>Králová</p></td>
+<td><p>F</p></td>
+<td><p>Praha, Modřínová 101</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>Martin</p></td>
+<td><p>Procházka</p></td>
+<td><p>M</p></td>
+<td><p>Praha, Na Výsluní 23</p></td>
+<td><p>3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Sloupec <strong>ID</strong> v tabulce <code class="docutils literal notranslate"><span class="pre">Třída</span></code> je <strong>primární klíč</strong> (<strong>primary key</strong>) — jednoznačně identifikuje každý řádek. Sloupec <strong>ID třídy</strong> v tabulce <code class="docutils literal notranslate"><span class="pre">Student</span></code> odkazuje na konkrétní záznam v tabulce <code class="docutils literal notranslate"><span class="pre">Třída</span></code> — takový sloupec se nazývá <strong>cizí klíč</strong> (<strong>foreign key</strong>). Spárování primárního a cizího klíče vznikne jednoznačná vazba (relace) mezi oběma tabulkami. Odtud pochází název relační databáze.</p>
+<section id="prirozeny-a-umely-klic">
+<h3>1.1.&nbsp;&nbsp;Přirozený a umělý klíč<a class="headerlink" href="#prirozeny-a-umely-klic" title="Link to this heading">#</a></h3>
+<p>Primární klíč může být <strong>přirozený</strong> (<strong>natural key</strong>) — hodnota, která přirozeně existuje a je unikátní, například rodné číslo, ISBN knihy nebo e-mailová adresa. Přirozené klíče ale mohou být problematické: mohou se měnit (příjmení po sňatku), být příliš dlouhé nebo obsahovat citlivé údaje (rodné číslo).</p>
+<p>Proto se v praxi častěji používá <strong>umělý klíč</strong> (<strong>surrogate key</strong>) — uměle vytvořené číslo (typicky automaticky zvyšované celé číslo), které nemá žádný věcný význam, slouží pouze k identifikaci záznamu. Sloupec <strong>ID</strong> v našich ukázkových tabulkách je právě umělý klíč.</p>
+</section>
+<section id="typy-relaci-vztahu">
+<h3>1.2.&nbsp;&nbsp;Typy relací (vztahů)<a class="headerlink" href="#typy-relaci-vztahu" title="Link to this heading">#</a></h3>
+<p>Mezi entitami mohou existovat tři základní typy vztahů:</p>
+<section id="one-to-one-jeden-na-jednoho">
+<h4>1:1 (one-to-one) — Jeden na jednoho<a class="headerlink" href="#one-to-one-jeden-na-jednoho" title="Link to this heading">#</a></h4>
+<p>Každý záznam v jedné tabulce odpovídá přesně jednomu záznamu ve druhé tabulce.</p>
+<p><em>Příklad</em>: Každý student má právě jeden přístupový účet (login a heslo) do IS a každý účet patří právě jednomu studentovi.</p>
+</section>
+<section id="n-one-to-many-jeden-na-mnoho">
+<h4>1:N (one-to-many) — Jeden na mnoho<a class="headerlink" href="#n-one-to-many-jeden-na-mnoho" title="Link to this heading">#</a></h4>
+<p>Jeden záznam v první tabulce může být propojen s více záznamy ve druhé tabulce, ale každý záznam ve druhé tabulce patří jen jednomu záznamu v první.</p>
+<p><em>Příklad</em>: V jedné třídě je více studentů, ale každý student patří právě do jedné třídy.</p>
+</section>
+<section id="m-n-many-to-many-mnoho-na-mnoho">
+<h4>M:N (many-to-many) — Mnoho na mnoho<a class="headerlink" href="#m-n-many-to-many-mnoho-na-mnoho" title="Link to this heading">#</a></h4>
+<p>Více záznamů v jedné tabulce může být propojeno s více záznamy v druhé tabulce.</p>
+<p><em>Příklad</em>: Jeden student navštěvuje více předmětů a jeden předmět je navštěvován více studenty.</p>
+<p>Vztah M:N nelze v relační databázi vyjádřit přímo — řeší se <strong>vazební tabulkou</strong> (junction table), která obsahuje cizí klíče obou propojených tabulek.</p>
+<p>Ukažme si, jak by tabulky pro tento vztah mohly vypadat:</p>
+<p><strong>Tabulka <code class="docutils literal notranslate"><span class="pre">Student</span></code>:</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>ID</p></th>
+<th class="head"><p>Jméno</p></th>
+<th class="head"><p>Příjmení</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Jan</p></td>
+<td><p>Novák</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Petra</p></td>
+<td><p>Svobodová</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Tomáš</p></td>
+<td><p>Dvořák</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Tabulka <code class="docutils literal notranslate"><span class="pre">Předmět</span></code>:</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>ID</p></th>
+<th class="head"><p>Zkratka</p></th>
+<th class="head"><p>Název</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>MAT</p></td>
+<td><p>Matematika</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>INF</p></td>
+<td><p>Informatika</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>CES</p></td>
+<td><p>Čeština</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Vazební tabulka <code class="docutils literal notranslate"><span class="pre">Zápis</span></code>:</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>ID studenta</p></th>
+<th class="head"><p>ID předmětu</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Z tabulky <code class="docutils literal notranslate"><span class="pre">Zápis</span></code> tak například vyčteme, že Jan Novák (ID 1) navštěvuje Matematiku, Informatiku i Češtinu, zatímco Tomáš Dvořák (ID 3) navštěvuje pouze Matematiku a Češtinu.</p>
+<div class="note admonition">
+<p class="admonition-title">Kardinalita vztahu</p>
+<p>Typům relací se formálně říká <strong>kardinalita vztahu</strong> — více se můžete dozvědět <a class="reference external" href="https://en.wikipedia.org/wiki/Cardinality_(data_modeling)">zde</a>.</p>
+</div>
+</section>
+</section>
+</section>
+<section id="normalizace-databaze">
+<h2>2.&nbsp;&nbsp;Normalizace databáze<a class="headerlink" href="#normalizace-databaze" title="Link to this heading">#</a></h2>
+<p><strong>Normalizace</strong> je proces návrhu databáze tak, aby se minimalizovala <strong>redundance</strong> (opakování stejných dat) a předešlo se <strong>nekonzistencím</strong> (situacím, kdy se stejná informace na různých místech liší). Normalizace databáze definuje několik úrovní — <strong>normálních forem</strong>.</p>
+<p>Celý proces si ukážeme na jednom příkladu, který budeme krok za krokem upravovat od nenormalizovaného stavu až do 3NF.</p>
+<section id="vychozi-nenormalizovana-tabulka">
+<h3>2.1.&nbsp;&nbsp;Výchozí (nenormalizovaná) tabulka<a class="headerlink" href="#vychozi-nenormalizovana-tabulka" title="Link to this heading">#</a></h3>
+<p>Evidujeme, které třídy, učitele, studenty a předměty, které navštěvují, a vše ukládáme do jediné tabulky:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Jméno studenta</p></th>
+<th class="head"><p>Třída</p></th>
+<th class="head"><p>Třídní učitel</p></th>
+<th class="head"><p>Předměty</p></th>
+<th class="head"><p>Učitelé předmětů</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Jan Novák</p></td>
+<td><p>1.A</p></td>
+<td><p>Nováková</p></td>
+<td><p>Matematika, Informatika</p></td>
+<td><p>Nováková, Dvořák</p></td>
+</tr>
+<tr class="row-odd"><td><p>Petra Svobodová</p></td>
+<td><p>1.A</p></td>
+<td><p>Nováková</p></td>
+<td><p>Matematika</p></td>
+<td><p>Nováková</p></td>
+</tr>
+<tr class="row-even"><td><p>Tomáš Dvořák</p></td>
+<td><p>1.B</p></td>
+<td><p>Procházka</p></td>
+<td><p>Matematika, Fyzika</p></td>
+<td><p>Nováková, Jelínek</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Problémy:</strong></p>
+<ul class="simple">
+<li><p><strong>Více hodnot v buňce</strong>: sloupce <em>Předměty</em> a <em>Učitelé předmětů</em> obsahují více hodnot — nelze se na ně spolehlivě dotazovat ani třídit.</p></li>
+<li><p><strong>Redundance</strong>: třída a třídní učitel se opakují u každého studenta dané třídy; jméno učitele se opakuje u každého studenta v témž předmětu.</p></li>
+<li><p><strong>Riziko nekonzistence</strong>: při změně třídního učitele nebo přejmenování předmětu je nutné opravit všechny dotčené řádky.</p></li>
+</ul>
+</section>
+<section id="krok-1-prvni-normalni-forma-1nf">
+<h3>2.2.&nbsp;&nbsp;Krok 1 — První normální forma (1NF)<a class="headerlink" href="#krok-1-prvni-normalni-forma-1nf" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p>Tabulka je v <strong>1NF</strong>, pokud každá buňka obsahuje jen jednu (atomickou) hodnotu a každý řádek je unikátní.</p>
+</div></blockquote>
+<p><strong>Oprava</strong>: rozložíme záznamy tak, aby každý řádek odpovídal zápisu jednoho studenta do jednoho předmětu. Primární klíč zatím tvoří dvojice přirozených hodnot <strong>(Jméno studenta, Předmět)</strong>:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Jméno studenta</p></th>
+<th class="head"><p>Třída</p></th>
+<th class="head"><p>Třídní učitel</p></th>
+<th class="head"><p>Předmět</p></th>
+<th class="head"><p>Učitel předmětu</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Jan Novák</p></td>
+<td><p>1.A</p></td>
+<td><p>Nováková</p></td>
+<td><p>Matematika</p></td>
+<td><p>Nováková</p></td>
+</tr>
+<tr class="row-odd"><td><p>Jan Novák</p></td>
+<td><p>1.A</p></td>
+<td><p>Nováková</p></td>
+<td><p>Informatika</p></td>
+<td><p>Dvořák</p></td>
+</tr>
+<tr class="row-even"><td><p>Petra Svobodová</p></td>
+<td><p>1.A</p></td>
+<td><p>Nováková</p></td>
+<td><p>Matematika</p></td>
+<td><p>Nováková</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tomáš Dvořák</p></td>
+<td><p>1.B</p></td>
+<td><p>Procházka</p></td>
+<td><p>Matematika</p></td>
+<td><p>Nováková</p></td>
+</tr>
+<tr class="row-even"><td><p>Tomáš Dvořák</p></td>
+<td><p>1.B</p></td>
+<td><p>Procházka</p></td>
+<td><p>Fyzika</p></td>
+<td><p>Jelínek</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Každá buňka nyní obsahuje jednu hodnotu. Redundance ale přetrvává: <em>Třída</em> a <em>Třídní učitel</em> se opakují pro každý předmět téhož studenta; <em>Učitel předmětu</em> se opakuje pro každého studenta v témž předmětu.</p>
+</section>
+<section id="krok-2-druha-normalni-forma-2nf">
+<h3>2.3.&nbsp;&nbsp;Krok 2 — Druhá normální forma (2NF)<a class="headerlink" href="#krok-2-druha-normalni-forma-2nf" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p>Tabulka je v <strong>2NF</strong>, pokud je v 1NF a každý neklíčový atribut závisí na <strong>celém</strong> primárním klíči — ne jen na jeho části.</p>
+</div></blockquote>
+<p>Ukažme si, na které části klíče závisí jednotlivé atributy:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Atribut</p></th>
+<th class="head"><p>Závisí jen na…</p></th>
+<th class="head"><p>Problém</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Třída</p></td>
+<td><p><em>Jméno studenta</em></p></td>
+<td><p>✗ částečná závislost</p></td>
+</tr>
+<tr class="row-odd"><td><p>Třídní učitel</p></td>
+<td><p><em>Jméno studenta</em></p></td>
+<td><p>✗ částečná závislost</p></td>
+</tr>
+<tr class="row-even"><td><p>Učitel předmětu</p></td>
+<td><p><em>Předmět</em></p></td>
+<td><p>✗ částečná závislost</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Oprava</strong>: rozdělíme tabulku na samostatné entity <code class="docutils literal notranslate"><span class="pre">Student</span></code> a <code class="docutils literal notranslate"><span class="pre">Předmět</span></code>, vazbu zachytíme tabulkou <code class="docutils literal notranslate"><span class="pre">Zápis</span></code>.</p>
+<p><strong>Tabulka <code class="docutils literal notranslate"><span class="pre">Student</span></code>:</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>ID</p></th>
+<th class="head"><p>Jméno</p></th>
+<th class="head"><p>Třída</p></th>
+<th class="head"><p>Třídní učitel</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Jan Novák</p></td>
+<td><p>1.A</p></td>
+<td><p>Nováková</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Petra Svobodová</p></td>
+<td><p>1.A</p></td>
+<td><p>Nováková</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Tomáš Dvořák</p></td>
+<td><p>1.B</p></td>
+<td><p>Procházka</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Tabulka <code class="docutils literal notranslate"><span class="pre">Předmět</span></code>:</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>ID</p></th>
+<th class="head"><p>Název</p></th>
+<th class="head"><p>Učitel</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Matematika</p></td>
+<td><p>Nováková</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Informatika</p></td>
+<td><p>Dvořák</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Fyzika</p></td>
+<td><p>Jelínek</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Tabulka <code class="docutils literal notranslate"><span class="pre">Zápis</span></code></strong> (vazební tabulka — zachycuje, kdo co navštěvuje):</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>ID studenta</p></th>
+<th class="head"><p>ID předmětu</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Proč zavádíme ID?</p>
+<p>Při rozdělení do samostatných tabulek přestávají být přirozená jména jako primární klíče praktická: jsou dlouhá, mohou se změnit (příjmení po sňatku) a odkazovat na ně z jiných tabulek je nepraktické. Proto nyní každé nové entitě přidáme <strong>umělý klíč — krátké číselné ID</strong>. Jméno studenta ani název předmětu tak není třeba kopírovat do vazební tabulky <code class="docutils literal notranslate"><span class="pre">Zápis</span></code>; stačí uložit jejich ID.</p>
+</div>
+<p>Redundance je výrazně omezena. Přesto má tabulka <code class="docutils literal notranslate"><span class="pre">Student</span></code> stále jeden problém: <em>Třídní učitel</em> se opakuje u všech studentů téže třídy.</p>
+</section>
+<section id="krok-3-treti-normalni-forma-3nf">
+<h3>2.4.&nbsp;&nbsp;Krok 3 — Třetí normální forma (3NF)<a class="headerlink" href="#krok-3-treti-normalni-forma-3nf" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p>Tabulka je v <strong>3NF</strong>, pokud je v 2NF a každý neklíčový atribut závisí přímo na primárním klíči — ne na jiném neklíčovém atributu (<strong>tranzitivní závislost</strong>).</p>
+</div></blockquote>
+<p>V tabulce <code class="docutils literal notranslate"><span class="pre">Student</span></code> závisí <em>Třídní učitel</em> na sloupci <em>Třída</em>, nikoli přímo na <em>ID studenta</em>. Jedná se o tranzitivní závislost: <em>ID studenta</em> → <em>Třída</em> → <em>Třídní učitel</em>.</p>
+<p><strong>Oprava</strong>: přesuneme informaci o třídě (včetně třídního učitele) do nové tabulky <code class="docutils literal notranslate"><span class="pre">Třída</span></code>. V tabulce <code class="docutils literal notranslate"><span class="pre">Student</span></code> ponecháme jen cizí klíč <em>ID třídy</em>:</p>
+<p><strong>Tabulka <code class="docutils literal notranslate"><span class="pre">Student</span></code>:</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>ID</p></th>
+<th class="head"><p>Jméno</p></th>
+<th class="head"><p>ID třídy</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Jan Novák</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Petra Svobodová</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Tomáš Dvořák</p></td>
+<td><p>2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Tabulka <code class="docutils literal notranslate"><span class="pre">Třída</span></code>:</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>ID</p></th>
+<th class="head"><p>Název</p></th>
+<th class="head"><p>Třídní učitel</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>1.A</p></td>
+<td><p>Nováková</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>1.B</p></td>
+<td><p>Procházka</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Tabulky <code class="docutils literal notranslate"><span class="pre">Předmět</span></code> a <code class="docutils literal notranslate"><span class="pre">Zápis</span></code> zůstávají beze změny — jsou již v 3NF.</p>
+</section>
+<section id="vysledek-normalizace">
+<h3>2.5.&nbsp;&nbsp;Výsledek normalizace<a class="headerlink" href="#vysledek-normalizace" title="Link to this heading">#</a></h3>
+<p>Z původní jedné tabulky vznikly čtyři:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Student</span></code></strong> — jméno studenta a odkaz na jeho třídu</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Třída</span></code></strong> — název třídy a třídní učitel</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Předmět</span></code></strong> — název předmětu a jeho učitel</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Zápis</span></code></strong> — vazební tabulka propojující studenty s předměty</p></li>
+</ul>
+<p>Každá informace je uložena právě na jednom místě. Změna třídního učitele, přejmenování předmětu nebo přiřazení jiného vyučujícího vyžaduje úpravu jediného řádku v jediné tabulce.</p>
+<div class="tip admonition">
+<p class="admonition-title">Poznámka k úplnému návrhu</p>
+<p>Ve skutečném systému by <em>třídní učitel</em> i <em>učitel předmětu</em> měly být cizí klíče odkazující na samostatnou tabulku <code class="docutils literal notranslate"><span class="pre">Učitel</span></code> — stejně jako jsme vyčlenili třídu do vlastní tabulky. Pro přehlednost příkladu jsme jména učitelů ponechali jako textové atributy, princip je ale stejný: opakující se hodnota patří do vlastní tabulky a nahrazuje ji ID.</p>
+</div>
+</section>
+<section id="dalsi-normalni-formy">
+<h3>2.6.&nbsp;&nbsp;Další normální formy<a class="headerlink" href="#dalsi-normalni-formy" title="Link to this heading">#</a></h3>
+<p>Kromě prvních tří existují ještě další normální formy — <strong>BCNF</strong> (Boyce-Coddova), <strong>4NF</strong>, <strong>5NF</strong> a <strong>6NF</strong>. V praxi se však za dostatečný základ kvalitního návrhu databáze považuje splnění <strong>3NF</strong>. Vyšší normální formy řeší specifické okrajové případy a v běžných aplikacích se s nimi setkáte zřídka. Podrobnosti najdete na <a class="reference external" href="https://cs.wikipedia.org/wiki/Normalizace_datab%C3%A1ze">Wikipedii</a>.</p>
+</section>
+</section>
+<section id="er-diagram">
+<h2>3.&nbsp;&nbsp;ER diagram<a class="headerlink" href="#er-diagram" title="Link to this heading">#</a></h2>
+<p>Než začneme databázi vytvářet, potřebujeme si její strukturu navrhnout. K tomu slouží <strong>ER diagramy</strong> (<em>Entity-Relationship diagram</em>) — vizuální plány databáze, které ukazují, jaké entity existují, jaké mají atributy a jak spolu souvisejí. ER diagram se kreslí ještě <strong>před</strong> samotnou implementací databáze — pomáhá odhalit chyby v návrhu, usnadňuje komunikaci v týmu a slouží jako dokumentace.</p>
+<section id="zakladni-pravidla-er-diagramu">
+<h3>3.1.&nbsp;&nbsp;Základní pravidla ER diagramu<a class="headerlink" href="#zakladni-pravidla-er-diagramu" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Každá <strong>entita</strong> se zobrazuje jako obdélník s názvem a seznamem atributů</p></li>
+<li><p>U každého atributu se uvádí jeho <strong>datový typ</strong> (int, string, …)</p></li>
+<li><p><strong>Relace</strong> (vztahy) mezi entitami se znázorňují čarami s popiskem</p></li>
+</ul>
+</section>
+<section id="vztah-1-n-trida-a-student">
+<h3>3.2.&nbsp;&nbsp;Vztah 1:N — Třída a Student<a class="headerlink" href="#vztah-1-n-trida-a-student" title="Link to this heading">#</a></h3>
+<p>Každý student patří do právě jedné třídy; v jedné třídě je více studentů.</p>
+<pre  class="mermaid">
+        erDiagram
+    Trida ||--|{ Student : &quot;obsahuje&quot;
+    Trida {
+        int id
+        string nazev
+        string tridni_ucitel
+    }
+    Student {
+        int id
+        string jmeno
+        int id_tridy
+    }
+    </pre><p>Čára <code class="docutils literal notranslate"><span class="pre">┼┼────┼⋲</span></code> říká: jedna třída (<code class="docutils literal notranslate"><span class="pre">┼┼</span></code>) obsahuje více studentů (<code class="docutils literal notranslate"><span class="pre">┼⋲</span></code>). Atribut <code class="docutils literal notranslate"><span class="pre">id_tridy</span></code> v entitě <code class="docutils literal notranslate"><span class="pre">Student</span></code> je cizí klíč odkazující na <code class="docutils literal notranslate"><span class="pre">Třída</span></code>.</p>
+</section>
+<section id="vztah-m-n-student-a-predmet">
+<h3>3.3.&nbsp;&nbsp;Vztah M:N — Student a Předmět<a class="headerlink" href="#vztah-m-n-student-a-predmet" title="Link to this heading">#</a></h3>
+<p>Student navštěvuje více předmětů a jeden předmět navštěvuje více studentů. V relační databázi se vždy realizuje přes <strong>vazební tabulku</strong> (<code class="docutils literal notranslate"><span class="pre">Zapis</span></code>), která jej rozloží na dva vztahy 1:N:</p>
+<pre  class="mermaid">
+        erDiagram
+    Student ||--|{ Zapis : &quot;je zapsán&quot;
+    Predmet ||--|{ Zapis : &quot;je navštěvován&quot;
+    Student {
+        int id
+        string jmeno
+    }
+    Predmet {
+        int id
+        string nazev
+    }
+    Zapis {
+        int id_studenta
+        int id_predmetu
+    }
+    </pre></section>
+<section id="vysledny-diagram-skolni-is">
+<h3>3.4.&nbsp;&nbsp;Výsledný diagram — školní IS<a class="headerlink" href="#vysledny-diagram-skolni-is" title="Link to this heading">#</a></h3>
+<p>Následující diagram přímo odpovídá finálnímu výsledku normalizace z předchozí kapitoly:</p>
+<pre  class="mermaid">
+        erDiagram
+    Trida ||--|{ Student : &quot;obsahuje&quot;
+    Student ||--|{ Zapis : &quot;je zapsán&quot;
+    Predmet ||--|{ Zapis : &quot;je navštěvován&quot;
+    Trida {
+        int id
+        string nazev
+        string tridni_ucitel
+    }
+    Student {
+        int id
+        string jmeno
+        int id_tridy
+    }
+    Predmet {
+        int id
+        string nazev
+        string ucitel
+    }
+    Zapis {
+        int id_studenta
+        int id_predmetu
+    }
+    </pre><p>Z diagramu lze vyčíst:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Třída</span></code> → <code class="docutils literal notranslate"><span class="pre">Student</span></code></strong>: jedna třída obsahuje více studentů (1:N); atribut <code class="docutils literal notranslate"><span class="pre">tridni_ucitel</span></code> je zde textový řetězec — ve větším systému by odkazoval na samostatnou tabulku učitelů</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Student</span></code> ↔ <code class="docutils literal notranslate"><span class="pre">Předmět</span></code></strong>: student je zapsán do více předmětů a předmět navštěvuje více studentů (M:N realizované přes vazební tabulku <code class="docutils literal notranslate"><span class="pre">Zápis</span></code>)</p></li>
+</ul>
+</section>
+</section>
+<section id="databazove-systemy">
+<h2>4.&nbsp;&nbsp;Databázové systémy<a class="headerlink" href="#databazove-systemy" title="Link to this heading">#</a></h2>
+<p>Pro práci s relačními databázemi existuje celá řada systémů. Zde jsou nejznámější z nich:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Systém</p></th>
+<th class="head"><p>Licence</p></th>
+<th class="head"><p>Poznámka</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.sqlite.org/">SQLite</a></p></td>
+<td><p>Open source</p></td>
+<td><p>Jednoduchá souborová databáze, ideální pro malé aplikace a výuku</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.mysql.com/">MySQL</a></p></td>
+<td><p>Open source / komerční</p></td>
+<td><p>Nejrozšířenější open-source databáze, dnes vlastněna společností Oracle</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.postgresql.org/">PostgreSQL</a></p></td>
+<td><p>Open source</p></td>
+<td><p>Pokročilá open-source databáze s důrazem na standardy a rozšiřitelnost</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://mariadb.org/">MariaDB</a></p></td>
+<td><p>Open source</p></td>
+<td><p>Komunitní fork MySQL</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.oracle.com/database/">Oracle Database</a></p></td>
+<td><p>Komerční</p></td>
+<td><p>Jeden z nejstarších a nejvýkonnějších komerčních systémů</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.microsoft.com/sql-server">Microsoft SQL Server</a></p></td>
+<td><p>Komerční</p></td>
+<td><p>Databázový systém od Microsoftu, široce používaný v korporátním prostředí</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Přehled a srovnání databázových systémů naleznete <a class="reference external" href="https://en.wikipedia.org/wiki/Comparison_of_relational_database_management_systems">zde</a>.</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="01_is.html"
+       title="předchozí stránka">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">předchozí</p>
+        <p class="prev-next-title">Informační systémy</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../2_python/01_algorithms.html"
+       title="další stránka">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">další</p>
+        <p class="prev-next-title">Algoritmizace</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Obsah
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relacni-databaze">Relační databáze</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prirozeny-a-umely-klic">Přirozený a umělý klíč</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#typy-relaci-vztahu">Typy relací (vztahů)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#one-to-one-jeden-na-jednoho">1:1 (one-to-one) — Jeden na jednoho</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#n-one-to-many-jeden-na-mnoho">1:N (one-to-many) — Jeden na mnoho</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#m-n-many-to-many-mnoho-na-mnoho">M:N (many-to-many) — Mnoho na mnoho</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalizace-databaze">Normalizace databáze</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vychozi-nenormalizovana-tabulka">Výchozí (nenormalizovaná) tabulka</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#krok-1-prvni-normalni-forma-1nf">Krok 1 — První normální forma (1NF)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#krok-2-druha-normalni-forma-2nf">Krok 2 — Druhá normální forma (2NF)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#krok-3-treti-normalni-forma-3nf">Krok 3 — Třetí normální forma (3NF)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vysledek-normalizace">Výsledek normalizace</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dalsi-normalni-formy">Další normální formy</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#er-diagram">ER diagram</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zakladni-pravidla-er-diagramu">Základní pravidla ER diagramu</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vztah-1-n-trida-a-student">Vztah 1:N — Třída a Student</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vztah-m-n-student-a-predmet">Vztah M:N — Student a Předmět</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vysledny-diagram-skolni-is">Výsledný diagram — školní IS</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#databazove-systemy">Databázové systémy</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Podle kf
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, kf..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

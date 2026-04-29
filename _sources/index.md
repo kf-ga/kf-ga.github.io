@@ -16,9 +16,15 @@ Informatika
 1_office/01_shortcuts.md
 1_office/02_typography.md
 1_office/03_spreadsheet.md
-1_office/04_is.md
-1_office/05_database.md
 1_office/06_presentations.md
+```
+
+```{toctree}
+:caption: Informační systémy
+:maxdepth: 1
+
+3_is/01_is.md
+3_is/02_database.md
 ```
 
 ```{toctree}

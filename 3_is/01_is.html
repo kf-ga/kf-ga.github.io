@@ -1,0 +1,523 @@
+
+<!DOCTYPE html>
+
+
+<html lang="cs" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZX7DQPSHE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RZX7DQPSHE');
+    </script>
+    
+    <title>Informační systémy &#8212; Informatika</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/local.css?v=1256093c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=4cdba38b"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/translations.js?v=22e1c300"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '3_is/01_is';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Rejstřík" href="../genindex.html" />
+    <link rel="search" title="Vyhledávání" href="../search.html" />
+    <link rel="next" title="Databáze" href="02_database.html" />
+    <link rel="prev" title="Tabulkové procesory" href="../1_office/03_spreadsheet.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="cs"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Přejít k hlavnímu obsahu</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Zpět na začátek</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/favicon.png" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../_static/favicon.png" class="logo__image only-dark" alt=""/>`);</script>
+  
+  
+    <p class="title logo__title">Informatika</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Vyhledávání" aria-label="Vyhledávání" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Vyhledávání</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Software</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../1_office/01_shortcuts.html">Zkratky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_office/02_typography.html">Typografie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_office/03_spreadsheet.html">Tabulkové procesory</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Informační systémy</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Informační systémy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_database.html">Databáze</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../2_python/01_algorithms.html">Algoritmizace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_python/02_variables.html">Proměnné</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_python/03_conditions.html">Podmínky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_python/04_cycles.html">Cykly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_python/07_modules.html">Moduly a balíčky</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Webové technologie</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../a_web/01_html.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../a_web/02_css.html">Základy CSS</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Stáhněte si tuto stránku">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/3_is/01_is.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Stáhněte si zdrojový soubor"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Tisk do PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Režim celé obrazovky"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="světlý/tmavý" aria-label="světlý/tmavý" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Vyhledávání" aria-label="Vyhledávání" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Informační systémy</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Obsah </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procesy-a-agenda">Procesy a agenda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#role">Role</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entity">Entity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dalsi-aspekty-is">Další aspekty IS</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="informacni-systemy">
+<h1>Informační systémy<a class="headerlink" href="#informacni-systemy" title="Link to this heading">#</a></h1>
+<p><strong>Informační systém</strong> (IS) je vzájemně propojený soubor lidí, procesů, dat a technologií, který zajišťuje sběr, zpracování, ukládání a poskytování informací pro podporu řízení a rozhodování.</p>
+<p>Informační systémy jsou dnes nedílnou součástí fungování téměř každé organizace — školy, nemocnice, firmy i státní správy. V této kapitole se podíváme na základní stavební kameny informačního systému na příkladu IS pro školu.</p>
+<p>V dnešní době má informační systém zpravidla podobu serveru připojeného k Internetu, který slouží jako centrální datové úložiště. Uživatelé k informačnímu systému přistupují zpravidla pomocí webové aplikace (často také doplněn mobilní aplikací). Software či aplikace, které se k IS připojují se také označují jako <strong>terminály</strong>.</p>
+<section id="procesy-a-agenda">
+<h2>1.&nbsp;&nbsp;Procesy a agenda<a class="headerlink" href="#procesy-a-agenda" title="Link to this heading">#</a></h2>
+<p>Primárním úkolem informačního systému je zjednodušení <strong>agendy</strong> — procesů, které organizace potřebuje ke svému fungování.</p>
+<p>V případě školního informačního systému (jako je např. <a class="reference external" href="https://www.bakalari.cz/">Bakaláři</a>) bychom mohli identifikovat například tyto agendy:</p>
+<ul class="simple">
+<li><p><strong>Známkování</strong>: zapisování a zobrazování známek</p></li>
+<li><p><strong>Evidence docházky</strong>: evidence přítomnosti, počítání absence, omlouvání</p></li>
+<li><p><strong>Agenda rozvrhu</strong>: stálý rozvrh, suplování, spojování tříd, rušení výuky atd.</p></li>
+<li><p><strong>Komunikace</strong>: zasílání zpráv mezi učiteli, studenty a rodiči</p></li>
+</ul>
+</section>
+<section id="role">
+<h2>2.&nbsp;&nbsp;Role<a class="headerlink" href="#role" title="Link to this heading">#</a></h2>
+<p>Informační systém umožňuje přístup různým uživatelům, přičemž rozsah zpřístupněných informací závisí na jejich <strong>roli</strong> — souboru pravomocí přiřazených danému uživateli.</p>
+<p>Pro školní IS můžeme definovat například tyto role:</p>
+<ul class="simple">
+<li><p><strong>Student</strong>: čtení vlastních známek, zobrazení absence, čtení rozvrhu</p></li>
+<li><p><strong>Učitel</strong>: zapisování známek a absence u svých studentů, čtení rozvrhu</p></li>
+<li><p><strong>Třídní učitel</strong>: oproti učiteli navíc omlouvání absence celé třídy</p></li>
+<li><p><strong>Ředitel</strong>: správa studentů, učitelů, rozvrhu; přístup ke všem datům</p></li>
+<li><p><strong>Rodič</strong>: čtení známek a omlouvání absence svého dítěte</p></li>
+</ul>
+<p>Informační systémy mají často i roli <strong>administrátora</strong> (někdy označovaného jako <strong>root</strong> nebo <strong>superuser</strong>), který má přístup ke všem funkcím systému včetně servisních úkonů (záloha a obnova dat, aktualizace apod.).</p>
+</section>
+<section id="entity">
+<h2>3.&nbsp;&nbsp;Entity<a class="headerlink" href="#entity" title="Link to this heading">#</a></h2>
+<p>Jako <strong>entity</strong> (někdy též <strong>modely</strong>) označujeme objekty, které informační systém eviduje — lidé, věci, vztahy, události. Každá entita má své <strong>atributy</strong> (vlastnosti) a <strong>relace</strong> (vztahy k jiným entitám).</p>
+<p>Entity, jejich atributy a relace dohromady tvoří <strong>databázi</strong> informačního systému. Databázi si lze zjednodušeně představit jako soubor tabulek: každá tabulka odpovídá jedné entitě, sloupce jsou atributy a řádky jsou konkrétní <strong>záznamy</strong> (též <strong>instance</strong>) entity.</p>
+<p>V našem školním IS budeme potřebovat například tyto entity:</p>
+<ul class="simple">
+<li><p><strong>Student</strong>: jméno, příjmení, bydliště</p></li>
+<li><p><strong>Třída</strong>: rok nástupu, paralelka (A, B, C, …)</p></li>
+<li><p><strong>Učitel</strong>: titul, jméno, příjmení, bydliště</p></li>
+<li><p><strong>Předmět</strong>: zkratka, název</p></li>
+<li><p><strong>Učebna</strong>: číslo učebny</p></li>
+<li><p><strong>Výuka</strong>: vyučovací hodina, třída, učitel, učebna, předmět</p></li>
+</ul>
+<p>Každá entita má navíc <strong>unikátní identifikátor</strong> (<strong>ID</strong>), který slouží k jednoznačné identifikaci záznamu a k vytváření vztahů mezi entitami.</p>
+<div class="note admonition">
+<p class="admonition-title">Student a student</p>
+<p>Je třeba rozlišovat pojmy <em>role student</em> (soubor pravomocí uživatele přihlášeného do IS) a <em>entita student</em> (databázová struktura pro ukládání informací o studentech).</p>
+</div>
+</section>
+<section id="dalsi-aspekty-is">
+<h2>4.&nbsp;&nbsp;Další aspekty IS<a class="headerlink" href="#dalsi-aspekty-is" title="Link to this heading">#</a></h2>
+<p>Při návrhu informačního systému se kromě dat, procesů a rolí řeší i další otázky:</p>
+<ul class="simple">
+<li><p><strong>Přístup k IS</strong>: webové rozhraní, mobilní aplikace, desktopová aplikace, specializované terminály (např. čtečka čárových kódů), automatizované terminály (např. automatický sběr dat)</p></li>
+<li><p><strong>Uživatelské rozhraní</strong>: vizuální stránka, přehlednost, přístupnost</p></li>
+<li><p><strong>Bezpečnost</strong>: autentizace, autorizace, šifrování dat</p></li>
+<li><p><strong>Záloha a obnova</strong>: ochrana dat před ztrátou</p></li>
+</ul>
+<p>Klíčovou součástí každého informačního systému je jeho <strong>databáze</strong>, s jejíž principy se seznámíme v další kapitole.</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../1_office/03_spreadsheet.html"
+       title="předchozí stránka">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">předchozí</p>
+        <p class="prev-next-title">Tabulkové procesory</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="02_database.html"
+       title="další stránka">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">další</p>
+        <p class="prev-next-title">Databáze</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Obsah
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procesy-a-agenda">Procesy a agenda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#role">Role</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entity">Entity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dalsi-aspekty-is">Další aspekty IS</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Podle kf
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, kf..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
